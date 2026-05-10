@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Henry B. Plant Museum – Exhibits</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="scroll-progress" id="progressBar"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Henry B. Plant Museum</a>
+      <i class="fa-solid fa-bars menu-toggle" id="menuToggle"></i>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="exhibits.html" class="active">Exhibitions</a>
+        <a href="artifacts.html">Artifacts</a>
+        <a href="get_involved.html">Get Involved</a>
+        <a href="profile.html">Sign In</a>
+        <a href="visitor.html" class="nav-cta">Plan Your Visit</a>
+      </div>
+      <a href="visitor.html" class="nav-cta">Plan Your Visit</a>
+    </div>
+  </nav>
+  <script src="scripts.js"></script>
+
+  <main>
+    <header class="hero-exhibits">
+      <div class="hero-common-overlay"></div>
+      <div class="hero-common-content reveal">
+        <h1>Current Events & Exhibits</h1>
+        <p>Explore our ongoing and upcoming exhibitions!</p>
+      </div>
+    </header>
+
+    <section class="exhibitions-wrapper">
+      
+      <input type="radio" name="category" id="every" checked>
+      <input type="radio" name="category" id="events">
+      <input type="radio" name="category" id="current-events">
+      <input type="radio" name="category" id="past-events">
+      <input type="radio" name="category" id="exhibits">
+      <input type="radio" name="category" id="current-exhibits">
+      <input type="radio" name="category" id="past-exhibits">
+      <input type="radio" name="category" id="online-exhibits">
+
+      <div class="exhibitions-filters reveal">
+        <label for="every">All</label>
+        <label for="events">Events</label>
+        <label for="current-events">Current Events</label>
+        <label for="past-events">Past Events</label>
+        <label for="exhibits">Exhibits</label>
+        <label for="current-exhibits">Current Exhibits</label>
+        <label for="past-exhibits">Past Exhibits</label>
+        <label for="online-exhibits">Online</label>
+      </div>
+  
+      <div class="cards-grid-exhibits exhibitions-content">
+
+        <a href="exhibits/victorian-christmas-stroll.html" class="card-exhibits spotlight-card every events reveal">
+          <div class="upcoming-tag">Event</div>
+          <h3>Victorian Christmas Stroll</h3>
+          <p>Seasonal Event • December</p>
+          <p>Enjoy candlelight tours, historical decorations, and live character performances throughout the Henry B. Plant Museum.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/upstairs-downstairs.html" class="card-exhibits spotlight-card every events current-events reveal" style="transition-delay: 0.1s;">
+          <div class="upcoming-tag">Event</div>
+          <h3>Upstairs / Downstairs</h3>
+          <p>Every Sunday</p>
+          <p>Enjoy personal stories and perspectives from staff that illuminate life in the Gilded Age.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/celebrate-sunset.html" class="card-exhibits spotlight-card every events current-events reveal" style="transition-delay: 0.2s;">
+          <div class="upcoming-tag">Event</div>
+          <h3>Celebrate Sunset</h3>
+          <p>First Friday of Every Month</p>
+          <p>A historical open house where the museum hosts live performances and Gilded Age storytelling as the sun sets.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/free-movie-series.html" class="card-exhibits spotlight-card every events current-events reveal">
+          <div class="upcoming-tag">Event</div>
+          <h3>Free Movie Series</h3>
+          <p>Every Few Months</p>
+          <p>Explore FREE community screenings held in Plant Park that pair classic movies with historical exhibits.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/jose-gaspar.html" class="card-exhibits spotlight-card every events past-events reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>The Jose Gaspar Literary Cannon</h3>
+          <p>A Past Event</p>
+          <p>Take a deep dive into Gasparilla, one of Tampa's most celebrated traditions and myths.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/everything-musical.html" class="card-exhibits spotlight-card every events past-events reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>Everything Musical</h3>
+          <p>A Past Event</p>
+          <p>Exploring Tampa's 1920 music scene and the profound impact of the "Everything Musical" Philpitt Store.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=oB9NDRfSiIQ" class="card-exhibits spotlight-card every events past-events online-exhibits reveal" target="_blank">
+          <div class="upcoming-tag">Online</div>
+          <h3>In the Shadow of the Crescent</h3>
+          <p>Recorded Lecture</p>
+          <p>A lecture given by Professor Richard Ellis on June 10, 2023. Watch the full presentation online.</p>
+          <span class="learn-more">Watch Now <i class="fa-brands fa-youtube"></i></span>
+        </a>
+
+        <a href="exhibits/george-washington.html" class="card-exhibits spotlight-card every events past-events reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>"George Washington Ate Here"</h3>
+          <p>A Past Event</p>
+          <p>Explore how "Oriental" luxury goods influenced American culture during the era of the early republic.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/gems.html" class="card-exhibits spotlight-card every events past-events reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>"Gems for Olivette"</h3>
+          <p>A Past Event</p>
+          <p>Watch the live staged concert of the most popular songs from Edmond Audran’s comedic operetta, Olivette.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/plants-follies.html" class="card-exhibits spotlight-card every events past-events reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>"Plant's Follies"</h3>
+          <p>A Past Event</p>
+          <p>Explore how the Tampa Bay Hotel’s Casino and its world-class entertainment helped shape Tampa's identity.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/rocking-chair.html" class="card-exhibits spotlight-card every events past-events reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>"The Rocking Chair Report"</h3>
+          <p>A Past Event</p>
+          <p>Explore the history of popular entertainment at the turn of the 20th century.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/businessmen.html" class="card-exhibits spotlight-card every events past-events reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>"Shrewd Business Men"</h3>
+          <p>A Past Event</p>
+          <p>Featuring single-character performances where actors bring real turn-of-the-century hotel staff and guests to life.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/blackdisplay.html" class="card-exhibits spotlight-card every events past-events reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>"Placing Black Progress on Display"</h3>
+          <p>A Past Event</p>
+          <p>Showcasing the economic and educational "progress" of Black Americans during the Jim Crow era.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/music.html" class="card-exhibits spotlight-card every events past-events reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>"Music and Memory"</h3>
+          <p>A Past Event</p>
+          <p>Focusing on the history of African American spirituals and local heritage.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/exotic.html" class="card-exhibits spotlight-card every events past-events reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>"The Exotic Architecture"</h3>
+          <p>A Past Event</p>
+          <p>Exploring the vision of railroad tycoon Henry Plant and his architect, J.A. Wood.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=JAsoQ6vqtu8" class="card-exhibits spotlight-card every events past-events online-exhibits reveal" target="_blank">
+          <div class="upcoming-tag">Online</div>
+          <h3>Classical Guitar with John Barr</h3>
+          <p>Recorded Performance</p>
+          <p>Some of the Music in the Museum. Click to watch the performance online.</p>
+          <span class="learn-more">Watch Now <i class="fa-brands fa-youtube"></i></span>
+        </a>
+
+        <a href="https://youtu.be/pY_MOFyaS7U" class="card-exhibits spotlight-card every events past-events online-exhibits reveal" target="_blank">
+          <div class="upcoming-tag">Online</div>
+          <h3>Harp with Damara Chaudhuri Besker</h3>
+          <p>Recorded Performance</p>
+          <p>Some of the Music in the Museum. Click to watch the performance online.</p>
+          <span class="learn-more">Watch Now <i class="fa-brands fa-youtube"></i></span>
+        </a>
+
+        <a href="https://youtu.be/jjOhn83mwUU" class="card-exhibits spotlight-card every events past-events online-exhibits reveal" target="_blank">
+          <div class="upcoming-tag">Online</div>
+          <h3>Saxophone with Matt Weihmuller</h3>
+          <p>Recorded Performance</p>
+          <p>Some of the Music in the Museum. Click to watch the performance online.</p>
+          <span class="learn-more">Watch Now <i class="fa-brands fa-youtube"></i></span>
+        </a>
+
+        <a href="exhibits/plants-southern-empire.html" class="card-exhibits spotlight-card every exhibits current-exhibits reveal">
+          <div class="upcoming-tag">Ongoing</div>
+          <h3>Plant’s Southern Empire</h3>
+          <p>Jan 1, 2020 – Jan 1, 2030</p>
+          <p>Explore the Plant System, a network of railroads and steamships built by Henry B. Plant in the late 19th century.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/tampa-at-war.html" class="card-exhibits spotlight-card every exhibits current-exhibits reveal">
+          <div class="upcoming-tag">Ongoing</div>
+          <h3>Tampa at War</h3>
+          <p>Sep 22, 2024 – Sep 22, 2030</p>
+          <p>Explore how Tampa and the historic Tampa Bay Hotel played a role during major American conflicts.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/grand-hotel.html" class="card-exhibits spotlight-card every exhibits current-exhibits reveal">
+          <div class="upcoming-tag">Ongoing</div>
+          <h3>Grand Hotel</h3>
+          <p>Dec 9, 2025 – Dec 9, 2030</p>
+          <p>Explore the Museum’s lifestyle rooms and vignettes that showcase genuine Gilded Age resort grandeur.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        
+        <a href="exhibits/gaspar_gold.html" class="card-exhibits spotlight-card every exhibits current-exhibits reveal">
+          <div class="upcoming-tag">Ongoing</div>
+          <h3>Gaspar's Gold</h3>
+          <p>Jan 24, 2026 - Aug 30, 2026</p>
+          <p>Stepping beyond the myth, this exhibit reveals the symbols and customs behind one of America’s signature celebrations.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+      
+        <a href="exhibits/CaptainsLog.html" class="card-exhibits spotlight-card every exhibits past-exhibits reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>Captain's Log</h3>
+          <p>A Past Exhibit</p>
+          <p>Revisit the glamour and spectacle of steamship travel in Gilded Age America.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="exhibits/Imagined-East.html" class="card-exhibits spotlight-card every exhibits past-exhibits reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>Imagined East</h3>
+          <p>A Past Exhibit</p>
+          <p>Explore the aesthetic movement known as Orientalism.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="exhibits/Imperfect-Harmony.html" class="card-exhibits spotlight-card every exhibits past-exhibits reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>Imperfect Harmony</h3>
+          <p>A Past Exhibit</p>
+          <p>Discover the lost world of self-playing musical instruments in an exciting new exhibit on music at the Tampa Bay Hotel.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+ 
+         <a href="exhibits/when-the-train.html" class="card-exhibits spotlight-card every exhibits past-exhibits reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>"When the Train Comes Along"</h3>
+          <p>A Past Exhibit</p>
+          <p>The impact of Booker T. Washington at the Tampa Bay Casino in 1912.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+      
+        
+        <a href="exhibits/Henry-Plant.html" class="card-exhibits spotlight-card every exhibits past-exhibits reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>Henry Plant</h3>
+          <p>A Past Exhibit</p>
+          <p>A special exhibit in honor of Henry Plant's 200th birthday.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="exhibits/Imperial-design.html" class="card-exhibits spotlight-card every exhibits past-exhibits reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>Imperial Design</h3>
+          <p>A Past Exhibit</p>
+          <p>An exquisite collection of porcelains and decorative arts that harken back to the grand dynasties of 19th century Europe and Asia.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="exhibits/Dogs-In-Art.html" class="card-exhibits spotlight-card every exhibits past-exhibits reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>Dogs In Art</h3>
+          <p>A Past Exhibit</p>
+          <p>Featuring man's best friend.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="exhibits/Menus.html" class="card-exhibits spotlight-card every exhibits past-exhibits reveal">
+          <div class="upcoming-tag">Past</div>
+          <h3>Menus</h3>
+          <p>A Past Exhibit</p>
+          <p>This exhibit uses original menus as a starting point to explore the fine dining at the Tampa Bay Hotel and other grand Florida resorts from 1891 to 1932.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/french_operetta.html" class="card-exhibits spotlight-card every exhibits online-exhibits reveal">
+          <div class="upcoming-tag">Online</div>
+          <h3>Henry Plant's Playlist</h3>
+          <p>An Online Exhibit</p>
+          <p>Learn the origins of the operetta craze that swept late-nineteenth-century America in this short documentary film, featuring performances from several popular works.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>  
+
+        <a href="exhibits/gems.html" class="card-exhibits spotlight-card every exhibits online-exhibits reveal">
+          <div class="upcoming-tag">Online</div>
+          <h3>Gems from Olivette</h3>
+          <p>An Online Exhibit</p>
+          <p>Learn about French comic opera in this short documentary film, featuring historically informed performances of popular songs from Olivette.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/signature.html" class="card-exhibits spotlight-card every exhibits online-exhibits reveal">
+          <div class="upcoming-tag">Online</div>
+          <h3>Signatures from the Spanish American War</h3>
+          <p>An Online Exhibit</p>
+          <p>Discover a rarely exhibited piece of Spanish American War history, an autograph album featuring the signatures of dignataries, journalists, and artists who joined U.S. Generals on the verandas of the Tampa Bay Hotel.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/tampa_casino.html" class="card-exhibits spotlight-card every exhibits online-exhibits reveal">
+          <div class="upcoming-tag">Online</div>
+          <h3>Music and Meaning</h3>
+          <p>An Online Exhibit</p>
+          <p>View a performance of a spiritual sung at the Tampa Bay Casino and learn about the significance of this musical form.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/dirty_laundry.html" class="card-exhibits spotlight-card every exhibits online-exhibits reveal">
+          <div class="upcoming-tag">Online</div>
+          <h3>Dirty Laundry</h3>
+          <p>An Online Exhibit</p>
+          <p>This exhibit showcases the lives of the housekeepers, maids, and laundresses who labored at the Tampa Bay Hotel.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/minstrelsy.html" class="card-exhibits spotlight-card every exhibits online-exhibits reveal">
+          <div class="upcoming-tag">Online</div>
+          <h3>Minstrelsy in Black and White</h3>
+          <p>An Online Exhibit</p>
+          <p>Explore minstrel performances at the Tampa Bay Casino.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/lucky_charms.html" class="card-exhibits spotlight-card every exhibits online-exhibits reveal">
+          <div class="upcoming-tag">Online</div>
+          <h3>Lucky Charms</h3>
+          <p>An Online Exhibit</p>
+          <p>Enjoy a performance from a 19th century opera and learn about the connections between the work and the City of Tampa.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>   
+
+
+        <a href="exhibits/ann_lowe.html" class="card-exhibits spotlight-card every exhibits online-exhibits reveal">
+          <div class="upcoming-tag">Online</div>
+          <h3>Ann Lowe</h3>
+          <p>An Online Exhibit</p>
+          <p>Learn about Ann Lowe and three of her gowns designed for Gasparilla celebration - including 3D scans of the gowns.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/perfect_paradise.html" class="card-exhibits spotlight-card every exhibits online-exhibits reveal">
+          <div class="upcoming-tag">Online</div>
+          <h3>Strolling in a Perfect Paradise</h3>
+          <p>An Online Exhibit</p>
+          <p>Tour Henry Plant Park through a series of historic postcards.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/red_cross.html" class="card-exhibits spotlight-card every exhibits online-exhibits reveal">
+          <div class="upcoming-tag">Online</div>
+          <h3>Red Cross Nursing and the War of 1898</h3>
+          <p>An Online Exhibit</p>
+          <p>Follow the path that led dozens of young women from New York to Tampa and Cuba in 1898.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/skinner_service.html" class="card-exhibits spotlight-card every exhibits online-exhibits reveal">
+          <div class="upcoming-tag">Online</div>
+          <h3>Mr. Skinner, at Your Service</h3>
+          <p>An Online Exhibit</p>
+          <p>Peek behind the scenes of the Tampa Bay Hotel's dining room and meet the men and women responsible for its epicurean delights.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="exhibits/letters_tampa.html" class="card-exhibits spotlight-card every exhibits online-exhibits reveal">
+          <div class="upcoming-tag">Online</div>
+          <h3>Letters from Tampa</h3>
+          <p>An Online Exhibit</p>
+          <p>Watch this short documentary film, featuring two eye-witness accounts of life in Tampa in 1898.</p>
+          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+                                                             
+      </div>
+    </section>
+
+  </main>
+
+  <div class="side-buttons">
+    <button class="side-btn" id="btnResources" aria-label="Museum Resources" title="Resources & Contact"><i class="fa-solid fa-layer-group"></i></button>
+    <button class="side-btn" id="btnA11y" aria-label="Accessibility Settings" title="Accessibility"><i class="fa-solid fa-universal-access"></i></button>
+  </div>
+
+  <div class="panel-overlay" id="panelOverlay"></div>
+
+  <aside class="panel-drawer" id="drawerResources">
+    <div class="panel-header">
+      <h3>Museum Resources</h3>
+      <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="panel-body">
+      <div class="drawer-group">
+        <h4>Visit & Contact</h4>
+        <a href="tel:8132541891" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="resource-text"><h5>Phone</h5><p>(813) 254-1891</p></div>
+        </a>
+        <a href="mailto:info@plantmuseum.com" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="resource-text"><h5>Email</h5><p>info@plantmuseum.com</p></div>
+        </a>
+        <a href="https://henrybplantmuseum.com/visitor-info" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="resource-text"><h5>Location</h5><p>401 W. Kennedy Blvd, Tampa</p></div>
+        </a>
+        <div class="resource-item static">
+          <div class="resource-icon"><i class="fa-solid fa-clock"></i></div>
+          <div class="resource-text"><h5>Hours of Operation</h5><p>Tue–Sat: 10am–5pm<br>Sun: 12pm–5pm<br>Mon: Closed</p></div>
+        </div>
+      </div>
+      <div class="drawer-group">
+        <h4>Support the Museum</h4>
+        <a href="visitor.html" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-ticket"></i></div>
+          <div class="resource-text"><h5>Buy Tickets</h5><p>Admissions & Tours</p></div>
+        </a>
+        <a href="membership.html" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-id-card"></i></div>
+          <div class="resource-text"><h5>Membership</h5><p>Join the Museum Society</p></div>
+        </a>
+        <a href="https://henry-b-plant-museum.square.site/product/donation/101" target="_blank" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-heart"></i></div>
+          <div class="resource-text"><h5>Donate Now</h5><p>Support our preservation</p></div>
+        </a>
+      </div>
+      <div class="drawer-group">
+        <h4>Connect With Us</h4>
+        <div class="drawer-socials">
+          <a href="https://twitter.com/HBPlantMuseum" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <aside class="panel-drawer" id="drawerA11y">
+    <div class="panel-header">
+      <h3>Accessibility Settings</h3>
+      <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="panel-body">
+      <div class="a11y-setting">
+        <label for="toggle-contrast">High Contrast Mode</label>
+        <label class="switch"><input type="checkbox" id="toggle-contrast"><span class="slider"></span></label>
+      </div>
+      <div class="a11y-setting">
+        <label for="toggle-text">Large Text</label>
+        <label class="switch"><input type="checkbox" id="toggle-text"><span class="slider"></span></label>
+      </div>
+      <div class="a11y-setting">
+        <label for="toggle-dyslexia">Dyslexia Friendly Font</label>
+        <label class="switch"><input type="checkbox" id="toggle-dyslexia"><span class="slider"></span></label>
+      </div>
+      <div class="a11y-setting">
+        <label for="toggle-motion">Reduce Motion</label>
+        <label class="switch"><input type="checkbox" id="toggle-motion"><span class="slider"></span></label>
+      </div>
+      <div class="a11y-setting">
+        <label for="toggle-links">Highlight Links</label>
+        <label class="switch"><input type="checkbox" id="toggle-links"><span class="slider"></span></label>
+      </div>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Museum Support</h3>
+        <ul class="footer-links">
+          <li><a href="visitor.html">Buy Tickets</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="https://henry-b-plant-museum.square.site/product/donation/101" target="_blank">Donate Now</a></li>
+        </ul>
+        <div class="footer-socials">
+          <a href="https://twitter.com/HBPlantMuseum" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="visitor.html">Plan Your Visit</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="exhibits.html">Exhibitions</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="https://maps.google.com/?q=401+W.+Kennedy+Blvd,+Tampa" target="_blank">401 W. Kennedy Blvd, Tampa</a></li>
+          <li><a href="tel:8132541891">(813) 254-1891</a></li>
+          <li><a href="mailto:info@plantmuseum.com">info@plantmuseum.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Henry B. Plant Museum. Created for FBLA.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Menu Logic
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+      
+      if(menuToggle && navLinks) {
+        menuToggle.addEventListener('click', (e) => {
+          navLinks.classList.toggle('mobile-open');
+          e.stopPropagation();
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+            navLinks.classList.remove('mobile-open');
+          }
+        });
+      }
+
+      // 2. Scroll Progress & Navbar Scrolled State
+      const progressBar = document.getElementById('progressBar');
+      const navbar = document.getElementById('navbar');
+      
+      window.addEventListener('scroll', () => {
+        if(progressBar) {
+          const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          progressBar.style.width = (winScroll / height) * 100 + "%";
+        }
+        if(navbar) {
+          if (window.scrollY > 20) navbar.classList.add('scrolled');
+          else navbar.classList.remove('scrolled');
+        }
+      });
+
+      // 3. Drawers Logic
+      const btnRes = document.getElementById('btnResources');
+      const btnA11y = document.getElementById('btnA11y');
+      const drawRes = document.getElementById('drawerResources');
+      const drawA11y = document.getElementById('drawerA11y');
+      const overlay = document.getElementById('panelOverlay');
+      const closeBtns = document.querySelectorAll('.close-btn');
+
+      function closeDrawers() {
+        if(drawRes) drawRes.classList.remove('open');
+        if(drawA11y) drawA11y.classList.remove('open');
+        if(overlay) overlay.classList.remove('open');
+      }
+
+      function openDrawer(drawer) {
+        closeDrawers();
+        if(drawer) drawer.classList.add('open');
+        if(overlay) overlay.classList.add('open');
+      }
+
+      if(btnRes) btnRes.addEventListener('click', () => openDrawer(drawRes));
+      if(btnA11y) btnA11y.addEventListener('click', () => openDrawer(drawA11y));
+      if(overlay) overlay.addEventListener('click', closeDrawers);
+      closeBtns.forEach(btn => btn.addEventListener('click', closeDrawers));
+
+      // 4. Slider Logic
+      const slides = document.querySelectorAll('.slide');
+      const indicator = document.getElementById('slideNum');
+      let currentSlide = 0;
+      
+      function updateSlider(direction) {
+        if(slides.length > 0) {
+          slides[currentSlide].classList.remove('active');
+          currentSlide = (currentSlide + direction + slides.length) % slides.length;
+          slides[currentSlide].classList.add('active');
+          if(indicator) indicator.textContent = `0${currentSlide + 1} / 0${slides.length}`;
+        }
+      }
+      
+      const prevSlideBtn = document.getElementById('prevSlide');
+      const nextSlideBtn = document.getElementById('nextSlide');
+      if(prevSlideBtn) prevSlideBtn.addEventListener('click', () => updateSlider(-1));
+      if(nextSlideBtn) nextSlideBtn.addEventListener('click', () => updateSlider(1));
+
+      // 5. Reveal Animations (Intersection Observer)
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      // 6. Accessibility Toggles
+      const tContrast = document.getElementById('toggle-contrast');
+      const tText = document.getElementById('toggle-text');
+      const tDyslexia = document.getElementById('toggle-dyslexia');
+      const tLinks = document.getElementById('toggle-links');
+      const tMotion = document.getElementById('toggle-motion');
+
+      if(tContrast) tContrast.addEventListener('change', e => document.body.classList.toggle('high-contrast', e.target.checked));
+      if(tText) tText.addEventListener('change', e => document.body.classList.toggle('large-text', e.target.checked));
+      if(tDyslexia) tDyslexia.addEventListener('change', e => document.body.classList.toggle('dyslexia-mode', e.target.checked));
+      if(tLinks) tLinks.addEventListener('change', e => document.body.classList.toggle('highlight-links', e.target.checked));
+      if(tMotion) tMotion.addEventListener('change', e => document.body.classList.toggle('reduced-motion', e.target.checked));
+    });
+  </script>
+</body>
+</html>
