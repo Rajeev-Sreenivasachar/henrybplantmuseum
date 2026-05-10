@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Henry B. Plant Museum – Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+  <div class="scroll-progress" id="progressBar"></div>
+
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/index.html" class="logo">Henry B. Plant Museum</a>
+      <i class="fa-solid fa-bars menu-toggle" id="menuToggle"></i>
+      <div class="nav-links" id="navLinks">
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/exhibits.html">Exhibitions</a>
+        <a href="/artifacts.html">Artifacts</a>
+        <a href="/get_involved.html">Get Involved</a>
+        <a href="/profile.html" class="active">Sign In</a>
+        <a href="/visitor.html" class="nav-cta">Plan Your Visit</a>
+      </div>
+      <a href="/visitor.html" class="nav-cta">Plan Your Visit</a>
+    </div>
+  </nav>
+
+<main class="fbla-profile-wrapper">
+    <div id="fbla-auth-view" class="fbla-auth-container">
+      <div class="fbla-auth-header">
+        <h2>Museum Portal</h2>
+        <p>Curate your Gilded Age experience</p>
+      </div>
+      <div class="fbla-auth-body">
+        <div class="fbla-tabs">
+          <button id="tab-login" class="fbla-tab active" onclick="window.switchTab('login')">Sign In</button>
+          <button id="tab-signup" class="fbla-tab" onclick="window.switchTab('signup')">Sign Up</button>
+        </div>
+        
+        <div id="form-login" class="fbla-form-group">
+          <div class="fbla-input-wrap">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" id="log-user" placeholder="Username">
+          </div>
+          <div class="fbla-input-wrap">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="log-pass" placeholder="Password">
+          </div>
+          <div id="log-err" class="fbla-error"></div>
+          <button class="fbla-btn" onclick="window.signIn()">Access Portal</button>
+        </div>
+        
+        <div id="form-signup" class="fbla-form-group fbla-hidden">
+          <div class="fbla-input-wrap">
+            <i class="fa-solid fa-id-card"></i>
+            <input type="text" id="reg-name" placeholder="Full Name">
+          </div>
+          <div class="fbla-input-wrap">
+            <i class="fa-solid fa-user-plus"></i>
+            <input type="text" id="reg-user" placeholder="Choose Username">
+          </div>
+          <div class="fbla-input-wrap">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="reg-pass" placeholder="Password (6+ chars)">
+          </div>
+          <div id="reg-err" class="fbla-error"></div>
+          <button class="fbla-btn" onclick="window.signUp()">Create Account</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="fbla-dash-view" class="fbla-dash-container fbla-hidden">
+      <div class="fbla-dash-hero">
+        <div>
+          <h2>Welcome back, <span id="ui-name" class="fbla-gold"></span></h2>
+          <p>Username: <span id="ui-user"></span></p>
+        </div>
+        <button class="fbla-btn-logout" onclick="window.logout()">Sign Out <i class="fa-solid fa-right-from-bracket"></i></button>
+      </div>
+
+      <div class="fbla-dash-grid">
+        <aside class="fbla-sidebar">
+          <div class="fbla-panel-header">
+            <h3><i class="fa-solid fa-bookmark"></i> My Itinerary</h3>
+          </div>
+          <ul id="fbla-wishlist-box" class="fbla-wishlist-list">
+            <li class="fbla-empty">Loading your saved exhibits...</li>
+          </ul>
+        </aside>
+
+        <section class="fbla-main-content">
+          <div class="fbla-panel-header">
+            <h3><i class="fa-solid fa-compass"></i> Discover & Save</h3>
+          </div>
+          <div class="fbla-cards-grid">
+            <div class="fbla-card">
+              <i class="fa-solid fa-tree fbla-card-icon"></i>
+              <h4>Victorian Christmas Stroll</h4>
+              <p>Seasonal Event</p>
+              <button class="fbla-add-btn" onclick="window.addWish('Victorian Christmas', 'victorian-christmas-stroll.html')">Save to Itinerary</button>
+            </div>
+            <div class="fbla-card">
+              <i class="fa-solid fa-masks-theater fbla-card-icon"></i>
+              <h4>Upstairs / Downstairs</h4>
+              <p>Live Performance</p>
+              <button class="fbla-add-btn" onclick="window.addWish('Upstairs / Downstairs', 'upstairs-downstairs.html')">Save to Itinerary</button>
+            </div>
+            <div class="fbla-card">
+              <i class="fa-solid fa-shield-halved fbla-card-icon"></i>
+              <h4>Tampa at War</h4>
+              <p>Permanent Exhibit</p>
+              <button class="fbla-add-btn" onclick="window.addWish('Tampa at War', 'tampa-at-war.html')">Save to Itinerary</button>
+            </div>
+            <div class="fbla-card">
+              <i class="fa-solid fa-bell-concierge fbla-card-icon"></i>
+              <h4>Grand Hotel</h4>
+              <p>Permanent Exhibit</p>
+              <button class="fbla-add-btn" onclick="window.addWish('Grand Hotel', 'grand-hotel.html')">Save to Itinerary</button>
+            </div>
+            <div class="fbla-card">
+              <i class="fa-solid fa-coins fbla-card-icon"></i>
+              <h4>Gaspar's Gold</h4>
+              <p>Temporary Exhibit</p>
+              <button class="fbla-add-btn" onclick="window.addWish('Gaspar\'s Gold', 'gaspar-gold.html')">Save to Itinerary</button>
+            </div>
+            <div class="fbla-card">
+              <i class="fa-solid fa-train-tram fbla-card-icon"></i>
+              <h4>Plants Southern Empire</h4>
+              <p>Permanent Exhibit</p>
+              <button class="fbla-add-btn" onclick="window.addWish('Plants Southern Empire', 'plants-southern-empire.html')">Save to Itinerary</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="gilded-newsletter-wrapper">
+        <div class="gilded-newsletter-content">
+          <h3><i class="fa-solid fa-envelope-open-text"></i> The Gilded Dispatch</h3>
+          <p>Verify your identity to access exclusive historical insights, private event invites, and the latest news directly from the archives of the Henry B. Plant Museum.</p>
+        </div>
+        <div class="gilded-newsletter-iframe-box">
+          <iframe width="100%" height="305" src="https://5560cd82.sibforms.com/serve/MUIFAM9istJWBRQKTdlA9CVlFkqzhIyIo8o4y7wzXySA8MeoXCf8JWfwUcZ-FtusLmrJMj860GL5-NdcrzeAE_omQ7a-9J3zlWFxJp5OVdQrs5NymfDZ5jbLpxM6oumqwVWYD8k-e9ChXZmktyQBxjALWfBtdKdFtq62yXIqhPfm7kdv8a0A0pYqVaMHrg89U5OGDcgrdhHB3V0XPQ==" frameborder="0" scrolling="auto" allowfullscreen style="display: block; margin-left: auto; margin-right: auto;"></iframe>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="side-buttons">
+    <button class="side-btn" id="btnResources" aria-label="Museum Resources" title="Resources & Contact"><i class="fa-solid fa-layer-group"></i></button>
+    <button class="side-btn" id="btnA11y" aria-label="Accessibility Settings" title="Accessibility"><i class="fa-solid fa-universal-access"></i></button>
+  </div>
+
+  <div class="panel-overlay" id="panelOverlay"></div>
+
+  <aside class="panel-drawer" id="drawerResources">
+    <div class="panel-header">
+      <h3>Museum Resources</h3>
+      <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="panel-body">
+      <div class="drawer-group">
+        <h4>Visit & Contact</h4>
+        <a href="tel:8132541891" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="resource-text"><h5>Phone</h5><p>(813) 254-1891</p></div>
+        </a>
+        <a href="mailto:info@plantmuseum.com" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="resource-text"><h5>Email</h5><p>info@plantmuseum.com</p></div>
+        </a>
+        <a href="https://henrybplantmuseum.com/visitor-info" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="resource-text"><h5>Location</h5><p>401 W. Kennedy Blvd, Tampa</p></div>
+        </a>
+        <div class="resource-item static">
+          <div class="resource-icon"><i class="fa-solid fa-clock"></i></div>
+          <div class="resource-text"><h5>Hours of Operation</h5><p>Tue–Sat: 10am–5pm<br>Sun: 12pm–5pm<br>Mon: Closed</p></div>
+        </div>
+      </div>
+      <div class="drawer-group">
+        <h4>Support the Museum</h4>
+        <a href="visitor.html" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-ticket"></i></div>
+          <div class="resource-text"><h5>Buy Tickets</h5><p>Admissions & Tours</p></div>
+        </a>
+        <a href="membership.html" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-id-card"></i></div>
+          <div class="resource-text"><h5>Membership</h5><p>Join the Museum Society</p></div>
+        </a>
+        <a href="https://henry-b-plant-museum.square.site/product/donation/101" target="_blank" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-heart"></i></div>
+          <div class="resource-text"><h5>Donate Now</h5><p>Support our preservation</p></div>
+        </a>
+      </div>
+      <div class="drawer-group">
+        <h4>Connect With Us</h4>
+        <div class="drawer-socials">
+          <a href="https://twitter.com/HBPlantMuseum" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <aside class="panel-drawer" id="drawerA11y">
+    <div class="panel-header">
+      <h3>Accessibility Settings</h3>
+      <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="panel-body">
+      <div class="a11y-setting">
+        <label for="toggle-contrast">High Contrast Mode</label>
+        <label class="switch"><input type="checkbox" id="toggle-contrast"><span class="slider"></span></label>
+      </div>
+      <div class="a11y-setting">
+        <label for="toggle-text">Large Text</label>
+        <label class="switch"><input type="checkbox" id="toggle-text"><span class="slider"></span></label>
+      </div>
+      <div class="a11y-setting">
+        <label for="toggle-dyslexia">Dyslexia Friendly Font</label>
+        <label class="switch"><input type="checkbox" id="toggle-dyslexia"><span class="slider"></span></label>
+      </div>
+      <div class="a11y-setting">
+        <label for="toggle-motion">Reduce Motion</label>
+        <label class="switch"><input type="checkbox" id="toggle-motion"><span class="slider"></span></label>
+      </div>
+      <div class="a11y-setting">
+        <label for="toggle-links">Highlight Links</label>
+        <label class="switch"><input type="checkbox" id="toggle-links"><span class="slider"></span></label>
+      </div>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Museum Support</h3>
+        <ul class="footer-links">
+          <li><a href="visitor.html">Buy Tickets</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="https://henry-b-plant-museum.square.site/product/donation/101" target="_blank">Donate Now</a></li>
+        </ul>
+        <div class="footer-socials">
+          <a href="https://twitter.com/HBPlantMuseum" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="visitor.html">Plan Your Visit</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="exhibits.html">Exhibitions</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="https://maps.google.com/?q=401+W.+Kennedy+Blvd,+Tampa" target="_blank">401 W. Kennedy Blvd, Tampa</a></li>
+          <li><a href="tel:8132541891">(813) 254-1891</a></li>
+          <li><a href="mailto:info@plantmuseum.com">info@plantmuseum.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Henry B. Plant Museum. Created for FBLA.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // Scroll Progress
+      const progressBar = document.getElementById('progressBar');
+      window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        progressBar.style.width = (winScroll / height) * 100 + "%";
+      });
+
+      // Navbar Scroll
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+      });
+
+      // Mobile Menu
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+      });
+
+      // Scroll Reveal
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      // Spotlight Hover for Cards
+      document.querySelectorAll('.discover-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
+
+      // Slider
+      const slides = document.querySelectorAll('.slide');
+      const indicator = document.getElementById('slideNum');
+      let currentSlide = 0;
+
+      function updateSlider(direction) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+        if(indicator) indicator.textContent = `0${currentSlide + 1} / 0${slides.length}`;
+      }
+      document.getElementById('prevSlide')?.addEventListener('click', () => updateSlider(-1));
+      document.getElementById('nextSlide')?.addEventListener('click', () => updateSlider(1));
+
+      // Drawers
+      const btnRes = document.getElementById('btnResources');
+      const btnA11y = document.getElementById('btnA11y');
+      const drawRes = document.getElementById('drawerResources');
+      const drawA11y = document.getElementById('drawerA11y');
+      const overlay = document.getElementById('panelOverlay');
+      const closeBtns = document.querySelectorAll('.close-btn');
+
+      function closeDrawers() {
+        drawRes.classList.remove('open');
+        drawA11y.classList.remove('open');
+        overlay.classList.remove('open');
+      }
+
+      function openDrawer(drawer) {
+        closeDrawers();
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+      }
+
+      btnRes.addEventListener('click', () => openDrawer(drawRes));
+      btnA11y.addEventListener('click', () => openDrawer(drawA11y));
+      overlay.addEventListener('click', closeDrawers);
+      closeBtns.forEach(btn => btn.addEventListener('click', closeDrawers));
+
+      // Accessibility Toggles
+      document.getElementById('toggle-contrast').addEventListener('change', e => document.body.classList.toggle('high-contrast', e.target.checked));
+      document.getElementById('toggle-text').addEventListener('change', e => document.body.classList.toggle('large-text', e.target.checked));
+      document.getElementById('toggle-dyslexia').addEventListener('change', e => document.body.classList.toggle('dyslexia-mode', e.target.checked));
+      document.getElementById('toggle-links').addEventListener('change', e => document.body.classList.toggle('highlight-links', e.target.checked));
+      document.getElementById('toggle-motion').addEventListener('change', e => {
+        document.body.classList.toggle('reduced-motion', e.target.checked);
+      });
+
+    });
+  </script>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+    import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, arrayRemove } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA-ltDU9XbrsCIDWAnjze85Q2duWpLje5s",
+      authDomain: "plant-museum-fbla.firebaseapp.com",
+      projectId: "plant-museum-fbla",
+      storageBucket: "plant-museum-fbla.firebasestorage.app",
+      messagingSenderId: "132636635847",
+      appId: "1:132636635847:web:6c306c59b00f4e290944e2"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    window.switchTab = (tab) => {
+      document.getElementById('form-login').classList.toggle('fbla-hidden', tab !== 'login');
+      document.getElementById('form-signup').classList.toggle('fbla-hidden', tab !== 'signup');
+      document.getElementById('tab-login').classList.toggle('active', tab === 'login');
+      document.getElementById('tab-signup').classList.toggle('active', tab === 'signup');
+    };
+
+    function drawWishlist(arr) {
+      const box = document.getElementById('fbla-wishlist-box');
+      box.innerHTML = "";
+      if(!arr || arr.length === 0) {
+        box.innerHTML = "<li class='fbla-empty'>Your itinerary is empty.</li>";
+        return;
+      }
+      arr.forEach(item => {
+        const escapedName = item.name.replace(/'/g, "\\'");
+        box.innerHTML += `
+          <li class="fbla-wish-item">
+            <a href="${item.url}">${item.name}</a>
+            <button onclick="window.removeWish('${escapedName}', '${item.url}')"><i class="fa-solid fa-trash"></i></button>
+          </li>`;
+      });
+    }
+
+    window.signUp = async () => {
+      const n = document.getElementById('reg-name').value;
+      const u = document.getElementById('reg-user').value;
+      const p = document.getElementById('reg-pass').value;
+      try {
+        const cred = await createUserWithEmailAndPassword(auth, `${u.toLowerCase()}@museum.local`, p);
+        await setDoc(doc(db, "users", cred.user.uid), { realName: n, username: u, wishlist: [] });
+      } catch (e) { alert(e.message); }
+    };
+
+    window.signIn = async () => {
+      const u = document.getElementById('log-user').value;
+      const p = document.getElementById('log-pass').value;
+      try { await signInWithEmailAndPassword(auth, `${u.toLowerCase()}@museum.local`, p); } 
+      catch (e) { alert("Invalid login."); }
+    };
+
+    window.logout = () => signOut(auth);
+
+    window.addWish = async (name, url) => {
+      if(!auth.currentUser) return;
+      const ref = doc(db, "users", auth.currentUser.uid);
+      await updateDoc(ref, { wishlist: arrayUnion({ name, url }) });
+      const snap = await getDoc(ref);
+      drawWishlist(snap.data().wishlist);
+    };
+
+    window.removeWish = async (name, url) => {
+      if(!auth.currentUser) return;
+      const ref = doc(db, "users", auth.currentUser.uid);
+      await updateDoc(ref, { wishlist: arrayRemove({ name, url }) });
+      const snap = await getDoc(ref);
+      drawWishlist(snap.data().wishlist);
+    };
+
+    onAuthStateChanged(auth, async (user) => {
+      const authView = document.getElementById('fbla-auth-view');
+      const dashView = document.getElementById('fbla-dash-view');
+      if(user) {
+        const snap = await getDoc(doc(db, "users", user.uid));
+        if(snap.exists()) {
+          const data = snap.data();
+          document.getElementById('ui-name').innerText = data.realName;
+          document.getElementById('ui-user').innerText = data.username;
+          drawWishlist(data.wishlist);
+        }
+        authView.classList.add('fbla-hidden');
+        dashView.classList.remove('fbla-hidden');
+      } else {
+        authView.classList.remove('fbla-hidden');
+        dashView.classList.add('fbla-hidden');
+      }
+    });
+  </script>
+  </body>
+</html>
