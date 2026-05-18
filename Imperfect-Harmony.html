@@ -1,12 +1,12 @@
 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Henry B. Plant Museum – Events</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <head>
+    <meta charset="UTF-8">
+    <title> Imperfect Harmony | Henry B. Plant Museum</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
   
@@ -14,206 +14,86 @@
   
   <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+  </head>
+  <body>
 
-  <div class="scroll-progress" id="progressBar"></div>
+   
+<div class="scroll-progress" id="progressBar"></div>
 
-  <nav class="navbar" id="navbar">
+<a href="/exhibits.html" class="sticky-ticket-btn">
+    <i class="fa-solid fa-arrow-left"></i> Back to Exhibits
+</a>
+
+ <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="logo">Henry B. Plant Museum</a>
+      <a href="/index.html" class="logo">Henry B. Plant Museum</a>
       <i class="fa-solid fa-bars menu-toggle" id="menuToggle"></i>
       <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="events.html" class="active">Events</a>
-        <a href="exhibits.html">Exhibits</a>
-        <a href="artifacts.html">Artifacts</a>
-        <a href="get_involved.html">Get Involved</a>
-        <a href="profile.html">Sign In</a>
-        <a href="visitor.html" class="nav-cta">Plan Your Visit</a>
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/exhibits.html" class="active">Exhibitions</a>
+        <a href="/artifacts.html">Artifacts</a>
+        <a href="/get_involved.html">Get Involved</a>
+        <a href="/profile.html">Sign In</a>
+        <a href="/visitor.html" class="nav-cta">Plan Your Visit</a>
       </div>
-      <a href="visitor.html" class="nav-cta">Plan Your Visit</a>
+      <a href="/visitor.html" class="nav-cta">Plan Your Visit</a>
     </div>
   </nav>
-  <script src="scripts.js"></script>
 
-  <main>
-    <header class="hero-exhibits">
+<header class="hero-exhibits">
       <div class="hero-common-overlay"></div>
       <div class="hero-common-content reveal">
-        <h1>Current Events & Exhibits</h1>
-        <p>Explore our ongoing and upcoming exhibitions!</p>
+        <h1>Man, Machine, and Music at the Tampa Bay Hotel</h1>
       </div>
     </header>
 
-    <section class="exhibitions-wrapper">
-      
-      <input type="radio" name="category" id="every" checked>
-      <input type="radio" name="category" id="events">
-      <input type="radio" name="category" id="current-events">
-      <input type="radio" name="category" id="past-events">
+<main class="exhibit-main-layout">
 
-      <div class="exhibitions-filters reveal">
-        <label for="every">All</label>
-        <label for="events">Events</label>
-        <label for="current-events">Current Events</label>
-        <label for="past-events">Past Events</label>
+  <section class="exhibit-image-section">
+    <div class="image-frame">
+      <img src="https://www.plantmuseum.com/getattachment/Exhibits/Current-Exhibits/Imperfect-Harmony/Orchestrion-(1).jpg.aspx;?width=300&height=386" class="exhibit-img">
+     
+    </div>
+  </section>
+
+  <section class="exhibit-info">
+    <div class="exhibit-content">
+      <span class="exhibit-badge">Live Performance</span>
+      <h2>About the Event</h2>
+      <p>
+        In 1895, the Tampa Bay Hotel unveiled the period’s ultimate symbol of opulence, an ornate concert orchestrion that Henry B. Plant imported from Germany.
+      </p>
+
+      <div class="details-card">
+        <h3><i class="fa-solid fa-calendar-check"></i> Event Details</h3>
+        <p><strong>Date:</strong> Most Sundays</p>
+        <p><strong>Time:</strong> 2:00 PM – 2:30 PM</p>
+        <p><strong>Location:</strong> Henry B. Plant Museum, Tampa, FL</p>
+        <p><strong>Tickets:</strong> Included with museum admission; first-come, first-served seating.</p>
       </div>
-  
-      <div class="cards-grid-exhibits exhibitions-content">
 
-        <a href="events/victorian-christmas-stroll.html" class="card-exhibits spotlight-card every events reveal">
-          <div class="upcoming-tag">Event</div>
-          <h3>Victorian Christmas Stroll</h3>
-          <p>Seasonal Event • December</p>
-          <p>Enjoy candlelight tours, historical decorations, and live character performances throughout the Henry B. Plant Museum.</p>
-          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-
-        <a href="events/upstairs-downstairs.html" class="card-exhibits spotlight-card every events current-events reveal" style="transition-delay: 0.1s;">
-          <div class="upcoming-tag">Event</div>
-          <h3>Upstairs / Downstairs</h3>
-          <p>Every Sunday</p>
-          <p>Enjoy personal stories and perspectives from staff that illuminate life in the Gilded Age.</p>
-          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-
-        <a href="events/celebrate-sunset.html" class="card-exhibits spotlight-card every events current-events reveal" style="transition-delay: 0.2s;">
-          <div class="upcoming-tag">Event</div>
-          <h3>Celebrate Sunset</h3>
-          <p>First Friday of Every Month</p>
-          <p>A historical open house where the museum hosts live performances and Gilded Age storytelling as the sun sets.</p>
-          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-
-        <a href="events/free-movie-series.html" class="card-exhibits spotlight-card every events current-events reveal">
-          <div class="upcoming-tag">Event</div>
-          <h3>Free Movie Series</h3>
-          <p>Every Few Months</p>
-          <p>Explore FREE community screenings held in Plant Park that pair classic movies with historical exhibits.</p>
-          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-
-        <a href="events/jose-gaspar.html" class="card-exhibits spotlight-card every events past-events reveal">
-          <div class="upcoming-tag">Past</div>
-          <h3>The Jose Gaspar Literary Cannon</h3>
-          <p>A Past Event</p>
-          <p>Take a deep dive into Gasparilla, one of Tampa's most celebrated traditions and myths.</p>
-          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-
-        <a href="events/everything-musical.html" class="card-exhibits spotlight-card every events past-events reveal">
-          <div class="upcoming-tag">Past</div>
-          <h3>Everything Musical</h3>
-          <p>A Past Event</p>
-          <p>Exploring Tampa's 1920 music scene and the profound impact of the "Everything Musical" Philpitt Store.</p>
-          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-
-        <a href="https://www.youtube.com/watch?v=oB9NDRfSiIQ" class="card-exhibits spotlight-card every events past-events online-exhibits reveal" target="_blank">
-          <div class="upcoming-tag">Online</div>
-          <h3>In the Shadow of the Crescent</h3>
-          <p>Recorded Lecture</p>
-          <p>A lecture given by Professor Richard Ellis on June 10, 2023. Watch the full presentation online.</p>
-          <span class="learn-more">Watch Now <i class="fa-brands fa-youtube"></i></span>
-        </a>
-
-        <a href="events/george-washington.html" class="card-exhibits spotlight-card every events past-events reveal">
-          <div class="upcoming-tag">Past</div>
-          <h3>"George Washington Ate Here"</h3>
-          <p>A Past Event</p>
-          <p>Explore how "Oriental" luxury goods influenced American culture during the era of the early republic.</p>
-          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-
-        <a href="events/gems.html" class="card-exhibits spotlight-card every events past-events reveal">
-          <div class="upcoming-tag">Past</div>
-          <h3>"Gems for Olivette"</h3>
-          <p>A Past Event</p>
-          <p>Watch the live staged concert of the most popular songs from Edmond Audran’s comedic operetta, Olivette.</p>
-          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-
-        <a href="events/plants-follies.html" class="card-exhibits spotlight-card every events past-events reveal">
-          <div class="upcoming-tag">Past</div>
-          <h3>"Plant's Follies"</h3>
-          <p>A Past Event</p>
-          <p>Explore how the Tampa Bay Hotel’s Casino and its world-class entertainment helped shape Tampa's identity.</p>
-          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-
-        <a href="events/rocking-chair.html" class="card-exhibits spotlight-card every events past-events reveal">
-          <div class="upcoming-tag">Past</div>
-          <h3>"The Rocking Chair Report"</h3>
-          <p>A Past Event</p>
-          <p>Explore the history of popular entertainment at the turn of the 20th century.</p>
-          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-
-        <a href="events/businessmen.html" class="card-exhibits spotlight-card every events past-events reveal">
-          <div class="upcoming-tag">Past</div>
-          <h3>"Shrewd Business Men"</h3>
-          <p>A Past Event</p>
-          <p>Featuring single-character performances where actors bring real turn-of-the-century hotel staff and guests to life.</p>
-          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-
-        <a href="events/blackdisplay.html" class="card-exhibits spotlight-card every events past-events reveal">
-          <div class="upcoming-tag">Past</div>
-          <h3>"Placing Black Progress on Display"</h3>
-          <p>A Past Event</p>
-          <p>Showcasing the economic and educational "progress" of Black Americans during the Jim Crow era.</p>
-          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-
-        <a href="events/music.html" class="card-exhibits spotlight-card every events past-events reveal">
-          <div class="upcoming-tag">Past</div>
-          <h3>"Music and Memory"</h3>
-          <p>A Past Event</p>
-          <p>Focusing on the history of African American spirituals and local heritage.</p>
-          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-
-        <a href="events/exotic.html" class="card-exhibits spotlight-card every events past-events reveal">
-          <div class="upcoming-tag">Past</div>
-          <h3>"The Exotic Architecture"</h3>
-          <p>A Past Event</p>
-          <p>Exploring the vision of railroad tycoon Henry Plant and his architect, J.A. Wood.</p>
-          <span class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-
-        <a href="https://www.youtube.com/watch?v=JAsoQ6vqtu8" class="card-exhibits spotlight-card every events past-events online-exhibits reveal" target="_blank">
-          <div class="upcoming-tag">Online</div>
-          <h3>Classical Guitar with John Barr</h3>
-          <p>Recorded Performance</p>
-          <p>Some of the Music in the Museum. Click to watch the performance online.</p>
-          <span class="learn-more">Watch Now <i class="fa-brands fa-youtube"></i></span>
-        </a>
-
-        <a href="https://youtu.be/pY_MOFyaS7U" class="card-exhibits spotlight-card every events past-events online-exhibits reveal" target="_blank">
-          <div class="upcoming-tag">Online</div>
-          <h3>Harp with Damara Chaudhuri Besker</h3>
-          <p>Recorded Performance</p>
-          <p>Some of the Music in the Museum. Click to watch the performance online.</p>
-          <span class="learn-more">Watch Now <i class="fa-brands fa-youtube"></i></span>
-        </a>
-
-        <a href="https://youtu.be/jjOhn83mwUU" class="card-exhibits spotlight-card every events past-events online-exhibits reveal" target="_blank">
-          <div class="upcoming-tag">Online</div>
-          <h3>Saxophone with Matt Weihmuller</h3>
-          <p>Recorded Performance</p>
-          <p>Some of the Music in the Museum. Click to watch the performance online.</p>
-          <span class="learn-more">Watch Now <i class="fa-brands fa-youtube"></i></span>
-        </a>
-
-        
-                                                             
+      <div class="details-card">
+        <h3><i class="fa-solid fa-masks-theater"></i> What to Expect</h3>
+        <ul>
+          <li>The exhibit’s centerpiece is a rare 1895 M. Welte & Söhne orchestrion, a luxurious mechanical instrument designed to imitate a full orchestra.</li>
+          <li>It features early self-playing instruments, including a Mermod Frères music box from the 1893 World’s Fair and an automatic violin player.</li>
+          <li>The exhibit explains how gramophones and recorded sound in the 1920s began replacing live music and shaping popular culture through “race records.”</li>
+          <li>It highlights the ongoing tension between technology and musicians, emphasizing that human artistry remained essential to Tampa’s musical community.</li>
+        </ul>
       </div>
-    </section>
 
-  </main>
-
-  <div class="side-buttons">
+      <div class="details-card">
+        <h3><i class="fa-solid fa-circle-info"></i> Visitor Info</h3>
+        <p><strong>Admission:</strong> Free with museum admission.</p>
+        <p><strong>Accessibility:</strong> Wheelchair accessible; early arrival recommended for best seating.</p>
+      </div>
+    </div>
+  </section>
+</main>
+    
+    
+ <div class="side-buttons">
     <button class="side-btn" id="btnResources" aria-label="Museum Resources" title="Resources & Contact"><i class="fa-solid fa-layer-group"></i></button>
     <button class="side-btn" id="btnA11y" aria-label="Accessibility Settings" title="Accessibility"><i class="fa-solid fa-universal-access"></i></button>
   </div>
@@ -442,5 +322,6 @@
       if(tMotion) tMotion.addEventListener('change', e => document.body.classList.toggle('reduced-motion', e.target.checked));
     });
   </script>
-</body>
+    
+  </body>
 </html>
