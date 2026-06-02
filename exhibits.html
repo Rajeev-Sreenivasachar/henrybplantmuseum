@@ -20,6 +20,7 @@
 <body>
 
   <div class="scroll-progress" id="progressBar"></div>
+  <script src="script.js"></script>
 
   <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -392,106 +393,6 @@
     </div>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1. Mobile Menu Logic
-      const menuToggle = document.getElementById('menuToggle');
-      const navLinks = document.getElementById('navLinks');
-      
-      if(menuToggle && navLinks) {
-        menuToggle.addEventListener('click', (e) => {
-          navLinks.classList.toggle('mobile-open');
-          e.stopPropagation();
-        });
-
-        document.addEventListener('click', (e) => {
-          if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
-            navLinks.classList.remove('mobile-open');
-          }
-        });
-      }
-
-      // 2. Scroll Progress & Navbar Scrolled State
-      const progressBar = document.getElementById('progressBar');
-      const navbar = document.getElementById('navbar');
-      
-      window.addEventListener('scroll', () => {
-        if(progressBar) {
-          const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-          progressBar.style.width = (winScroll / height) * 100 + "%";
-        }
-        if(navbar) {
-          if (window.scrollY > 20) navbar.classList.add('scrolled');
-          else navbar.classList.remove('scrolled');
-        }
-      });
-
-      // 3. Drawers Logic
-      const btnRes = document.getElementById('btnResources');
-      const btnA11y = document.getElementById('btnA11y');
-      const drawRes = document.getElementById('drawerResources');
-      const drawA11y = document.getElementById('drawerA11y');
-      const overlay = document.getElementById('panelOverlay');
-      const closeBtns = document.querySelectorAll('.close-btn');
-
-      function closeDrawers() {
-        if(drawRes) drawRes.classList.remove('open');
-        if(drawA11y) drawA11y.classList.remove('open');
-        if(overlay) overlay.classList.remove('open');
-      }
-
-      function openDrawer(drawer) {
-        closeDrawers();
-        if(drawer) drawer.classList.add('open');
-        if(overlay) overlay.classList.add('open');
-      }
-
-      if(btnRes) btnRes.addEventListener('click', () => openDrawer(drawRes));
-      if(btnA11y) btnA11y.addEventListener('click', () => openDrawer(drawA11y));
-      if(overlay) overlay.addEventListener('click', closeDrawers);
-      closeBtns.forEach(btn => btn.addEventListener('click', closeDrawers));
-
-      // 4. Slider Logic
-      const slides = document.querySelectorAll('.slide');
-      const indicator = document.getElementById('slideNum');
-      let currentSlide = 0;
-      
-      function updateSlider(direction) {
-        if(slides.length > 0) {
-          slides[currentSlide].classList.remove('active');
-          currentSlide = (currentSlide + direction + slides.length) % slides.length;
-          slides[currentSlide].classList.add('active');
-          if(indicator) indicator.textContent = `0${currentSlide + 1} / 0${slides.length}`;
-        }
-      }
-      
-      const prevSlideBtn = document.getElementById('prevSlide');
-      const nextSlideBtn = document.getElementById('nextSlide');
-      if(prevSlideBtn) prevSlideBtn.addEventListener('click', () => updateSlider(-1));
-      if(nextSlideBtn) nextSlideBtn.addEventListener('click', () => updateSlider(1));
-
-      // 5. Reveal Animations (Intersection Observer)
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('active');
-        });
-      }, { threshold: 0.1 });
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-      // 6. Accessibility Toggles
-      const tContrast = document.getElementById('toggle-contrast');
-      const tText = document.getElementById('toggle-text');
-      const tDyslexia = document.getElementById('toggle-dyslexia');
-      const tLinks = document.getElementById('toggle-links');
-      const tMotion = document.getElementById('toggle-motion');
-
-      if(tContrast) tContrast.addEventListener('change', e => document.body.classList.toggle('high-contrast', e.target.checked));
-      if(tText) tText.addEventListener('change', e => document.body.classList.toggle('large-text', e.target.checked));
-      if(tDyslexia) tDyslexia.addEventListener('change', e => document.body.classList.toggle('dyslexia-mode', e.target.checked));
-      if(tLinks) tLinks.addEventListener('change', e => document.body.classList.toggle('highlight-links', e.target.checked));
-      if(tMotion) tMotion.addEventListener('change', e => document.body.classList.toggle('reduced-motion', e.target.checked));
-    });
-  </script>
+  
 </body>
 </html>
