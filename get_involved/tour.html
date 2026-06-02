@@ -1,10 +1,10 @@
 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Volunteer | Henry B. Plant Museum</title>
+  <title> Tours | Henry B. Plant Museum</title>
   
   
  <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,12 +38,13 @@
       <a href="/visitor.html" class="nav-cta">Plan Your Visit</a>
     </div>
   </nav></div>
-<main>
+    </header>
+    <main>
     <section class="hero-involved">
       <div class="hero-common-overlay"></div>
       <div class="hero-common-content">
-        <h1>Volunteer</h1>
-        <p>Thank you for being interested in volunteering for our museum</p>
+        <h1>Tours</h1>
+        <p>Experience guided tours and self-giuded tours</p>
       </div>
     </section>
     
@@ -51,27 +52,22 @@
     
     <section class="cards-grid-involved">
       <div class="card">
-        <h3>Docent</h3>
-        <p>Docents are knowledgeable ambassadors who share the Museum’s stories and interpretive approach with the public. They lead school field trips and adult tours, and are expected to demonstrate flexibility, responsibility, and respect toward visitors, staff, and fellow volunteers.</p>
-        
+        <h3>Guided Tours</h3>
+        <p>A specially trained docent will lead your group of 10 or more on a one‑hour Museum tour featuring Henry Plant, the City of Tampa, the Tampa Bay Hotel, the Spanish‑American War, and more. It’s an ideal outing for civic organizations, retirement communities, business trips, and other group activities.</p>
       </div>
 
       <div class="card">
-        <h3>Store Asssistant</h3>
-
-        <p>Store Assistants help manage the Museum Store during open hours. They assist customers with selecting and purchasing items, ring up merchandise, handle transactions, restock shelves, and keep the store clean and organized between visitors to maintain a welcoming environment. </p>
-
-        
+        <h3>Self-Guided Tours</h3>
+        <p>Explore the Museum at your own pace using a brochure, and enjoy our complimentary audio tour, easily downloaded to your personal device. This 45‑minute guide provides deeper insight into the history of the Tampa Bay Hotel, objects in our permanent collection, and the Gilded Age lifestyle.</p>
       </div>
-
     </section>
-<section class="mission-section">
+   <section class="mission-section">
         <div class="mission-content-wrapper">
           <div class="mission-bg-accent"></div>
           <div class="mission-content">
         <h2>Information</h2>
-        <p>If you need more information for volunteering, please contact Todd Edwards at <a class="mail" href="mailto:tedwards@ut.edu" target="_blank"> tedwards@ut.edu</a> or 813.258.7304.</p>
- </div>
+        <p>If you need more information for volunteering, please contact Melissa Sullebarger at <a class="mail" href="mailto: msullebarger@ut.edu" target="_blank"> msullebarger@ut.edu</a> or 813.258.7304.</p>
+</div>
         </div>
       </section>
     </main>
@@ -256,14 +252,14 @@
       if(btnRes) btnRes.addEventListener('click', () => openDrawer(drawRes));
       if(btnA11y) btnA11y.addEventListener('click', () => openDrawer(drawA11y));
       if(overlay) overlay.addEventListener('click', closeDrawers);
-      closeBtns.forEach(btn => btn.addEventListener('click', closeDrawers));
+      closeBtns.forEach(btn => btn.addEventListener('click', closeDrawers));  
 
       const tContrast = document.getElementById('toggle-contrast');
       const tText = document.getElementById('toggle-text');
       const tDyslexia = document.getElementById('toggle-dyslexia');
       const tLinks = document.getElementById('toggle-links');
-      if(tMotion) tMotion.addEventListener('change', e => document.body.classList.toggle('reduced-motion', e.target.checked));
-    });
+      if(tContrast) tContrast.addEventListener('change', e => document.body.classList.toggle('high-contrast', e.target.checked));
+      });
   </script>
 </body>
 </html>
