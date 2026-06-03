@@ -16,9 +16,9 @@
   <link rel="icon" type="image/jpeg" href="https://www.plantmuseum.com/App_Themes/PlantMuseum/images/favicon.ico">
   
   <style>
-    /* --- NEW PROFILE CLASSES --- */
+    /* --- NEW PROFILE CLASSES: NAVY BLUE AESTHETIC --- */
     .new-prof-wrapper {
-      background-color: #f8f7f5;
+      background-color: #fafafa;
       padding: 3rem 5%;
       font-family: 'Inter', sans-serif;
       min-height: 80vh;
@@ -30,13 +30,14 @@
       margin: 2rem auto;
       background: #fff;
       padding: 2.5rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
       text-align: center;
+      border-top: 4px solid #1B365D; /* Navy Blue Accent */
     }
     .new-auth-box h2 {
       font-family: 'Playfair Display', serif;
-      color: #722F37;
+      color: #1B365D;
       font-size: 2rem;
       margin-top: 0;
       margin-bottom: 0.5rem;
@@ -61,8 +62,8 @@
       font-weight: 500;
     }
     .new-auth-tab.active {
-      color: #722F37;
-      border-bottom-color: #722F37;
+      color: #1B365D;
+      border-bottom-color: #1B365D;
     }
     .new-input-wrap {
       position: relative;
@@ -79,35 +80,41 @@
       width: 100%;
       padding: 0.8rem 1rem 0.8rem 2.5rem;
       border: 1px solid #ddd;
-      border-radius: 8px;
+      border-radius: 6px;
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
-      background: #fafafa;
+      background: #fff;
+      transition: border-color 0.2s;
+    }
+    .new-auth-input:focus {
+      outline: none;
+      border-color: #1B365D;
     }
     .new-auth-btn {
       width: 100%;
-      background: #222;
+      background: #1B365D;
       color: white;
       border: none;
       padding: 0.8rem;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
       font-weight: 600;
       margin-top: 1rem;
       transition: background 0.2s;
     }
-    .new-auth-btn:hover { background: #444; }
+    .new-auth-btn:hover { background: #122540; }
 
     /* Dashboard Styles */
     .new-dash-header {
       background: #fff;
-      border-radius: 16px;
+      border-radius: 12px;
       padding: 1.5rem 2.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
       margin-bottom: 2rem;
+      border-left: 4px solid #1B365D;
     }
     .new-dash-header-text h2 {
       font-family: 'Playfair Display', serif;
@@ -115,7 +122,7 @@
       margin: 0;
       color: #333;
     }
-    .new-dash-header-text h2 span { color: #722F37; } /* Maroon */
+    .new-dash-header-text h2 span { color: #1B365D; }
     .new-dash-header-text p {
       margin: 0.25rem 0 0 0;
       color: #666;
@@ -133,6 +140,7 @@
       align-items: center;
       gap: 0.5rem;
       transition: all 0.2s ease;
+      color: #333;
     }
     .new-signout-btn:hover { background: #eee; }
 
@@ -147,9 +155,9 @@
     /* Sidebar */
     .new-sidebar-card {
       background: #fff;
-      border-radius: 16px;
+      border-radius: 12px;
       padding: 1.5rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
     }
     .new-sidebar-card h3 {
       display: flex;
@@ -158,7 +166,7 @@
       font-family: 'Playfair Display', serif;
       margin-top: 0;
       font-size: 1.2rem;
-      color: #333;
+      color: #1B365D;
       padding-bottom: 1rem;
       border-bottom: 1px solid #f0f0f0;
     }
@@ -169,41 +177,40 @@
       align-items: center;
       padding: 0.8rem;
       border: 1px solid #f0f0f0;
-      border-radius: 8px;
+      border-radius: 6px;
       margin-bottom: 0.5rem;
       background: #fafafa;
       transition: 0.2s;
     }
-    .new-wishlist li:hover { background: #f4f4f4; }
+    .new-wishlist li:hover { background: #f0f4f8; border-color: #d0dce8; }
     .new-wishlist li a { text-decoration: none; color: #444; font-size: 0.85rem; font-weight: 500;}
     .new-wishlist li button { background: none; border: none; color: #aaa; cursor: pointer; }
-    .new-wishlist li button:hover { color: #722F37; }
+    .new-wishlist li button:hover { color: #d9534f; }
     
     /* Artifacts Promo */
     .new-promo-box {
-      background: #fcf9f2;
-      border: 1px solid #f2ead6;
-      border-radius: 12px;
+      background: #f4f6f9;
+      border: 1px solid #e1e7f0;
+      border-radius: 8px;
       padding: 1.5rem;
       margin-top: 1rem;
     }
     .new-promo-box h4 {
-      color: #333;
+      color: #1B365D;
       margin: 0 0 0.5rem 0;
       display: flex;
       align-items: center;
       gap: 0.5rem;
       font-family: 'Inter', sans-serif;
     }
-    .new-promo-box h4 i { color: #722F37; }
     .new-promo-box p {
       font-size: 0.8rem;
-      color: #666;
+      color: #555;
       margin: 0 0 1rem 0;
       line-height: 1.4;
     }
     .new-promo-box a {
-      color: #722F37;
+      color: #1B365D;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 600;
@@ -220,7 +227,7 @@
       color: #333;
       font-size: 1.2rem;
     }
-    .new-main-header i { background: #dcd1ba; color:#fff; padding:0.4rem; border-radius:4px; font-size:0.9rem;}
+    .new-main-header i { background: #1B365D; color:#fff; padding:0.4rem; border-radius:4px; font-size:0.9rem;}
     
     .new-cards-grid {
       display: grid;
@@ -230,14 +237,20 @@
     .new-card {
       background: #fff;
       padding: 1.5rem;
-      border-radius: 16px;
-      border: 1px solid #f0f0f0;
+      border-radius: 12px;
+      border: 1px solid #eaeaea;
       text-align: left;
       box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+      transition: all 0.3s ease;
+    }
+    .new-card:hover {
+      border-color: #1B365D;
+      box-shadow: 0 8px 24px rgba(27, 54, 93, 0.08);
+      transform: translateY(-2px);
     }
     .new-card i {
       font-size: 1.5rem;
-      color: #333;
+      color: #1B365D;
       margin-bottom: 1rem;
     }
     .new-card h4 {
@@ -255,25 +268,30 @@
     .new-card-btn {
       width: 100%;
       padding: 0.6rem;
-      border-radius: 20px;
-      border: none;
-      background: #f5f5f5;
-      color: #555;
+      border-radius: 6px;
+      border: 1px solid #eaeaea;
+      background: #fff;
+      color: #333;
       cursor: pointer;
       font-weight: 500;
-      transition: background 0.2s;
+      transition: all 0.2s;
     }
-    .new-card-btn:hover:not(:disabled) { background: #e0e0e0; }
+    .new-card-btn:hover:not(:disabled) { 
+      background: #f8f9fa; 
+      border-color: #ccc;
+    }
     .new-card-btn:disabled {
-      background: #f0f0f0;
-      color: #999;
+      background: #1B365D;
+      color: #fff;
+      border-color: #1B365D;
       cursor: not-allowed;
+      opacity: 0.9;
     }
 
-    /* Newsletter Section */
+    /* Newsletter Section - Upgraded layout for Iframe */
     .new-newsletter-banner {
-      background: linear-gradient(135deg, #722F37 0%, #521d24 100%);
-      border-radius: 24px;
+      background: #1B365D;
+      border-radius: 16px;
       padding: 4rem 3rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -281,76 +299,49 @@
       color: white;
       margin-top: 3rem;
       align-items: center;
+      box-shadow: 0 10px 30px rgba(27, 54, 93, 0.15);
     }
     .new-news-badge {
-      background: rgba(212, 175, 55, 0.2);
-      color: #d4af37;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
       padding: 0.4rem 1rem;
       border-radius: 20px;
       font-size: 0.8rem;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       font-weight: 500;
+      letter-spacing: 0.5px;
     }
     .new-news-left h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin: 0 0 1rem 0;
+      font-size: 2.8rem;
+      margin: 0 0 1.5rem 0;
+      line-height: 1.1;
     }
     .new-news-left > p {
-      font-size: 1rem;
+      font-size: 1.05rem;
       opacity: 0.9;
       margin-bottom: 2.5rem;
       line-height: 1.6;
     }
     .new-news-features { display: flex; flex-direction: column; gap: 1.5rem; }
-    .new-feature-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .new-feature-item { display: flex; gap: 1.2rem; align-items: flex-start; }
     .new-feature-item i {
       background: rgba(255,255,255,0.1);
       padding: 0.8rem;
       border-radius: 8px;
-      color: #d4af37;
+      color: #fff;
+      font-size: 1.2rem;
     }
-    .new-feature-item div h5 { margin: 0 0 0.25rem 0; font-size: 1rem; font-weight: 600;}
-    .new-feature-item div p { margin: 0; font-size: 0.85rem; opacity: 0.8; }
+    .new-feature-item div h5 { margin: 0 0 0.35rem 0; font-size: 1.1rem; font-weight: 600;}
+    .new-feature-item div p { margin: 0; font-size: 0.9rem; opacity: 0.8; line-height: 1.4;}
     
     .new-news-right {
-      background: #fff;
-      padding: 2.5rem;
-      border-radius: 16px;
-      color: #333;
-    }
-    .new-news-right h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      margin: 0 0 0.5rem 0;
-    }
-    .new-news-right p {
-      font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 1.5rem;
-    }
-    .new-news-right .new-input-wrap i { color: #666; }
-    .new-subscribe-btn {
-      width: 100%;
-      background: #722F37;
-      color: white;
-      border: none;
-      padding: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 1rem;
-    }
-    .new-fine-print {
-      font-size: 0.7rem;
-      color: #999;
-      text-align: center;
-      margin-top: 1rem;
-      display: block;
-      line-height: 1.4;
+      background: transparent;
+      border-radius: 12px;
+      overflow: hidden; /* Keeps the iframe corners round */
     }
 
     .fbla-hidden { display: none !important; }
@@ -367,6 +358,7 @@
 <body>
 
   <div class="scroll-progress" id="progressBar"></div>
+  <!-- Make sure your script.js logic is still linked for the rest of the site -->
   <script src="script.js"></script>
 
   <nav class="navbar" id="navbar">
@@ -388,6 +380,7 @@
   </nav>
 
   <main class="new-prof-wrapper">
+    <!-- AUTHENTICATION VIEW -->
     <div id="fbla-auth-view" class="new-auth-box">
       <h2>Museum Portal</h2>
       <p>Curate your Gilded Age experience</p>
@@ -428,6 +421,7 @@
       </div>
     </div>
 
+    <!-- DASHBOARD VIEW -->
     <div id="fbla-dash-view" class="fbla-hidden">
       
       <div class="new-dash-header">
@@ -442,11 +436,12 @@
 
       <div class="new-dash-layout">
         
+        <!-- SIDEBAR -->
         <aside>
           <div class="new-sidebar-card">
             <h3><i class="fa-regular fa-bookmark"></i> My Itinerary</h3>
             <ul id="fbla-wishlist-box" class="new-wishlist">
-              <li style="color:#888; font-size:14px;">Loading your saved exhibits...</li>
+              <li style="color:#888; font-size:14px; background:none; border:none;">Loading your saved exhibits...</li>
             </ul>
             
             <div class="new-promo-box">
@@ -457,8 +452,9 @@
           </div>
         </aside>
 
+        <!-- MAIN CONTENT -->
         <section>
-          <h3 class="new-main-header"><i class="fa-solid fa-bookmark"></i> Discover & Save</h3>
+          <h3 class="new-main-header"><i class="fa-solid fa-compass"></i> Discover & Save</h3>
           
           <div class="new-cards-grid">
             <div class="new-card">
@@ -521,49 +517,41 @@
 
       </div>
 
+      <!-- NEWSLETTER WITH BREVO IFRAME & EXTENDED TEXT -->
       <section class="new-newsletter-banner">
         <div class="new-news-left">
           <div class="new-news-badge"><i class="fa-solid fa-envelope-open-text"></i> The Gilded Dispatch</div>
           <h3>Stay Connected to History</h3>
-          <p>Join our community and receive exclusive historical insights, private event invites, and the latest news directly from the archives of the Henry B. Plant Museum.</p>
+          <p>Join a distinguished community of historians, locals, and museum patrons. By verifying your identity, you gain unrestricted access to the archives of the Henry B. Plant Museum and priority notifications for our most prestigious gatherings.</p>
           
           <div class="new-news-features">
             <div class="new-feature-item">
               <i class="fa-regular fa-bell"></i>
               <div>
                 <h5>Exclusive Event Invites</h5>
-                <p>Be the first to know about private viewings and member-only events</p>
+                <p>Receive priority registration and early access to private gallery viewings, member-only galas, and seasonal Victorian celebrations.</p>
               </div>
             </div>
             <div class="new-feature-item">
-              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
               <div>
-                <h5>Historical Insights</h5>
-                <p>Receive curated stories from the Gilded Age archives</p>
+                <h5>Curator's Corner</h5>
+                <p>Unlock deep-dive articles, artifact spotlights, and behind-the-scenes interviews directly from our resident historians and restoration experts.</p>
               </div>
             </div>
             <div class="new-feature-item">
               <i class="fa-solid fa-gift"></i>
               <div>
-                <h5>Special Offers</h5>
-                <p>Access exclusive discounts and early registration</p>
+                <h5>Special Offers & Discounts</h5>
+                <p>Access exclusive promotional codes for museum admission, guided tours, and distinct gifts from our Museum Store.</p>
               </div>
             </div>
           </div>
         </div>
         
         <div class="new-news-right">
-          <h4>Subscribe Today</h4>
-          <p>Get museum updates delivered to your inbox.</p>
-          <form onsubmit="event.preventDefault(); alert('Subscribed!');">
-            <label style="font-size:0.85rem; font-weight:600; margin-bottom:0.5rem; display:block;">Email Address</label>
-            <div class="new-input-wrap">
-              <i class="fa-regular fa-envelope"></i>
-              <input type="email" class="new-auth-input" placeholder="your@email.com" required>
-            </div>
-            <button type="submit" class="new-subscribe-btn">Subscribe to Newsletter</button>
-            <span class="new-fine-print">By subscribing, you agree to receive museum communications. Unsubscribe anytime.</span>
-          </form>
+          <!-- The Brevo Iframe dropped right in -->
+          <iframe width="100%" height="350" src="https://5560cd82.sibforms.com/serve/MUIFAM9istJWBRQKTdlA9CVlFkqzhIyIo8o4y7wzXySA8MeoXCf8JWfwUcZ-FtusLmrJMj860GL5-NdcrzeAE_omQ7a-9J3zlWFxJp5OVdQrs5NymfDZ5jbLpxM6oumqwVWYD8k-e9ChXZmktyQBxjALWfBtdKdFtq62yXIqhPfm7kdv8a0A0pYqVaMHrg89U5OGDcgrdhHB3V0XPQ==" frameborder="0" scrolling="auto" allowfullscreen style="display: block; margin-left: auto; margin-right: auto; border-radius: 12px; background: white;"></iframe>
         </div>
       </section>
 
