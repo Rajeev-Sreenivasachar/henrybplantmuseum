@@ -1271,12 +1271,11 @@
   </footer>
 
   
-  <script type="module">
+<script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 import { getFirestore, doc, getDoc, updateDoc, arrayUnion, arrayRemove } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
-// --- FIREBASE CONFIGURATION ---
 const firebaseConfig = {
   apiKey: "AIzaSyA-ltDU9XbrsCIDWAnjze85Q2duWpLje5s",
   authDomain: "plant-museum-fbla.firebaseapp.com",
@@ -1290,17 +1289,12 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// --- GLOBAL STATE ---
 let currentUserRef = null;
-let localFavorites = []; // Using favorites instead of wishlist!
+let localFavorites = [];
 
-// --- GLOBAL FUNCTIONS ---
-
-// 1. Sidebar Rendering
 window.renderSidebar = function() {
   const favList = document.getElementById('favList');
-  if (!favList) return; 
-
+  if (!favList) return;
   if(localFavorites.length === 0) {
     favList.innerHTML = '<p style="color: #666; font-size: 0.9rem;">Artifacts you star will appear here.</p>';
   } else {
@@ -1317,16 +1311,12 @@ window.renderSidebar = function() {
       `;
     });
   }
-
-  // Strict Sync: Check both name AND image URL to prevent duplicate highlighting
   document.querySelectorAll('.star-btn').forEach(btn => {
     const onclickText = btn.getAttribute('onclick');
     if(onclickText) {
-      // Extracts the name and URL from the inline function
       const args = onclickText.match(/'([^']+)'/g).map(s => s.replace(/'/g, ''));
       const btnTitle = args[0];
       const btnUrl = args[1];
-
       const isSaved = localFavorites.some(i => i.name === btnTitle && i.url === btnUrl);
       if(isSaved) btn.classList.add('active');
       else btn.classList.remove('active');
@@ -1334,68 +1324,50 @@ window.renderSidebar = function() {
   });
 };
 
-// 2. Trash Can Delete Logic
 window.removeFavorite = async (title, imgSrc) => {
-  if (!currentUserRef) return; 
-  
+  if (!currentUserRef) return;
   localFavorites = localFavorites.filter(i => !(i.name === title && i.url === imgSrc));
   window.renderSidebar();
-  
-  const itemObj = { name: title, url: imgSrc };
-  await updateDoc(currentUserRef, { favorites: arrayRemove(itemObj) });
+  await updateDoc(currentUserRef, { favorites: arrayRemove({ name: title, url: imgSrc }) });
 };
 
-// 3. The Click Function for Artifact Cards
 window.toggleStar = async (btn, title, imgSrc) => {
   if (!currentUserRef) {
     window.showPopup("You must <a href='profile.html' style='color:#D4AF37;'>Sign In</a> to save artifacts!");
     return;
   }
-
   const isStarred = btn.classList.contains('active');
-  const itemObj = { name: title, url: imgSrc }; 
-
+  const itemObj = { name: title, url: imgSrc };
   if (!isStarred) {
     btn.classList.add('active');
     localFavorites.push(itemObj);
-    window.renderSidebar(); 
-    
-    const favSidebar = document.getElementById('favSidebar');
-    if(favSidebar) favSidebar.classList.add('open'); 
-    
-    // Save specifically to the "favorites" array
+    window.renderSidebar();
+    document.getElementById('favSidebar')?.classList.add('open');
     await updateDoc(currentUserRef, { favorites: arrayUnion(itemObj) });
   } else {
     btn.classList.remove('active');
     localFavorites = localFavorites.filter(i => !(i.name === title && i.url === imgSrc));
-    window.renderSidebar(); 
-    
-    // Remove from "favorites" array
+    window.renderSidebar();
     await updateDoc(currentUserRef, { favorites: arrayRemove(itemObj) });
   }
 };
 
-// 4. Popup Messaging
 window.showPopup = function(msg) {
   const authPopup = document.getElementById('authPopup');
   const authMsg = document.getElementById('authMsg');
   if(!authPopup || !authMsg) return;
-
   authMsg.innerHTML = msg;
   authPopup.classList.add('show');
   setTimeout(() => authPopup.classList.remove('show'), 4000);
 };
 
-
-// --- FIREBASE AUTH LISTENER ---
 onAuthStateChanged(auth, async (user) => {
   if (user) {
     currentUserRef = doc(db, "users", user.uid);
     const snap = await getDoc(currentUserRef);
     if(snap.exists()) {
       const data = snap.data();
-      // Look for favorites array, or create empty if new
-      localFavorites = data.favorites || []; 
+      localFavorites = data.favorites || [];
       window.showPopup(`Welcome back to the archives, <strong>${data.realName || 'Explorer'}</strong>!`);
       window.renderSidebar();
     }
@@ -1406,14 +1378,11 @@ onAuthStateChanged(auth, async (user) => {
   }
 });
 
-
-// --- STANDARD PAGE LOGIC ---
 document.addEventListener('DOMContentLoaded', () => {
-
+  // Favorites sidebar
   const favSidebar = document.getElementById('favSidebar');
   const floatingFavBtn = document.getElementById('floatingFavBtn');
   const closeFav = document.getElementById('closeFav');
-
   if(floatingFavBtn) {
     floatingFavBtn.addEventListener('click', () => {
       if(!currentUserRef) {
@@ -1425,54 +1394,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if(closeFav) closeFav.addEventListener('click', () => favSidebar.classList.remove('open'));
 
-  // Scroll Progress Bar
-  const progressBar = document.getElementById('progressBar');
-  window.addEventListener('scroll', () => {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    if(progressBar) progressBar.style.width = (winScroll / height) * 100 + "%";
-  });
-
-  // Navbar Scroll Effect
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      if(navbar) navbar.classList.add('scrolled');
-    } else {
-      if(navbar) navbar.classList.remove('scrolled');
-    }
-  });
-
-  // Mobile Menu Toggle
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
-  if(menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('mobile-open');
-    });
-  }
-
-  // Scroll Reveal Animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
-    });
-  }, { threshold: 0.05 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // Artifacts Category Filtering
+  // Artifacts filter
   const filterButtons = document.querySelectorAll('.filter-btn');
   const artifactCards = document.querySelectorAll('.card-artifacts');
-
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
       filterButtons.forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
-
       const filterValue = button.getAttribute('data-filter');
-
       artifactCards.forEach(card => {
         const category = card.getAttribute('data-category');
         if (filterValue === 'all' || filterValue === category) {
@@ -1485,7 +1414,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
-
 });
 </script>
 </body>
