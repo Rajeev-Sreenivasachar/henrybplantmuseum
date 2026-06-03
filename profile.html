@@ -7,361 +7,198 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="/style.css">
-
   <link rel="icon" type="image/jpeg" href="https://www.plantmuseum.com/App_Themes/PlantMuseum/images/favicon.ico">
   
   <style>
-    /* --- NEW PROFILE CLASSES: BURGUNDY, GOLD & BLACK AESTHETIC --- */
+    /* --- ULTIMATE THEME: BURGUNDY, RED, GOLD, BLACK (MODERN/FUTURISTIC) --- */
+    :root {
+      --burgundy: #722F37;
+      --red-accent: #A6192E;
+      --gold: #D4AF37;
+      --black-sleek: #111111;
+      --black-card: #1A1A1A;
+      --white-bg: #F4F5F7;
+    }
+
     .new-prof-wrapper {
-      background-color: #fafafa;
+      background-color: var(--white-bg);
       padding: 3rem 5%;
-      font-family: 'Inter', sans-serif;
-      min-height: 80vh;
+      font-family: 'Outfit', sans-serif;
+      min-height: 85vh;
+      color: var(--black-sleek);
     }
 
-    /* Auth State Styles */
+    h1, h2, h3, h4, h5 { font-family: 'Cinzel', serif; margin: 0; }
+
+    /* AUTHENTICATION BOX */
     .new-auth-box {
-      max-width: 450px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-      text-align: center;
-      border-top: 4px solid #D4AF37; /* Gold Accent */
+      max-width: 420px; margin: 4rem auto; background: #fff;
+      padding: 3rem 2.5rem; border-radius: 12px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08); text-align: center;
+      border-top: 4px solid var(--gold); position: relative;
     }
-    .new-auth-box h2 {
-      font-family: 'Playfair Display', serif;
-      color: #722F37; /* Burgundy */
-      font-size: 2rem;
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-    }
-    .new-auth-box p { color: #666; margin-bottom: 2rem; }
-    .new-auth-tabs {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      justify-content: center;
-      border-bottom: 1px solid #eee;
-    }
+    .new-auth-box h2 { color: var(--black-sleek); font-size: 2.2rem; margin-bottom: 0.5rem; }
+    .new-auth-box p { color: #666; margin-bottom: 2rem; font-weight: 300; }
+    
+    .new-auth-tabs { display: flex; gap: 1rem; margin-bottom: 2rem; justify-content: center; border-bottom: 1px solid #eee; }
     .new-auth-tab {
-      background: none;
-      border: none;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      cursor: pointer;
-      color: #999;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -1px;
-      font-weight: 500;
-      transition: all 0.2s ease;
+      background: none; border: none; padding: 0.5rem 1rem; font-size: 1rem;
+      cursor: pointer; color: #999; border-bottom: 2px solid transparent;
+      margin-bottom: -1px; font-family: 'Outfit', sans-serif; font-weight: 500; transition: all 0.3s ease;
     }
-    .new-auth-tab.active {
-      color: #722F37;
-      border-bottom-color: #722F37;
-    }
-    .new-auth-tab:hover:not(.active) { color: #1A1A1A; }
-    .new-input-wrap {
-      position: relative;
-      margin-bottom: 1rem;
-    }
-    .new-input-wrap i {
-      position: absolute;
-      left: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #999;
-    }
+    .new-auth-tab.active { color: var(--burgundy); border-bottom-color: var(--burgundy); }
+    .new-auth-tab:hover:not(.active) { color: var(--black-sleek); }
+    
+    .new-input-wrap { position: relative; margin-bottom: 1.2rem; }
+    .new-input-wrap i { position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: #888; font-size: 0.9rem; }
     .new-auth-input {
-      width: 100%;
-      padding: 0.8rem 1rem 0.8rem 2.5rem;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-      background: #fff;
-      transition: border-color 0.2s;
+      width: 100%; padding: 0.9rem 1rem 0.9rem 2.8rem; border: 1px solid #e0e0e0;
+      border-radius: 6px; box-sizing: border-box; font-family: 'Outfit', sans-serif;
+      background: #fafafa; transition: all 0.3s ease; font-size: 0.95rem;
     }
-    .new-auth-input:focus {
-      outline: none;
-      border-color: #722F37;
-    }
+    .new-auth-input:focus { outline: none; border-color: var(--gold); background: #fff; box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15); }
     .new-auth-btn {
-      width: 100%;
-      background: #1A1A1A; /* Sleek Black */
-      color: white;
-      border: none;
-      padding: 0.8rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      margin-top: 1rem;
-      transition: background 0.3s ease;
+      width: 100%; background: var(--black-sleek); color: white; border: none;
+      padding: 1rem; border-radius: 6px; cursor: pointer; font-weight: 600;
+      font-family: 'Outfit', sans-serif; letter-spacing: 1px; margin-top: 1rem;
+      transition: background 0.3s ease, transform 0.1s;
     }
-    .new-auth-btn:hover { background: #722F37; /* Shifts to Burgundy on hover */ }
+    .new-auth-btn:hover { background: var(--burgundy); }
 
-    /* Dashboard Styles */
-    .new-dash-header {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1.5rem 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
-      margin-bottom: 2rem;
-      border-left: 4px solid #D4AF37; /* Gold Accent */
-    }
-    .new-dash-header-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      margin: 0;
-      color: #1A1A1A;
-    }
-    .new-dash-header-text h2 span { color: #722F37; } /* Burgundy Name */
-    .new-dash-header-text p {
-      margin: 0.25rem 0 0 0;
-      color: #666;
-      font-size: 0.95rem;
-    }
-    .new-signout-btn {
-      padding: 0.6rem 1.2rem;
-      border: 1px solid #eaeaea;
-      border-radius: 20px;
-      background: #f9f9f9;
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.2s ease;
-      color: #1A1A1A;
-    }
-    .new-signout-btn:hover { background: #1A1A1A; color: #fff; border-color: #1A1A1A; }
-
-    /* Layout Grid */
+    /* DASHBOARD LAYOUT */
     .new-dash-layout {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 2rem;
-      align-items: start;
+      display: grid; grid-template-columns: 340px 1fr; gap: 2.5rem; align-items: start; max-width: 1400px; margin: 0 auto;
     }
 
-    /* Sidebar */
-    .new-sidebar-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    /* LEFT SIDEBAR (Futuristic panels) */
+    .sidebar-col { display: flex; flex-direction: column; gap: 1.5rem; }
+    
+    .sleek-card {
+      background: #fff; border-radius: 12px; padding: 1.8rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.05);
     }
-    .new-sidebar-card h3 {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: 'Playfair Display', serif;
-      margin-top: 0;
-      font-size: 1.2rem;
-      color: #722F37;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #f0f0f0;
+    .sleek-card h3 { font-size: 1.2rem; color: var(--black-sleek); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.6rem; }
+    .sleek-card h3 i { color: var(--burgundy); font-size: 1.1rem; }
+
+    /* Digital Admissions Pass (Makes sense + Futuristic) */
+    .digital-pass {
+      background: linear-gradient(135deg, var(--black-sleek) 0%, var(--black-card) 100%);
+      color: white; border-radius: 12px; padding: 2rem; position: relative;
+      overflow: hidden; border-left: 4px dashed var(--gold);
+      box-shadow: 0 10px 30px rgba(17, 17, 17, 0.3);
     }
-    .new-wishlist { list-style: none; padding: 0; margin: 0; }
+    .digital-pass::after {
+      content: '\f02a'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+      position: absolute; right: -20px; top: 50%; transform: translateY(-50%) rotate(90deg);
+      font-size: 6rem; opacity: 0.05; color: white;
+    }
+    .digital-pass p.label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 0.3rem; }
+    .digital-pass h2 { font-size: 1.8rem; margin-bottom: 1.5rem; color: #fff; }
+    .pass-details { display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; }
+    .pass-details div p { margin: 0; font-size: 0.8rem; color: #aaa; }
+    .pass-details div h5 { font-family: 'Outfit', sans-serif; font-size: 1rem; color: #fff; margin-top: 0.2rem; }
+    .logout-text { display: block; text-align: right; margin-top: 1.5rem; color: #888; font-size: 0.8rem; cursor: pointer; text-decoration: underline; transition: color 0.2s;}
+    .logout-text:hover { color: var(--red-accent); }
+
+    /* Settings Form */
+    .settings-form { display: flex; flex-direction: column; gap: 1rem; }
+    .settings-form input { padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; font-family: 'Outfit', sans-serif; background: #fafafa;}
+    .settings-form input:focus { outline: none; border-color: var(--burgundy); }
+    .settings-form button {
+      background: var(--burgundy); color: #fff; border: none; padding: 0.8rem;
+      border-radius: 6px; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 500; transition: background 0.3s;
+    }
+    .settings-form button:hover { background: var(--black-sleek); }
+
+    /* Itinerary Wishlist */
+    .new-wishlist { list-style: none; padding: 0; margin: 0; max-height: 250px; overflow-y: auto;}
     .new-wishlist li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.8rem;
-      border: 1px solid #f0f0f0;
-      border-radius: 6px;
-      margin-bottom: 0.5rem;
-      background: #fafafa;
-      transition: 0.2s;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem; border: 1px solid #f0f0f0; border-radius: 8px;
+      margin-bottom: 0.6rem; background: #fafafa; transition: all 0.3s;
     }
-    .new-wishlist li:hover { background: #FCF9F2; border-color: #E8DECE; } /* Subtle gold tint on hover */
-    .new-wishlist li a { text-decoration: none; color: #1A1A1A; font-size: 0.85rem; font-weight: 500;}
-    .new-wishlist li button { background: none; border: none; color: #aaa; cursor: pointer; transition: color 0.2s; }
-    .new-wishlist li button:hover { color: #E53935; } /* Red accent for delete */
-    
-    /* Artifacts Promo */
-    .new-promo-box {
-      background: #FCF9F2; /* Very pale gold */
-      border: 1px solid #E8DECE;
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-top: 1rem;
-    }
-    .new-promo-box h4 {
-      color: #722F37;
-      margin: 0 0 0.5rem 0;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: 'Inter', sans-serif;
-    }
-    .new-promo-box p {
-      font-size: 0.8rem;
-      color: #555;
-      margin: 0 0 1rem 0;
-      line-height: 1.4;
-    }
-    .new-promo-box a {
-      color: #1A1A1A;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-    .new-promo-box a:hover { color: #722F37; }
+    .new-wishlist li:hover { background: #fff; border-color: var(--gold); box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1); }
+    .new-wishlist li a { text-decoration: none; color: var(--black-sleek); font-size: 0.9rem; font-weight: 500;}
+    .new-wishlist li button { background: none; border: none; color: #ccc; cursor: pointer; transition: color 0.2s; }
+    .new-wishlist li button:hover { color: var(--red-accent); }
 
-    /* Main Content Grid */
-    .new-main-header {
-      font-family: 'Playfair Display', serif;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-      color: #1A1A1A;
-      font-size: 1.2rem;
+    /* MAIN CONTENT */
+    .main-col { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    /* Futuristic Stats Row */
+    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .stat-box {
+      background: #fff; padding: 1.5rem; border-radius: 12px;
+      border-bottom: 3px solid var(--burgundy); box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      display: flex; align-items: center; gap: 1rem; transition: transform 0.3s;
     }
-    .new-main-header i { 
-      background: #1A1A1A; 
-      color: #D4AF37; /* Gold on Black */
-      padding: 0.4rem; 
-      border-radius: 4px; 
-      font-size: 0.9rem;
-    }
-    
-    .new-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
+    .stat-box:hover { transform: translateY(-3px); }
+    .stat-icon { background: rgba(114, 47, 55, 0.1); color: var(--burgundy); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+    .stat-info h4 { font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--black-sleek); margin-bottom: 0.1rem; }
+    .stat-info p { font-size: 0.8rem; color: #777; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* Catalog Header */
+    .new-main-header { font-size: 1.4rem; color: var(--black-sleek); margin-top: 1rem; display: flex; align-items: center; gap: 0.8rem; }
+    .new-main-header i { color: var(--gold); }
+
+    /* Exhibit Cards */
+    .new-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
     .new-card {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 12px;
-      border: 1px solid #eaeaea;
-      text-align: left;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-      transition: all 0.3s ease;
+      background: #fff; padding: 2rem 1.5rem; border-radius: 12px;
+      border: 1px solid #eaeaea; text-align: left; position: relative; overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: all 0.3s ease;
     }
-    .new-card:hover {
-      border-color: #D4AF37; /* Gold border on hover */
-      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.1);
-      transform: translateY(-3px);
+    .new-card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+      background: linear-gradient(90deg, var(--burgundy), var(--red-accent));
+      transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;
     }
-    .new-card i {
-      font-size: 1.5rem;
-      color: #722F37; /* Burgundy Icons */
-      margin-bottom: 1rem;
-    }
-    .new-card h4 {
-      margin: 0 0 0.25rem 0;
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #1A1A1A;
-    }
-    .new-card p {
-      font-size: 0.8rem;
-      color: #888;
-      margin: 0 0 1.2rem 0;
-    }
+    .new-card:hover { border-color: transparent; box-shadow: 0 12px 30px rgba(0,0,0,0.08); transform: translateY(-4px); }
+    .new-card:hover::before { transform: scaleX(1); }
+    .new-card i { font-size: 2rem; color: var(--gold); margin-bottom: 1.2rem; display: block; text-shadow: 0 4px 10px rgba(212, 175, 55, 0.3); }
+    .new-card h4 { font-size: 1.1rem; color: var(--black-sleek); margin-bottom: 0.4rem; }
+    .new-card p { font-size: 0.85rem; color: #777; margin-bottom: 1.5rem; font-weight: 300; }
+    
     .new-card-btn {
-      width: 100%;
-      padding: 0.6rem;
-      border-radius: 6px;
-      border: 1px solid #eaeaea;
-      background: #fff;
-      color: #1A1A1A;
-      cursor: pointer;
-      font-weight: 500;
-      transition: all 0.2s;
+      width: 100%; padding: 0.8rem; border-radius: 6px; border: 1px solid var(--black-sleek);
+      background: transparent; color: var(--black-sleek); cursor: pointer;
+      font-weight: 600; font-family: 'Outfit', sans-serif; transition: all 0.3s;
     }
-    .new-card-btn:hover:not(:disabled) { 
-      background: #1A1A1A; 
-      color: #fff;
-      border-color: #1A1A1A;
-    }
-    .new-card-btn:disabled {
-      background: #722F37; /* Burgundy for Saved state */
-      color: #fff;
-      border-color: #722F37;
-      cursor: not-allowed;
-      opacity: 0.95;
-    }
+    .new-card-btn:hover:not(:disabled) { background: var(--black-sleek); color: #fff; box-shadow: 0 4px 15px rgba(17,17,17,0.2); }
+    .new-card-btn:disabled { background: var(--burgundy); color: #fff; border-color: var(--burgundy); cursor: not-allowed; }
 
-    /* Newsletter Section - Burgundy & Black Gradient */
+    /* NEWSLETTER (Working iframe) */
     .new-newsletter-banner {
-      background: linear-gradient(135deg, #722F37 0%, #111111 100%);
-      border-radius: 16px;
-      padding: 4rem 3rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      color: white;
-      margin-top: 3rem;
-      align-items: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(135deg, var(--black-sleek) 0%, #1a0a0c 100%);
+      border-radius: 12px; padding: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+      color: white; margin-top: 3rem; align-items: center; border-bottom: 4px solid var(--gold);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     }
     .new-news-badge {
-      background: rgba(212, 175, 55, 0.15); /* Tint of Gold */
-      color: #D4AF37; /* Gold text */
-      padding: 0.4rem 1rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      background: rgba(212, 175, 55, 0.15); color: var(--gold); padding: 0.4rem 1.2rem;
+      border-radius: 20px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-bottom: 1.5rem; font-weight: 500; border: 1px solid rgba(212, 175, 55, 0.3);
     }
-    .new-news-left h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      margin: 0 0 1.5rem 0;
-      line-height: 1.1;
-    }
-    .new-news-left > p {
-      font-size: 1.05rem;
-      opacity: 0.9;
-      margin-bottom: 2.5rem;
-      line-height: 1.6;
-    }
-    .new-news-features { display: flex; flex-direction: column; gap: 1.5rem; }
+    .new-news-left h3 { font-size: 2.8rem; margin-bottom: 1.5rem; line-height: 1.1; }
+    .new-news-left > p { font-size: 1rem; color: #ccc; margin-bottom: 2.5rem; line-height: 1.6; font-weight: 300; }
+    .new-news-features { display: flex; flex-direction: column; gap: 1.8rem; }
     .new-feature-item { display: flex; gap: 1.2rem; align-items: flex-start; }
-    .new-feature-item i {
-      background: rgba(255,255,255,0.08);
-      padding: 0.8rem;
-      border-radius: 8px;
-      color: #D4AF37; /* Gold Icons */
-      font-size: 1.2rem;
-    }
-    .new-feature-item div h5 { margin: 0 0 0.35rem 0; font-size: 1.1rem; font-weight: 600;}
-    .new-feature-item div p { margin: 0; font-size: 0.9rem; opacity: 0.8; line-height: 1.4;}
+    .new-feature-item i { color: var(--red-accent); font-size: 1.4rem; margin-top: 0.2rem; }
+    .new-feature-item div h5 { font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.3rem;}
+    .new-feature-item div p { margin: 0; font-size: 0.9rem; color: #aaa; line-height: 1.5; font-weight: 300;}
+    .new-news-right { background: #fff; border-radius: 8px; overflow: hidden; padding: 1rem; }
     
-    .new-news-right {
-      background: transparent;
-      border-radius: 12px;
-      overflow: hidden; /* Keeps the iframe corners round */
-    }
-
     .fbla-hidden { display: none !important; }
 
-    /* Responsive adjustments */
-    @media(max-width: 900px) {
+    @media(max-width: 1000px) {
       .new-dash-layout, .new-newsletter-banner { grid-template-columns: 1fr; }
-      .new-newsletter-banner { padding: 2rem; }
-      .new-dash-header { flex-direction: column; text-align: center; gap: 1rem; }
+      .new-newsletter-banner { padding: 2rem; gap: 2rem; }
+      .stats-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -390,6 +227,7 @@
   </nav>
 
   <main class="new-prof-wrapper">
+    <!-- AUTHENTICATION VIEW -->
     <div id="fbla-auth-view" class="new-auth-box">
       <h2>Museum Portal</h2>
       <p>Curate your Gilded Age experience</p>
@@ -408,8 +246,8 @@
           <i class="fa-solid fa-lock"></i>
           <input type="password" id="log-pass" class="new-auth-input" placeholder="Password">
         </div>
-        <div id="log-err" style="color:red; font-size:14px;"></div>
-        <button class="new-auth-btn" onclick="window.signIn()">Access Portal</button>
+        <div id="log-err" style="color:var(--red-accent); font-size:14px; margin-bottom: 10px;"></div>
+        <button class="new-auth-btn" onclick="window.signIn()">ACCESS PORTAL</button>
       </div>
       
       <div id="form-signup" class="fbla-hidden">
@@ -425,137 +263,161 @@
           <i class="fa-solid fa-lock"></i>
           <input type="password" id="reg-pass" class="new-auth-input" placeholder="Password (6+ chars)">
         </div>
-        <div id="reg-err" style="color:red; font-size:14px;"></div>
-        <button class="new-auth-btn" onclick="window.signUp()">Create Account</button>
+        <div id="reg-err" style="color:var(--red-accent); font-size:14px; margin-bottom: 10px;"></div>
+        <button class="new-auth-btn" onclick="window.signUp()">CREATE ACCOUNT</button>
       </div>
     </div>
 
+    <!-- DASHBOARD VIEW -->
     <div id="fbla-dash-view" class="fbla-hidden">
-      
-      <div class="new-dash-header">
-        <div class="new-dash-header-text">
-          <h2>Welcome back, <span id="ui-name"></span></h2>
-          <p>Username: <span id="ui-user"></span></p>
-        </div>
-        <button class="new-signout-btn" onclick="window.logout()">
-          Sign Out <i class="fa-solid fa-right-from-bracket"></i>
-        </button>
-      </div>
-
       <div class="new-dash-layout">
         
-        <aside>
-          <div class="new-sidebar-card">
-            <h3><i class="fa-regular fa-bookmark"></i> My Itinerary</h3>
+        <!-- LEFT SIDEBAR -->
+        <div class="sidebar-col">
+          
+          <!-- FEATURE 1: Digital Admissions Pass (Realistic + Futuristic) -->
+          <div class="digital-pass">
+            <p class="label">Admissions Pass</p>
+            <h2 id="ui-name">Welcome</h2>
+            <div class="pass-details">
+              <div>
+                <p>Username</p>
+                <h5 id="ui-user">---</h5>
+              </div>
+              <div>
+                <p>Access Tier</p>
+                <h5>General</h5>
+              </div>
+              <div>
+                <p>Status</p>
+                <h5 style="color: var(--gold);">Verified</h5>
+              </div>
+            </div>
+            <span class="logout-text" onclick="window.logout()">Secure Sign Out <i class="fa-solid fa-lock"></i></span>
+          </div>
+
+          <!-- FEATURE 2: Account Settings (Working Data Update) -->
+          <div class="sleek-card">
+            <h3><i class="fa-solid fa-sliders"></i> Account Preferences</h3>
+            <form class="settings-form" onsubmit="window.updateProfile(event)">
+              <input type="text" id="settings-name" placeholder="Update display name..." required>
+              <button type="submit">Save Changes</button>
+            </form>
+          </div>
+
+          <!-- FEATURE 3: Itinerary Wishlist -->
+          <div class="sleek-card">
+            <h3><i class="fa-regular fa-bookmark"></i> Planned Itinerary</h3>
             <ul id="fbla-wishlist-box" class="new-wishlist">
-              <li style="color:#888; font-size:14px; background:none; border:none;">Loading your saved exhibits...</li>
+              <li style="color:#888; font-size:14px; background:none; border:none; padding-left: 0;">Loading your saved exhibits...</li>
             </ul>
-            
-            <div class="new-promo-box">
-              <h4><i class="fa-regular fa-heart"></i> Favorite Artifacts</h4>
-              <p>You can now favorite your favorite artifacts! Browse our collection and save the pieces that inspire you.</p>
-              <a href="/artifacts.html">Explore Artifacts →</a>
+          </div>
+        </div>
+
+        <!-- MAIN CONTENT (Stats + Catalog) -->
+        <div class="main-col">
+          
+          <!-- FEATURE 4: Futuristic Stat Trackers -->
+          <div class="stats-row">
+            <div class="stat-box">
+              <div class="stat-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+              <div class="stat-info">
+                <h4 id="stat-saved-count">0</h4>
+                <p>Saved to Itinerary</p>
+              </div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-icon"><i class="fa-solid fa-qrcode"></i></div>
+              <div class="stat-info">
+                <h4>Active</h4>
+                <p>Mobile Entry Pass</p>
+              </div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+              <div class="stat-info">
+                <h4>June 2026</h4>
+                <p>Next Planned Visit</p>
+              </div>
             </div>
           </div>
-        </aside>
 
-        <section>
-          <h3 class="new-main-header"><i class="fa-solid fa-compass"></i> Discover & Save</h3>
-          
+          <!-- FEATURE 5: Exhibit Catalog -->
+          <h3 class="new-main-header"><i class="fa-solid fa-compass"></i> Curate Your Experience</h3>
           <div class="new-cards-grid">
             <div class="new-card">
               <i class="fa-solid fa-tree"></i>
               <h4>Victorian Christmas Stroll</h4>
-              <p>Seasonal Event</p>
-              <button class="new-card-btn fbla-add-btn" data-name="Victorian Christmas" onclick="window.addWish('Victorian Christmas', 'events/victorian-christmas-stroll.html')">Save</button>
+              <p>Seasonal Event • First Floor</p>
+              <button class="new-card-btn fbla-add-btn" data-name="Victorian Christmas" onclick="window.addWish('Victorian Christmas', 'events/victorian-christmas-stroll.html')">Add to Itinerary</button>
             </div>
             
             <div class="new-card">
               <i class="fa-solid fa-masks-theater"></i>
               <h4>Upstairs / Downstairs</h4>
-              <p>Live Performance</p>
-              <button class="new-card-btn fbla-add-btn" data-name="Upstairs / Downstairs" onclick="window.addWish('Upstairs / Downstairs', 'events/upstairs-downstairs.html')">Save</button>
+              <p>Live Performance • Veranda</p>
+              <button class="new-card-btn fbla-add-btn" data-name="Upstairs / Downstairs" onclick="window.addWish('Upstairs / Downstairs', 'events/upstairs-downstairs.html')">Add to Itinerary</button>
             </div>
 
             <div class="new-card">
               <i class="fa-solid fa-film"></i>
               <h4>Free Movie Series</h4>
-              <p>Community Event</p>
-              <button class="new-card-btn fbla-add-btn" data-name="Free Movie Series" onclick="window.addWish('Free Movie Series', 'events/free-movie-series.html')">Save</button>
+              <p>Community Event • South Hall</p>
+              <button class="new-card-btn fbla-add-btn" data-name="Free Movie Series" onclick="window.addWish('Free Movie Series', 'events/free-movie-series.html')">Add to Itinerary</button>
             </div>
 
             <div class="new-card">
               <i class="fa-regular fa-sun"></i>
               <h4>Celebrate Sunset</h4>
-              <p>Special Event</p>
-              <button class="new-card-btn fbla-add-btn" data-name="Celebrate Sunset" onclick="window.addWish('Celebrate Sunset', 'events/celebrate-sunset.html')">Save</button>
+              <p>Special Event • West Grounds</p>
+              <button class="new-card-btn fbla-add-btn" data-name="Celebrate Sunset" onclick="window.addWish('Celebrate Sunset', 'events/celebrate-sunset.html')">Add to Itinerary</button>
             </div>
 
             <div class="new-card">
               <i class="fa-solid fa-shield-halved"></i>
               <h4>Tampa at War</h4>
-              <p>History Exhibit</p>
-              <button class="new-card-btn fbla-add-btn" data-name="Tampa at War" onclick="window.addWish('Tampa at War', 'exhibits/tampa-at-war.html')">Save</button>
+              <p>History Exhibit • Room 104</p>
+              <button class="new-card-btn fbla-add-btn" data-name="Tampa at War" onclick="window.addWish('Tampa at War', 'exhibits/tampa-at-war.html')">Add to Itinerary</button>
             </div>
 
             <div class="new-card">
               <i class="fa-solid fa-building"></i>
               <h4>Grand Hotel</h4>
-              <p>Permanent Exhibit</p>
-              <button class="new-card-btn fbla-add-btn" data-name="Grand Hotel" onclick="window.addWish('Grand Hotel', 'exhibits/grand-hotel.html')">Save</button>
-            </div>
-            
-            <div class="new-card">
-              <i class="fa-solid fa-coins"></i>
-              <h4>Gaspar's Gold</h4>
-              <p>Temporary Exhibit</p>
-              <button class="new-card-btn fbla-add-btn" data-name="Gaspar's Gold" onclick="window.addWish('Gaspar\'s Gold', 'exhibits/gaspar_gold.html')">Save</button>
-            </div>
-            
-            <div class="new-card">
-              <i class="fa-solid fa-chess-rook"></i>
-              <h4>Plants Southern Empire</h4>
-              <p>Permanent Exhibit</p>
-              <button class="new-card-btn fbla-add-btn" data-name="Plants Southern Empire" onclick="window.addWish('Plants Southern Empire', 'exhibits/plants-southern-empire.html')">Save</button>
+              <p>Permanent Exhibit • Main Lobby</p>
+              <button class="new-card-btn fbla-add-btn" data-name="Grand Hotel" onclick="window.addWish('Grand Hotel', 'exhibits/grand-hotel.html')">Add to Itinerary</button>
             </div>
           </div>
-        </section>
+        </div>
 
       </div>
 
+      <!-- FEATURE 6: NEWSLETTER (Working iframe) -->
       <section class="new-newsletter-banner">
         <div class="new-news-left">
           <div class="new-news-badge"><i class="fa-solid fa-envelope-open-text"></i> The Gilded Dispatch</div>
-          <h3>Stay Connected to History</h3>
-          <p>Join a distinguished community of historians, locals, and museum patrons. By verifying your identity, you gain unrestricted access to the archives of the Henry B. Plant Museum and priority notifications for our most prestigious gatherings.</p>
+          <h3>The Official Museum Chronicle</h3>
+          <p>Join a distinguished community of historians, locals, and patrons. Registration grants priority notifications for our most prestigious gatherings.</p>
           
           <div class="new-news-features">
             <div class="new-feature-item">
-              <i class="fa-regular fa-bell"></i>
+              <i class="fa-solid fa-champagne-glasses"></i>
               <div>
-                <h5>Exclusive Event Invites</h5>
-                <p>Receive priority registration and early access to private gallery viewings, member-only galas, and seasonal Victorian celebrations.</p>
+                <h5>Exclusive Galas & Invites</h5>
+                <p>Receive early access to member-only galas and seasonal Victorian celebrations.</p>
               </div>
             </div>
             <div class="new-feature-item">
-              <i class="fa-solid fa-magnifying-glass-chart"></i>
+              <i class="fa-solid fa-landmark"></i>
               <div>
                 <h5>Curator's Corner</h5>
-                <p>Unlock deep-dive articles, artifact spotlights, and behind-the-scenes interviews directly from our resident historians and restoration experts.</p>
-              </div>
-            </div>
-            <div class="new-feature-item">
-              <i class="fa-solid fa-gift"></i>
-              <div>
-                <h5>Special Offers & Discounts</h5>
-                <p>Access exclusive promotional codes for museum admission, guided tours, and distinct gifts from our Museum Store.</p>
+                <p>Unlock behind-the-scenes interviews directly from our resident restoration experts.</p>
               </div>
             </div>
           </div>
         </div>
         
         <div class="new-news-right">
-          <iframe width="100%" height="350" src="https://5560cd82.sibforms.com/serve/MUIFAM9istJWBRQKTdlA9CVlFkqzhIyIo8o4y7wzXySA8MeoXCf8JWfwUcZ-FtusLmrJMj860GL5-NdcrzeAE_omQ7a-9J3zlWFxJp5OVdQrs5NymfDZ5jbLpxM6oumqwVWYD8k-e9ChXZmktyQBxjALWfBtdKdFtq62yXIqhPfm7kdv8a0A0pYqVaMHrg89U5OGDcgrdhHB3V0XPQ==" frameborder="0" scrolling="auto" allowfullscreen style="display: block; margin-left: auto; margin-right: auto; border-radius: 12px; background: white;"></iframe>
+          <iframe width="100%" height="320" src="https://5560cd82.sibforms.com/serve/MUIFAM9istJWBRQKTdlA9CVlFkqzhIyIo8o4y7wzXySA8MeoXCf8JWfwUcZ-FtusLmrJMj860GL5-NdcrzeAE_omQ7a-9J3zlWFxJp5OVdQrs5NymfDZ5jbLpxM6oumqwVWYD8k-e9ChXZmktyQBxjALWfBtdKdFtq62yXIqhPfm7kdv8a0A0pYqVaMHrg89U5OGDcgrdhHB3V0XPQ==" frameborder="0" scrolling="auto" allowfullscreen style="display: block; margin: 0 auto; background: white;"></iframe>
         </div>
       </section>
 
@@ -589,34 +451,6 @@
           <div class="resource-icon"><i class="fa-solid fa-location-dot"></i></div>
           <div class="resource-text"><h5>Location</h5><p>401 W. Kennedy Blvd, Tampa</p></div>
         </a>
-        <div class="resource-item static">
-          <div class="resource-icon"><i class="fa-solid fa-clock"></i></div>
-          <div class="resource-text"><h5>Hours of Operation</h5><p>Tue–Sat: 10am–5pm<br>Sun: 12pm–5pm<br>Mon: Closed</p></div>
-        </div>
-      </div>
-      <div class="drawer-group">
-        <h4>Support the Museum</h4>
-        <a href="visitor.html" class="resource-item">
-          <div class="resource-icon"><i class="fa-solid fa-ticket"></i></div>
-          <div class="resource-text"><h5>Buy Tickets</h5><p>Admissions & Tours</p></div>
-        </a>
-        <a href="membership.html" class="resource-item">
-          <div class="resource-icon"><i class="fa-solid fa-id-card"></i></div>
-          <div class="resource-text"><h5>Membership</h5><p>Join the Museum Society</p></div>
-        </a>
-        <a href="https://henry-b-plant-museum.square.site/product/donation/101" target="_blank" class="resource-item">
-          <div class="resource-icon"><i class="fa-solid fa-heart"></i></div>
-          <div class="resource-text"><h5>Donate Now</h5><p>Support our preservation</p></div>
-        </a>
-      </div>
-      <div class="drawer-group">
-        <h4>Connect With Us</h4>
-        <div class="drawer-socials">
-          <a href="https://twitter.com/HBPlantMuseum" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        </div>
       </div>
     </div>
   </aside>
@@ -635,18 +469,6 @@
         <label for="toggle-text">Large Text</label>
         <label class="switch"><input type="checkbox" id="toggle-text"><span class="slider"></span></label>
       </div>
-      <div class="a11y-setting">
-        <label for="toggle-dyslexia">Dyslexia Friendly Font</label>
-        <label class="switch"><input type="checkbox" id="toggle-dyslexia"><span class="slider"></span></label>
-      </div>
-      <div class="a11y-setting">
-        <label for="toggle-motion">Reduce Motion</label>
-        <label class="switch"><input type="checkbox" id="toggle-motion"><span class="slider"></span></label>
-      </div>
-      <div class="a11y-setting">
-        <label for="toggle-links">Highlight Links</label>
-        <label class="switch"><input type="checkbox" id="toggle-links"><span class="slider"></span></label>
-      </div>
     </div>
   </aside>
 
@@ -658,29 +480,6 @@
           <li><a href="visitor.html">Buy Tickets</a></li>
           <li><a href="membership.html">Membership</a></li>
           <li><a href="https://henry-b-plant-museum.square.site/product/donation/101" target="_blank">Donate Now</a></li>
-        </ul>
-        <div class="footer-socials">
-          <a href="https://twitter.com/HBPlantMuseum" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h3>Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="visitor.html">Plan Your Visit</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="exhibits.html">Exhibitions</a></li>
-          <li><a href="get-involved.html">Get Involved</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h3>Contact</h3>
-        <ul class="footer-links">
-          <li><a href="https://maps.google.com/?q=401+W.+Kennedy+Blvd,+Tampa" target="_blank">401 W. Kennedy Blvd, Tampa</a></li>
-          <li><a href="tel:8132541891">(813) 254-1891</a></li>
-          <li><a href="mailto:info@plantmuseum.com">info@plantmuseum.com</a></li>
         </ul>
       </div>
     </div>
@@ -712,39 +511,42 @@
       document.getElementById('form-signup').classList.toggle('fbla-hidden', tab !== 'signup');
       document.getElementById('tab-login').classList.toggle('active', tab === 'login');
       document.getElementById('tab-signup').classList.toggle('active', tab === 'signup');
+      document.getElementById('log-err').innerText = "";
+      document.getElementById('reg-err').innerText = "";
     };
 
     function drawWishlist(arr) {
       const box = document.getElementById('fbla-wishlist-box');
+      const countDisplay = document.getElementById('stat-saved-count');
       box.innerHTML = "";
 
-      // Reset all buttons
+      // Update the functional stat tracker
+      if(countDisplay) { countDisplay.innerText = arr ? arr.length : 0; }
+
       document.querySelectorAll('.fbla-add-btn').forEach(btn => {
-        btn.textContent = 'Save';
+        btn.textContent = 'Add to Itinerary';
         btn.disabled = false;
       });
 
       if (!arr || arr.length === 0) {
-        box.innerHTML = "<li style='color:#888; font-size:14px; border:none; background:none;'>Your itinerary is empty.</li>";
+        box.innerHTML = "<li style='color:#888; font-size:14px; border:none; background:none; padding-left:0;'>Your itinerary is currently empty.</li>";
         return;
       }
 
       arr.forEach(item => {
         const escapedName = item.name.replace(/'/g, "\\'");
-
-        // Mark matching button as saved
         const btn = document.querySelector(`.fbla-add-btn[data-name="${item.name}"]`);
 
         if (btn) {
-          btn.textContent = "Saved";
+          btn.textContent = "Saved to Itinerary";
           btn.disabled = true;
         }
 
         box.innerHTML += `
           <li>
             <a href="${item.url}" target="_blank">${item.name}</a>
-            <button onclick="window.removeWish('${escapedName}', '${item.url}')">
-              <i class="fa-solid fa-trash"></i>
+            <button onclick="window.removeWish('${escapedName}', '${item.url}')" title="Remove">
+              <i class="fa-solid fa-xmark"></i>
             </button>
           </li>`;
       });
@@ -757,17 +559,34 @@
       try {
         const cred = await createUserWithEmailAndPassword(auth, `${u.toLowerCase()}@museum.local`, p);
         await setDoc(doc(db, "users", cred.user.uid), { realName: n, username: u, wishlist: [] });
-      } catch (e) { alert(e.message); }
+      } catch (e) { document.getElementById('reg-err').innerText = e.message; }
     };
 
     window.signIn = async () => {
       const u = document.getElementById('log-user').value;
       const p = document.getElementById('log-pass').value;
       try { await signInWithEmailAndPassword(auth, `${u.toLowerCase()}@museum.local`, p); } 
-      catch (e) { alert("Invalid login."); }
+      catch (e) { document.getElementById('log-err').innerText = "Invalid credentials. Please try again."; }
     };
 
     window.logout = () => signOut(auth);
+
+    // Working Account Preferences Feature
+    window.updateProfile = async (e) => {
+      e.preventDefault();
+      if(!auth.currentUser) return;
+      
+      const newName = document.getElementById('settings-name').value;
+      try {
+        const ref = doc(db, "users", auth.currentUser.uid);
+        await updateDoc(ref, { realName: newName });
+        document.getElementById('ui-name').innerText = newName;
+        alert("Profile name updated successfully!");
+        document.getElementById('settings-name').value = "";
+      } catch(err) {
+        alert("Error updating profile: " + err.message);
+      }
+    };
 
     window.addWish = async (name, url) => {
       if(!auth.currentUser) return;
