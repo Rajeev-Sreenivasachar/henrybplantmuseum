@@ -20,7 +20,6 @@
 <body>
 
   <div class="scroll-progress" id="progressBar"></div>
-  <script src="/script.js"></script>
 
   <button id="floatingFavBtn" class="floating-fav-btn" aria-label="Open Favorites">
     <i class="fa-solid fa-bookmark"></i> Curate
@@ -1272,7 +1271,8 @@
   </footer>
 
   
-  <script type="module">import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+  <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 import { getFirestore, doc, getDoc, updateDoc, arrayUnion, arrayRemove } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
@@ -1489,4 +1489,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 </body>
+<script src="script.js"></script>
 </html>
