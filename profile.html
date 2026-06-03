@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +15,353 @@
 
   <link rel="icon" type="image/jpeg" href="https://www.plantmuseum.com/App_Themes/PlantMuseum/images/favicon.ico">
   
+  <style>
+    /* --- NEW PROFILE CLASSES --- */
+    .new-prof-wrapper {
+      background-color: #f8f7f5;
+      padding: 3rem 5%;
+      font-family: 'Inter', sans-serif;
+      min-height: 80vh;
+    }
+
+    /* Auth State Styles */
+    .new-auth-box {
+      max-width: 450px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      text-align: center;
+    }
+    .new-auth-box h2 {
+      font-family: 'Playfair Display', serif;
+      color: #722F37;
+      font-size: 2rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+    .new-auth-box p { color: #666; margin-bottom: 2rem; }
+    .new-auth-tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      justify-content: center;
+      border-bottom: 1px solid #eee;
+    }
+    .new-auth-tab {
+      background: none;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #999;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      font-weight: 500;
+    }
+    .new-auth-tab.active {
+      color: #722F37;
+      border-bottom-color: #722F37;
+    }
+    .new-input-wrap {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+    .new-input-wrap i {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #999;
+    }
+    .new-auth-input {
+      width: 100%;
+      padding: 0.8rem 1rem 0.8rem 2.5rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      background: #fafafa;
+    }
+    .new-auth-btn {
+      width: 100%;
+      background: #222;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: background 0.2s;
+    }
+    .new-auth-btn:hover { background: #444; }
+
+    /* Dashboard Styles */
+    .new-dash-header {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      margin-bottom: 2rem;
+    }
+    .new-dash-header-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin: 0;
+      color: #333;
+    }
+    .new-dash-header-text h2 span { color: #722F37; } /* Maroon */
+    .new-dash-header-text p {
+      margin: 0.25rem 0 0 0;
+      color: #666;
+      font-size: 0.95rem;
+    }
+    .new-signout-btn {
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #eaeaea;
+      border-radius: 20px;
+      background: #f9f9f9;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+    .new-signout-btn:hover { background: #eee; }
+
+    /* Layout Grid */
+    .new-dash-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* Sidebar */
+    .new-sidebar-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+    .new-sidebar-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Playfair Display', serif;
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #333;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .new-wishlist { list-style: none; padding: 0; margin: 0; }
+    .new-wishlist li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem;
+      border: 1px solid #f0f0f0;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      background: #fafafa;
+      transition: 0.2s;
+    }
+    .new-wishlist li:hover { background: #f4f4f4; }
+    .new-wishlist li a { text-decoration: none; color: #444; font-size: 0.85rem; font-weight: 500;}
+    .new-wishlist li button { background: none; border: none; color: #aaa; cursor: pointer; }
+    .new-wishlist li button:hover { color: #722F37; }
+    
+    /* Artifacts Promo */
+    .new-promo-box {
+      background: #fcf9f2;
+      border: 1px solid #f2ead6;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+    .new-promo-box h4 {
+      color: #333;
+      margin: 0 0 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Inter', sans-serif;
+    }
+    .new-promo-box h4 i { color: #722F37; }
+    .new-promo-box p {
+      font-size: 0.8rem;
+      color: #666;
+      margin: 0 0 1rem 0;
+      line-height: 1.4;
+    }
+    .new-promo-box a {
+      color: #722F37;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Main Content Grid */
+    .new-main-header {
+      font-family: 'Playfair Display', serif;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      color: #333;
+      font-size: 1.2rem;
+    }
+    .new-main-header i { background: #dcd1ba; color:#fff; padding:0.4rem; border-radius:4px; font-size:0.9rem;}
+    
+    .new-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .new-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 16px;
+      border: 1px solid #f0f0f0;
+      text-align: left;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    }
+    .new-card i {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    .new-card h4 {
+      margin: 0 0 0.25rem 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #222;
+    }
+    .new-card p {
+      font-size: 0.8rem;
+      color: #888;
+      margin: 0 0 1.2rem 0;
+    }
+    .new-card-btn {
+      width: 100%;
+      padding: 0.6rem;
+      border-radius: 20px;
+      border: none;
+      background: #f5f5f5;
+      color: #555;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .new-card-btn:hover:not(:disabled) { background: #e0e0e0; }
+    .new-card-btn:disabled {
+      background: #f0f0f0;
+      color: #999;
+      cursor: not-allowed;
+    }
+
+    /* Newsletter Section */
+    .new-newsletter-banner {
+      background: linear-gradient(135deg, #722F37 0%, #521d24 100%);
+      border-radius: 24px;
+      padding: 4rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      color: white;
+      margin-top: 3rem;
+      align-items: center;
+    }
+    .new-news-badge {
+      background: rgba(212, 175, 55, 0.2);
+      color: #d4af37;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    .new-news-left h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin: 0 0 1rem 0;
+    }
+    .new-news-left > p {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+    .new-news-features { display: flex; flex-direction: column; gap: 1.5rem; }
+    .new-feature-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .new-feature-item i {
+      background: rgba(255,255,255,0.1);
+      padding: 0.8rem;
+      border-radius: 8px;
+      color: #d4af37;
+    }
+    .new-feature-item div h5 { margin: 0 0 0.25rem 0; font-size: 1rem; font-weight: 600;}
+    .new-feature-item div p { margin: 0; font-size: 0.85rem; opacity: 0.8; }
+    
+    .new-news-right {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 16px;
+      color: #333;
+    }
+    .new-news-right h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin: 0 0 0.5rem 0;
+    }
+    .new-news-right p {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+    .new-news-right .new-input-wrap i { color: #666; }
+    .new-subscribe-btn {
+      width: 100%;
+      background: #722F37;
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .new-fine-print {
+      font-size: 0.7rem;
+      color: #999;
+      text-align: center;
+      margin-top: 1rem;
+      display: block;
+      line-height: 1.4;
+    }
+
+    .fbla-hidden { display: none !important; }
+
+    /* Responsive adjustments */
+    @media(max-width: 900px) {
+      .new-dash-layout, .new-newsletter-banner { grid-template-columns: 1fr; }
+      .new-newsletter-banner { padding: 2rem; }
+      .new-dash-header { flex-direction: column; text-align: center; gap: 1rem; }
+    }
+  </style>
 </head>
 
 <body>
@@ -23,7 +369,7 @@
   <div class="scroll-progress" id="progressBar"></div>
   <script src="script.js"></script>
 
-<nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="/index.html" class="logo">Henry B. Plant Museum</a>
       <i class="fa-solid fa-bars menu-toggle" id="menuToggle"></i>
@@ -41,152 +387,183 @@
     </div>
   </nav>
 
-<main class="fbla-profile-wrapper">
-    <div id="fbla-auth-view" class="fbla-auth-container">
-      <div class="fbla-auth-header">
-        <h2>Museum Portal</h2>
-        <p>Curate your Gilded Age experience</p>
+  <main class="new-prof-wrapper">
+    <div id="fbla-auth-view" class="new-auth-box">
+      <h2>Museum Portal</h2>
+      <p>Curate your Gilded Age experience</p>
+      
+      <div class="new-auth-tabs">
+        <button id="tab-login" class="new-auth-tab active" onclick="window.switchTab('login')">Sign In</button>
+        <button id="tab-signup" class="new-auth-tab" onclick="window.switchTab('signup')">Sign Up</button>
       </div>
-      <div class="fbla-auth-body">
-        <div class="fbla-tabs">
-          <button id="tab-login" class="fbla-tab active" onclick="window.switchTab('login')">Sign In</button>
-          <button id="tab-signup" class="fbla-tab" onclick="window.switchTab('signup')">Sign Up</button>
+      
+      <div id="form-login">
+        <div class="new-input-wrap">
+          <i class="fa-solid fa-user"></i>
+          <input type="text" id="log-user" class="new-auth-input" placeholder="Username">
         </div>
-        
-        <div id="form-login" class="fbla-form-group">
-          <div class="fbla-input-wrap">
-            <i class="fa-solid fa-user"></i>
-            <input type="text" id="log-user" placeholder="Username">
-          </div>
-          <div class="fbla-input-wrap">
-            <i class="fa-solid fa-lock"></i>
-            <input type="password" id="log-pass" placeholder="Password">
-          </div>
-          <div id="log-err" class="fbla-error"></div>
-          <button class="fbla-btn" onclick="window.signIn()">Access Portal</button>
+        <div class="new-input-wrap">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="log-pass" class="new-auth-input" placeholder="Password">
         </div>
-        
-        <div id="form-signup" class="fbla-form-group fbla-hidden">
-          <div class="fbla-input-wrap">
-            <i class="fa-solid fa-id-card"></i>
-            <input type="text" id="reg-name" placeholder="Full Name">
-          </div>
-          <div class="fbla-input-wrap">
-            <i class="fa-solid fa-user-plus"></i>
-            <input type="text" id="reg-user" placeholder="Choose Username">
-          </div>
-          <div class="fbla-input-wrap">
-            <i class="fa-solid fa-lock"></i>
-            <input type="password" id="reg-pass" placeholder="Password (6+ chars)">
-          </div>
-          <div id="reg-err" class="fbla-error"></div>
-          <button class="fbla-btn" onclick="window.signUp()">Create Account</button>
+        <div id="log-err" style="color:red; font-size:14px;"></div>
+        <button class="new-auth-btn" onclick="window.signIn()">Access Portal</button>
+      </div>
+      
+      <div id="form-signup" class="fbla-hidden">
+        <div class="new-input-wrap">
+          <i class="fa-solid fa-id-card"></i>
+          <input type="text" id="reg-name" class="new-auth-input" placeholder="Full Name">
         </div>
+        <div class="new-input-wrap">
+          <i class="fa-solid fa-user-plus"></i>
+          <input type="text" id="reg-user" class="new-auth-input" placeholder="Choose Username">
+        </div>
+        <div class="new-input-wrap">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="reg-pass" class="new-auth-input" placeholder="Password (6+ chars)">
+        </div>
+        <div id="reg-err" style="color:red; font-size:14px;"></div>
+        <button class="new-auth-btn" onclick="window.signUp()">Create Account</button>
       </div>
     </div>
 
-    <div id="fbla-dash-view" class="fbla-dash-container fbla-hidden">
-      <div class="fbla-dash-hero">
-        <div>
-          <h2>Welcome back, <span id="ui-name" class="fbla-gold"></span></h2>
+    <div id="fbla-dash-view" class="fbla-hidden">
+      
+      <div class="new-dash-header">
+        <div class="new-dash-header-text">
+          <h2>Welcome back, <span id="ui-name"></span></h2>
           <p>Username: <span id="ui-user"></span></p>
         </div>
-        <button class="fbla-btn-logout" onclick="window.logout()">Sign Out <i class="fa-solid fa-right-from-bracket"></i></button>
+        <button class="new-signout-btn" onclick="window.logout()">
+          Sign Out <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
       </div>
 
-      <div class="fbla-dash-grid">
-        <aside class="fbla-sidebar">
-          <div class="fbla-panel-header">
-            <h3><i class="fa-solid fa-bookmark"></i> My Itinerary</h3>
+      <div class="new-dash-layout">
+        
+        <aside>
+          <div class="new-sidebar-card">
+            <h3><i class="fa-regular fa-bookmark"></i> My Itinerary</h3>
+            <ul id="fbla-wishlist-box" class="new-wishlist">
+              <li style="color:#888; font-size:14px;">Loading your saved exhibits...</li>
+            </ul>
+            
+            <div class="new-promo-box">
+              <h4><i class="fa-regular fa-heart"></i> Favorite Artifacts</h4>
+              <p>You can now favorite your favorite artifacts! Browse our collection and save the pieces that inspire you.</p>
+              <a href="/artifacts.html">Explore Artifacts &rarr;</a>
+            </div>
           </div>
-          <ul id="fbla-wishlist-box" class="fbla-wishlist-list">
-            <li class="fbla-empty">Loading your saved exhibits...</li>
-          </ul>
         </aside>
 
-        <section class="fbla-main-content">
-          <div class="fbla-panel-header">
-            <h3><i class="fa-solid fa-compass"></i> Discover & Save</h3>
-          </div>
-          <div class="fbla-cards-grid">
-            <div class="fbla-card">
-              <i class="fa-solid fa-tree fbla-card-icon"></i>
+        <section>
+          <h3 class="new-main-header"><i class="fa-solid fa-bookmark"></i> Discover & Save</h3>
+          
+          <div class="new-cards-grid">
+            <div class="new-card">
+              <i class="fa-solid fa-tree"></i>
               <h4>Victorian Christmas Stroll</h4>
               <p>Seasonal Event</p>
-              <button class="fbla-add-btn" 
-              data-name="Victorian Christmas"
-              onclick="window.addWish('Victorian Christmas', 'events/victorian-christmas-stroll.html')">Save to Itinerary</button>
+              <button class="new-card-btn fbla-add-btn" data-name="Victorian Christmas" onclick="window.addWish('Victorian Christmas', 'events/victorian-christmas-stroll.html')">Save</button>
             </div>
-            <div class="fbla-card">
-              <i class="fa-solid fa-masks-theater fbla-card-icon"></i>
+            
+            <div class="new-card">
+              <i class="fa-solid fa-masks-theater"></i>
               <h4>Upstairs / Downstairs</h4>
               <p>Live Performance</p>
-              <button class="fbla-add-btn" 
-              data-name="Upstairs / Downstairs"
-              onclick="window.addWish('Upstairs / Downstairs', 'events/upstairs-downstairs.html')">Save to Itinerary</button>
+              <button class="new-card-btn fbla-add-btn" data-name="Upstairs / Downstairs" onclick="window.addWish('Upstairs / Downstairs', 'events/upstairs-downstairs.html')">Save</button>
             </div>
 
-            <div class="fbla-card">
-  <i class="fa-solid fa-film fbla-card-icon"></i>
-  <h4>Free Movie Series</h4>
-  <p>Community Event</p>
-  <button class="fbla-add-btn" 
-  data-name="Free Movie Series"
-  onclick="window.addWish('Free Movie Series', 'events/free-movie-series.html')">Save to Itinerary</button>
-</div>
+            <div class="new-card">
+              <i class="fa-solid fa-film"></i>
+              <h4>Free Movie Series</h4>
+              <p>Community Event</p>
+              <button class="new-card-btn fbla-add-btn" data-name="Free Movie Series" onclick="window.addWish('Free Movie Series', 'events/free-movie-series.html')">Save</button>
+            </div>
 
-<div class="fbla-card">
-  <i class="fa-solid fa-sun fbla-card-icon"></i>
-  <h4>Celebrate Sunset</h4>
-  <p>Social Gathering</p>
-  <button class="fbla-add-btn" 
-  data-name="Celebrate Sunset"
-  onclick="window.addWish('Celebrate Sunset', 'events/celebrate-sunset.html')">Save to Itinerary</button>
-</div>
+            <div class="new-card">
+              <i class="fa-regular fa-sun"></i>
+              <h4>Celebrate Sunset</h4>
+              <p>Special Event</p>
+              <button class="new-card-btn fbla-add-btn" data-name="Celebrate Sunset" onclick="window.addWish('Celebrate Sunset', 'events/celebrate-sunset.html')">Save</button>
+            </div>
 
-            <div class="fbla-card">
-              <i class="fa-solid fa-shield-halved fbla-card-icon"></i>
+            <div class="new-card">
+              <i class="fa-solid fa-shield-halved"></i>
               <h4>Tampa at War</h4>
-              <p>Permanent Exhibit</p>
-              <button class="fbla-add-btn" 
-              data-name="Tampa at War" 
-              onclick="window.addWish('Tampa at War', 'exhibits/tampa-at-war.html')">Save to Itinerary</button>
+              <p>History Exhibit</p>
+              <button class="new-card-btn fbla-add-btn" data-name="Tampa at War" onclick="window.addWish('Tampa at War', 'exhibits/tampa-at-war.html')">Save</button>
             </div>
-            <div class="fbla-card">
-              <i class="fa-solid fa-bell-concierge fbla-card-icon"></i>
+
+            <div class="new-card">
+              <i class="fa-solid fa-building"></i>
               <h4>Grand Hotel</h4>
               <p>Permanent Exhibit</p>
-              <button class="fbla-add-btn" 
-              data-name="Grand Hotel"
-              onclick="window.addWish('Grand Hotel', 'exhibits/grand-hotel.html')">Save to Itinerary</button>
+              <button class="new-card-btn fbla-add-btn" data-name="Grand Hotel" onclick="window.addWish('Grand Hotel', 'exhibits/grand-hotel.html')">Save</button>
             </div>
-            <div class="fbla-card">
-              <i class="fa-solid fa-coins fbla-card-icon"></i>
+            
+            <div class="new-card">
+              <i class="fa-solid fa-coins"></i>
               <h4>Gaspar's Gold</h4>
               <p>Temporary Exhibit</p>
-              <button class="fbla-add-btn" 
-              data-name="Gaspar's Gold"
-              onclick="window.addWish('Gaspar\'s Gold', 'exhibits/gaspar_gold.html')">Save to Itinerary</button>
+              <button class="new-card-btn fbla-add-btn" data-name="Gaspar's Gold" onclick="window.addWish('Gaspar\'s Gold', 'exhibits/gaspar_gold.html')">Save</button>
             </div>
-            <div class="fbla-card">
-              <i class="fa-solid fa-train-tram fbla-card-icon"></i>
+            
+            <div class="new-card">
+              <i class="fa-solid fa-chess-rook"></i>
               <h4>Plants Southern Empire</h4>
               <p>Permanent Exhibit</p>
-              <button class="fbla-add-btn" 
-              data-name="Plants Southern Empire"
-              onclick="window.addWish('Plants Southern Empire', 'exhibits/plants-southern-empire.html')">Save to Itinerary</button>
+              <button class="new-card-btn fbla-add-btn" data-name="Plants Southern Empire" onclick="window.addWish('Plants Southern Empire', 'exhibits/plants-southern-empire.html')">Save</button>
             </div>
           </div>
         </section>
+
       </div>
 
-      <section class="gilded-newsletter-wrapper">
-        <div class="gilded-newsletter-content">
-          <h3><i class="fa-solid fa-envelope-open-text"></i> The Gilded Dispatch</h3>
-          <p>Verify your identity to access exclusive historical insights, private event invites, and the latest news directly from the archives of the Henry B. Plant Museum.</p>
+      <section class="new-newsletter-banner">
+        <div class="new-news-left">
+          <div class="new-news-badge"><i class="fa-solid fa-envelope-open-text"></i> The Gilded Dispatch</div>
+          <h3>Stay Connected to History</h3>
+          <p>Join our community and receive exclusive historical insights, private event invites, and the latest news directly from the archives of the Henry B. Plant Museum.</p>
+          
+          <div class="new-news-features">
+            <div class="new-feature-item">
+              <i class="fa-regular fa-bell"></i>
+              <div>
+                <h5>Exclusive Event Invites</h5>
+                <p>Be the first to know about private viewings and member-only events</p>
+              </div>
+            </div>
+            <div class="new-feature-item">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <div>
+                <h5>Historical Insights</h5>
+                <p>Receive curated stories from the Gilded Age archives</p>
+              </div>
+            </div>
+            <div class="new-feature-item">
+              <i class="fa-solid fa-gift"></i>
+              <div>
+                <h5>Special Offers</h5>
+                <p>Access exclusive discounts and early registration</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="gilded-newsletter-iframe-box">
-          <iframe width="100%" height="305" src="https://5560cd82.sibforms.com/serve/MUIFAM9istJWBRQKTdlA9CVlFkqzhIyIo8o4y7wzXySA8MeoXCf8JWfwUcZ-FtusLmrJMj860GL5-NdcrzeAE_omQ7a-9J3zlWFxJp5OVdQrs5NymfDZ5jbLpxM6oumqwVWYD8k-e9ChXZmktyQBxjALWfBtdKdFtq62yXIqhPfm7kdv8a0A0pYqVaMHrg89U5OGDcgrdhHB3V0XPQ==" frameborder="0" scrolling="auto" allowfullscreen style="display: block; margin-left: auto; margin-right: auto;"></iframe>
+        
+        <div class="new-news-right">
+          <h4>Subscribe Today</h4>
+          <p>Get museum updates delivered to your inbox.</p>
+          <form onsubmit="event.preventDefault(); alert('Subscribed!');">
+            <label style="font-size:0.85rem; font-weight:600; margin-bottom:0.5rem; display:block;">Email Address</label>
+            <div class="new-input-wrap">
+              <i class="fa-regular fa-envelope"></i>
+              <input type="email" class="new-auth-input" placeholder="your@email.com" required>
+            </div>
+            <button type="submit" class="new-subscribe-btn">Subscribe to Newsletter</button>
+            <span class="new-fine-print">By subscribing, you agree to receive museum communications. Unsubscribe anytime.</span>
+          </form>
         </div>
       </section>
 
@@ -320,8 +697,6 @@
     </div>
   </footer>
 
-  
-
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
@@ -348,43 +723,40 @@
     };
 
     function drawWishlist(arr) {
-  const box = document.getElementById('fbla-wishlist-box');
+      const box = document.getElementById('fbla-wishlist-box');
+      box.innerHTML = "";
 
-  box.innerHTML = "";
+      // Reset all buttons
+      document.querySelectorAll('.fbla-add-btn').forEach(btn => {
+        btn.textContent = 'Save';
+        btn.disabled = false;
+      });
 
-  // Reset all buttons
-  document.querySelectorAll('.fbla-add-btn').forEach(btn => {
-    btn.textContent = 'Save to Itinerary';
-    btn.disabled = false;
-  });
+      if (!arr || arr.length === 0) {
+        box.innerHTML = "<li style='color:#888; font-size:14px; border:none; background:none;'>Your itinerary is empty.</li>";
+        return;
+      }
 
-  if (!arr || arr.length === 0) {
-    box.innerHTML = "<li class='fbla-empty'>Your itinerary is empty.</li>";
-    return;
-  }
+      arr.forEach(item => {
+        const escapedName = item.name.replace(/'/g, "\\'");
 
-  arr.forEach(item => {
-    const escapedName = item.name.replace(/'/g, "\\'");
+        // Mark matching button as saved
+        const btn = document.querySelector(`.fbla-add-btn[data-name="${item.name}"]`);
 
-    // Mark matching button as saved
-    const btn = document.querySelector(
-      `.fbla-add-btn[data-name="${item.name}"]`
-    );
+        if (btn) {
+          btn.textContent = "Saved";
+          btn.disabled = true;
+        }
 
-    if (btn) {
-      btn.textContent = "Saved";
-      btn.disabled = true;
+        box.innerHTML += `
+          <li>
+            <a href="${item.url}" target="_blank">${item.name}</a>
+            <button onclick="window.removeWish('${escapedName}', '${item.url}')">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </li>`;
+      });
     }
-
-    box.innerHTML += `
-      <li class="fbla-wish-item">
-        <a href="${item.url}" target="_blank">${item.name}</a>
-        <button onclick="window.removeWish('${escapedName}', '${item.url}')">
-          <i class="fa-solid fa-trash"></i>
-        </button>
-      </li>`;
-  });
-}
 
     window.signUp = async () => {
       const n = document.getElementById('reg-name').value;
@@ -440,5 +812,5 @@
       }
     });
   </script>
-  </body>
+</body>
 </html>
