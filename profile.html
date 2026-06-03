@@ -16,7 +16,7 @@
   <link rel="icon" type="image/jpeg" href="https://www.plantmuseum.com/App_Themes/PlantMuseum/images/favicon.ico">
   
   <style>
-    /* --- NEW PROFILE CLASSES: NAVY BLUE AESTHETIC --- */
+    /* --- NEW PROFILE CLASSES: BURGUNDY, GOLD & BLACK AESTHETIC --- */
     .new-prof-wrapper {
       background-color: #fafafa;
       padding: 3rem 5%;
@@ -33,11 +33,11 @@
       border-radius: 12px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.06);
       text-align: center;
-      border-top: 4px solid #1B365D; /* Navy Blue Accent */
+      border-top: 4px solid #D4AF37; /* Gold Accent */
     }
     .new-auth-box h2 {
       font-family: 'Playfair Display', serif;
-      color: #1B365D;
+      color: #722F37; /* Burgundy */
       font-size: 2rem;
       margin-top: 0;
       margin-bottom: 0.5rem;
@@ -60,11 +60,13 @@
       border-bottom: 2px solid transparent;
       margin-bottom: -1px;
       font-weight: 500;
+      transition: all 0.2s ease;
     }
     .new-auth-tab.active {
-      color: #1B365D;
-      border-bottom-color: #1B365D;
+      color: #722F37;
+      border-bottom-color: #722F37;
     }
+    .new-auth-tab:hover:not(.active) { color: #1A1A1A; }
     .new-input-wrap {
       position: relative;
       margin-bottom: 1rem;
@@ -88,11 +90,11 @@
     }
     .new-auth-input:focus {
       outline: none;
-      border-color: #1B365D;
+      border-color: #722F37;
     }
     .new-auth-btn {
       width: 100%;
-      background: #1B365D;
+      background: #1A1A1A; /* Sleek Black */
       color: white;
       border: none;
       padding: 0.8rem;
@@ -100,9 +102,9 @@
       cursor: pointer;
       font-weight: 600;
       margin-top: 1rem;
-      transition: background 0.2s;
+      transition: background 0.3s ease;
     }
-    .new-auth-btn:hover { background: #122540; }
+    .new-auth-btn:hover { background: #722F37; /* Shifts to Burgundy on hover */ }
 
     /* Dashboard Styles */
     .new-dash-header {
@@ -114,15 +116,15 @@
       align-items: center;
       box-shadow: 0 4px 24px rgba(0,0,0,0.04);
       margin-bottom: 2rem;
-      border-left: 4px solid #1B365D;
+      border-left: 4px solid #D4AF37; /* Gold Accent */
     }
     .new-dash-header-text h2 {
       font-family: 'Playfair Display', serif;
       font-size: 2.2rem;
       margin: 0;
-      color: #333;
+      color: #1A1A1A;
     }
-    .new-dash-header-text h2 span { color: #1B365D; }
+    .new-dash-header-text h2 span { color: #722F37; } /* Burgundy Name */
     .new-dash-header-text p {
       margin: 0.25rem 0 0 0;
       color: #666;
@@ -140,9 +142,9 @@
       align-items: center;
       gap: 0.5rem;
       transition: all 0.2s ease;
-      color: #333;
+      color: #1A1A1A;
     }
-    .new-signout-btn:hover { background: #eee; }
+    .new-signout-btn:hover { background: #1A1A1A; color: #fff; border-color: #1A1A1A; }
 
     /* Layout Grid */
     .new-dash-layout {
@@ -166,7 +168,7 @@
       font-family: 'Playfair Display', serif;
       margin-top: 0;
       font-size: 1.2rem;
-      color: #1B365D;
+      color: #722F37;
       padding-bottom: 1rem;
       border-bottom: 1px solid #f0f0f0;
     }
@@ -182,21 +184,21 @@
       background: #fafafa;
       transition: 0.2s;
     }
-    .new-wishlist li:hover { background: #f0f4f8; border-color: #d0dce8; }
-    .new-wishlist li a { text-decoration: none; color: #444; font-size: 0.85rem; font-weight: 500;}
-    .new-wishlist li button { background: none; border: none; color: #aaa; cursor: pointer; }
-    .new-wishlist li button:hover { color: #d9534f; }
+    .new-wishlist li:hover { background: #FCF9F2; border-color: #E8DECE; } /* Subtle gold tint on hover */
+    .new-wishlist li a { text-decoration: none; color: #1A1A1A; font-size: 0.85rem; font-weight: 500;}
+    .new-wishlist li button { background: none; border: none; color: #aaa; cursor: pointer; transition: color 0.2s; }
+    .new-wishlist li button:hover { color: #E53935; } /* Red accent for delete */
     
     /* Artifacts Promo */
     .new-promo-box {
-      background: #f4f6f9;
-      border: 1px solid #e1e7f0;
+      background: #FCF9F2; /* Very pale gold */
+      border: 1px solid #E8DECE;
       border-radius: 8px;
       padding: 1.5rem;
       margin-top: 1rem;
     }
     .new-promo-box h4 {
-      color: #1B365D;
+      color: #722F37;
       margin: 0 0 0.5rem 0;
       display: flex;
       align-items: center;
@@ -210,24 +212,32 @@
       line-height: 1.4;
     }
     .new-promo-box a {
-      color: #1B365D;
+      color: #1A1A1A;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 600;
+      transition: color 0.2s;
     }
+    .new-promo-box a:hover { color: #722F37; }
 
     /* Main Content Grid */
     .new-main-header {
       font-family: 'Playfair Display', serif;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
       margin-top: 0;
       margin-bottom: 1.5rem;
-      color: #333;
+      color: #1A1A1A;
       font-size: 1.2rem;
     }
-    .new-main-header i { background: #1B365D; color:#fff; padding:0.4rem; border-radius:4px; font-size:0.9rem;}
+    .new-main-header i { 
+      background: #1A1A1A; 
+      color: #D4AF37; /* Gold on Black */
+      padding: 0.4rem; 
+      border-radius: 4px; 
+      font-size: 0.9rem;
+    }
     
     .new-cards-grid {
       display: grid;
@@ -244,13 +254,13 @@
       transition: all 0.3s ease;
     }
     .new-card:hover {
-      border-color: #1B365D;
-      box-shadow: 0 8px 24px rgba(27, 54, 93, 0.08);
-      transform: translateY(-2px);
+      border-color: #D4AF37; /* Gold border on hover */
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.1);
+      transform: translateY(-3px);
     }
     .new-card i {
       font-size: 1.5rem;
-      color: #1B365D;
+      color: #722F37; /* Burgundy Icons */
       margin-bottom: 1rem;
     }
     .new-card h4 {
@@ -258,7 +268,7 @@
       font-family: 'Inter', sans-serif;
       font-size: 1rem;
       font-weight: 600;
-      color: #222;
+      color: #1A1A1A;
     }
     .new-card p {
       font-size: 0.8rem;
@@ -271,26 +281,27 @@
       border-radius: 6px;
       border: 1px solid #eaeaea;
       background: #fff;
-      color: #333;
+      color: #1A1A1A;
       cursor: pointer;
       font-weight: 500;
       transition: all 0.2s;
     }
     .new-card-btn:hover:not(:disabled) { 
-      background: #f8f9fa; 
-      border-color: #ccc;
+      background: #1A1A1A; 
+      color: #fff;
+      border-color: #1A1A1A;
     }
     .new-card-btn:disabled {
-      background: #1B365D;
+      background: #722F37; /* Burgundy for Saved state */
       color: #fff;
-      border-color: #1B365D;
+      border-color: #722F37;
       cursor: not-allowed;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
-    /* Newsletter Section - Upgraded layout for Iframe */
+    /* Newsletter Section - Burgundy & Black Gradient */
     .new-newsletter-banner {
-      background: #1B365D;
+      background: linear-gradient(135deg, #722F37 0%, #111111 100%);
       border-radius: 16px;
       padding: 4rem 3rem;
       display: grid;
@@ -299,11 +310,11 @@
       color: white;
       margin-top: 3rem;
       align-items: center;
-      box-shadow: 0 10px 30px rgba(27, 54, 93, 0.15);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
     .new-news-badge {
-      background: rgba(255, 255, 255, 0.15);
-      color: #fff;
+      background: rgba(212, 175, 55, 0.15); /* Tint of Gold */
+      color: #D4AF37; /* Gold text */
       padding: 0.4rem 1rem;
       border-radius: 20px;
       font-size: 0.8rem;
@@ -311,7 +322,7 @@
       align-items: center;
       gap: 0.4rem;
       margin-bottom: 1.5rem;
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: 0.5px;
     }
     .new-news-left h3 {
@@ -329,10 +340,10 @@
     .new-news-features { display: flex; flex-direction: column; gap: 1.5rem; }
     .new-feature-item { display: flex; gap: 1.2rem; align-items: flex-start; }
     .new-feature-item i {
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.08);
       padding: 0.8rem;
       border-radius: 8px;
-      color: #fff;
+      color: #D4AF37; /* Gold Icons */
       font-size: 1.2rem;
     }
     .new-feature-item div h5 { margin: 0 0 0.35rem 0; font-size: 1.1rem; font-weight: 600;}
@@ -358,7 +369,6 @@
 <body>
 
   <div class="scroll-progress" id="progressBar"></div>
-  <!-- Make sure your script.js logic is still linked for the rest of the site -->
   <script src="script.js"></script>
 
   <nav class="navbar" id="navbar">
@@ -380,7 +390,6 @@
   </nav>
 
   <main class="new-prof-wrapper">
-    <!-- AUTHENTICATION VIEW -->
     <div id="fbla-auth-view" class="new-auth-box">
       <h2>Museum Portal</h2>
       <p>Curate your Gilded Age experience</p>
@@ -421,7 +430,6 @@
       </div>
     </div>
 
-    <!-- DASHBOARD VIEW -->
     <div id="fbla-dash-view" class="fbla-hidden">
       
       <div class="new-dash-header">
@@ -436,7 +444,6 @@
 
       <div class="new-dash-layout">
         
-        <!-- SIDEBAR -->
         <aside>
           <div class="new-sidebar-card">
             <h3><i class="fa-regular fa-bookmark"></i> My Itinerary</h3>
@@ -447,12 +454,11 @@
             <div class="new-promo-box">
               <h4><i class="fa-regular fa-heart"></i> Favorite Artifacts</h4>
               <p>You can now favorite your favorite artifacts! Browse our collection and save the pieces that inspire you.</p>
-              <a href="/artifacts.html">Explore Artifacts &rarr;</a>
+              <a href="/artifacts.html">Explore Artifacts →</a>
             </div>
           </div>
         </aside>
 
-        <!-- MAIN CONTENT -->
         <section>
           <h3 class="new-main-header"><i class="fa-solid fa-compass"></i> Discover & Save</h3>
           
@@ -517,7 +523,6 @@
 
       </div>
 
-      <!-- NEWSLETTER WITH BREVO IFRAME & EXTENDED TEXT -->
       <section class="new-newsletter-banner">
         <div class="new-news-left">
           <div class="new-news-badge"><i class="fa-solid fa-envelope-open-text"></i> The Gilded Dispatch</div>
@@ -550,7 +555,6 @@
         </div>
         
         <div class="new-news-right">
-          <!-- The Brevo Iframe dropped right in -->
           <iframe width="100%" height="350" src="https://5560cd82.sibforms.com/serve/MUIFAM9istJWBRQKTdlA9CVlFkqzhIyIo8o4y7wzXySA8MeoXCf8JWfwUcZ-FtusLmrJMj860GL5-NdcrzeAE_omQ7a-9J3zlWFxJp5OVdQrs5NymfDZ5jbLpxM6oumqwVWYD8k-e9ChXZmktyQBxjALWfBtdKdFtq62yXIqhPfm7kdv8a0A0pYqVaMHrg89U5OGDcgrdhHB3V0XPQ==" frameborder="0" scrolling="auto" allowfullscreen style="display: block; margin-left: auto; margin-right: auto; border-radius: 12px; background: white;"></iframe>
         </div>
       </section>
