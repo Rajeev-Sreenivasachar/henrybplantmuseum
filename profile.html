@@ -15,34 +15,35 @@
   <link rel="icon" type="image/jpeg" href="https://www.plantmuseum.com/App_Themes/PlantMuseum/images/favicon.ico">
   
   <style>
-    /* --- SLEEK BURGUNDY & GOLD THEME (LIGHT & MODERN) --- */
+    /* --- SLEEK BURGUNDY, RED, & GOLD FUTURISTIC LIGHT THEME --- */
     :root {
       --burgundy: #722F37;
-      --burgundy-light: #F9F2F3;
-      --red-accent: #A6192E;
+      --burgundy-glow: rgba(114, 47, 55, 0.05);
+      --crimson: #A6192E;
       --gold: #D4AF37;
-      --gold-light: #FCF9F2;
-      --charcoal: #2D2D2D;
-      --white-surface: #FFFFFF;
-      --bg-clean: #FAFAFA;
+      --gold-glow: rgba(212, 175, 55, 0.1);
+      --dark-text: #1C1C1C;
+      --card-bg: #FFFFFF;
+      --app-bg: #F7F8FA;
+      --border-color: #EAEAEA;
     }
 
     .new-prof-wrapper {
-      background-color: var(--bg-clean);
+      background-color: var(--app-bg);
       padding: 3rem 5%;
       font-family: 'Outfit', sans-serif;
       min-height: 85vh;
-      color: var(--charcoal);
+      color: var(--dark-text);
     }
 
     h1, h2, h3, h4, h5 { font-family: 'Cinzel', serif; margin: 0; }
 
-    /* AUTHENTICATION VIEW */
+    /* AUTHENTICATION BOX */
     .new-auth-box {
-      max-width: 420px; margin: 4rem auto; background: var(--white-surface);
-      padding: 3rem 2.5rem; border-radius: 8px;
-      box-shadow: 0 10px 35px rgba(114, 47, 55, 0.05); text-align: center;
-      border: 1px solid rgba(212, 175, 55, 0.3); position: relative;
+      max-width: 420px; margin: 4rem auto; background: var(--card-bg);
+      padding: 3rem 2.5rem; border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.03); text-align: center;
+      border: 1px solid var(--border-color); border-top: 4px solid var(--gold);
     }
     .new-auth-box h2 { color: var(--burgundy); font-size: 2.2rem; margin-bottom: 0.5rem; }
     .new-auth-box p { color: #666; margin-bottom: 2rem; font-weight: 300; }
@@ -54,85 +55,87 @@
       margin-bottom: -1px; font-family: 'Outfit', sans-serif; font-weight: 500; transition: all 0.3s ease;
     }
     .new-auth-tab.active { color: var(--burgundy); border-bottom-color: var(--burgundy); font-weight: 600; }
-    .new-auth-tab:hover:not(.active) { color: var(--charcoal); }
     
     .new-input-wrap { position: relative; margin-bottom: 1.2rem; }
-    .new-input-wrap i { position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: #888; font-size: 0.9rem; }
+    .new-input-wrap i { position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: #888; }
     .new-auth-input {
       width: 100%; padding: 0.9rem 1rem 0.9rem 2.8rem; border: 1px solid #e0e0e0;
-      border-radius: 4px; box-sizing: border-box; font-family: 'Outfit', sans-serif;
+      border-radius: 6px; box-sizing: border-box; font-family: 'Outfit', sans-serif;
       background: #fff; transition: all 0.3s ease; font-size: 0.95rem;
     }
-    .new-auth-input:focus { outline: none; border-color: var(--burgundy); box-shadow: 0 0 0 3px rgba(114, 47, 55, 0.08); }
+    .new-auth-input:focus { outline: none; border-color: var(--burgundy); box-shadow: 0 0 0 3px var(--burgundy-glow); }
     
     .new-auth-btn {
       width: 100%; background: var(--burgundy); color: white; border: none;
-      padding: 1rem; border-radius: 4px; cursor: pointer; font-weight: 600;
+      padding: 1rem; border-radius: 6px; cursor: pointer; font-weight: 600;
       font-family: 'Outfit', sans-serif; letter-spacing: 1px; margin-top: 1rem;
-      transition: background 0.3s ease, transform 0.1s; border: 1px solid var(--burgundy);
+      transition: all 0.3s ease; border: 1px solid var(--burgundy);
     }
-    .new-auth-btn:hover { background: var(--white-surface); color: var(--burgundy); }
+    .new-auth-btn:hover { background: transparent; color: var(--burgundy); }
 
-    /* DASHBOARD CONTENT BOXES */
+    /* DASHBOARD CONTAINER */
     .dashboard-grid-container {
       max-width: 1400px; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem;
     }
 
-    /* Welcome Banner */
+    /* Welcome Top Banner */
     .new-dash-header {
-      background: var(--white-surface); border-radius: 12px; padding: 2rem 3rem;
+      background: var(--card-bg); border-radius: 12px; padding: 2rem 3rem;
       display: flex; justify-content: space-between; align-items: center;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.02); border: 1px solid #eaeaea;
-      border-top: 4px solid var(--burgundy);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid var(--border-color);
+      border-left: 4px solid var(--burgundy);
     }
-    .new-dash-header-text h2 { font-size: 2.4rem; color: var(--charcoal); }
+    .new-dash-header-text h2 { font-size: 2.4rem; color: var(--dark-text); }
     .new-dash-header-text h2 span { color: var(--burgundy); font-weight: 700; }
     .new-dash-header-text p { margin: 0.4rem 0 0 0; color: #666; font-weight: 300; display: flex; align-items: center; gap: 0.8rem; }
     .status-badge {
       background: var(--burgundy-light); color: var(--burgundy); padding: 0.2rem 0.8rem;
-      border-radius: 4px; font-size: 0.75rem; font-weight: 500; border: 1px solid rgba(114, 47, 55, 0.15);
+      border-radius: 4px; font-size: 0.75rem; font-weight: 500; border: 1px solid rgba(114, 47, 55, 0.1);
     }
     .new-signout-btn {
       padding: 0.6rem 1.4rem; border: 1px solid #ddd; border-radius: 4px;
       background: transparent; cursor: pointer; font-family: 'Outfit', sans-serif;
-      font-weight: 500; display: flex; align-items: center; gap: 0.6rem; color: var(--charcoal);
+      font-weight: 500; display: flex; align-items: center; gap: 0.6rem; color: var(--dark-text);
       transition: all 0.3s ease;
     }
-    .new-signout-btn:hover { background: var(--red-accent); color: #fff; border-color: var(--red-accent); }
+    .new-signout-btn:hover { background: var(--crimson); color: #fff; border-color: var(--crimson); }
 
-    /* TOP SECTION: User-focused Layout (Itinerary & Discover) */
+    /* LAYOUT TRACKS */
     .user-top-layout {
       display: grid; grid-template-columns: 340px 1fr; gap: 2.5rem; align-items: start;
     }
+    .user-bottom-layout {
+      display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: stretch;
+    }
 
     .sleek-panel {
-      background: var(--white-surface); border-radius: 12px; padding: 2rem;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.02); border: 1px solid #eaeaea;
+      background: var(--card-bg); border-radius: 12px; padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid var(--border-color);
     }
-    .sleek-panel h3 { font-size: 1.25rem; color: var(--charcoal); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem; border-bottom: 1px solid #f5f5f5; padding-bottom: 0.8rem; }
+    .sleek-panel h3 { font-size: 1.2rem; color: var(--dark-text); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem; border-bottom: 1px solid #f5f5f5; padding-bottom: 0.8rem; }
     .sleek-panel h3 i { color: var(--gold); }
 
-    /* Itinerary Wishlist */
+    /* Wishlist List */
     .new-wishlist { list-style: none; padding: 0; margin: 0; max-height: 280px; overflow-y: auto; }
     .new-wishlist li {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 0.9rem 1.2rem; border: 1px solid #eee; border-radius: 6px;
-      margin-bottom: 0.6rem; background: var(--bg-clean); transition: all 0.25s ease;
+      padding: 0.9rem 1.2rem; border: 1px solid var(--border-color); border-radius: 6px;
+      margin-bottom: 0.6rem; background: var(--app-bg); transition: all 0.25s ease;
     }
-    .new-wishlist li:hover { background: #fff; border-color: var(--burgundy); box-shadow: 0 4px 12px rgba(114, 47, 55, 0.05); }
-    .new-wishlist li a { text-decoration: none; color: var(--charcoal); font-size: 0.9rem; font-weight: 500; }
-    .new-wishlist li button { background: none; border: none; color: #bbb; cursor: pointer; transition: color 0.2s; }
-    .new-wishlist li button:hover { color: var(--red-accent); }
+    .new-wishlist li:hover { background: #fff; border-color: var(--burgundy); box-shadow: 0 4px 12px rgba(114, 47, 55, 0.04); }
+    .new-wishlist li a { text-decoration: none; color: var(--dark-text); font-size: 0.9rem; font-weight: 500; }
+    .new-wishlist li button { background: none; border: none; color: #ccc; cursor: pointer; transition: color 0.2s; }
+    .new-wishlist li button:hover { color: var(--crimson); }
 
-    /* Exhibit Cards Catalog */
+    /* Main Grid Items */
     .new-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
     .new-card {
-      background: var(--white-surface); padding: 2rem 1.5rem; border-radius: 12px;
-      border: 1px solid #eaeaea; text-align: left; position: relative; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      background: var(--card-bg); padding: 2rem 1.5rem; border-radius: 12px;
+      border: 1px solid var(--border-color); text-align: left; position: relative; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .new-card:hover { border-color: var(--gold); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.08); transform: translateY(-3px); }
+    .new-card:hover { border-color: var(--gold); box-shadow: 0 10px 30px var(--gold-glow); transform: translateY(-3px); }
     .new-card i { font-size: 1.8rem; color: var(--burgundy); margin-bottom: 1rem; display: block; }
-    .new-card h4 { font-size: 1.1rem; color: var(--charcoal); margin-bottom: 0.4rem; }
+    .new-card h4 { font-size: 1.1rem; color: var(--dark-text); margin-bottom: 0.4rem; }
     .new-card p { font-size: 0.85rem; color: #777; margin-bottom: 1.5rem; font-weight: 300; }
     
     .new-card-btn {
@@ -141,28 +144,23 @@
       font-weight: 600; font-family: 'Outfit', sans-serif; transition: all 0.25s;
     }
     .new-card-btn:hover:not(:disabled) { background: var(--burgundy); color: #fff; }
-    .new-card-btn:disabled { background: var(--gold-light); color: var(--gold); border-color: var(--gold); cursor: not-allowed; }
+    .new-card-btn:disabled { background: #fdfaf2; color: var(--gold); border-color: var(--gold); cursor: not-allowed; }
 
-    /* BOTTOM SECTION: Additional Analytics & Credentials Panels */
-    .user-bottom-layout {
-      display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; align-items: stretch;
-    }
-
-    /* Stats Dashboard Widgets */
+    /* Stats Trackers Row */
     .stats-container-box { display: flex; flex-direction: column; gap: 1.5rem; justify-content: space-between; }
     .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .stat-box {
-      background: var(--white-surface); padding: 1.5rem; border-radius: 12px;
-      border: 1px solid #eaeaea; display: flex; align-items: center; gap: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+      background: var(--card-bg); padding: 1.5rem; border-radius: 12px;
+      border: 1px solid var(--border-color); display: flex; align-items: center; gap: 1rem;
     }
-    .stat-icon { background: var(--gold-light); color: var(--gold); width: 45px; height: 45px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
-    .stat-info h4 { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--charcoal); }
+    .stat-icon { background: #fffcf5; color: var(--gold); width: 45px; height: 45px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; border: 1px solid #f5ebd2; }
+    .stat-info h4 { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--dark-text); }
     .stat-info p { font-size: 0.75rem; color: #777; margin: 0; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
 
-    /* Account Update Utility Form */
+    /* Account Update Setup */
     .settings-form { display: flex; flex-direction: column; gap: 0.8rem; }
     .settings-form label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: #666; letter-spacing: 0.5px; }
-    .settings-form input { padding: 0.75rem; border: 1px solid #e0e0e0; border-radius: 4px; font-family: 'Outfit', sans-serif; background: var(--bg-clean); transition: border-color 0.2s; }
+    .settings-form input { padding: 0.75rem; border: 1px solid #e0e0e0; border-radius: 4px; font-family: 'Outfit', sans-serif; background: var(--app-bg); transition: border-color 0.2s; }
     .settings-form input:focus { outline: none; border-color: var(--burgundy); background: #fff; }
     .settings-form button {
       background: var(--charcoal); color: #fff; border: none; padding: 0.75rem;
@@ -170,27 +168,23 @@
     }
     .settings-form button:hover { background: var(--burgundy); }
 
-    /* Modern Admission Entry Ticket Card */
+    /* Admission Ticket Element */
     .digital-pass {
-      background: var(--white-surface); border-radius: 12px; padding: 2rem;
+      background: var(--card-bg); border-radius: 12px; padding: 2rem;
       border: 1px dashed var(--gold); position: relative; display: flex; flex-direction: column; justify-content: space-between;
-      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.03); background-image: radial-gradient(var(--gold-light) 1px, transparent 0); background-size: 16px 16px;
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.02);
     }
     .digital-pass p.label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--burgundy); font-weight: 600; margin-bottom: 0.2rem; }
-    .digital-pass h2 { font-size: 1.6rem; color: var(--charcoal); margin-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 0.5rem; }
+    .digital-pass h2 { font-size: 1.6rem; color: var(--dark-text); margin-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 0.5rem; }
     .pass-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .pass-details div p { margin: 0; font-size: 0.75rem; color: #777; text-transform: uppercase; }
-    .pass-details div h5 { font-family: 'Outfit', sans-serif; font-size: 0.95rem; color: var(--charcoal); margin-top: 0.1rem; font-weight: 600; }
+    .pass-details div h5 { font-family: 'Outfit', sans-serif; font-size: 0.95rem; color: var(--dark-text); margin-top: 0.1rem; font-weight: 600; }
 
-    /* PREMIUM INTEGRATED DISPATCH NEWSLETTER BOX */
+    /* NEWSLETTER DISPATCH */
     .new-newsletter-banner {
-      background: linear-gradient(135deg, var(--burgundy) 0%, #3d1419 100%);
+      background: linear-gradient(135deg, var(--burgundy) 0%, #4a1920 100%);
       border-radius: 12px; padding: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
       color: white; margin-top: 1rem; align-items: center; position: relative; box-shadow: 0 15px 35px rgba(114, 47, 55, 0.1);
-    }
-    .new-newsletter-banner::before {
-      content: ''; position: absolute; top:0; left:0; width: 100%; height: 100%;
-      background: radial-gradient(circle at 80% 20%, rgba(212,175,55,0.08) 0%, transparent 50%); pointer-events: none;
     }
     .new-news-badge {
       background: rgba(212, 175, 55, 0.15); color: var(--gold); padding: 0.4rem 1.2rem;
@@ -241,7 +235,7 @@
   </nav>
 
   <main class="new-prof-wrapper">
-    <!-- AUTHENTICATION MODULE VIEW -->
+    <!-- AUTH VIEW -->
     <div id="fbla-auth-view" class="new-auth-box">
       <h2>Museum Portal</h2>
       <p>Curate your Gilded Age experience</p>
@@ -260,7 +254,7 @@
           <i class="fa-solid fa-lock"></i>
           <input type="password" id="log-pass" class="new-auth-input" placeholder="Password">
         </div>
-        <div id="log-err" style="color:var(--red-accent); font-size:14px; margin-bottom: 12px; font-weight:500;"></div>
+        <div id="log-err" style="color:var(--crimson); font-size:14px; margin-bottom: 12px; font-weight:500;"></div>
         <button class="new-auth-btn" onclick="window.signIn()">ACCESS PORTAL</button>
       </div>
       
@@ -277,22 +271,22 @@
           <i class="fa-solid fa-lock"></i>
           <input type="password" id="reg-pass" class="new-auth-input" placeholder="Password (6+ chars)">
         </div>
-        <div id="reg-err" style="color:var(--red-accent); font-size:14px; margin-bottom: 12px; font-weight:500;"></div>
+        <div id="reg-err" style="color:var(--crimson); font-size:14px; margin-bottom: 12px; font-weight:500;"></div>
         <button class="new-auth-btn" onclick="window.signUp()">CREATE ACCOUNT</button>
       </div>
     </div>
 
-    <!-- MAIN USER DASHBOARD VIEW -->
+    <!-- MAIN DASHBOARD -->
     <div id="fbla-dash-view" class="fbla-hidden">
       <div class="dashboard-grid-container">
         
-        <!-- Welcome Block Header -->
+        <!-- Welcome Row Header -->
         <div class="new-dash-header">
           <div class="new-dash-header-text">
             <h2>Welcome back, <span id="ui-name">---</span></h2>
             <p>
-              Account Node Identity: @<span id="ui-user">---</span> 
-              <span class="status-badge"><i class="fa-solid fa-landmark"></i> Patron Portal</span>
+              Identity Signature: @<span id="ui-user">---</span> 
+              <span class="status-badge"><i class="fa-solid fa-landmark"></i> Verified Portal Access</span>
             </p>
           </div>
           <button class="new-signout-btn" onclick="window.logout()">
@@ -300,108 +294,102 @@
           </button>
         </div>
 
-        <!-- STAGE 1 (TOP): Itinerary Layout System -->
+        <!-- STAGE 1 (TOP) -->
         <div class="user-top-layout">
-          <!-- Left side: Itinerary Panel -->
           <div class="sleek-panel">
             <h3><i class="fa-solid fa-list-check"></i> My Itinerary</h3>
             <ul id="fbla-wishlist-box" class="new-wishlist">
-              <li style="color:#888; font-size:14px; background:none; border:none; padding:0;">Synchronizing itinerary logs...</li>
+              <li style="color:#888; font-size:14px; background:none; border:none; padding:0;">Loading Saved Log entries...</li>
             </ul>
           </div>
 
-          <!-- Right side: Discovery Matrix Catalog -->
           <div class="sleek-panel">
-            <h3><i class="fa-solid fa-compass"></i> Discover Exhibitions & Events</h3>
+            <h3><i class="fa-solid fa-compass"></i> Discover Portfolio Items</h3>
             <div class="new-cards-grid">
               <div class="new-card">
                 <i class="fa-solid fa-tree"></i>
                 <h4>Victorian Christmas Stroll</h4>
-                <p>Seasonal Event • First Floor Exhibits</p>
+                <p>Seasonal Exhibit Block</p>
                 <button class="new-card-btn fbla-add-btn" data-name="Victorian Christmas" onclick="window.addWish('Victorian Christmas', 'events/victorian-christmas-stroll.html')">Save</button>
               </div>
               
               <div class="new-card">
                 <i class="fa-solid fa-masks-theater"></i>
                 <h4>Upstairs / Downstairs</h4>
-                <p>Live Performance • Main Veranda</p>
+                <p>Live Performance Block</p>
                 <button class="new-card-btn fbla-add-btn" data-name="Upstairs / Downstairs" onclick="window.addWish('Upstairs / Downstairs', 'events/upstairs-downstairs.html')">Save</button>
               </div>
 
               <div class="new-card">
                 <i class="fa-solid fa-film"></i>
                 <h4>Free Movie Series</h4>
-                <p>Community Event • Grand South Hall</p>
+                <p>Community Event Block</p>
                 <button class="new-card-btn fbla-add-btn" data-name="Free Movie Series" onclick="window.addWish('Free Movie Series', 'events/free-movie-series.html')">Save</button>
               </div>
 
               <div class="new-card">
                 <i class="fa-regular fa-sun"></i>
                 <h4>Celebrate Sunset</h4>
-                <p>Special Event • West Pavilion Grounds</p>
+                <p>Special Event Block</p>
                 <button class="new-card-btn fbla-add-btn" data-name="Celebrate Sunset" onclick="window.addWish('Celebrate Sunset', 'events/celebrate-sunset.html')">Save</button>
               </div>
 
               <div class="new-card">
                 <i class="fa-solid fa-shield-halved"></i>
                 <h4>Tampa at War</h4>
-                <p>History Exhibit • Wing Hall 104</p>
+                <p>History Exhibit Block</p>
                 <button class="new-card-btn fbla-add-btn" data-name="Tampa at War" onclick="window.addWish('Tampa at War', 'exhibits/tampa-at-war.html')">Save</button>
               </div>
 
               <div class="new-card">
                 <i class="fa-solid fa-building"></i>
                 <h4>Grand Hotel</h4>
-                <p>Permanent Exhibit • Central Lobby Vault</p>
+                <p>Permanent Exhibit Block</p>
                 <button class="new-card-btn fbla-add-btn" data-name="Grand Hotel" onclick="window.addWish('Grand Hotel', 'exhibits/grand-hotel.html')">Save</button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- STAGE 2 (BOTTOM): Metrics, Verification & Preferences Panel -->
+        <!-- STAGE 2 (BOTTOM) -->
         <div class="user-bottom-layout">
-          <!-- Left side widgets area -->
           <div class="stats-container-box">
-            <!-- Analytics Status Dashboard Blocks -->
             <div class="stats-row">
               <div class="stat-box">
                 <div class="stat-icon"><i class="fa-solid fa-folder-open"></i></div>
                 <div class="stat-info">
                   <h4 id="stat-saved-count">0</h4>
-                  <p>Curated Entries</p>
+                  <p>Curated Items</p>
                 </div>
               </div>
               <div class="stat-box">
                 <div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div>
                 <div class="stat-info">
                   <h4>Active</h4>
-                  <p>Admissions Link</p>
+                  <p>System Token</p>
                 </div>
               </div>
               <div class="stat-box">
                 <div class="stat-icon"><i class="fa-solid fa-clock-history"></i></div>
                 <div class="stat-info">
                   <h4>June 2026</h4>
-                  <p>Next Visitation Window</p>
+                  <p>Planned Entry Window</p>
                 </div>
               </div>
             </div>
 
-            <!-- Profile Modification Access Form -->
             <div class="sleek-panel" style="margin-top:0;">
               <h3><i class="fa-solid fa-user-gear"></i> Preferences Configuration</h3>
               <form class="settings-form" onsubmit="window.updateProfile(event)">
                 <div style="display:flex; flex-direction:column; gap:0.4rem;">
-                  <label>Modify Public Display Name</label>
+                  <label>Update Display Identifier</label>
                   <input type="text" id="settings-name" placeholder="Input fresh system name value..." required>
                 </div>
-                <button type="submit">Commit Preferences Sync</button>
+                <button type="submit" style="background: var(--burgundy);">Commit Parameter Sync</button>
               </form>
             </div>
           </div>
 
-          <!-- Right side: Modern Verified Admission Ticket Card Element -->
           <div class="digital-pass">
             <div>
               <p class="label">Admissions Gateway Ticket</p>
@@ -409,44 +397,43 @@
             </div>
             <div class="pass-details">
               <div>
-                <p>Authorized</p>
+                <p>Authorized Paton</p>
                 <h5 id="ticket-user-slug">---</h5>
               </div>
               <div>
-                <p>Tier Group</p>
-                <h5>General Class</h5>
+                <p>Class Group</p>
+                <h5>General Admission</h5>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- STAGE 3: Extended Historical Dispatch Matrix Newsletter (Brevo Core Built-in) -->
+        <!-- STAGE 3: NEWSLETTER -->
         <section class="new-newsletter-banner">
           <div class="new-news-left">
             <div class="new-news-badge"><i class="fa-solid fa-envelope-open-text"></i> The Gilded Dispatch</div>
             <h3>The Official Museum Chronicle</h3>
-            <p>Join a distinguished community of historians, locals, and patrons. Registration grants priority notifications for our most prestigious gatherings.</p>
+            <p>Join a distinguished community of patrons. Identity verification grants real-time priority alerts for our historical restoration exhibits.</p>
             
             <div class="new-news-features">
               <div class="new-feature-item">
                 <i class="fa-solid fa-star"></i>
                 <div>
-                  <h5>Exclusive Access & Private Showings</h5>
-                  <p>Receive immediate alerts for members-only restoration galas and priority booking windows for seasonal turn-of-the-century performance galleries.</p>
+                  <h5>Private Showings</h5>
+                  <p>Receive primary notifications regarding members-only galas and performance windows.</p>
                 </div>
               </div>
               <div class="new-feature-item">
                 <i class="fa-solid fa-graduation-cap"></i>
                 <div>
-                  <h5>Curator Archives & Historical Insights</h5>
-                  <p>Review comprehensive research updates and deep-dive spotlights on newly cataloged artifacts written directly by lead archival management specialists.</p>
+                  <h5>Curator Log Entries</h5>
+                  <p>Review comprehensive restoration records written by archival management staff.</p>
                 </div>
               </div>
             </div>
           </div>
           
           <div class="new-news-right">
-            <!-- Functional Brevo Platform Embedded Framework Form Connector -->
             <iframe width="100%" height="320" src="https://5560cd82.sibforms.com/serve/MUIFAM9istJWBRQKTdlA9CVlFkqzhIyIo8o4y7wzXySA8MeoXCf8JWfwUcZ-FtusLmrJMj860GL5-NdcrzeAE_omQ7a-9J3zlWFxJp5OVdQrs5NymfDZ5jbLpxM6oumqwVWYD8k-e9ChXZmktyQBxjALWfBtdKdFtq62yXIqhPfm7kdv8a0A0pYqVaMHrg89U5OGDcgrdhHB3V0XPQ==" frameborder="0" scrolling="auto" allowfullscreen style="display: block; margin: 0 auto; background: white; border: none; border-radius: 4px;"></iframe>
           </div>
         </section>
@@ -478,6 +465,29 @@
           <div class="resource-icon"><i class="fa-solid fa-envelope"></i></div>
           <div class="resource-text"><h5>Email</h5><p>info@plantmuseum.com</p></div>
         </a>
+        <a href="https://henrybplantmuseum.com/visitor-info" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="resource-text"><h5>Location</h5><p>401 W. Kennedy Blvd, Tampa</p></div>
+        </a>
+        <div class="resource-item static">
+          <div class="resource-icon"><i class="fa-solid fa-clock"></i></div>
+          <div class="resource-text"><h5>Hours of Operation</h5><p>Tue–Sat: 10am–5pm<br>Sun: 12pm–5pm<br>Mon: Closed</p></div>
+        </div>
+      </div>
+      <div class="drawer-group">
+        <h4>Support the Museum</h4>
+        <a href="visitor.html" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-ticket"></i></div>
+          <div class="resource-text"><h5>Buy Tickets</h5><p>Admissions & Tours</p></div>
+        </a>
+        <a href="membership.html" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-id-card"></i></div>
+          <div class="resource-text"><h5>Membership</h5><p>Join the Museum Society</p></div>
+        </a>
+        <a href="https://henry-b-plant-museum.square.site/product/donation/101" target="_blank" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-heart"></i></div>
+          <div class="resource-text"><h5>Donate Now</h5><p>Support our preservation</p></div>
+        </a>
       </div>
     </div>
   </aside>
@@ -492,9 +502,14 @@
         <label for="toggle-contrast">High Contrast Mode</label>
         <label class="switch"><input type="checkbox" id="toggle-contrast"><span class="slider"></span></label>
       </div>
+      <div class="a11y-setting">
+        <label for="toggle-text">Large Text</label>
+        <label class="switch"><input type="checkbox" id="toggle-text"><span class="slider"></span></label>
+      </div>
     </div>
   </aside>
 
+  <!-- RESTORED ALL FOOTER LINKS AS REQUESTED -->
   <footer class="footer">
     <div class="footer-grid">
       <div class="footer-col">
@@ -502,6 +517,30 @@
         <ul class="footer-links">
           <li><a href="visitor.html">Buy Tickets</a></li>
           <li><a href="membership.html">Membership</a></li>
+          <li><a href="https://henry-b-plant-museum.square.site/product/donation/101" target="_blank">Donate Now</a></li>
+        </ul>
+        <div class="footer-socials">
+          <a href="https://twitter.com/HBPlantMuseum" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="visitor.html">Plan Your Visit</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="exhibits.html">Exhibitions</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="https://maps.google.com/?q=401+W.+Kennedy+Blvd,+Tampa" target="_blank">401 W. Kennedy Blvd, Tampa</a></li>
+          <li><a href="tel:8132541891">(813) 254-1891</a></li>
+          <li><a href="mailto:info@plantmuseum.com">info@plantmuseum.com</a></li>
         </ul>
       </div>
     </div>
@@ -566,7 +605,7 @@
         box.innerHTML += `
           <li>
             <a href="${item.url}" target="_blank">${item.name}</a>
-            <button onclick="window.removeWish('${escapedName}', '${item.url}')" title="Remove Entry">
+            <button onclick="window.removeWish('${escapedName}', '${item.url}')" title="Remove Tracking Matrix">
               <i class="fa-solid fa-xmark"></i>
             </button>
           </li>`;
@@ -587,7 +626,7 @@
       const u = document.getElementById('log-user').value;
       const p = document.getElementById('log-pass').value;
       try { await signInWithEmailAndPassword(auth, `${u.toLowerCase()}@museum.local`, p); } 
-      catch (e) { document.getElementById('log-err').innerText = "Invalid credentials. Please verify your token parameters."; }
+      catch (e) { document.getElementById('log-err').innerText = "Credentials rejection. Verify token configurations."; }
     };
 
     window.logout = () => signOut(auth);
@@ -601,10 +640,10 @@
         const ref = doc(db, "users", auth.currentUser.uid);
         await updateDoc(ref, { realName: newName });
         document.getElementById('ui-name').innerText = newName;
-        alert("Account parameter synchronization complete.");
+        alert("Account settings write sequence verified.");
         document.getElementById('settings-name').value = "";
       } catch(err) {
-        alert("Configuration write exception: " + err.message);
+        alert("Exception encountered during data write: " + err.message);
       }
     };
 
