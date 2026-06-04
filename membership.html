@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="/style.css">
   <style>
-    /* ── MEMBERSHIP HERO ── */
+
     .hero-involved {
       position: relative;
       height: 60vh;
@@ -20,7 +20,6 @@
       text-align: center;
     }
 
-    /* ── MEMBERSHIP BUTTON ── */
     .btn-membership {
       display: inline-flex;
       align-items: center;
@@ -40,6 +39,7 @@
       transition: var(--transition);
       text-decoration: none;
     }
+
     .btn-membership:hover {
       background: #fff;
       color: #000;
@@ -47,7 +47,6 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
-    /* ── BENEFITS SECTION ── */
     .benefits-section {
       padding: 5rem 2rem;
       background: var(--bg-surface);
@@ -80,7 +79,6 @@
       flex-shrink: 0;
     }
 
-    /* ── TIERS SECTION ── */
     .tiers-section {
       padding: 5rem 2rem;
       background: var(--bg-main);
@@ -91,7 +89,6 @@
     }
     .tiers-section .section-header { margin-bottom: 3.5rem; }
 
-    /* Reuse .card from style.css but add tier-specific bits */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -192,29 +189,26 @@
   </style>
 </head>
 <body>
-
-  <!-- ── SCROLL PROGRESS ── -->
-  <div class="scroll-progress" id="progressBar"></div>
-
-  <!-- ── NAVBAR ── -->
-  <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="/index.html" class="logo">Henry B. Plant Museum</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
-      <nav class="nav-links" id="navLinks">
-        <a href="/index.html">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/events.html">Events</a>
-        <a href="/exhibits.html">Exhibits</a>
-        <a href="/artifacts.html">Artifacts</a>
-        <a href="/get_involved.html" class="active">Get Involved</a>
-        <a href="/profile.html">Sign In</a>
-        <a href="/visitor.html" class="nav-cta">Plan Your Visit</a>
+  
+      <div class="scroll-progress" id="progressBar"></div>
+      <nav class="navbar" id="navbar">
+         <div class="nav-container">
+            <a href="/index.html" class="logo">Henry B. Plant Museum</a>
+            <i class="fa-solid fa-bars menu-toggle" id="menuToggle"></i>
+            <div class="nav-links" id="navLinks">
+               <a href="/index.html">Home</a>
+               <a href="/about.html">About</a>
+               <a href="/events.html">Events</a>
+               <a href="/exhibits.html">Exhibits</a>
+               <a href="/artifacts.html">Artifacts</a>
+               <a href="/get_involved.html">Get Involved</a>
+               <a href="/profile.html">Sign In</a>
+               <a href="/visitor.html" class="nav-cta">Plan Your Visit</a>
+            </div>
+            <a href="/visitor.html" class="nav-cta">Plan Your Visit</a>
+         </div>
       </nav>
-    </div>
-  </header>
 
-  <!-- ── HERO ── -->
   <section class="hero-involved">
     <div class="hero-common-overlay"></div>
     <div class="hero-common-content">
@@ -227,7 +221,6 @@
     </div>
   </section>
 
-  <!-- ── SHARED BENEFITS ── -->
   <section class="benefits-section">
     <div class="benefits-inner">
       <div class="section-header reveal">
@@ -246,7 +239,6 @@
     </div>
   </section>
 
-  <!-- ── MEMBERSHIP TIERS ── -->
   <section class="tiers-section">
     <div class="tiers-inner">
       <div class="section-header reveal">
@@ -346,7 +338,6 @@
     </div>
   </section>
 
-  <!-- ── INFORMATION (matches volunteer page) ── -->
   <section class="mission-section">
     <div class="mission-content-wrapper reveal">
       <div class="mission-bg-accent"></div>
@@ -361,10 +352,8 @@
     </div>
   </section>
 
-  <!-- ── PANEL OVERLAY ── -->
   <div class="panel-overlay" id="panelOverlay"></div>
 
-  <!-- ── SIDE BUTTONS (matches screenshot exactly) ── -->
   <div class="side-buttons">
     <button class="side-btn" id="btnResources" title="Museum Resources" aria-label="Museum Resources">
       <i class="fa-solid fa-layer-group"></i>
@@ -374,7 +363,6 @@
     </button>
   </div>
 
-  <!-- ── RESOURCES DRAWER ── -->
   <aside class="panel-drawer" id="drawerResources" aria-label="Museum Resources">
     <div class="panel-header">
       <h3>Museum Resources</h3>
@@ -434,7 +422,6 @@
     </div>
   </aside>
 
-  <!-- ── ACCESSIBILITY DRAWER ── -->
   <aside class="panel-drawer" id="drawerA11y" aria-label="Accessibility Settings">
     <div class="panel-header">
       <h3>Accessibility Settings</h3>
@@ -489,7 +476,6 @@
     </div>
   </aside>
 
-  <!-- ── FOOTER (matches screenshot) ── -->
   <footer class="footer">
     <div class="footer-grid">
       <div class="footer-col">
@@ -531,14 +517,12 @@
     </div>
   </footer>
 
-  <!-- ── STICKY BACK BUTTON ── -->
   <a href="/get_involved.html" class="sticky-ticket-btn">
     <i class="fa-solid fa-arrow-left"></i> Back to Get Involved
   </a>
 
-  <!-- ── SCRIPTS ── -->
   <script>
-    /* Scroll progress + navbar */
+
     const progressBar = document.getElementById('progressBar');
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
@@ -550,7 +534,6 @@
       if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 20);
     });
 
-    /* Reveal animations */
     const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
     }, { threshold: 0.1 });
@@ -570,7 +553,6 @@
       });
     }
 
-    /* Drawers */
     const overlay    = document.getElementById('panelOverlay');
     const closeBtns  = document.querySelectorAll('.close-btn');
 
@@ -596,7 +578,6 @@
     overlay.addEventListener('click', closeDrawers);
     closeBtns.forEach(btn => btn.addEventListener('click', closeDrawers));
 
-    /* Accessibility toggles (persisted) */
     const a11yMap = {
       'toggle-contrast':  'high-contrast',
       'toggle-text':      'large-text',
