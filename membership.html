@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
   <style>
-    /* ── PAGE-SPECIFIC STYLES ── */
-
-    /* Membership Hero */
+    /* ── MEMBERSHIP HERO ── */
     .hero-involved {
       position: relative;
       height: 60vh;
@@ -23,18 +20,18 @@
       text-align: center;
     }
 
-    /* "Buy Membership" CTA button in hero */
+    /* ── MEMBERSHIP BUTTON ── */
     .btn-membership {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       margin-top: 1.5rem;
-      padding: 0.9rem 2.4rem;
+      padding: 0.85rem 2.2rem;
       background: var(--brand-gold);
       color: #000;
       font-family: var(--font-sans);
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       border: none;
@@ -50,107 +47,63 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
-    /* ── SECTION WRAPPERS ── */
-    .section-benefits {
+    /* ── BENEFITS SECTION ── */
+    .benefits-section {
       padding: 5rem 2rem;
       background: var(--bg-surface);
     }
-    .section-tiers {
-      padding: 5rem 2rem;
-      background: var(--bg-main);
-    }
-    .section-info {
-      padding: 3rem 2rem 5rem;
-      background: var(--bg-surface);
-    }
-
-    .section-inner {
-      max-width: 1200px;
+    .benefits-inner {
+      max-width: 1100px;
       margin: 0 auto;
     }
+    .benefits-section .section-header { margin-bottom: 3rem; }
 
-    .section-head {
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
-    .section-head h2 {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      color: var(--text-main);
-      margin-bottom: 0.5rem;
-    }
-    .section-head p {
-      color: var(--text-muted);
-      font-size: 1rem;
-    }
-    .section-head .gold-rule {
-      width: 56px;
-      height: 3px;
-      background: var(--brand-gold);
-      margin: 1rem auto 0;
-      border-radius: 2px;
-    }
-
-    /* ── SHARED BENEFITS LIST ── */
     .benefits-list {
       list-style: none;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 0.85rem 2rem;
-      max-width: 900px;
-      margin: 0 auto;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 0.75rem 2rem;
     }
     .benefits-list li {
       display: flex;
       align-items: flex-start;
-      gap: 0.75rem;
+      gap: 0.7rem;
       font-size: 0.95rem;
-      color: var(--text-main);
+      color: var(--text-muted);
       line-height: 1.55;
+      padding: 0.4rem 0;
     }
     .benefits-list li i {
       color: var(--brand-gold);
-      font-size: 0.85rem;
-      margin-top: 0.3rem;
+      font-size: 0.8rem;
+      margin-top: 0.35rem;
       flex-shrink: 0;
     }
 
-    /* ── MEMBERSHIP TIER CARDS ── */
-    .tiers-grid {
+    /* ── TIERS SECTION ── */
+    .tiers-section {
+      padding: 5rem 2rem;
+      background: var(--bg-main);
+    }
+    .tiers-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .tiers-section .section-header { margin-bottom: 3.5rem; }
+
+    /* Reuse .card from style.css but add tier-specific bits */
+    .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
 
-    .tier-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-    }
-    .tier-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 4px;
-      background: linear-gradient(90deg, var(--brand-primary), var(--brand-gold));
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform var(--transition);
-    }
-    .tier-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: transparent; }
-    .tier-card:hover::before { transform: scaleX(1); transform-origin: left; }
-
-    .tier-card.featured {
-      border-color: var(--brand-gold);
-      border-top: 4px solid var(--brand-gold);
-    }
-    .tier-card.featured::before { transform: scaleX(1); transform-origin: left; }
+    .card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 2.5rem; display: flex; flex-direction: column; position: relative; overflow: hidden; z-index: 1; transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition); }
+    .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--brand-primary), var(--brand-gold)); transform: scaleX(0); transform-origin: right; transition: transform var(--transition); z-index: 2; }
+    .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: transparent; }
+    .card:hover::before { transform: scaleX(1); transform-origin: left; }
+    .card.featured { border-color: var(--brand-gold); border-top: 4px solid var(--brand-gold); }
+    .card.featured::before { transform: scaleX(1); transform-origin: left; }
 
     .tier-badge {
       display: inline-block;
@@ -162,31 +115,31 @@
       letter-spacing: 0.1em;
       padding: 3px 10px;
       border-radius: 20px;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.6rem;
       width: fit-content;
     }
-
     .tier-price {
       font-family: var(--font-serif);
       font-size: 2.4rem;
       color: var(--brand-primary);
       line-height: 1;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.15rem;
     }
     .tier-price sup { font-size: 1.1rem; vertical-align: super; }
-    .tier-price span { font-size: 1rem; color: var(--text-muted); font-family: var(--font-sans); font-weight: 400; }
-
-    .tier-name {
+    .tier-price small { font-size: 1rem; color: var(--text-muted); font-family: var(--font-sans); font-weight: 400; }
+    .card h3 {
       font-family: var(--font-serif);
       font-size: 1.3rem;
       color: var(--text-main);
       margin-bottom: 0.3rem;
+      transition: color var(--transition);
     }
+    .card:hover h3 { color: var(--brand-primary); }
     .tier-desc {
       font-size: 0.85rem;
       color: var(--text-muted);
-      margin-bottom: 1.25rem;
-      padding-bottom: 1.25rem;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
       border-bottom: 1px solid var(--border-color);
       line-height: 1.5;
     }
@@ -195,154 +148,45 @@
       flex-grow: 1;
       display: flex;
       flex-direction: column;
-      gap: 0.55rem;
-      margin-bottom: 1.75rem;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
     }
     .tier-perks li {
       font-size: 0.88rem;
       color: var(--text-muted);
       display: flex;
       align-items: flex-start;
-      gap: 0.55rem;
+      gap: 0.5rem;
       line-height: 1.4;
     }
     .tier-perks li i {
       color: var(--brand-gold);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       margin-top: 0.3rem;
       flex-shrink: 0;
     }
     .tier-cta {
       display: block;
       text-align: center;
-      padding: 0.75rem 1.5rem;
+      padding: 0.7rem 1.5rem;
       border: 1.5px solid var(--brand-primary);
       border-radius: var(--radius-sm);
       color: var(--brand-primary);
       font-family: var(--font-sans);
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       text-decoration: none;
-      cursor: pointer;
       transition: var(--transition);
       background: transparent;
       margin-top: auto;
     }
-    .tier-cta:hover, .tier-card.featured .tier-cta {
+    .tier-cta:hover, .card.featured .tier-cta {
       background: var(--brand-primary);
       color: #fff;
-      transform: none;
-    }
-    .tier-card.featured .tier-cta:hover {
-      background: var(--brand-primary-hover);
     }
 
-    /* ── INFORMATION BOX ── */
-    .info-box {
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-left: 4px solid var(--brand-primary);
-      border-radius: var(--radius-sm);
-      padding: 2rem 2.5rem;
-      box-shadow: var(--shadow-sm);
-    }
-    .info-box h2 {
-      font-size: 1.6rem;
-      margin-bottom: 0.75rem;
-    }
-    .info-box p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    /* ── FOOTER ── */
-    .fbla-main-footer {
-      background: #050505;
-      color: #a1a1aa;
-      border-top: 1px solid rgba(197,160,89,0.2);
-    }
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 2rem 2rem;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 3rem;
-    }
-    .footer-logo {
-      font-family: var(--font-serif);
-      font-size: 1.3rem;
-      color: var(--brand-gold);
-      margin-bottom: 0.75rem;
-    }
-    .footer-tagline {
-      font-size: 0.85rem;
-      line-height: 1.65;
-      color: #71717a;
-      max-width: 240px;
-      margin-bottom: 1.25rem;
-    }
-    .footer-social-icons {
-      display: flex;
-      gap: 0.75rem;
-    }
-    .footer-social-icons a {
-      width: 34px; height: 34px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: #71717a;
-      font-size: 0.85rem;
-      transition: var(--transition);
-    }
-    .footer-social-icons a:hover { background: var(--brand-gold); color: #000; border-color: var(--brand-gold); }
-    .footer-section h3 {
-      font-family: var(--font-serif);
-      font-size: 1rem;
-      color: var(--brand-gold);
-      margin-bottom: 1rem;
-      border-bottom: 1px solid rgba(197,160,89,0.25);
-      padding-bottom: 0.4rem;
-    }
-    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-    .footer-links a { font-size: 0.85rem; color: #71717a; transition: color var(--transition); }
-    .footer-links a:hover { color: #fff; }
-    .footer-contact-info p {
-      font-size: 0.85rem;
-      color: #71717a;
-      line-height: 1.6;
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-    }
-    .footer-contact-info p i { color: var(--brand-gold); margin-top: 0.2rem; flex-shrink: 0; }
-    .footer-cta {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.55rem 1.4rem;
-      background: var(--brand-primary);
-      color: #fff;
-      font-size: 0.85rem;
-      font-weight: 600;
-      border-radius: var(--radius-sm);
-      transition: var(--transition);
-    }
-    .footer-cta:hover { background: var(--brand-primary-hover); }
-    .footer-bottom {
-      text-align: center;
-      padding: 1.5rem 2rem;
-      color: #3f3f46;
-      font-size: 0.75rem;
-      border-top: 1px solid rgba(255,255,255,0.03);
-    }
     @media (max-width: 768px) {
-      .footer-container { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem 2rem; }
-      .tiers-grid { grid-template-columns: 1fr; }
+      .cards-grid { grid-template-columns: 1fr; }
       .benefits-list { grid-template-columns: 1fr; }
     }
   </style>
@@ -355,17 +199,17 @@
   <!-- ── NAVBAR ── -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="logo">Henry B. Plant Museum</a>
-      <input type="checkbox" id="nav-toggle" class="menu-toggle-check" style="display:none">
-      <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu">☰</label>
+      <a href="/index.html" class="logo">Henry B. Plant Museum</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
       <nav class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="exhibits.html">Exhibitions</a>
-        <a href="artifacts.html">Artifacts</a>
-        <a href="get_involved.html" class="active">Get Involved</a>
-        <a href="visitor.html">Visitor Info</a>
-        <a href="profile.html">Sign In</a>
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/events.html">Events</a>
+        <a href="/exhibits.html">Exhibits</a>
+        <a href="/artifacts.html">Artifacts</a>
+        <a href="/get_involved.html" class="active">Get Involved</a>
+        <a href="/profile.html">Sign In</a>
+        <a href="/visitor.html" class="nav-cta">Plan Your Visit</a>
       </nav>
     </div>
   </header>
@@ -378,107 +222,101 @@
       <p>Enjoy exclusive programs, discounts, and other benefits</p>
       <a href="https://henry-b-plant-museum.square.site/product/membership/88?cs=true&cst=custom"
          target="_blank" class="btn-membership">
-        <i class="fa-solid fa-star"></i> Buy Membership
+        <i class="fa-solid fa-star"></i>&nbsp;Buy Membership
       </a>
     </div>
   </section>
 
   <!-- ── SHARED BENEFITS ── -->
-  <section class="section-benefits">
-    <div class="section-inner">
-      <div class="section-head reveal">
+  <section class="benefits-section">
+    <div class="benefits-inner">
+      <div class="section-header reveal">
         <h2>Membership Benefits</h2>
         <p>Shared by all membership levels</p>
-        <div class="gold-rule"></div>
       </div>
       <ul class="benefits-list reveal">
-        <li><i class="fa-solid fa-check"></i> Complimentary admission to the Henry B. Plant Museum</li>
-        <li><i class="fa-solid fa-check"></i> A 10% discount in the Museum Store</li>
-        <li><i class="fa-solid fa-check"></i> Access to members‑only programs</li>
-        <li><i class="fa-solid fa-check"></i> Members‑only receptions and advance exhibit previews</li>
-        <li><i class="fa-solid fa-check"></i> <em>The Orange Blossom</em> newsletter</li>
-        <li><i class="fa-solid fa-check"></i> SERM benefits — free admission to 190+ cultural institutions</li>
-        <li><i class="fa-solid fa-check"></i> One "Member for a Day" pass</li>
+        <li><i class="fa-solid fa-diamond"></i> Complimentary admission to the Henry B. Plant Museum</li>
+        <li><i class="fa-solid fa-diamond"></i> A 10% discount in the Museum Store</li>
+        <li><i class="fa-solid fa-diamond"></i> Access to members‑only programs</li>
+        <li><i class="fa-solid fa-diamond"></i> Members‑only receptions and advance exhibit previews</li>
+        <li><i class="fa-solid fa-diamond"></i> <em>The Orange Blossom</em> newsletter</li>
+        <li><i class="fa-solid fa-diamond"></i> SERM benefits — free admission to 190+ cultural institutions</li>
+        <li><i class="fa-solid fa-diamond"></i> One "Member for a Day" guest pass</li>
       </ul>
     </div>
   </section>
 
   <!-- ── MEMBERSHIP TIERS ── -->
-  <section class="section-tiers">
-    <div class="section-inner">
-      <div class="section-head reveal">
-        <h2>Choose Your Level</h2>
-        <p>Find the membership that's right for you</p>
-        <div class="gold-rule"></div>
+  <section class="tiers-section">
+    <div class="tiers-inner">
+      <div class="section-header reveal">
+        <h2>Membership Levels</h2>
+        <p>Choose the level that's right for you</p>
       </div>
-      <div class="tiers-grid">
 
-        <div class="tier-card reveal">
-          <p class="tier-price"><sup>$</sup>75 <span>/ year</span></p>
-          <h3 class="tier-name">Individual</h3>
+      <div class="cards-grid">
+
+        <div class="card reveal">
+          <p class="tier-price"><sup>$</sup>75 <small>/ year</small></p>
+          <h3>Individual</h3>
           <p class="tier-desc">Membership benefits for 1 adult</p>
           <ul class="tier-perks">
             <li><i class="fa-solid fa-circle-dot"></i> All shared membership benefits</li>
             <li><i class="fa-solid fa-circle-dot"></i> One Victorian Christmas Stroll ticket</li>
           </ul>
-          <a href="https://henry-b-plant-museum.square.site/product/membership/88?cs=true&cst=custom"
-             target="_blank" class="tier-cta">Join Now</a>
+          <a href="https://henry-b-plant-museum.square.site/product/membership/88?cs=true&cst=custom" target="_blank" class="tier-cta">Join Now</a>
         </div>
 
-        <div class="tier-card reveal">
-          <p class="tier-price"><sup>$</sup>125 <span>/ year</span></p>
-          <h3 class="tier-name">Dual</h3>
+        <div class="card reveal">
+          <p class="tier-price"><sup>$</sup>125 <small>/ year</small></p>
+          <h3>Dual</h3>
           <p class="tier-desc">Membership benefits for 2 individuals</p>
           <ul class="tier-perks">
             <li><i class="fa-solid fa-circle-dot"></i> All shared membership benefits</li>
             <li><i class="fa-solid fa-circle-dot"></i> Two Victorian Christmas Stroll tickets</li>
           </ul>
-          <a href="https://henry-b-plant-museum.square.site/product/membership/88?cs=true&cst=custom"
-             target="_blank" class="tier-cta">Join Now</a>
+          <a href="https://henry-b-plant-museum.square.site/product/membership/88?cs=true&cst=custom" target="_blank" class="tier-cta">Join Now</a>
         </div>
 
-        <div class="tier-card featured reveal">
-          <span class="tier-badge"><i class="fa-solid fa-star"></i>&nbsp; Most Popular</span>
-          <p class="tier-price"><sup>$</sup>150 <span>/ year</span></p>
-          <h3 class="tier-name">Family</h3>
+        <div class="card featured reveal">
+          <span class="tier-badge"><i class="fa-solid fa-star"></i>&nbsp;Most Popular</span>
+          <p class="tier-price"><sup>$</sup>150 <small>/ year</small></p>
+          <h3>Family</h3>
           <p class="tier-desc">Membership benefits for a household of up to 4</p>
           <ul class="tier-perks">
             <li><i class="fa-solid fa-circle-dot"></i> All shared membership benefits</li>
             <li><i class="fa-solid fa-circle-dot"></i> Two Victorian Christmas Stroll tickets</li>
           </ul>
-          <a href="https://henry-b-plant-museum.square.site/product/membership/88?cs=true&cst=custom"
-             target="_blank" class="tier-cta">Join Now</a>
+          <a href="https://henry-b-plant-museum.square.site/product/membership/88?cs=true&cst=custom" target="_blank" class="tier-cta">Join Now</a>
         </div>
 
-        <div class="tier-card reveal">
-          <p class="tier-price"><sup>$</sup>400 <span>/ year</span></p>
-          <h3 class="tier-name">Patron</h3>
+        <div class="card reveal">
+          <p class="tier-price"><sup>$</sup>400 <small>/ year</small></p>
+          <h3>Patron</h3>
           <p class="tier-desc">Membership benefits for up to 4 individuals</p>
           <ul class="tier-perks">
             <li><i class="fa-solid fa-circle-dot"></i> All shared membership benefits</li>
             <li><i class="fa-solid fa-circle-dot"></i> Invitation for two to the annual Patron Party</li>
             <li><i class="fa-solid fa-circle-dot"></i> Two Victorian Christmas Stroll tickets</li>
           </ul>
-          <a href="https://henry-b-plant-museum.square.site/product/membership/88?cs=true&cst=custom"
-             target="_blank" class="tier-cta">Join Now</a>
+          <a href="https://henry-b-plant-museum.square.site/product/membership/88?cs=true&cst=custom" target="_blank" class="tier-cta">Join Now</a>
         </div>
 
-        <div class="tier-card reveal">
-          <p class="tier-price"><sup>$</sup>600 <span>/ year</span></p>
-          <h3 class="tier-name">Veranda</h3>
+        <div class="card reveal">
+          <p class="tier-price"><sup>$</sup>600 <small>/ year</small></p>
+          <h3>Veranda</h3>
           <p class="tier-desc">Membership benefits for up to 4 individuals</p>
           <ul class="tier-perks">
             <li><i class="fa-solid fa-circle-dot"></i> All shared membership benefits</li>
             <li><i class="fa-solid fa-circle-dot"></i> Invitation for two to the annual Patron Party</li>
             <li><i class="fa-solid fa-circle-dot"></i> Four Victorian Christmas Stroll tickets</li>
           </ul>
-          <a href="https://henry-b-plant-museum.square.site/product/membership/88?cs=true&cst=custom"
-             target="_blank" class="tier-cta">Join Now</a>
+          <a href="https://henry-b-plant-museum.square.site/product/membership/88?cs=true&cst=custom" target="_blank" class="tier-cta">Join Now</a>
         </div>
 
-        <div class="tier-card reveal">
-          <p class="tier-price"><sup>$</sup>1,250 <span>/ year</span></p>
-          <h3 class="tier-name">Crescent</h3>
+        <div class="card reveal">
+          <p class="tier-price"><sup>$</sup>1,250 <small>/ year</small></p>
+          <h3>Crescent</h3>
           <p class="tier-desc">Membership benefits for up to 6 individuals</p>
           <ul class="tier-perks">
             <li><i class="fa-solid fa-circle-dot"></i> All shared membership benefits</li>
@@ -486,13 +324,12 @@
             <li><i class="fa-solid fa-circle-dot"></i> One individual membership to give as a gift</li>
             <li><i class="fa-solid fa-circle-dot"></i> Six Victorian Christmas Stroll tickets</li>
           </ul>
-          <a href="https://henry-b-plant-museum.square.site/product/membership/88?cs=true&cst=custom"
-             target="_blank" class="tier-cta">Join Now</a>
+          <a href="https://henry-b-plant-museum.square.site/product/membership/88?cs=true&cst=custom" target="_blank" class="tier-cta">Join Now</a>
         </div>
 
-        <div class="tier-card reveal">
-          <p class="tier-price"><sup>$</sup>2,500 <span>/ year</span></p>
-          <h3 class="tier-name">Club Henry</h3>
+        <div class="card reveal">
+          <p class="tier-price"><sup>$</sup>2,500 <small>/ year</small></p>
+          <h3>Club Henry</h3>
           <p class="tier-desc">Membership benefits for up to 6 individuals</p>
           <ul class="tier-perks">
             <li><i class="fa-solid fa-circle-dot"></i> All shared membership benefits</li>
@@ -502,164 +339,206 @@
             <li><i class="fa-solid fa-circle-dot"></i> Curator-led tour for up to 12</li>
             <li><i class="fa-solid fa-circle-dot"></i> Six Victorian Christmas Stroll tickets</li>
           </ul>
-          <a href="https://henry-b-plant-museum.square.site/product/membership/88?cs=true&cst=custom"
-             target="_blank" class="tier-cta">Join Now</a>
+          <a href="https://henry-b-plant-museum.square.site/product/membership/88?cs=true&cst=custom" target="_blank" class="tier-cta">Join Now</a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ── INFORMATION ── -->
-  <section class="section-info">
-    <div class="section-inner">
-      <div class="info-box reveal">
-        <h2>More Information</h2>
+  <!-- ── INFORMATION (matches volunteer page) ── -->
+  <section class="mission-section">
+    <div class="mission-content-wrapper reveal">
+      <div class="mission-bg-accent"></div>
+      <div class="mission-content">
+        <h2>Information</h2>
         <p>
-          For questions about membership, please contact <strong>Jill D'Anna</strong> at
+          If you need more information for membership, please contact Jill D'Anna at
           <a class="mail" href="mailto:jdanna@ut.edu" target="_blank">jdanna@ut.edu</a>
-          or <a class="mail" href="tel:8132587304">813.258.7304</a>.
+          or 813.258.7304.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ── FBLA RIGHT DOCK ── -->
-  <nav class="fbla-right-dock">
-    <button class="fbla-dock-btn" onclick="fblaOpenPanel('fbla-panel-contact', this)" title="Contact Info">
-      <i class="fa-solid fa-address-book"></i>
+  <!-- ── PANEL OVERLAY ── -->
+  <div class="panel-overlay" id="panelOverlay"></div>
+
+  <!-- ── SIDE BUTTONS (matches screenshot exactly) ── -->
+  <div class="side-buttons">
+    <button class="side-btn" id="btnResources" title="Museum Resources" aria-label="Museum Resources">
+      <i class="fa-solid fa-layer-group"></i>
     </button>
-    <button class="fbla-dock-btn" onclick="fblaOpenPanel('fbla-panel-visitor', this)" title="Visitor Info">
-      <i class="fa-solid fa-map-location-dot"></i>
+    <button class="side-btn" id="btnA11y" title="Accessibility" aria-label="Accessibility Settings">
+      <i class="fa-solid fa-universal-access"></i>
     </button>
-    <button class="fbla-dock-btn" onclick="fblaOpenPanel('fbla-panel-support', this)" title="Admissions & Support">
-      <i class="fa-solid fa-ticket"></i>
-    </button>
-    <button class="fbla-dock-btn" onclick="fblaOpenPanel('fbla-panel-social', this)" title="Social Media">
-      <i class="fa-solid fa-hashtag"></i>
-    </button>
-  </nav>
-
-  <!-- ── FBLA SIDE PANEL ── -->
-  <div id="fbla-side-panel" class="fbla-side-panel">
-    <div class="fbla-panel-header-bar">
-      <h2 id="fbla-panel-title">Connect With Us</h2>
-      <button class="fbla-close-btn" onclick="fblaClosePanel()"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <div class="fbla-panel-content-area">
-
-      <div id="fbla-panel-contact" class="fbla-drawer-content">
-        <div class="fbla-info-card">
-          <div class="fbla-icon-box"><i class="fa-solid fa-phone"></i></div>
-          <div class="fbla-info-text">
-            <strong>Phone Number</strong>
-            <p><a href="tel:8132541891">(813) 254-1891</a></p>
-          </div>
-        </div>
-        <div class="fbla-info-card">
-          <div class="fbla-icon-box"><i class="fa-solid fa-envelope"></i></div>
-          <div class="fbla-info-text">
-            <strong>Email Address</strong>
-            <p><a href="mailto:info@plantmuseum.com">info@plantmuseum.com</a></p>
-          </div>
-        </div>
-      </div>
-
-      <div id="fbla-panel-visitor" class="fbla-drawer-content">
-        <div class="fbla-info-card">
-          <div class="fbla-icon-box"><i class="fa-solid fa-location-dot"></i></div>
-          <div class="fbla-info-text">
-            <strong>Museum Location</strong>
-            <p>401 W. Kennedy Blvd<br>Tampa, FL 33606</p>
-          </div>
-        </div>
-        <div class="fbla-info-card">
-          <div class="fbla-icon-box"><i class="fa-solid fa-clock"></i></div>
-          <div class="fbla-info-text">
-            <strong>Hours of Operation</strong>
-            <p>Tue–Sat: 10 AM – 5 PM<br>Sun: 12 PM – 5 PM<br>Mon: Closed</p>
-          </div>
-        </div>
-      </div>
-
-      <div id="fbla-panel-support" class="fbla-drawer-content">
-        <div class="fbla-action-grid">
-          <a href="visitor.html" class="fbla-action-btn primary">
-            <i class="fa-solid fa-ticket"></i> Buy Tickets
-          </a>
-          <a href="membership.html" class="fbla-action-btn outline">
-            <i class="fa-solid fa-star"></i> Membership
-          </a>
-          <a href="https://henry-b-plant-museum.square.site/product/donation/101?cs=true&cst=custom"
-             target="_blank" class="fbla-action-btn donate">
-            <i class="fa-solid fa-heart"></i> Donate Now
-          </a>
-        </div>
-      </div>
-
-      <div id="fbla-panel-social" class="fbla-drawer-content">
-        <div class="fbla-social-grid">
-          <a href="https://www.youtube.com/channel/UC1shdGuCysazOzAUS8O0WWw" target="_blank" class="fbla-social-btn youtube">
-            <i class="fa-brands fa-youtube"></i> YouTube
-          </a>
-          <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" class="fbla-social-btn facebook">
-            <i class="fa-brands fa-facebook-f"></i> Facebook
-          </a>
-          <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" class="fbla-social-btn instagram">
-            <i class="fa-brands fa-instagram"></i> Instagram
-          </a>
-          <a href="https://twitter.com/HBPlantMuseum" target="_blank" class="fbla-social-btn twitter">
-            <i class="fa-brands fa-x-twitter"></i> Twitter
-          </a>
-        </div>
-      </div>
-
-    </div>
   </div>
 
-  <!-- ── FOOTER ── -->
-  <footer class="fbla-main-footer">
-    <div class="footer-container">
-      <div class="footer-section">
-        <h2 class="footer-logo">Henry B. Plant Museum</h2>
-        <p class="footer-tagline">Preserving the luxury and innovation of Florida's Gilded Age since 1891.</p>
-        <div class="footer-social-icons">
-          <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+  <!-- ── RESOURCES DRAWER ── -->
+  <aside class="panel-drawer" id="drawerResources" aria-label="Museum Resources">
+    <div class="panel-header">
+      <h3>Museum Resources</h3>
+      <button class="close-btn" aria-label="Close">&times;</button>
+    </div>
+    <div class="panel-body">
+
+      <div class="drawer-group">
+        <h4>Visit &amp; Contact</h4>
+        <a href="tel:8132541891" class="resource-item">
+          <i class="fa-solid fa-phone resource-icon"></i>
+          <div class="resource-text"><h5>Phone</h5><p>(813) 254-1891</p></div>
+        </a>
+        <a href="mailto:info@plantmuseum.com" class="resource-item">
+          <i class="fa-solid fa-envelope resource-icon"></i>
+          <div class="resource-text"><h5>Email</h5><p>info@plantmuseum.com</p></div>
+        </a>
+        <a href="https://henrybplantmuseum.com/visitor-info" target="_blank" class="resource-item">
+          <i class="fa-solid fa-location-dot resource-icon"></i>
+          <div class="resource-text"><h5>Location</h5><p>401 W. Kennedy Blvd, Tampa</p></div>
+        </a>
+        <div class="resource-item static">
+          <i class="fa-solid fa-clock resource-icon"></i>
+          <div class="resource-text">
+            <h5>Hours of Operation</h5>
+            <p>Tue–Sat: 10am–5pm &nbsp;|&nbsp; Sun: 12pm–5pm &nbsp;|&nbsp; Mon: Closed</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer-group">
+        <h4>Support the Museum</h4>
+        <a href="/visitor.html" class="resource-item">
+          <i class="fa-solid fa-ticket resource-icon"></i>
+          <div class="resource-text"><h5>Buy Tickets</h5><p>Admissions &amp; Tours</p></div>
+        </a>
+        <a href="/membership.html" class="resource-item">
+          <i class="fa-solid fa-star resource-icon"></i>
+          <div class="resource-text"><h5>Membership</h5><p>Join the Museum Society</p></div>
+        </a>
+        <a href="https://henry-b-plant-museum.square.site/product/donation/101" target="_blank" class="resource-item">
+          <i class="fa-solid fa-heart resource-icon"></i>
+          <div class="resource-text"><h5>Donate Now</h5><p>Support our preservation</p></div>
+        </a>
+      </div>
+
+      <div class="drawer-group">
+        <h4>Connect With Us</h4>
+        <div class="drawer-socials">
+          <a href="https://twitter.com/HBPlantMuseum" target="_blank" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ── ACCESSIBILITY DRAWER ── -->
+  <aside class="panel-drawer" id="drawerA11y" aria-label="Accessibility Settings">
+    <div class="panel-header">
+      <h3>Accessibility Settings</h3>
+      <button class="close-btn" aria-label="Close">&times;</button>
+    </div>
+    <div class="panel-body">
+
+      <div class="drawer-group">
+        <h4>Display Options</h4>
+
+        <div class="a11y-setting">
+          <label for="toggle-contrast">High Contrast Mode</label>
+          <label class="switch">
+            <input type="checkbox" id="toggle-contrast">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="a11y-setting">
+          <label for="toggle-text">Large Text</label>
+          <label class="switch">
+            <input type="checkbox" id="toggle-text">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="a11y-setting">
+          <label for="toggle-dyslexia">Dyslexia Friendly Font</label>
+          <label class="switch">
+            <input type="checkbox" id="toggle-dyslexia">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="a11y-setting">
+          <label for="toggle-motion">Reduce Motion</label>
+          <label class="switch">
+            <input type="checkbox" id="toggle-motion">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="a11y-setting">
+          <label for="toggle-links">Highlight Links</label>
+          <label class="switch">
+            <input type="checkbox" id="toggle-links">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── FOOTER (matches screenshot) ── -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Museum Support</h3>
+        <ul class="footer-links">
+          <li><a href="/visitor.html">Buy Tickets</a></li>
+          <li><a href="/membership.html">Membership</a></li>
+          <li><a href="https://henry-b-plant-museum.square.site/product/donation/101?cs=true&cst=custom" target="_blank">Donate Now</a></li>
+        </ul>
+        <div class="footer-socials" style="margin-top:1rem;">
           <a href="https://twitter.com/HBPlantMuseum" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="https://www.youtube.com/channel/UC1shdGuCysazOzAUS8O0WWw" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
-      <div class="footer-section">
+
+      <div class="footer-col">
         <h3>Quick Links</h3>
         <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="exhibits.html">Exhibitions</a></li>
-          <li><a href="artifacts.html">Artifacts</a></li>
-          <li><a href="get_involved.html">Get Involved</a></li>
-          <li><a href="visitor.html">Visitor Info</a></li>
-          <li><a href="profile.html">Sign In</a></li>
-          <li><a href="credit.html">Credits</a></li>
+          <li><a href="/visitor.html">Plan Your Visit</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/exhibits.html">Exhibitions</a></li>
+          <li><a href="/get_involved.html">Get Involved</a></li>
         </ul>
       </div>
-      <div class="footer-section">
-        <h3>Visit Us</h3>
-        <div class="footer-contact-info">
-          <p><i class="fa-solid fa-location-dot"></i> 401 W. Kennedy Blvd<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tampa, FL 33606</p>
-          <p><i class="fa-solid fa-phone"></i> (813) 254-1891</p>
-          <a href="visitor.html" class="footer-cta">Plan Your Visit</a>
-        </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li>401 W. Kennedy Blvd, Tampa</li>
+          <li><a href="tel:8132541891">(813) 254-1891</a></li>
+          <li><a href="mailto:info@plantmuseum.com">info@plantmuseum.com</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Henry B. Plant Museum</p>
+      &copy; 2026 Henry B. Plant Museum. Created for FBLA.
     </div>
   </footer>
 
+  <!-- ── STICKY BACK BUTTON ── -->
+  <a href="/get_involved.html" class="sticky-ticket-btn">
+    <i class="fa-solid fa-arrow-left"></i> Back to Get Involved
+  </a>
+
   <!-- ── SCRIPTS ── -->
   <script>
-    /* Scroll progress + navbar scroll */
+    /* Scroll progress + navbar */
     const progressBar = document.getElementById('progressBar');
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
@@ -672,39 +551,70 @@
     });
 
     /* Reveal animations */
-    const observer = new IntersectionObserver(entries => {
+    const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    /* Mobile nav toggle */
-    const menuToggle = document.querySelector('.menu-toggle');
+    /* Mobile nav */
+    const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
     if (menuToggle && navLinks) {
-      document.getElementById('nav-toggle').addEventListener('change', function() {
-        navLinks.classList.toggle('mobile-open', this.checked);
+      menuToggle.addEventListener('click', e => {
+        navLinks.classList.toggle('mobile-open');
+        e.stopPropagation();
+      });
+      document.addEventListener('click', e => {
+        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target))
+          navLinks.classList.remove('mobile-open');
       });
     }
 
-    /* FBLA side panel */
-    function fblaOpenPanel(panelId, btn) {
-      document.getElementById('fbla-side-panel').classList.add('fbla-open');
-      document.querySelectorAll('.fbla-drawer-content').forEach(p => p.classList.remove('fbla-active-drawer'));
-      document.querySelectorAll('.fbla-dock-btn').forEach(b => b.classList.remove('fbla-active-tab'));
-      document.getElementById(panelId).classList.add('fbla-active-drawer');
-      btn.classList.add('fbla-active-tab');
-      const titles = {
-        'fbla-panel-contact': 'Contact Info',
-        'fbla-panel-visitor': 'Visitor Info',
-        'fbla-panel-support': 'Admissions & Support',
-        'fbla-panel-social': 'Follow Our Journey'
-      };
-      document.getElementById('fbla-panel-title').innerText = titles[panelId];
+    /* Drawers */
+    const overlay    = document.getElementById('panelOverlay');
+    const closeBtns  = document.querySelectorAll('.close-btn');
+
+    function closeDrawers() {
+      document.querySelectorAll('.panel-drawer').forEach(d => d.classList.remove('open'));
+      overlay.classList.remove('open');
+      document.querySelectorAll('.side-btn').forEach(b => b.style.background = '');
     }
-    function fblaClosePanel() {
-      document.getElementById('fbla-side-panel').classList.remove('fbla-open');
-      document.querySelectorAll('.fbla-dock-btn').forEach(b => b.classList.remove('fbla-active-tab'));
+    function openDrawer(drawer) {
+      closeDrawers();
+      drawer.classList.add('open');
+      overlay.classList.add('open');
     }
+
+    document.getElementById('btnResources').addEventListener('click', () => {
+      const d = document.getElementById('drawerResources');
+      d.classList.contains('open') ? closeDrawers() : openDrawer(d);
+    });
+    document.getElementById('btnA11y').addEventListener('click', () => {
+      const d = document.getElementById('drawerA11y');
+      d.classList.contains('open') ? closeDrawers() : openDrawer(d);
+    });
+    overlay.addEventListener('click', closeDrawers);
+    closeBtns.forEach(btn => btn.addEventListener('click', closeDrawers));
+
+    /* Accessibility toggles (persisted) */
+    const a11yMap = {
+      'toggle-contrast':  'high-contrast',
+      'toggle-text':      'large-text',
+      'toggle-dyslexia':  'dyslexia-mode',
+      'toggle-links':     'highlight-links',
+      'toggle-motion':    'reduced-motion',
+    };
+    Object.entries(a11yMap).forEach(([id, cls]) => {
+      const toggle = document.getElementById(id);
+      if (!toggle) return;
+      const saved = localStorage.getItem(cls) === 'true';
+      toggle.checked = saved;
+      document.body.classList.toggle(cls, saved);
+      toggle.addEventListener('change', e => {
+        document.body.classList.toggle(cls, e.target.checked);
+        localStorage.setItem(cls, e.target.checked);
+      });
+    });
   </script>
 
 </body>
