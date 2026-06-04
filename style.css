@@ -2129,27 +2129,6 @@ body {
     }
     .benefits-section .section-header { margin-bottom: 3rem; }
 
-    .benefits-list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 0.75rem 2rem;
-    }
-    .benefits-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.7rem;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-      padding: 0.4rem 0;
-    }
-    .benefits-list li i {
-      color: var(--brand-gold);
-      font-size: 0.8rem;
-      margin-top: 0.35rem;
-      flex-shrink: 0;
-    }
     tiers-section {
       padding: 5rem 2rem;
       background: var(--bg-main);
