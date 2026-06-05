@@ -361,81 +361,6 @@
     </div>
   </footer>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      
-      // 1. Scroll Progress & Navbar State
-      const progressBar = document.getElementById('progressBar');
-      const navbar = document.getElementById('navbar');
-      
-      window.addEventListener('scroll', () => {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        if(progressBar) progressBar.style.width = (winScroll / height) * 100 + "%";
-        
-        if (window.scrollY > 20) navbar.classList.add('scrolled');
-        else navbar.classList.remove('scrolled');
-      });
-
-      // 2. Mobile Menu
-      const menuToggle = document.getElementById('menuToggle');
-      const navLinks = document.getElementById('navLinks');
-      if(menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-          navLinks.classList.toggle('mobile-open');
-        });
-      }
-
-      // 3. Scroll Reveal Animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          }
-        });
-      }, { threshold: 0.1 }); 
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-      // 4. Side Panels & Overlays
-      const btnRes = document.getElementById('btnResources');
-      const btnA11y = document.getElementById('btnA11y');
-      const drawRes = document.getElementById('drawerResources');
-      const drawA11y = document.getElementById('drawerA11y');
-      const overlay = document.getElementById('panelOverlay');
-      const closeBtns = document.querySelectorAll('.close-btn');
-
-      function closeDrawers() {
-        if(drawRes) drawRes.classList.remove('open');
-        if(drawA11y) drawA11y.classList.remove('open');
-        if(overlay) overlay.classList.remove('open');
-      }
-
-      function openDrawer(drawer) {
-        closeDrawers();
-        drawer.classList.add('open');
-        overlay.classList.add('open');
-      }
-
-      if(btnRes) btnRes.addEventListener('click', () => openDrawer(drawRes));
-      if(btnA11y) btnA11y.addEventListener('click', () => openDrawer(drawA11y));
-      if(overlay) overlay.addEventListener('click', closeDrawers);
-      closeBtns.forEach(btn => btn.addEventListener('click', closeDrawers));
-
-      // 5. Accessibility Toggles
-      const toggles = [
-        { id: 'toggle-contrast', cls: 'high-contrast' },
-        { id: 'toggle-text', cls: 'large-text' },
-        { id: 'toggle-dyslexia', cls: 'dyslexia-mode' },
-        { id: 'toggle-links', cls: 'highlight-links' },
-        { id: 'toggle-motion', cls: 'reduced-motion' }
-      ];
-
-      toggles.forEach(t => {
-        const el = document.getElementById(t.id);
-        if(el) {
-          el.addEventListener('change', e => document.body.classList.toggle(t.cls, e.target.checked));
-        }
-      });
-
       // 6. MODERN FAQ ACCORDION LOGIC
       const faqItems = document.querySelectorAll(".faq-item");
 
@@ -469,7 +394,7 @@
         });
       });
 
-    });
+    ;
   </script>
   <script src="script.js"></script>  
 </body>
