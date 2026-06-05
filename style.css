@@ -212,7 +212,13 @@
     .panel-overlay.open { opacity: 1; visibility: visible; }
 
     .footer { background: #050505; color: #fff; padding: 2rem 1rem 1rem; border-top: 1px solid rgba(212, 175, 55, 0.2); }
-    .footer-grid { max-width: 1100px; margin: 0 auto 1.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .footer-grid {
+    max-width: 1100px;
+    margin: 0 auto 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
     .footer-col h3 { font-family: var(--font-serif); font-size: 1rem; margin-bottom: 0.8rem; color: var(--brand-gold); border-bottom: 1px solid rgba(212, 175, 55, 0.3); display: inline-block; padding-bottom: 2px; }
     .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
     .footer-links a, .footer-links li { color: #a1a1aa; font-size: 0.85rem; text-decoration: none; transition: 0.3s; }
@@ -221,6 +227,10 @@
     .footer-socials a { color: #71717a; font-size: 1.2rem; transition: 0.3s; }
     .footer-socials a:hover { color: var(--brand-gold); }
     .footer-bottom { text-align: center; padding-top: 1rem; color: #3f3f46; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.03); }
+    .quick-links-grid {
+    display: flex;
+    gap: 3rem;
+    }
 
     .sticky-ticket-btn {
       position: fixed; bottom: 2rem; right: 2rem; background: var(--brand-gold); color: #000; padding: 0.8rem 1.5rem;
@@ -237,6 +247,13 @@
       .sticky-ticket-btn { bottom: 1rem; right: 1rem; padding: 0.6rem 1.2rem; font-size: 0.8rem; }
       .slide { grid-template-columns: 1fr !important; text-align: center; gap: 2rem !important; }
       .btn-gold-link { margin-left: auto; margin-right: auto; }
+          .quick-links-grid {
+        justify-content: center;
+    }
+
+    .footer-links {
+        padding-left: 0;
+    }
     }
 :root {
   /* Elegant, Modern Museum Palette */
