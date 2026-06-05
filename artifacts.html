@@ -16,6 +16,22 @@
 
   <link rel="icon" type="image/jpeg" href="https://www.plantmuseum.com/App_Themes/PlantMuseum/images/favicon.ico">
  
+  <style>
+  .back-to-top-btn {
+  bottom: 5.5rem; /* sits above the curate button */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background 0.2s;
+  pointer-events: none;
+}
+.back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+  </style>
 </head>
 <body>
 
@@ -1281,7 +1297,10 @@
     </div>
   </footer>
 
-  
+<button id="backToTop" class="sticky-ticket-btn back-to-top-btn" aria-label="Back to top">
+  <i class="fa-solid fa-chevron-up"></i> Back to Top
+</button>
+
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
@@ -1426,6 +1445,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+// Back to top button
+const backToTopBtn = document.getElementById('backToTop');
+if (backToTopBtn) {
+  window.addEventListener('scroll', () => {
+    backToTopBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 </script>
 </body>
 <script src="script.js"></script>
