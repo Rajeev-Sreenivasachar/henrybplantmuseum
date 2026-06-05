@@ -247,12 +247,16 @@
       .sticky-ticket-btn { bottom: 1rem; right: 1rem; padding: 0.6rem 1.2rem; font-size: 0.8rem; }
       .slide { grid-template-columns: 1fr !important; text-align: center; gap: 2rem !important; }
       .btn-gold-link { margin-left: auto; margin-right: auto; }
-          .quick-links-grid {
+    .quick-links-grid {
+        display: flex;
         justify-content: center;
+        gap: 2rem;
+        width: 100%;
     }
 
     .footer-links {
         padding-left: 0;
+        margin: 0;
     }
     }
 :root {
