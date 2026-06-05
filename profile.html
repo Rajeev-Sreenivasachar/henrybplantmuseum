@@ -209,7 +209,6 @@
 <body>
 
   <div class="scroll-progress" id="progressBar"></div>
-  <script src="script.js"></script>
 
   <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -479,6 +478,30 @@
           <div class="resource-text"><h5>Hours of Operation</h5><p>Tue–Sat: 10am–5pm<br>Sun: 12pm–5pm<br>Mon: Closed</p></div>
         </div>
       </div>
+      <div class="drawer-group">
+        <h4>Support the Museum</h4>
+        <a href="visitor.html" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-ticket"></i></div>
+          <div class="resource-text"><h5>Buy Tickets</h5><p>Admissions & Tours</p></div>
+        </a>
+        <a href="membership.html" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-id-card"></i></div>
+          <div class="resource-text"><h5>Membership</h5><p>Join the Museum Society</p></div>
+        </a>
+        <a href="https://henry-b-plant-museum.square.site/product/donation/101" target="_blank" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-heart"></i></div>
+          <div class="resource-text"><h5>Donate Now</h5><p>Support our preservation</p></div>
+        </a>
+      </div>
+      <div class="drawer-group">
+        <h4>Connect With Us</h4>
+        <div class="drawer-socials">
+          <a href="https://twitter.com/HBPlantMuseum" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
     </div>
   </aside>
 
@@ -495,6 +518,18 @@
       <div class="a11y-setting">
         <label for="toggle-text">Large Text</label>
         <label class="switch"><input type="checkbox" id="toggle-text"><span class="slider"></span></label>
+      </div>
+      <div class="a11y-setting">
+        <label for="toggle-dyslexia">Dyslexia Friendly Font</label>
+        <label class="switch"><input type="checkbox" id="toggle-dyslexia"><span class="slider"></span></label>
+      </div>
+      <div class="a11y-setting">
+        <label for="toggle-motion">Reduce Motion</label>
+        <label class="switch"><input type="checkbox" id="toggle-motion"><span class="slider"></span></label>
+      </div>
+      <div class="a11y-setting">
+        <label for="toggle-links">Highlight Links</label>
+        <label class="switch"><input type="checkbox" id="toggle-links"><span class="slider"></span></label>
       </div>
     </div>
   </aside>
@@ -729,5 +764,6 @@
       }
     });
   </script>
+  <script src="script.js"></script>
 </body>
 </html>
