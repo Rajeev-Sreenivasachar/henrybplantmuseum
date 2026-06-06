@@ -12,8 +12,7 @@
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/jpeg" href="https://www.plantmuseum.com/App_Themes/PlantMuseum/images/favicon.ico">
 
- <style>
-    /* --- Main Layout Container --- */
+  <style>
     .profile-container {
       max-width: 1200px;
       margin: 0 auto;
@@ -22,12 +21,10 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 2.5rem;
-      /* Clears the massive phantom blank space stretching the page down */
       height: auto !important;
       min-height: auto !important;
     }
 
-    /* --- Hero Section --- */
     .welcome-hero {
       background: #fdfbf7;
       border: 1px solid #e6dfd3;
@@ -35,7 +32,6 @@
       border-radius: 8px;
     }
 
-    /* --- Itinerary & Favorites Layout --- */
     .itinerary-section {
       background: #fff;
       border: 1px solid #eaeaea;
@@ -77,7 +73,6 @@
       border-top: 1px dashed #ddd;
     }
 
-    /* --- Account Manager Forms (Stacked cleanly) --- */
     .account-manager {
       display: flex;
       flex-direction: column;
@@ -92,9 +87,9 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.02);
     }
 
-    .management-card h2, .management-card h3 {
+    .management-card h3 {
       margin-top: 0;
-      color: #800020; /* Burgundy */
+      color: #800020;
       font-family: 'Cinzel', serif;
     }
 
@@ -148,11 +143,6 @@
       background-color: #b30000;
     }
 
-    /* --- Discover Portfolio Items Grid Fix --- */
-    .portfolio-discovery {
-      margin-top: 1rem;
-    }
-
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -186,7 +176,6 @@
       cursor: default;
     }
 
-    /* --- Newsletter Box Section --- */
     .newsletter-dispatch {
       background: #f9f9f9;
       border: 1px solid #eaeaea;
@@ -410,7 +399,7 @@
       onAuthStateChanged
     } from "https://www.gstatic.com/firebasejs/10.x.x/firebase-auth.js";
 
-    // Your firebase configuration setup
+    // Insert your Firebase credentials configuration here
     const firebaseConfig = {
       apiKey: "YOUR_API_KEY",
       authDomain: "YOUR_AUTH_DOMAIN",
@@ -423,44 +412,38 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    // --- Core Authentication State Observer ---
+    // Track active credentials states
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        // dynamically populate greeting and identity metrics
         document.getElementById('user-greeting-name').textContent = user.displayName || "User";
         const providerSpan = document.getElementById('identity-provider');
         if (providerSpan && user.providerData.length > 0) {
           providerSpan.textContent = user.providerData[0].providerId === 'google.com' ? 'Google' : 'Password';
         }
       } else {
-        // if no session state, kick user back to home
         window.location.href = "/index.html";
       }
     });
 
-    // --- Interactive Itinerary Handling Logic ---
+    // Handle Itinerary Items Removal
     const itineraryList = document.getElementById('itinerary-list');
     if (itineraryList) {
       itineraryList.addEventListener('click', (e) => {
-        // handle close cross button items click event loops
         const removeBtn = e.target.closest('.remove-item');
         if (removeBtn) {
           const listItem = removeBtn.parentElement;
-          const itemId = removeBtn.getAttribute('data-item');
-          
           listItem.style.opacity = '0';
           setTimeout(() => {
             listItem.remove();
-            // Optional: add firebase database sync remove here if needed later
           }, 300);
         }
       });
     }
 
-    // Helper utility to reauthenticate a user before changing credentials
+    // Reauthentication setup before updating details
     async function reauthenticateUser(identifier, passwordValue) {
       const user = auth.currentUser;
-      if (!user) throw new Error("No active authorization context found.");
+      if (!user) throw new Error("No active authorization found.");
       
       const emailTarget = identifier.includes('@') ? identifier : user.email;
       const credential = EmailAuthProvider.credential(emailTarget, passwordValue);
@@ -489,7 +472,7 @@
       });
     }
 
-    // Flow 2: Current Password + New Username (Email)
+    // Flow 2: Current Password + New Username
     const formUsername = document.getElementById('form-username');
     if (formUsername) {
       formUsername.addEventListener('submit', async (e) => {
@@ -520,7 +503,7 @@
         const user = auth.currentUser;
 
         try {
-          await reauthenticateUser(currentUsername, user.password || prompt("Confirm password key context:"));
+          await reauthenticateUser(currentUsername, user.password || prompt("Confirm password verification:"));
           await updatePassword(user, newPassword);
           alert("Password updated successfully!");
           formPassword.reset();
@@ -531,13 +514,13 @@
       });
     }
 
-    // Global Sign Out Action Trigger
+    // Sign out handler
     const signOutBtn = document.getElementById('sign-out-btn');
     if (signOutBtn) {
       signOutBtn.addEventListener('click', () => {
         signOut(auth).then(() => {
           window.location.href = "/index.html";
-        }).catch((err) => console.error("Sign-out routing error:", err));
+        }).catch((err) => console.error(err));
       });
     }
   </script>
