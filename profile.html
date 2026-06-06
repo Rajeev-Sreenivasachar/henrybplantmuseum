@@ -1,781 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <title>Henry B. Plant Museum – Profile</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/jpeg" href="https://www.plantmuseum.com/App_Themes/PlantMuseum/images/favicon.ico">
-  
-  <style>
-    /* --- BURGUNDY, RED, & GOLD FUTURISTIC LIGHT THEME --- */
-    :root {
-      --burgundy: #722F37;
-      --burgundy-glow: rgba(114, 47, 55, 0.05);
-      --crimson: #A6192E;
-      --gold: #D4AF37;
-      --gold-glow: rgba(212, 175, 55, 0.1);
-      --dark-text: #1C1C1C;
-      --card-bg: #FFFFFF;
-      --app-bg: #F7F8FA;
-      --border-color: #EAEAEA;
-    }
-
-    .new-prof-wrapper {
-      background-color: var(--app-bg);
-      padding: 3rem 5%;
-      font-family: 'Outfit', sans-serif;
-      min-height: 85vh;
-      color: var(--dark-text);
-    }
-
-    h1, h2, h3, h4, h5 { font-family: 'Cinzel', serif; margin: 0; }
-
-    /* AUTHENTICATION BOX */
-    .new-auth-box {
-      max-width: 420px; margin: 4rem auto; background: var(--card-bg);
-      padding: 3rem 2.5rem; border-radius: 12px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.03); text-align: center;
-      border: 1px solid var(--border-color); border-top: 4px solid var(--gold);
-    }
-    .new-auth-box h2 { color: var(--burgundy); font-size: 2.2rem; margin-bottom: 0.5rem; }
-    .new-auth-box p { color: #666; margin-bottom: 2rem; font-weight: 300; }
-    
-    .new-auth-tabs { display: flex; gap: 1rem; margin-bottom: 2rem; justify-content: center; border-bottom: 1px solid #eee; }
-    .new-auth-tab {
-      background: none; border: none; padding: 0.5rem 1rem; font-size: 1rem;
-      cursor: pointer; color: #999; border-bottom: 2px solid transparent;
-      margin-bottom: -1px; font-family: 'Outfit', sans-serif; font-weight: 500; transition: all 0.3s ease;
-    }
-    .new-auth-tab.active { color: var(--burgundy); border-bottom-color: var(--burgundy); font-weight: 600; }
-    
-    .new-input-wrap { position: relative; margin-bottom: 1.2rem; }
-    .new-input-wrap i:not(.toggle-password) { position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: #888; }
-    
-    /* Password Visibility Icon */
-    .toggle-password {
-      position: absolute; right: 1.2rem; top: 50%; transform: translateY(-50%);
-      color: #999; cursor: pointer; transition: color 0.2s; z-index: 10;
-    }
-    .toggle-password:hover { color: var(--burgundy); }
-
-    .new-auth-input {
-      width: 100%; padding: 0.9rem 2.8rem; border: 1px solid #e0e0e0;
-      border-radius: 6px; box-sizing: border-box; font-family: 'Outfit', sans-serif;
-      background: #fff; transition: all 0.3s ease; font-size: 0.95rem;
-    }
-    .new-auth-input:focus { outline: none; border-color: var(--burgundy); box-shadow: 0 0 0 3px var(--burgundy-glow); }
-    
-    .new-auth-btn {
-      width: 100%; background: var(--burgundy); color: white; border: none;
-      padding: 1rem; border-radius: 6px; cursor: pointer; font-weight: 600;
-      font-family: 'Outfit', sans-serif; letter-spacing: 1px; margin-top: 1rem;
-      transition: all 0.3s ease; border: 1px solid var(--burgundy);
-    }
-    .new-auth-btn:hover { background: transparent; color: var(--burgundy); }
-
-    /* DASHBOARD LAYOUT */
-    .dashboard-grid-container {
-      max-width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem;
-    }
-
-    /* Welcome Row Header */
-    .new-dash-header {
-      background: var(--card-bg); border-radius: 12px; padding: 2rem 3rem;
-      display: flex; justify-content: space-between; align-items: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid var(--border-color);
-      border-left: 4px solid var(--burgundy);
-    }
-    .new-dash-header-text h2 { font-size: 2.4rem; color: var(--dark-text); }
-    .new-dash-header-text h2 span { color: var(--burgundy); font-weight: 700; }
-    .new-dash-header-text p { margin: 0.4rem 0 0 0; color: #666; font-weight: 300; }
-    
-    .new-signout-btn {
-      padding: 0.6rem 1.4rem; border: 1px solid #ddd; border-radius: 4px;
-      background: transparent; cursor: pointer; font-family: 'Outfit', sans-serif;
-      font-weight: 500; display: flex; align-items: center; gap: 0.6rem; color: var(--dark-text);
-      transition: all 0.3s ease;
-    }
-    .new-signout-btn:hover { background: var(--crimson); color: #fff; border-color: var(--crimson); }
-
-    .user-top-layout {
-      display: grid; grid-template-columns: 380px 1fr; gap: 2.5rem; align-items: start;
-    }
-
-    .sleek-panel {
-      background: var(--card-bg); border-radius: 12px; padding: 2rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid var(--border-color);
-    }
-    .sleek-panel h3 { font-size: 1.2rem; color: var(--dark-text); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem; border-bottom: 1px solid #f5f5f5; padding-bottom: 0.8rem; }
-    .sleek-panel h3 i { color: var(--gold); }
-
-    /* Nested Settings Sub-Tabs Styling */
-    .nested-tabs { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; }
-    .nested-tab-btn {
-      background: none; border: none; padding: 0.4rem 0.8rem; font-family: 'Outfit', sans-serif;
-      font-size: 0.85rem; font-weight: 500; color: #777; cursor: pointer; border-radius: 4px; transition: all 0.2s;
-    }
-    .nested-tab-btn.active { background: var(--burgundy-glow); color: var(--burgundy); font-weight: 600; }
-
-    /* Wishlist Elements */
-    .new-wishlist { list-style: none; padding: 0; margin: 0; }
-    .new-wishlist li {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0.9rem 1.2rem; border: 1px solid var(--border-color); border-radius: 6px;
-      margin-bottom: 0.6rem; background: var(--app-bg); transition: all 0.25s ease;
-    }
-    .new-wishlist li:hover { background: #fff; border-color: var(--burgundy); box-shadow: 0 4px 12px rgba(114, 47, 55, 0.04); }
-    .new-wishlist li a { text-decoration: none; color: var(--dark-text); font-size: 0.9rem; font-weight: 500; }
-    .new-wishlist li button { background: none; border: none; color: #ccc; cursor: pointer; transition: color 0.2s; }
-    .new-wishlist li button:hover { color: var(--crimson); }
-
-    /* Artifacts Custom Section Box */
-    .artifacts-promo-box {
-      margin-top: 1.5rem; padding: 1.2rem; border: 1px solid rgba(212, 175, 55, 0.3);
-      background-color: #fdfbf7; border-radius: 8px; text-align: left;
-    }
-    .artifacts-promo-box h4 { font-size: 0.95rem; color: var(--burgundy); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem; }
-    .artifacts-promo-box p { font-size: 0.85rem; color: #555; margin: 0 0 0.8rem 0; line-height: 1.4; }
-    .artifacts-promo-box a { color: var(--crimson); font-weight: 600; text-decoration: none; font-size: 0.85rem; }
-    .artifacts-promo-box a:hover { text-decoration: underline; }
-
-    /* Forms Layout Update styling */
-    .settings-form { display: flex; flex-direction: column; gap: 0.8rem; }
-    .settings-form label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: #666; letter-spacing: 0.5px; }
-    .settings-form input { padding: 0.75rem; border: 1px solid #e0e0e0; border-radius: 4px; font-family: 'Outfit', sans-serif; background: var(--app-bg); transition: border-color 0.2s; width: 100%; box-sizing: border-box; }
-    .settings-form input:focus { outline: none; border-color: var(--burgundy); background: #fff; }
-    .settings-form button {
-      background: var(--burgundy); color: #fff; border: none; padding: 0.8rem;
-      border-radius: 4px; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; transition: background 0.2s; letter-spacing: 0.5px; margin-top: 0.5rem;
-    }
-    .settings-form button:hover { background: var(--dark-text); }
-
-    /* Main Grid Items */
-    .new-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
-    .new-card {
-      background: var(--card-bg); padding: 2rem 1.5rem; border-radius: 12px;
-      border: 1px solid var(--border-color); text-align: left; position: relative; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .new-card:hover { border-color: var(--gold); box-shadow: 0 10px 30px var(--gold-glow); transform: translateY(-3px); }
-    .new-card i { font-size: 1.8rem; color: var(--burgundy); margin-bottom: 1rem; display: block; }
-    .new-card h4 { font-size: 1.1rem; color: var(--dark-text); margin-bottom: 0.4rem; }
-    .new-card p { font-size: 0.85rem; color: #777; margin-bottom: 1.5rem; font-weight: 300; }
-    
-    .new-card-btn {
-      width: 100%; padding: 0.75rem; border-radius: 4px; border: 1px solid var(--burgundy);
-      background: transparent; color: var(--burgundy); cursor: pointer;
-      font-weight: 600; font-family: 'Outfit', sans-serif; transition: all 0.25s;
-    }
-    .new-card-btn:hover:not(:disabled) { background: var(--burgundy); color: #fff; }
-    .new-card-btn:disabled { background: #fdfaf2; color: var(--gold); border-color: var(--gold); cursor: not-allowed; }
-
-    /* INTEGRATED DISPATCH NEWSLETTER BOX */
-    .new-newsletter-banner {
-      background: linear-gradient(135deg, var(--burgundy) 0%, #4a1920 100%);
-      border-radius: 12px; padding: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-      color: white; margin-top: 1rem; align-items: center; position: relative; box-shadow: 0 15px 35px rgba(114, 47, 55, 0.1);
-    }
-    .new-news-badge {
-      background: rgba(212, 175, 55, 0.15); color: var(--gold); padding: 0.4rem 1.2rem;
-      border-radius: 4px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.5rem;
-      margin-bottom: 1.5rem; font-weight: 600; border: 1px solid rgba(212, 175, 55, 0.3); letter-spacing: 0.5px;
-    }
-    .new-news-left h3 { font-size: 2.8rem; margin-bottom: 1.2rem; line-height: 1.1; color: #fff; }
-    .new-news-left > p { font-size: 1rem; color: #eee; margin-bottom: 2rem; line-height: 1.5; font-weight: 300; }
-    .new-news-features { display: flex; flex-direction: column; gap: 1.2rem; }
-    .new-feature-item { display: flex; gap: 1rem; align-items: flex-start; }
-    .new-feature-item i { color: var(--gold); font-size: 1.1rem; margin-top: 0.2rem; }
-    .new-feature-item div h5 { font-family: 'Outfit', sans-serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.1rem; color: #fff; }
-    .new-feature-item div p { margin: 0; font-size: 0.85rem; color: #ccc; line-height: 1.4; font-weight: 300; }
-    .new-news-right { background: #fff; border-radius: 8px; overflow: hidden; padding: 0.8rem; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-    
-    .fbla-hidden { display: none !important; }
-
-    @media(max-width: 1024px) {
-      .user-top-layout, .new-newsletter-banner { grid-template-columns: 1fr; }
-      .new-newsletter-banner { padding: 2.5rem; gap: 2.5rem; }
-      .new-dash-header { flex-direction: column; text-align: center; gap: 1.5rem; padding: 2rem 1.5rem; }
-    }
-  </style>
 </head>
-
 <body>
 
-  <div class="scroll-progress" id="progressBar"></div>
+  <header class="museum-header">
+    <div class="logo">Henry B. Plant Museum</div>
+    <nav class="nav-links">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/events.html">Events</a>
+      <a href="/exhibits.html">Exhibits</a>
+      <a href="/artifacts.html">Artifacts</a>
+      <a href="/get_involved.html">Get Involved</a>
+      <a href="/profile.html" class="active">Profile</a>
+      <a href="/visitor.html" class="btn-visit">Plan Your Visit</a>
+    </nav>
+  </header>
 
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="/index.html" class="logo">Henry B. Plant Museum</a>
-      <i class="fa-solid fa-bars menu-toggle" id="menuToggle"></i>
-      <div class="nav-links" id="navLinks">
-        <a href="/index.html">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/events.html">Events</a>
-        <a href="/exhibits.html">Exhibits</a>
-        <a href="/artifacts.html">Artifacts</a>
-        <a href="/get_involved.html">Get Involved</a>
-        <a href="/profile.html" class="active">Sign In</a>
-        <a href="/visitor.html" class="nav-cta">Plan Your Visit</a>
-      </div>
-      <a href="/visitor.html" class="nav-cta">Plan Your Visit</a>
-    </div>
-  </nav>
+  <main class="profile-container">
+    <section class="welcome-hero">
+      <h1>Welcome back, <span id="user-greeting-name">hiii</span></h1>
+      <p class="identity-sig"><i class="fa-brands fa-google"></i> Identity Signature: <span id="identity-provider">Google</span></p>
+      <button id="sign-out-btn" class="btn-secondary"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</button>
+    </section>
 
-  <main class="new-prof-wrapper">
-    <!-- AUTH VIEW -->
-    <div id="fbla-auth-view" class="new-auth-box">
-      <h2>Museum Portal</h2>
-      <p>Curate your Gilded Age experience</p>
+    <section class="itinerary-section">
+      <h2><i class="fa-solid fa-route"></i> My Itinerary</h2>
+      <ul id="itinerary-list" class="itinerary-list">
+        <li>Upstairs / Downstairs <span class="remove-item" data-item="upstairs-downstairs"><i class="fa-solid fa-xmark"></i></span></li>
+        <li>Celebrate Sunset <span class="remove-item" data-item="celebrate-sunset"><i class="fa-solid fa-xmark"></i></span></li>
+        <li>Tampa at War <span class="remove-item" data-item="tampa-at-war"><i class="fa-solid fa-xmark"></i></span></li>
+        <li>Free Movie Series <span class="remove-item" data-item="free-movie-series"><i class="fa-solid fa-xmark"></i></span></li>
+        <li>Grand Hotel <span class="remove-item" data-item="grand-hotel"><i class="fa-solid fa-xmark"></i></span></li>
+        <li>Gaspar's Gold <span class="remove-item" data-item="gaspars-gold"><i class="fa-solid fa-xmark"></i></span></li>
+        <li>Plants Southern Empire <span class="remove-item" data-item="plants-southern-empire"><i class="fa-solid fa-xmark"></i></span></li>
+      </ul>
       
-      <div class="new-auth-tabs">
-        <button id="tab-login" class="new-auth-tab active" onclick="window.switchTab('login')">Sign In</button>
-        <button id="tab-signup" class="new-auth-tab" onclick="window.switchTab('signup')">Sign Up</button>
+      <div class="favorites-box">
+        <h3><i class="fa-solid fa-bookmark"></i> Favorite Artifacts</h3>
+        <p>Since you created a profile, you can now save your favorite artifacts!</p>
+        <a href="/artifacts.html" class="explore-link">Explore Collections &rarr;</a>
       </div>
+    </section>
+
+    <section class="account-manager">
+      <h2><i class="fa-solid fa-user-gear"></i> Account Manager</h2>
       
-      <!-- Log In Subform Container -->
-      <div id="form-login">
-        <div class="new-input-wrap">
-          <i class="fa-solid fa-user"></i>
-          <input type="text" id="log-user" class="new-auth-input" placeholder="Username">
+      <form id="form-display-name" class="management-card">
+        <h3>Update Profile Display Name</h3>
+        <div class="input-group">
+          <label for="dn-current-password">Current Password</label>
+          <input type="password" id="dn-current-password" placeholder="Confirm your current password..." required>
         </div>
-        <div class="new-input-wrap">
-          <i class="fa-solid fa-lock"></i>
-          <input type="password" id="log-pass" class="new-auth-input" placeholder="Password">
-          <i class="fa-regular fa-eye toggle-password" onclick="window.togglePasswordVisibility('log-pass', this)"></i>
+        <div class="input-group">
+          <label for="new-display-name">New Display Name</label>
+          <input type="text" id="new-display-name" placeholder="Enter new display name..." required>
         </div>
-        <div id="log-err" style="color:var(--crimson); font-size:14px; margin-bottom: 12px; font-weight:500;"></div>
-        <button class="new-auth-btn" onclick="window.signIn()">ACCESS PORTAL</button>
+        <button type="submit" class="btn-commit">Commit Display Name</button>
+      </form>
+
+      <form id="form-username" class="management-card">
+        <h3>Update Profile Username (Email)</h3>
+        <div class="input-group">
+          <label for="un-current-password">Current Password</label>
+          <input type="password" id="un-current-password" placeholder="Confirm your current password..." required>
+        </div>
+        <div class="input-group">
+          <label for="new-username">New Username</label>
+          <input type="text" id="new-username" placeholder="Enter new username..." required>
+        </div>
+        <button type="submit" class="btn-commit">Commit Username</button>
+      </form>
+
+      <form id="form-password" class="management-card">
+        <h3>Update Profile Password</h3>
+        <div class="input-group">
+          <label for="pw-current-username">Current Username</label>
+          <input type="text" id="pw-current-username" placeholder="Confirm your current identity value..." required>
+        </div>
+        <div class="input-group">
+          <label for="new-password">New Password</label>
+          <input type="password" id="new-password" placeholder="Enter new password..." required>
+        </div>
+        <button type="submit" class="btn-commit">Commit Password</button>
+      </form>
+    </section>
+
+    <section class="portfolio-discovery">
+      <h2><i class="fa-solid fa-compass"></i> Discover Portfolio Items</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item-card">
+          <i class="fa-solid fa-face-frown-open item-icon"></i>
+          <h3>Upstairs / Downstairs</h3>
+          <p>Live Performance Block</p>
+          <button class="btn-status-saved">Saved</button>
+        </div>
+        <div class="portfolio-item-card">
+          <i class="fa-solid fa-film item-icon"></i>
+          <h3>Free Movie Series</h3>
+          <p>Community Event Block</p>
+          <button class="btn-status-saved">Saved</button>
+        </div>
+        <div class="portfolio-item-card">
+          <i class="fa-solid fa-sun item-icon"></i>
+          <h3>Celebrate Sunset</h3>
+          <p>Special Event Block</p>
+          <button class="btn-status-saved">Saved</button>
+        </div>
+        <div class="portfolio-item-card">
+          <i class="fa-solid fa-shield-halved item-icon"></i>
+          <h3>Tampa at War</h3>
+          <p>History Exhibit Block</p>
+          <button class="btn-status-saved">Saved</button>
+        </div>
+        <div class="portfolio-item-card">
+          <i class="fa-solid fa-hotel item-icon"></i>
+          <h3>Grand Hotel</h3>
+          <p>Permanent Exhibit Block</p>
+          <button class="btn-status-saved">Saved</button>
+        </div>
+        <div class="portfolio-item-card">
+          <i class="fa-solid fa-coins item-icon"></i>
+          <h3>Gaspar's Gold</h3>
+          <p>Temporary Exhibit Block</p>
+          <button class="btn-status-saved">Saved</button>
+        </div>
+        <div class="portfolio-item-card">
+          <i class="fa-solid fa-train item-icon"></i>
+          <h3>Plants Southern Empire</h3>
+          <p>Permanent Exhibit Block</p>
+          <button class="btn-status-saved">Saved</button>
+        </div>
       </div>
+    </section>
+
+    <section class="newsletter-dispatch">
+      <div class="dispatch-header">
+        <i class="fa-solid fa-square-envelope"></i>
+        <span>The Gilded Dispatch</span>
+      </div>
+      <h2>The Official Museum Chronicle</h2>
+      <p>Join our group of patrons. Verify your account to subscribe to real-time updates regarding our historical restoration collections.</p>
       
-      <!-- Sign Up Subform Container -->
-      <div id="form-signup" class="fbla-hidden">
-        <div class="new-input-wrap">
-          <i class="fa-solid fa-id-card"></i>
-          <input type="text" id="reg-name" class="new-auth-input" placeholder="Full Name">
+      <div class="dispatch-features">
+        <div class="feature-bullet">
+          <i class="fa-solid fa-star"></i>
+          <div>
+            <h4>Private Showings</h4>
+            <p>Get priority alerts for special members galas and opening windows.</p>
+          </div>
         </div>
-        <div class="new-input-wrap">
-          <i class="fa-solid fa-user-plus"></i>
-          <input type="text" id="reg-user" class="new-auth-input" placeholder="Choose Username">
+        <div class="feature-bullet">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <div>
+            <h4>Curator Logs</h4>
+            <p>Review insights and records delivered straight from our restoration department experts.</p>
+          </div>
         </div>
-        <div class="new-input-wrap">
-          <i class="fa-solid fa-lock"></i>
-          <input type="password" id="reg-pass" class="new-auth-input" placeholder="Password (6+ chars)">
-          <i class="fa-regular fa-eye toggle-password" onclick="window.togglePasswordVisibility('reg-pass', this)"></i>
-        </div>
-        <div id="reg-err" style="color:var(--crimson); font-size:14px; margin-bottom: 12px; font-weight:500;"></div>
-        <button class="new-auth-btn" onclick="window.signUp()">CREATE ACCOUNT</button>
       </div>
-    </div>
 
-    <!-- MAIN DASHBOARD -->
-    <div id="fbla-dash-view" class="fbla-hidden">
-      <div class="dashboard-grid-container">
-        
-        <!-- Welcome Header Banner -->
-        <div class="new-dash-header">
-          <div class="new-dash-header-text">
-            <h2>Welcome back, <span id="ui-name">---</span></h2>
-            <p>Identity Signature: <span id="ui-user">---</span></p>
-          </div>
-          <button class="new-signout-btn" onclick="window.logout()">
-            Sign Out <i class="fa-solid fa-right-from-bracket"></i>
-          </button>
-        </div>
-
-        <!-- MAIN SECTION -->
-        <div class="user-top-layout">
-          <div style="display:flex; flex-direction:column; gap:1.5rem;">
-            <!-- Itinerary Module -->
-            <div class="sleek-panel">
-              <h3><i class="fa-solid fa-list-check"></i> My Itinerary</h3>
-              <ul id="fbla-wishlist-box" class="new-wishlist">
-                <li style="color:#888; font-size:14px; background:none; border:none; padding:0;">Loading Itinerary...</li>
-              </ul>
-              
-              <!-- Artifacts Reference Block -->
-              <div class="artifacts-promo-box">
-                <h4><i class="fa-solid fa-bookmark"></i> Favorite Artifacts</h4>
-                <p>Since you created a profile, you can now save your favorite artifacts!</p>
-                <a href="/artifacts.html">Explore Collections &rarr;</a>
-              </div>
-            </div>
-
-            <!-- Unified Tabbed Configuration Module (Change display name, username, password in separate tab panels) -->
-            <div class="sleek-panel">
-              <h3><i class="fa-solid fa-user-gear"></i> Account Manager</h3>
-              
-              <div class="nested-tabs">
-                <button id="subtab-name" class="nested-tab-btn active" onclick="window.switchSettingsPane('name')">Display Name</button>
-                <button id="subtab-user" class="nested-tab-btn" onclick="window.switchSettingsPane('user')">Username</button>
-                <button id="subtab-pass" class="nested-tab-btn" onclick="window.switchSettingsPane('pass')">Password</button>
-              </div>
-
-              <form class="settings-form" onsubmit="window.updateCredentials(event)">
-                <!-- Global required input requirement validation parameter verification step -->
-                <div style="display:flex; flex-direction:column; gap:0.3rem; margin-bottom: 0.5rem;">
-                  <label>Current Username <span style="color:var(--crimson);">*</span></label>
-                  <input type="text" id="settings-curr-user" placeholder="Confirm your current identity value..." required>
-                </div>
-
-                <!-- Pane 1: Update Name Box container -->
-                <div id="pane-name" class="settings-pane">
-                  <div style="display:flex; flex-direction:column; gap:0.3rem;">
-                    <label>New Display Name</label>
-                    <input type="text" id="settings-new-name" placeholder="Enter new display name...">
-                  </div>
-                </div>
-
-                <!-- Pane 2: Update Username Box container -->
-                <div id="pane-user" class="settings-pane fbla-hidden">
-                  <div style="display:flex; flex-direction:column; gap:0.3rem;">
-                    <label>New Username</label>
-                    <input type="text" id="settings-new-user" placeholder="Enter new custom account handle...">
-                  </div>
-                </div>
-
-                <!-- Pane 3: Update Password Box container -->
-                <div id="pane-pass" class="settings-pane fbla-hidden">
-                  <div style="display:flex; flex-direction:column; gap:0.3rem;">
-                    <label>New Password</label>
-                    <div style="position:relative; width:100%;">
-                      <input type="password" id="settings-new-pass" placeholder="Input fresh password sequence (6+ chars)...">
-                      <i class="fa-regular fa-eye toggle-password" style="right:1rem;" onclick="window.togglePasswordVisibility('settings-new-pass', this)"></i>
-                    </div>
-                  </div>
-                </div>
-
-                <button type="submit">Commit Changes</button>
-              </form>
-            </div>
-          </div>
-
-          <!-- Catalog Listing View Block Options -->
-          <div class="sleek-panel">
-            <h3><i class="fa-solid fa-compass"></i> Discover Portfolio Items</h3>
-            <div class="new-cards-grid">
-              <div class="new-card">
-                <i class="fa-solid fa-masks-theater"></i>
-                <h4>Upstairs / Downstairs</h4>
-                <p>Live Performance Block</p>
-                <button class="new-card-btn fbla-add-btn" data-name="Upstairs / Downstairs" onclick="window.addWish('Upstairs / Downstairs', 'events/upstairs-downstairs.html')">Save</button>
-              </div>
-
-              <div class="new-card">
-                <i class="fa-solid fa-film"></i>
-                <h4>Free Movie Series</h4>
-                <p>Community Event Block</p>
-                <button class="new-card-btn fbla-add-btn" data-name="Free Movie Series" onclick="window.addWish('Free Movie Series', 'events/free-movie-series.html')">Save</button>
-              </div>
-
-              <div class="new-card">
-                <i class="fa-regular fa-sun"></i>
-                <h4>Celebrate Sunset</h4>
-                <p>Special Event Block</p>
-                <button class="new-card-btn fbla-add-btn" data-name="Celebrate Sunset" onclick="window.addWish('Celebrate Sunset', 'events/celebrate-sunset.html')">Save</button>
-              </div>
-
-              <div class="new-card">
-                <i class="fa-solid fa-shield-halved"></i>
-                <h4>Tampa at War</h4>
-                <p>History Exhibit Block</p>
-                <button class="new-card-btn fbla-add-btn" data-name="Tampa at War" onclick="window.addWish('Tampa at War', 'exhibits/tampa-at-war.html')">Save</button>
-              </div>
-
-              <div class="new-card">
-                <i class="fa-solid fa-building"></i>
-                <h4>Grand Hotel</h4>
-                <p>Permanent Exhibit Block</p>
-                <button class="new-card-btn fbla-add-btn" data-name="Grand Hotel" onclick="window.addWish('Grand Hotel', 'exhibits/grand-hotel.html')">Save</button>
-              </div>
-
-              <div class="new-card">
-                <i class="fa-solid fa-coins"></i>
-                <h4>Gaspar's Gold</h4>
-                <p>Temporary Exhibit Block</p>
-                <button class="new-card-btn fbla-add-btn" data-name="Gaspar's Gold" onclick="window.addWish('Gaspar\'s Gold', 'exhibits/gaspar_gold.html')">Save</button>
-              </div>
-
-              <div class="new-card">
-                <i class="fa-solid fa-train-tram"></i>
-                <h4>Plants Southern Empire</h4>
-                <p>Permanent Exhibit Block</p>
-                <button class="new-card-btn fbla-add-btn" data-name="Plants Southern Empire" onclick="window.addWish('Plants Southern Empire', 'exhibits/plants-southern-empire.html')">Save</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- NEWSLETTER BANNER BLOCK -->
-        <section class="new-newsletter-banner">
-          <div class="new-news-left">
-            <div class="new-news-badge"><i class="fa-solid fa-envelope-open-text"></i> The Gilded Dispatch</div>
-            <h3>The Official Museum Chronicle</h3>
-            <p>Join our group of patrons. Verify your account to subscribe to real-time updates regarding our historical restoration collections.</p>
-            
-            <div class="new-news-features">
-              <div class="new-feature-item">
-                <i class="fa-solid fa-star"></i>
-                <div>
-                  <h5>Private Showings</h5>
-                  <p>Get priority alerts for special members galas and opening windows.</p>
-                </div>
-              </div>
-              <div class="new-feature-item">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <div>
-                  <h5>Curator Logs</h5>
-                  <p>Review insights and records delivered straight from our restoration department experts.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="new-news-right">
-            <iframe width="100%" height="320" src="https://0763f376.sibforms.com/v2/serve/MUIFABoisAy02GbeNr_nExJDu4nEjDi2ahR0wE9fteVjvwf7e_0YHnmPJzaqkhfadwAVyEdfti2G-TaerEzSXPLbqScpowgCmb78cRlm1T5wWCkseVx0jssR1cZxWTZCIB3y22ohECR_Lqb1UzAjpA5HosBjAdJVqab032fJAaw9voNAEKUzqpY5zMNZ3djfXB2ospCRTenMiDRuCg==" frameborder="0" scrolling="auto" allowfullscreen style="display: block; margin: 0 auto; background: white; border: none; border-radius: 4px;"></iframe>
-          </div>
-        </section>
-
-      </div>
-    </div>
+      <iframe src="/newsletter-frame.html" title="Henry B Plant Museum Newsletter Sign Up" class="newsletter-iframe"></iframe>
+    </section>
   </main>
 
-  <div class="side-buttons">
-    <button class="side-btn" id="btnResources" aria-label="Museum Resources" title="Resources & Contact"><i class="fa-solid fa-layer-group"></i></button>
-    <button class="side-btn" id="btnA11y" aria-label="Accessibility Settings" title="Accessibility"><i class="fa-solid fa-universal-access"></i></button>
-  </div>
-
-  <div class="panel-overlay" id="panelOverlay"></div>
-
-  <aside class="panel-drawer" id="drawerResources">
-    <div class="panel-header">
-      <h3>Museum Resources</h3>
-      <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <div class="panel-body">
-      <div class="drawer-group">
-        <h4>Visit & Contact</h4>
-        <a href="tel:8132541891" class="resource-item">
-          <div class="resource-icon"><i class="fa-solid fa-phone"></i></div>
-          <div class="resource-text"><h5>Phone</h5><p>(813) 254-1891</p></div>
-        </a>
-        <a href="mailto:info@plantmuseum.com" class="resource-item">
-          <div class="resource-icon"><i class="fa-solid fa-envelope"></i></div>
-          <div class="resource-text"><h5>Email</h5><p>info@plantmuseum.com</p></div>
-        </a>
-        <a href="https://www.google.com/maps?q=401+W+Kennedy+Blvd,+Tampa,+FL" class="resource-item">
-          <div class="resource-icon"><i class="fa-solid fa-location-dot"></i></div>
-          <div class="resource-text"><h5>Location</h5><p>401 W. Kennedy Blvd, Tampa</p></div>
-        </a>
-        <div class="resource-item static">
-          <div class="resource-icon"><i class="fa-solid fa-clock"></i></div>
-          <div class="resource-text"><h5>Hours of Operation</h5><p>Tue–Sat: 10am–5pm<br>Sun: 12pm–5pm<br>Mon: Closed</p></div>
-        </div>
-      </div>
-      <div class="drawer-group">
-        <h4>Support the Museum</h4>
-        <a href="/visitor.html" target="_blank" class="resource-item">
-          <div class="resource-icon"><i class="fa-solid fa-ticket"></i></div>
-          <div class="resource-text"><h5>Buy Tickets</h5><p>Admissions & Tours</p></div>
-        </a>
-        <a href="/membership.html" target="_blank" class="resource-item">
-          <div class="resource-icon"><i class="fa-solid fa-id-card"></i></div>
-          <div class="resource-text"><h5>Membership</h5><p>Join the Museum Society</p></div>
-        </a>
-        <a href="https://henry-b-plant-museum.square.site/product/donation/101" target="_blank" class="resource-item">
-          <div class="resource-icon"><i class="fa-solid fa-heart"></i></div>
-          <div class="resource-text"><h5>Donate Now</h5><p>Support our preservation</p></div>
-        </a>
-      </div>
-      <div class="drawer-group">
-        <h4>Connect With Us</h4>
-        <div class="drawer-socials">
-          <a href="https://twitter.com/HBPlantMuseum" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        </div>
-      </div>
-    </div>
-  </aside>
-
-  <aside class="panel-drawer" id="drawerA11y">
-    <div class="panel-header">
-      <h3>Accessibility Settings</h3>
-      <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <div class="panel-body">
-      <div class="a11y-setting">
-        <label for="toggle-contrast">High Contrast Mode</label>
-        <label class="switch"><input type="checkbox" id="toggle-contrast"><span class="slider"></span></label>
-      </div>
-      <div class="a11y-setting">
-        <label for="toggle-text">Large Text</label>
-        <label class="switch"><input type="checkbox" id="toggle-text"><span class="slider"></span></label>
-      </div>
-      <div class="a11y-setting">
-        <label for="toggle-dyslexia">Dyslexia Friendly Font</label>
-        <label class="switch"><input type="checkbox" id="toggle-dyslexia"><span class="slider"></span></label>
-      </div>
-      <div class="a11y-setting">
-        <label for="toggle-motion">Reduce Motion</label>
-        <label class="switch"><input type="checkbox" id="toggle-motion"><span class="slider"></span></label>
-      </div>
-      <div class="a11y-setting">
-        <label for="toggle-links">Highlight Links</label>
-        <label class="switch"><input type="checkbox" id="toggle-links"><span class="slider"></span></label>
-      </div>
-    </div>
-  </aside>
-
-  <footer class="footer">
+  <footer class="museum-footer">
     <div class="footer-grid">
       <div class="footer-col">
-        <h3>Museum Support</h3>
-        <ul class="footer-links">
-          <li><a href="/visitor.html" target="_blank">Buy Tickets</a></li>
-          <li><a href="/membership.html" target="_blank">Membership</a></li>
-          <li><a href="https://henry-b-plant-museum.square.site/product/donation/101" target="_blank">Donate Now</a></li>
-        </ul>
-        <div class="footer-socials">
-          <a href="https://twitter.com/HBPlantMuseum" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        </div>
+        <h3>VISIT & CONTACT</h3>
+        <p><i class="fa-solid fa-phone"></i> (813) 254-1891</p>
+        <p><i class="fa-solid fa-envelope"></i> info@plantmuseum.com</p>
+        <p><i class="fa-solid fa-location-dot"></i> 401 W. Kennedy Blvd, Tampa</p>
+        <p><i class="fa-solid fa-clock"></i> Tue–Sat: 10am–5pm | Sun: 12pm–5pm | Mon: Closed</p>
       </div>
-
-<div class="footer-col">
-  <h3>Quick Links</h3>
-
-  <div class="quick-links-grid">
-    <ul class="footer-links">
-      <li><a href="/index.html" target="_blank">Home</a></li>
-      <li><a href="/about.html" target="_blank">About Us</a></li>
-      <li><a href="/events.html" target="_blank">Events</a></li>
-      <li><a href="/exhibits.html" target="_blank">Exhibits</a></li>
-      <li><a href="/artifacts.html" target="_blank">Artifacts</a></li>
-    </ul>
-
-    <ul class="footer-links">
-      <li><a href="/get-involved.html" target="_blank">Get Involved</a></li>
-      <li><a href="/profile.html" target="_blank">Profile</a></li>
-      <li><a href="/visitor.html" target="_blank">Plan Your Visit</a></li>
-      <li><a href="/credit.html" target="_blank">Credits</a></li>
-    </ul>
-  </div>
-</div>
       <div class="footer-col">
-        <h3>Contact</h3>
-        <ul class="footer-links">
-          <li><a href="https://maps.google.com/?q=401+W.+Kennedy+Blvd,+Tampa" target="_blank">401 W. Kennedy Blvd, Tampa</a></li>
-          <li><a href="tel:8132541891">(813) 254-1891</a></li>
-          <li><a href="mailto:info@plantmuseum.com">info@plantmuseum.com</a></li>
+        <h3>SUPPORT THE MUSEUM</h3>
+        <a href="/visitor.html"><i class="fa-solid fa-ticket"></i> Buy Tickets</a>
+        <a href="/membership.html"><i class="fa-solid fa-id-card"></i> Membership</a>
+        <a href="/donate.html"><i class="fa-solid fa-heart"></i> Donate Now</a>
+      </div>
+      <div class="footer-col">
+        <h3>QUICK LINKS</h3>
+        <ul class="footer-links-list">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/events.html">Events</a></li>
+          <li><a href="/exhibits.html">Exhibits</a></li>
+          <li><a href="/artifacts.html">Artifacts</a></li>
+          <li><a href="/get_involved.html">Get Involved</a></li>
+          <li><a href="/credit.html">Credits</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Henry B. Plant Museum. Created for FBLA.</p>
+      <p>&copy; 2026 Henry B. Plant Museum. Created for FBLA.</p>
     </div>
   </footer>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updatePassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
-    import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, arrayRemove } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyA-ltDU9XbrsCIDWAnjze85Q2duWpLje5s",
-      authDomain: "plant-museum-fbla.firebaseapp.com",
-      projectId: "plant-museum-fbla",
-      storageBucket: "plant-museum-fbla.firebasestorage.app",
-      messagingSenderId: "132636635847",
-      appId: "1:132636635847:web:6c306c59b00f4e290944e2"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-
-    // Password View/Hide Toggle Utility Function Logic
-    window.togglePasswordVisibility = (inputId, iconEl) => {
-      const input = document.getElementById(inputId);
-      if(input.type === "password") {
-        input.type = "text";
-        iconEl.classList.replace("fa-eye", "fa-eye-slash");
-      } else {
-        input.type = "password";
-        iconEl.classList.replace("fa-eye-slash", "fa-eye");
-      }
-    };
-
-    // Sub-pane Switching Control logic loop for management panel
-    window.switchSettingsPane = (paneKey) => {
-      document.querySelectorAll('.settings-pane').forEach(p => p.classList.add('fbla-hidden'));
-      document.querySelectorAll('.nested-tab-btn').forEach(b => b.classList.remove('active'));
-      
-      document.getElementById(`pane-${paneKey}`).classList.remove('fbla-hidden');
-      document.getElementById(`subtab-${paneKey}`).classList.add('active');
-    };
-
-    window.switchTab = (tab) => {
-      document.getElementById('form-login').classList.toggle('fbla-hidden', tab !== 'login');
-      document.getElementById('form-signup').classList.toggle('fbla-hidden', tab !== 'signup');
-      document.getElementById('tab-login').classList.toggle('active', tab === 'login');
-      document.getElementById('tab-signup').classList.toggle('active', tab === 'signup');
-      document.getElementById('log-err').innerText = "";
-      document.getElementById('reg-err').innerText = "";
-    };
-
-    function drawWishlist(arr) {
-      const box = document.getElementById('fbla-wishlist-box');
-      box.innerHTML = "";
-
-      document.querySelectorAll('.fbla-add-btn').forEach(btn => {
-        btn.textContent = 'Save';
-        btn.disabled = false;
-      });
-
-      if (!arr || arr.length === 0) {
-        box.innerHTML = "<li style='color:#888; font-size:14px; border:none; background:none; padding-left:0;'>Your itinerary is currently empty.</li>";
-        return;
-      }
-
-      arr.forEach(item => {
-        const escapedName = item.name.replace(/'/g, "\\'");
-        const btn = document.querySelector(`.fbla-add-btn[data-name="${item.name}"]`);
-
-        if (btn) {
-          btn.textContent = "Saved";
-          btn.disabled = true;
-        }
-
-        box.innerHTML += `
-          <li>
-            <a href="${item.url}" target="_blank">${item.name}</a>
-            <button onclick="window.removeWish('${escapedName}', '${item.url}')" title="Remove Entry">
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-          </li>`;
-      });
-    }
-
-    window.signUp = async () => {
-      const n = document.getElementById('reg-name').value;
-      const u = document.getElementById('reg-user').value;
-      const p = document.getElementById('reg-pass').value;
-      try {
-        const cred = await createUserWithEmailAndPassword(auth, `${u.toLowerCase()}@museum.local`, p);
-        // Seeds 7 entries out of the box (with Christmas omitted explicitly)
-        const initialWishlist = [
-          { name: "Upstairs / Downstairs", url: "events/upstairs-downstairs.html" },
-          { name: "Free Movie Series", url: "events/free-movie-series.html" },
-          { name: "Celebrate Sunset", url: "events/celebrate-sunset.html" },
-          { name: "Tampa at War", url: "exhibits/tampa-at-war.html" },
-          { name: "Grand Hotel", url: "exhibits/grand-hotel.html" },
-          { name: "Gaspar's Gold", url: "exhibits/gaspar_gold.html" },
-          { name: "Plants Southern Empire", url: "exhibits/plants-southern-empire.html" }
-        ];
-        await setDoc(doc(db, "users", cred.user.uid), { realName: n, username: u, wishlist: initialWishlist });
-      } catch (e) { document.getElementById('reg-err').innerText = e.message; }
-    };
-
-    window.signIn = async () => {
-      const u = document.getElementById('log-user').value;
-      const p = document.getElementById('log-pass').value;
-      try { await signInWithEmailAndPassword(auth, `${u.toLowerCase()}@museum.local`, p); } 
-      catch (e) { document.getElementById('log-err').innerText = "Credentials verification failed."; }
-    };
-
-    window.logout = () => signOut(auth);
-
-    /* --- TABBED CONFIGURATION CREDENTIAL CONTROLLER PROCESSING LOGIC --- */
-    window.updateCredentials = async (e) => {
-      e.preventDefault();
-      if(!auth.currentUser) return;
-
-      const currentUsernameInput = document.getElementById('settings-curr-user').value.trim();
-      const newUsername = document.getElementById('settings-new-user').value.trim();
-      const newName = document.getElementById('settings-new-name').value.trim();
-      const newPass = document.getElementById('settings-new-pass').value;
-
-      const snap = await getDoc(doc(db, "users", auth.currentUser.uid));
-      if (!snap.exists() || snap.data().username.toLowerCase() !== currentUsernameInput.toLowerCase()) {
-        alert("Validation error: Input must completely match your current active identifier.");
-        return;
-      }
-
-      try {
-        const ref = doc(db, "users", auth.currentUser.uid);
-        let updates = {};
-
-        if (newName) {
-          updates.realName = newName;
-          document.getElementById('ui-name').innerText = newName;
-        }
-        if (newUsername) {
-          updates.username = newUsername;
-          document.getElementById('ui-user').innerText = newUsername;
-        }
-        if (Object.keys(updates).length > 0) {
-          await updateDoc(ref, updates);
-        }
-        if (newPass) {
-          if(newPass.length < 6) {
-            alert("Security exception: Password requires 6+ characters minimum.");
-            return;
-          }
-          await updatePassword(auth.currentUser, newPass);
-        }
-
-        alert("System adjustments synchronized successfully.");
-        e.target.reset();
-      } catch(err) {
-        alert("Write transaction exception: " + err.message);
-      }
-    };
-
-    window.addWish = async (name, url) => {
-      if(!auth.currentUser) return;
-      const ref = doc(db, "users", auth.currentUser.uid);
-      await updateDoc(ref, { wishlist: arrayUnion({ name, url }) });
-      const snap = await getDoc(ref);
-      drawWishlist(snap.data().wishlist);
-    };
-
-    window.removeWish = async (name, url) => {
-      if(!auth.currentUser) return;
-      const ref = doc(db, "users", auth.currentUser.uid);
-      await updateDoc(ref, { wishlist: arrayRemove({ name, url }) });
-      const snap = await getDoc(ref);
-      drawWishlist(snap.data().wishlist);
-    };
-
-    onAuthStateChanged(auth, async (user) => {
-      const authView = document.getElementById('fbla-auth-view');
-      const dashView = document.getElementById('fbla-dash-view');
-      if(user) {
-        const snap = await getDoc(doc(db, "users", user.uid));
-        if(snap.exists()) {
-          const data = snap.data();
-          document.getElementById('ui-name').innerText = data.realName;
-          document.getElementById('ui-user').innerText = data.username;
-          drawWishlist(data.wishlist);
-        }
-        authView.classList.add('fbla-hidden');
-        dashView.classList.remove('fbla-hidden');
-      } else {
-        authView.classList.remove('fbla-hidden');
-        dashView.classList.add('fbla-hidden');
-      }
-    });
-  </script>
-  <script src="script.js"></script>
+  <script type="module" src="/script.js"></script>
 </body>
 </html>
