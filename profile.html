@@ -11,6 +11,75 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/jpeg" href="https://www.plantmuseum.com/App_Themes/PlantMuseum/images/favicon.ico">
+
+  <style>
+    .profile-container {
+      display: flex;
+      flex-direction: column;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      /* Clears phantom vertical space layouts */
+      height: auto !important;
+      min-height: auto !important;
+    }
+
+    .account-manager {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .management-card {
+      background: var(--card-bg, #fff);
+      border: 1px solid var(--border-color, #ddd);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .management-card h3 {
+      margin-top: 0;
+      color: var(--burgundy, #800020);
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+
+    .input-group label {
+      font-weight: 500;
+      font-size: 0.85rem;
+      margin-bottom: 0.35rem;
+      text-transform: uppercase;
+    }
+
+    .input-group input {
+      padding: 0.75rem;
+      border: 1px solid var(--border-color, #ddd);
+      border-radius: 4px;
+      font-size: 1rem;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .btn-commit {
+      background-color: var(--burgundy, #800020);
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-weight: 500;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .btn-commit:hover {
+      background-color: var(--crimson, #b30000);
+    }
+  </style>
 </head>
 <body>
 
@@ -207,6 +276,113 @@
     </div>
   </footer>
 
-  <script type="module" src="/script.js"></script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.x.x/firebase-app.js";
+    import { 
+      getAuth, 
+      reauthenticateWithCredential, 
+      EmailAuthProvider, 
+      updateProfile, 
+      updateEmail, 
+      updatePassword,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/10.x.x/firebase-auth.js";
+
+    // Use your own project config values here
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    async function reauthenticateUser(identifier, passwordValue) {
+      const user = auth.currentUser;
+      if (!user) throw new Error("No active authorization found.");
+      
+      const emailTarget = identifier.includes('@') ? identifier : user.email;
+      const credential = EmailAuthProvider.credential(emailTarget, passwordValue);
+      return await reauthenticateWithCredential(user, credential);
+    }
+
+    // Flow 1: Current Password + New Display Name
+    const formDisplayName = document.getElementById('form-display-name');
+    if (formDisplayName) {
+      formDisplayName.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const currentPassword = document.getElementById('dn-current-password').value;
+        const newDisplayName = document.getElementById('new-display-name').value;
+        const user = auth.currentUser;
+
+        try {
+          await reauthenticateUser(user.email, currentPassword);
+          await updateProfile(user, { displayName: newDisplayName });
+          document.getElementById('user-greeting-name').textContent = newDisplayName;
+          alert("Display name updated!");
+          formDisplayName.reset();
+        } catch (err) {
+          console.error(err);
+          alert("Error: " + err.message);
+        }
+      });
+    }
+
+    // Flow 2: Current Password + New Username
+    const formUsername = document.getElementById('form-username');
+    if (formUsername) {
+      formUsername.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const currentPassword = document.getElementById('un-current-password').value;
+        const newUsername = document.getElementById('new-username').value;
+        const user = auth.currentUser;
+
+        try {
+          await reauthenticateUser(user.email, currentPassword);
+          await updateEmail(user, newUsername);
+          alert("Username email updated!");
+          formUsername.reset();
+        } catch (err) {
+          console.error(err);
+          alert("Error: " + err.message);
+        }
+      });
+    }
+
+    // Flow 3: Current Username + New Password
+    const formPassword = document.getElementById('form-password');
+    if (formPassword) {
+      formPassword.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const currentUsername = document.getElementById('pw-current-username').value;
+        const newPassword = document.getElementById('new-password').value;
+        const user = auth.currentUser;
+
+        try {
+          await reauthenticateUser(currentUsername, user.password || prompt("Confirm password context:"));
+          await updatePassword(user, newPassword);
+          alert("Password updated!");
+          formPassword.reset();
+        } catch (err) {
+          console.error(err);
+          alert("Error: " + err.message);
+        }
+      });
+    }
+
+    // Sign out handler
+    const signOutBtn = document.getElementById('sign-out-btn');
+    if (signOutBtn) {
+      signOutBtn.addEventListener('click', () => {
+        signOut(auth).then(() => {
+          window.location.href = "/index.html";
+        }).catch((err) => console.error(err));
+      });
+    }
+  </script>
 </body>
 </html>
