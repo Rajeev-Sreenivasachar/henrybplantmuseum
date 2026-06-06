@@ -12,72 +12,193 @@
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/jpeg" href="https://www.plantmuseum.com/App_Themes/PlantMuseum/images/favicon.ico">
 
-  <style>
+ <style>
+    /* --- Main Layout Container --- */
     .profile-container {
-      display: flex;
-      flex-direction: column;
       max-width: 1200px;
       margin: 0 auto;
       padding: 2rem 1rem;
-      /* Clears phantom vertical space layouts */
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      /* Clears the massive phantom blank space stretching the page down */
       height: auto !important;
       min-height: auto !important;
     }
 
+    /* --- Hero Section --- */
+    .welcome-hero {
+      background: #fdfbf7;
+      border: 1px solid #e6dfd3;
+      padding: 2rem;
+      border-radius: 8px;
+    }
+
+    /* --- Itinerary & Favorites Layout --- */
+    .itinerary-section {
+      background: #fff;
+      border: 1px solid #eaeaea;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    }
+
+    .itinerary-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .itinerary-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      background: #fdfdfd;
+      border: 1px solid #eaeaea;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+
+    .remove-item {
+      cursor: pointer;
+      color: #cc0000;
+      transition: transform 0.2s;
+    }
+    
+    .remove-item:hover {
+      transform: scale(1.15);
+    }
+
+    .favorites-box {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed #ddd;
+    }
+
+    /* --- Account Manager Forms (Stacked cleanly) --- */
     .account-manager {
-      margin-top: 2rem;
-      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
 
     .management-card {
-      background: var(--card-bg, #fff);
-      border: 1px solid var(--border-color, #ddd);
+      background: #fff;
+      border: 1px solid #eaeaea;
       border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
+      padding: 1.75rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
     }
 
-    .management-card h3 {
+    .management-card h2, .management-card h3 {
       margin-top: 0;
-      color: var(--burgundy, #800020);
+      color: #800020; /* Burgundy */
       font-family: 'Cinzel', serif;
-      font-size: 1.25rem;
     }
 
     .input-group {
       display: flex;
       flex-direction: column;
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
     }
 
     .input-group label {
-      font-weight: 500;
-      font-size: 0.85rem;
-      margin-bottom: 0.35rem;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
       text-transform: uppercase;
+      color: #555;
     }
 
     .input-group input {
-      padding: 0.75rem;
-      border: 1px solid var(--border-color, #ddd);
+      padding: 0.85rem;
+      border: 1px solid #ccc;
       border-radius: 4px;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-family: 'Outfit', sans-serif;
+      background: #fafafa;
+      transition: border 0.2s;
+    }
+
+    .input-group input:focus {
+      border-color: #800020;
+      outline: none;
+      background: #fff;
     }
 
     .btn-commit {
-      background-color: var(--burgundy, #800020);
+      background-color: #800020;
       color: #fff;
       border: none;
-      padding: 0.75rem 1.5rem;
+      padding: 0.85rem 2rem;
       font-weight: 500;
+      font-family: 'Outfit', sans-serif;
       border-radius: 4px;
       cursor: pointer;
-      transition: background 0.2s ease;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      transition: background 0.2s;
     }
 
     .btn-commit:hover {
-      background-color: var(--crimson, #b30000);
+      background-color: #b30000;
+    }
+
+    /* --- Discover Portfolio Items Grid Fix --- */
+    .portfolio-discovery {
+      margin-top: 1rem;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .portfolio-item-card {
+      background: #fff;
+      border: 1px solid #eaeaea;
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    }
+
+    .item-icon {
+      font-size: 2rem;
+      color: #800020;
+      margin-bottom: 1rem;
+    }
+
+    .btn-status-saved {
+      background: #fdf6e2;
+      color: #cda250;
+      border: 1px solid #cda250;
+      padding: 0.5rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 500;
+      width: 100%;
+      cursor: default;
+    }
+
+    /* --- Newsletter Box Section --- */
+    .newsletter-dispatch {
+      background: #f9f9f9;
+      border: 1px solid #eaeaea;
+      padding: 2rem;
+      border-radius: 8px;
+    }
+
+    .newsletter-iframe {
+      width: 100%;
+      border: none;
+      height: 200px;
+      margin-top: 1rem;
     }
   </style>
 </head>
