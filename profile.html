@@ -285,10 +285,11 @@
       updateProfile, 
       updateEmail, 
       updatePassword,
-      signOut
+      signOut,
+      onAuthStateChanged
     } from "https://www.gstatic.com/firebasejs/10.x.x/firebase-auth.js";
 
-    // Use your own project config values here
+    // Your firebase configuration setup
     const firebaseConfig = {
       apiKey: "YOUR_API_KEY",
       authDomain: "YOUR_AUTH_DOMAIN",
@@ -301,9 +302,44 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
+    // --- Core Authentication State Observer ---
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // dynamically populate greeting and identity metrics
+        document.getElementById('user-greeting-name').textContent = user.displayName || "User";
+        const providerSpan = document.getElementById('identity-provider');
+        if (providerSpan && user.providerData.length > 0) {
+          providerSpan.textContent = user.providerData[0].providerId === 'google.com' ? 'Google' : 'Password';
+        }
+      } else {
+        // if no session state, kick user back to home
+        window.location.href = "/index.html";
+      }
+    });
+
+    // --- Interactive Itinerary Handling Logic ---
+    const itineraryList = document.getElementById('itinerary-list');
+    if (itineraryList) {
+      itineraryList.addEventListener('click', (e) => {
+        // handle close cross button items click event loops
+        const removeBtn = e.target.closest('.remove-item');
+        if (removeBtn) {
+          const listItem = removeBtn.parentElement;
+          const itemId = removeBtn.getAttribute('data-item');
+          
+          listItem.style.opacity = '0';
+          setTimeout(() => {
+            listItem.remove();
+            // Optional: add firebase database sync remove here if needed later
+          }, 300);
+        }
+      });
+    }
+
+    // Helper utility to reauthenticate a user before changing credentials
     async function reauthenticateUser(identifier, passwordValue) {
       const user = auth.currentUser;
-      if (!user) throw new Error("No active authorization found.");
+      if (!user) throw new Error("No active authorization context found.");
       
       const emailTarget = identifier.includes('@') ? identifier : user.email;
       const credential = EmailAuthProvider.credential(emailTarget, passwordValue);
@@ -323,7 +359,7 @@
           await reauthenticateUser(user.email, currentPassword);
           await updateProfile(user, { displayName: newDisplayName });
           document.getElementById('user-greeting-name').textContent = newDisplayName;
-          alert("Display name updated!");
+          alert("Display name updated successfully!");
           formDisplayName.reset();
         } catch (err) {
           console.error(err);
@@ -332,7 +368,7 @@
       });
     }
 
-    // Flow 2: Current Password + New Username
+    // Flow 2: Current Password + New Username (Email)
     const formUsername = document.getElementById('form-username');
     if (formUsername) {
       formUsername.addEventListener('submit', async (e) => {
@@ -344,7 +380,7 @@
         try {
           await reauthenticateUser(user.email, currentPassword);
           await updateEmail(user, newUsername);
-          alert("Username email updated!");
+          alert("Username updated successfully!");
           formUsername.reset();
         } catch (err) {
           console.error(err);
@@ -363,9 +399,9 @@
         const user = auth.currentUser;
 
         try {
-          await reauthenticateUser(currentUsername, user.password || prompt("Confirm password context:"));
+          await reauthenticateUser(currentUsername, user.password || prompt("Confirm password key context:"));
           await updatePassword(user, newPassword);
-          alert("Password updated!");
+          alert("Password updated successfully!");
           formPassword.reset();
         } catch (err) {
           console.error(err);
@@ -374,13 +410,13 @@
       });
     }
 
-    // Sign out handler
+    // Global Sign Out Action Trigger
     const signOutBtn = document.getElementById('sign-out-btn');
     if (signOutBtn) {
       signOutBtn.addEventListener('click', () => {
         signOut(auth).then(() => {
           window.location.href = "/index.html";
-        }).catch((err) => console.error(err));
+        }).catch((err) => console.error("Sign-out routing error:", err));
       });
     }
   </script>
