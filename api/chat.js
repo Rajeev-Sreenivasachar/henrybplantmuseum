@@ -1,36 +1,51 @@
-import { GoogleGenAI } from "https://esm.sh/@google/genai";
+import https from 'https';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  const { conversationHistory, systemInstruction } = ;
-  const API_KEY = process.env.GEMINI_API_KEY; 
-
-  if (!API_KEY) {
-    return res.status(500).json({ error: 'API key not configured on server.' });
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    return res.status(500).json({ error: 'Missing GEMINI_API_KEY on server.' });
   }
 
-  const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+  const { conversationHistory, systemInstruction } = req.body;
 
-  try {
-    const response = await fetch(API_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        system_instruction: systemInstruction, 
-        contents: conversationHistory,
-        generationConfig: {
-          temperature: 0.5
-        }
-      })
+  // Format the payload exactly how Google's direct API expects it
+  const postData = JSON.stringify({
+    contents: conversationHistory,
+    systemInstruction: {
+      parts: [{ text: systemInstruction }]
+    }
+  });
+ const options = {
+    hostname: 'generativelanguage.googleapis.com',
+    path: `/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Content-Length': Buffer.byteLength(postData)
+    }
+  };
+
+  const request = https.request(options, (response) => {
+    let data = '';
+    response.on('data', (chunk) => { data += chunk; });
+    response.on('end', () => {
+      try {
+        const parsedData = JSON.parse(data);
+        return res.status(200).json(parsedData);
+      } catch (e) {
+        return res.status(500).json({ error: 'Failed to parse AI response' });
+      }
     });
+  });
 
-    const data = await response.json();
-    return res.status(200).json(data);
-  } catch (error) {
-    console.error("Backend Route Error:", error);
-    return res.status(500).json({ error: 'Internal server error processing chat.' });
-  }
+  request.on('error', (error) => {
+    return res.status(500).json({ error: error.message });
+  });
+
+  request.write(postData);
+  request.end();
 }
