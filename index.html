@@ -449,7 +449,7 @@
       const userInput = document.getElementById('henry-user-input');
       const messagesContainer = document.getElementById('henry-chat-messages');
 
-      // SECURE CHANGE: Targeted to your Vercel serverless environment route
+      // Internal API endpoint matching your Vercel project directory layout
       const API_URL = '/api/chat'; 
 
       let conversationHistory = [];
@@ -522,7 +522,7 @@
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
         try {
-          // SECURE FETCH: Sending payload to secure internal backend route on Vercel
+          // Sending clean fields to your Vercel serverless background route
           const response = await fetch(API_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
