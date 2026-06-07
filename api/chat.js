@@ -49,4 +49,3 @@ export default async function handler(req, res) {
   request.write(postData);
   request.end();
 }
-}
