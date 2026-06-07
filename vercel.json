@@ -1,0 +1,5 @@
+{
+  "installCommand": "echo 'Skipping dependencies installation phase'",
+  "buildCommand": "echo 'Serving clean raw assets profile'",
+  "framework": null
+}
