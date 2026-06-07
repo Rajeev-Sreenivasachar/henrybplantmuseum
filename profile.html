@@ -113,11 +113,11 @@
       background: var(--card-bg); border-radius: 12px; padding: 2rem;
       box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid var(--border-color);
     }
-    .sleek-panel h3 { font-size: 1.2rem; color: var(--dark-text); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem; border-bottom: 1px solid #f5f5f5; padding-bottom: 0.8rem; }
+    .sleek-panel h3 { font-size: 1.2rem; color: var(--dark-text); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.6rem; border-bottom: 1px solid #f5f5f5; padding-bottom: 0.8rem; }
     .sleek-panel h3 i { color: var(--gold); }
 
     /* Nested Settings Sub-Tabs Styling */
-    .nested-tabs { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; }
+    .nested-tabs { display: flex; gap: 0; margin-bottom: 0; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; }
     .nested-tab-btn {
       background: none; border: none; padding: 0.4rem 0.8rem; font-family: 'Outfit', sans-serif;
       font-size: 0.85rem; font-weight: 500; color: #777; cursor: pointer; border-radius: 4px; transition: all 0.2s;
@@ -129,7 +129,7 @@
     .new-wishlist li {
       display: flex; justify-content: space-between; align-items: center;
       padding: 0.9rem 1.2rem; border: 1px solid var(--border-color); border-radius: 6px;
-      margin-bottom: 0.6rem; background: var(--app-bg); transition: all 0.25s ease;
+      margin-bottom: 0; background: var(--app-bg); transition: all 0.25s ease;
     }
     .new-wishlist li:hover { background: #fff; border-color: var(--burgundy); box-shadow: 0 4px 12px rgba(114, 47, 55, 0.04); }
     .new-wishlist li a { text-decoration: none; color: var(--dark-text); font-size: 0.9rem; font-weight: 500; }
@@ -138,7 +138,7 @@
 
     /* Artifacts Custom Section Box */
     .artifacts-promo-box {
-      margin-top: 1.5rem; padding: 1.2rem; border: 1px solid rgba(212, 175, 55, 0.3);
+      margin-top: 0; padding: 1.2rem; border: 1px solid rgba(212, 175, 55, 0.3);
       background-color: #fdfbf7; border-radius: 8px; text-align: left;
     }
     .artifacts-promo-box h4 { font-size: 0.95rem; color: var(--burgundy); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem; }
@@ -147,13 +147,13 @@
     .artifacts-promo-box a:hover { text-decoration: underline; }
 
     /* Forms Layout Update styling */
-    .settings-form { display: flex; flex-direction: column; gap: 0.8rem; }
+    .settings-form { display: flex; flex-direction: column; gap: 0; }
     .settings-form label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: #666; letter-spacing: 0.5px; }
     .settings-form input { padding: 0.75rem; border: 1px solid #e0e0e0; border-radius: 4px; font-family: 'Outfit', sans-serif; background: var(--app-bg); transition: border-color 0.2s; width: 100%; box-sizing: border-box; }
     .settings-form input:focus { outline: none; border-color: var(--burgundy); background: #fff; }
     .settings-form button {
       background: var(--burgundy); color: #fff; border: none; padding: 0.8rem;
-      border-radius: 4px; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; transition: background 0.2s; letter-spacing: 0.5px; margin-top: 0.5rem;
+      border-radius: 4px; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; transition: background 0.2s; letter-spacing: 0.5px; margin-top: 0;
     }
     .settings-form button:hover { background: var(--dark-text); }
 
@@ -292,9 +292,12 @@
 
         <!-- MAIN SECTION -->
         <div class="user-top-layout">
-          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+          
+          <!-- REMOVED THE GAP HERE. Now the two sleek panels touch perfectly. -->
+          <div style="display:flex; flex-direction:column; gap:0;">
+            
             <!-- Itinerary Module -->
-            <div class="sleek-panel">
+            <div class="sleek-panel" style="border-bottom-left-radius: 0; border-bottom-right-radius: 0; border-bottom: none;">
               <h3><i class="fa-solid fa-list-check"></i> My Itinerary</h3>
               <ul id="fbla-wishlist-box" class="new-wishlist">
                 <li style="color:#888; font-size:14px; background:none; border:none; padding:0;">Loading Itinerary...</li>
@@ -304,12 +307,12 @@
               <div class="artifacts-promo-box">
                 <h4><i class="fa-solid fa-bookmark"></i> Favorite Artifacts</h4>
                 <p>Visit artifacts.html to save your artifacts to your gilded experience!</p>
-                <a href="/artifacts.html">Explore Collections &rarr;</a>
+                <a href="/artifacts.html">Explore Collections →</a>
               </div>
             </div>
 
-            <!-- Unified Tabbed Configuration Module (Change display name, username, password in separate tab panels) -->
-            <div class="sleek-panel">
+            <!-- Unified Tabbed Configuration Module -->
+            <div class="sleek-panel" style="border-top-left-radius: 0; border-top-right-radius: 0;">
               <h3><i class="fa-solid fa-user-gear"></i> Account Manager</h3>
               
               <div class="nested-tabs">
@@ -319,15 +322,13 @@
               </div>
 
               <form class="settings-form" onsubmit="window.updateCredentials(event)">
-                <!-- Global required input requirement validation parameter verification step -->
-                <div style="display:flex; flex-direction:column; gap:0.3rem; margin-bottom: 0.5rem;">
-                  <label>Current Username <span style="color:var(--crimson);">*</span></label>
-                  <input type="text" id="settings-curr-user" placeholder="Confirm your current identity value..." required>
-                </div>
-
                 <!-- Pane 1: Update Name Box container -->
                 <div id="pane-name" class="settings-pane">
-                  <div style="display:flex; flex-direction:column; gap:0.3rem;">
+                  <div style="display:flex; flex-direction:column; gap:0;">
+                    <label>Current Password <span style="color:var(--crimson);">*</span></label>
+                    <input type="password" id="settings-name-curr-pass" placeholder="Enter current password...">
+                  </div>
+                  <div style="display:flex; flex-direction:column; gap:0;">
                     <label>New Display Name</label>
                     <input type="text" id="settings-new-name" placeholder="Enter new display name...">
                   </div>
@@ -335,7 +336,11 @@
 
                 <!-- Pane 2: Update Username Box container -->
                 <div id="pane-user" class="settings-pane fbla-hidden">
-                  <div style="display:flex; flex-direction:column; gap:0.3rem;">
+                  <div style="display:flex; flex-direction:column; gap:0;">
+                    <label>Current Password <span style="color:var(--crimson);">*</span></label>
+                    <input type="password" id="settings-user-curr-pass" placeholder="Enter current password...">
+                  </div>
+                  <div style="display:flex; flex-direction:column; gap:0;">
                     <label>New Username</label>
                     <input type="text" id="settings-new-user" placeholder="Enter new custom account handle...">
                   </div>
@@ -343,7 +348,11 @@
 
                 <!-- Pane 3: Update Password Box container -->
                 <div id="pane-pass" class="settings-pane fbla-hidden">
-                  <div style="display:flex; flex-direction:column; gap:0.3rem;">
+                  <div style="display:flex; flex-direction:column; gap:0;">
+                    <label>Current Username <span style="color:var(--crimson);">*</span></label>
+                    <input type="text" id="settings-pass-curr-user" placeholder="Confirm your current username...">
+                  </div>
+                  <div style="display:flex; flex-direction:column; gap:0;">
                     <label>New Password</label>
                     <div style="position:relative; width:100%;">
                       <input type="password" id="settings-new-pass" placeholder="Input fresh password sequence (6+ chars)...">
@@ -439,7 +448,7 @@
           </div>
           
           <div class="new-news-right">
-            <iframe width="100%" height="320" src="https://5560cd82.sibforms.com/serve/MUIFAM9istJWBRQKTdlA9CVlFkqzhIyIo8o4y7wzXySA8MeoXCf8JWfwUcZ-FtusLmrJMj860GL5-NdcrzeAE_omQ7a-9J3zlWFxJp5OVdQrs5NymfDZ5jbLpxM6oumqwVWYD8k-e9ChXZmktyQBxjALWfBtdKdFtq62yXIqhPfm7kdv8a0A0pYqVaMHrg89U5OGDcgrdhHB3V0XPQ==" frameborder="0" scrolling="auto" allowfullscreen style="display: block; margin: 0 auto; background: white; border: none; border-radius: 4px;"></iframe>
+            <iframe width="100%" height="320" src="https://0763f376.sibforms.com/serve/MUIFABoisAy02GbeNr_nExJDu4nEjDi2ahR0wE9fteVjvwf7e_0YHnmPJzaqkhfadwAVyEdfti2G-TaerEzSXPLbqScpowgCmb78cRlm1T5wWCkseVx0jssR1cZxWTZCIB3y22ohECR_Lqb1UzAjpA5HosBjAdJVqab032fJAaw9voNAEKUzqpY5zMNZ3djfXB2ospCRTenMiDRuCg==" frameborder="0" scrolling="auto" allowfullscreen style="display: block; margin: 0 auto; background: white; border: none; border-radius: 4px;"></iframe>
           </div>
         </section>
 
@@ -470,13 +479,37 @@
           <div class="resource-icon"><i class="fa-solid fa-envelope"></i></div>
           <div class="resource-text"><h5>Email</h5><p>info@plantmuseum.com</p></div>
         </a>
-        <a href="https://henrybplantmuseum.com/visitor-info" class="resource-item">
+        <a href="https://www.google.com/maps?q=401+W+Kennedy+Blvd,+Tampa,+FL" target="_blank" class="resource-item">
           <div class="resource-icon"><i class="fa-solid fa-location-dot"></i></div>
           <div class="resource-text"><h5>Location</h5><p>401 W. Kennedy Blvd, Tampa</p></div>
         </a>
         <div class="resource-item static">
           <div class="resource-icon"><i class="fa-solid fa-clock"></i></div>
           <div class="resource-text"><h5>Hours of Operation</h5><p>Tue–Sat: 10am–5pm<br>Sun: 12pm–5pm<br>Mon: Closed</p></div>
+        </div>
+      </div>
+      <div class="drawer-group">
+        <h4>Support the Museum</h4>
+        <a href="/visitor.html" target="_blank" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-ticket"></i></div>
+          <div class="resource-text"><h5>Buy Tickets</h5><p>Admissions & Tours</p></div>
+        </a>
+        <a href="/membership.html" target="_blank" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-id-card"></i></div>
+          <div class="resource-text"><h5>Membership</h5><p>Join the Museum Society</p></div>
+        </a>
+        <a href="https://henry-b-plant-museum.square.site/product/donation/101" target="_blank" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-heart"></i></div>
+          <div class="resource-text"><h5>Donate Now</h5><p>Support our preservation</p></div>
+        </a>
+      </div>
+      <div class="drawer-group">
+        <h4>Connect With Us</h4>
+        <div class="drawer-socials">
+          <a href="https://twitter.com/HBPlantMuseum" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
     </div>
@@ -496,6 +529,18 @@
         <label for="toggle-text">Large Text</label>
         <label class="switch"><input type="checkbox" id="toggle-text"><span class="slider"></span></label>
       </div>
+      <div class="a11y-setting">
+        <label for="toggle-dyslexia">Dyslexia Friendly Font</label>
+        <label class="switch"><input type="checkbox" id="toggle-dyslexia"><span class="slider"></span></label>
+      </div>
+      <div class="a11y-setting">
+        <label for="toggle-motion">Reduce Motion</label>
+        <label class="switch"><input type="checkbox" id="toggle-motion"><span class="slider"></span></label>
+      </div>
+      <div class="a11y-setting">
+        <label for="toggle-links">Highlight Links</label>
+        <label class="switch"><input type="checkbox" id="toggle-links"><span class="slider"></span></label>
+      </div>
     </div>
   </aside>
 
@@ -504,26 +549,38 @@
       <div class="footer-col">
         <h3>Museum Support</h3>
         <ul class="footer-links">
-          <li><a href="visitor.html">Buy Tickets</a></li>
-          <li><a href="membership.html">Membership</a></li>
+          <li><a href="/visitor.html" target="_blank">Buy Tickets</a></li>
+          <li><a href="/membership.html" target="_blank">Membership</a></li>
           <li><a href="https://henry-b-plant-museum.square.site/product/donation/101" target="_blank">Donate Now</a></li>
         </ul>
         <div class="footer-socials">
           <a href="https://twitter.com/HBPlantMuseum" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
           <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
-      <div class="footer-col">
-        <h3>Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="visitor.html">Plan Your Visit</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="exhibits.html">Exhibitions</a></li>
-          <li><a href="get-involved.html">Get Involved</a></li>
-        </ul>
-      </div>
+
+<div class="footer-col">
+  <h3>Quick Links</h3>
+
+  <div class="quick-links-grid">
+    <ul class="footer-links">
+      <li><a href="/index.html" target="_blank">Home</a></li>
+      <li><a href="/about.html" target="_blank">About Us</a></li>
+      <li><a href="/events.html" target="_blank">Events</a></li>
+      <li><a href="/exhibits.html" target="_blank">Exhibits</a></li>
+      <li><a href="/artifacts.html" target="_blank">Artifacts</a></li>
+    </ul>
+
+    <ul class="footer-links">
+      <li><a href="/get-involved.html" target="_blank">Get Involved</a></li>
+      <li><a href="/profile.html" target="_blank">Profile</a></li>
+      <li><a href="/visitor.html" target="_blank">Plan Your Visit</a></li>
+      <li><a href="/credit.html" target="_blank">Credits</a></li>
+    </ul>
+  </div>
+</div>
       <div class="footer-col">
         <h3>Contact</h3>
         <ul class="footer-links">
@@ -540,7 +597,7 @@
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updatePassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updatePassword, EmailAuthProvider, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
     import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, arrayRemove } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
     const firebaseConfig = {
@@ -653,44 +710,62 @@
       e.preventDefault();
       if(!auth.currentUser) return;
 
-      const currentUsernameInput = document.getElementById('settings-curr-user').value.trim();
-      const newUsername = document.getElementById('settings-new-user').value.trim();
-      const newName = document.getElementById('settings-new-name').value.trim();
-      const newPass = document.getElementById('settings-new-pass').value;
-
-      const snap = await getDoc(doc(db, "users", auth.currentUser.uid));
-      if (!snap.exists() || snap.data().username.toLowerCase() !== currentUsernameInput.toLowerCase()) {
-        alert("Validation error: Input must completely match your current active identifier.");
-        return;
-      }
-
+      const activeTabId = document.querySelector('.nested-tab-btn.active').id;
+      
       try {
         const ref = doc(db, "users", auth.currentUser.uid);
-        let updates = {};
+        const snap = await getDoc(ref);
+        if (!snap.exists()) return;
+        const userData = snap.data();
 
-        if (newName) {
-          updates.realName = newName;
+        if (activeTabId === 'subtab-name') {
+          const currPass = document.getElementById('settings-name-curr-pass').value;
+          const newName = document.getElementById('settings-new-name').value.trim();
+          
+          if(!currPass || !newName) return alert("Please fill out both fields.");
+          
+          const credential = EmailAuthProvider.credential(auth.currentUser.email, currPass);
+          await reauthenticateWithCredential(auth.currentUser, credential);
+          
+          await updateDoc(ref, { realName: newName });
           document.getElementById('ui-name').innerText = newName;
-        }
-        if (newUsername) {
-          updates.username = newUsername;
+          alert("Display name updated successfully.");
+          
+        } else if (activeTabId === 'subtab-user') {
+          const currPass = document.getElementById('settings-user-curr-pass').value;
+          const newUsername = document.getElementById('settings-new-user').value.trim();
+          
+          if(!currPass || !newUsername) return alert("Please fill out both fields.");
+          
+          const credential = EmailAuthProvider.credential(auth.currentUser.email, currPass);
+          await reauthenticateWithCredential(auth.currentUser, credential);
+          
+          await updateDoc(ref, { username: newUsername });
           document.getElementById('ui-user').innerText = newUsername;
-        }
-        if (Object.keys(updates).length > 0) {
-          await updateDoc(ref, updates);
-        }
-        if (newPass) {
-          if(newPass.length < 6) {
-            alert("Security exception: Password requires 6+ characters minimum.");
-            return;
+          alert("Username updated successfully.");
+          
+        } else if (activeTabId === 'subtab-pass') {
+          const currUser = document.getElementById('settings-pass-curr-user').value.trim();
+          const newPass = document.getElementById('settings-new-pass').value;
+          
+          if(!currUser || !newPass) return alert("Please fill out both fields.");
+          
+          if(currUser.toLowerCase() !== userData.username.toLowerCase()) {
+            return alert("Validation error: The current username you entered is incorrect.");
           }
+          
+          if(newPass.length < 6) {
+            return alert("Security exception: Password requires 6+ characters minimum.");
+          }
+          
           await updatePassword(auth.currentUser, newPass);
+          alert("Password updated successfully.");
         }
 
-        alert("System adjustments synchronized successfully.");
         e.target.reset();
+
       } catch(err) {
-        alert("Write transaction exception: " + err.message);
+        alert("Verification failed or update error: " + err.message);
       }
     };
 
