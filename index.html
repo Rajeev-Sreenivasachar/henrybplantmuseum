@@ -296,7 +296,111 @@
       <p>© 2026 Henry B. Plant Museum. Created for FBLA.</p>
     </div>
   </footer>
+  <div id="henry-chat-widget">
+  <div id="henry-chat-window" class="hidden">
+    <div id="henry-chat-header">
+      <span><i class="fa-solid fa-robot"></i> Henry AI</span>
+      <button id="henry-close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div id="henry-chat-messages">
+      <div class="henry-message henry-ai">
+        Hello! I am Henry AI, the virtual assistant for the Henry B. Plant Museum. How can I help you plan your visit or learn about our history today?
+      </div>
+    </div>
+    <div id="henry-chat-input-area">
+      <input type="text" id="henry-user-input" placeholder="Ask Henry AI..." autocomplete="off">
+      <button id="henry-send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+  <button id="henry-chat-toggle" aria-label="Open Henry AI Chat">
+    <i class="fa-solid fa-comment-dots"></i>
+  </button>
+</div>
+  <script>
+// --- Henry AI Chat Logic (Presentation Safe) ---
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('henry-chat-toggle');
+  const closeBtn = document.getElementById('henry-close-btn');
+  const chatWindow = document.getElementById('henry-chat-window');
+  const sendBtn = document.getElementById('henry-send-btn');
+  const userInput = document.getElementById('henry-user-input');
+  const messagesContainer = document.getElementById('henry-chat-messages');
 
+  // Toggle Window
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      chatWindow.classList.toggle('hidden');
+      if (!chatWindow.classList.contains('hidden')) {
+        userInput.focus();
+      }
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      chatWindow.classList.add('hidden');
+    });
+  }
+
+  // UI Message Appender
+  const appendMessage = (text, sender) => {
+    const msgDiv = document.createElement('div');
+    msgDiv.classList.add('henry-message', `henry-${sender}`);
+    msgDiv.innerHTML = text.replace(/\n/g, '<br>');
+    messagesContainer.appendChild(msgDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  };
+
+  // Handle Sending Data
+  const handleSend = () => {
+    const text = userInput.value.trim();
+    if (!text) return;
+
+    // 1. Display user message
+    appendMessage(text, 'user');
+    userInput.value = '';
+
+    // 2. Show loading dots
+    const loadingId = 'henry-loading';
+    const loadingDiv = document.createElement('div');
+    loadingDiv.id = loadingId;
+    loadingDiv.classList.add('henry-message', 'henry-ai');
+    loadingDiv.innerHTML = '<i class="fa-solid fa-ellipsis"></i>';
+    messagesContainer.appendChild(loadingDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+    // 3. Match predefined presentation questions
+    let responseText = "I am programmed to only discuss the history, hours, and events of the Henry B. Plant Museum. Could you please rephrase your question?";
+    const cleanText = text.toLowerCase();
+
+    if (cleanText.includes('hello') || cleanText.includes('hi')) {
+      responseText = "Hello! I am Henry AI. How can I help you explore the grand history of the Tampa Bay Hotel today?";
+    } else if (cleanText.includes('hour') || cleanText.includes('open')) {
+      responseText = "The Henry B. Plant Museum is open Tuesday through Saturday from 10:00 AM to 5:00 PM, and Sunday from 12:00 PM to 5:00 PM. We are closed on Mondays.";
+    } else if (cleanText.includes('ticket') || cleanText.includes('admission') || cleanText.includes('cost')) {
+      responseText = "Admission is $12 for adults, $9 for seniors, and $7 for students. You can purchase tickets directly using our 'Buy Tickets' button on the page!";
+    } else if (cleanText.includes('history') || cleanText.includes('who is henry')) {
+      responseText = "Henry B. Plant was a transportation tycoon who opened the grand, 511-room Tampa Bay Hotel in 1891. The museum preserves this Gilded Age masterpiece and its impact on Florida tourism.";
+    } else if (cleanText.includes('event') || cleanText.includes('exhibit')) {
+      responseText = "We feature incredible immersive experiences, including the live theatrical 'Upstairs & Downstairs' performances and the 'Plant's Southern Empire' historical exhibit.";
+    }
+
+    // 4. Simulate natural network delay for the presentation
+    setTimeout(() => {
+      const loader = document.getElementById(loadingId);
+      if (loader) loader.remove();
+      appendMessage(responseText, 'ai');
+    }, 1000);
+  };
+
+  if (sendBtn) sendBtn.addEventListener('click', handleSend);
+  if (userInput) {
+    userInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') handleSend();
+    });
+  }
+});
+</script>
   
 </body>
 </html>
