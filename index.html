@@ -449,9 +449,129 @@
       const userInput = document.getElementById('henry-user-input');
       const messagesContainer = document.getElementById('henry-chat-messages');
 
-      const API_KEY = 'AQ.Ab8RN6I4trfm9Pmm_lODO51_nj05T3gh5kskTVCgLRn7lvd5gA'; 
-      const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+      // SECURE CHANGE: Targeted to your Vercel serverless environment route
+      const API_URL = '/api/chat'; 
 
       let conversationHistory = [];
 
-      // Complete Site 
+      // Complete Site Mapping injected as Knowledge Context for the AI
+      const systemInstruction = {
+        parts: [{
+          text: `You are Henry AI, the highly intelligent and polite virtual guide for the Henry B. Plant Museum website in Tampa, FL. 
+          You can answer ANY general knowledge or custom user question completely, but you must prioritize guiding users to different pages on this website when relevant. 
+
+          Here is the complete map of our website and museum details that you MUST know and link to using HTML anchor tags:
+          - Home Page (/index.html): Explains the 1891 Tampa Bay Hotel architectural masterpiece.
+          - About Us (/about.html): Deep-dive into the Gilded Age history of transportation tycoon Henry B. Plant.
+          - Events (/events.html): Shows seasonal events, special theater programs like "Upstairs & Downstairs".
+          - Exhibitions (/exhibits.html): Permanent and rotating installations, including "Plant's Southern Empire".
+          - Artifact Collection (/artifacts.html): Showcases original high-society furnishings and antiquities.
+          - Get Involved (/get_involved.html): Details volunteering, donations, and museum society memberships.
+          - Profile / Sign In (/profile.html): Where users log in or register.
+          - Plan Your Visit (/visitor.html): Includes hours (Tue-Sat 10am-5pm, Sun 12pm-5pm, Mon Closed) and Admission Rates ($12 Adults, $9 Seniors, $7 Students).
+          - Credits Page (/credit.html): Design credentials.
+
+          Rules for guidance:
+          1. When a user asks about hours, tickets, pricing, location, or planning, answer them concisely and give them a direct link like this: <a href="/visitor.html">Plan Your Visit</a>.
+          2. When they ask about events or history, answer them and say: "You can discover more details on our <a href="/events.html">Events page</a>."
+          3. If they ask completely general or off-topic questions, answer them nicely but tie it back to a professional assistant experience. Format all links as clean HTML anchor tags targeting your relative links.`
+        }]
+      };
+
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+          chatWindow.classList.toggle('hidden');
+          if (!chatWindow.classList.contains('hidden')) {
+            userInput.focus();
+          }
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          chatWindow.classList.add('hidden');
+        });
+      }
+
+      const appendMessage = (text, sender) => {
+        const msgDiv = document.createElement('div');
+        msgDiv.classList.add('henry-message', `henry-${sender}`);
+        msgDiv.innerHTML = text.replace(/\n/g, '<br>');
+        messagesContainer.appendChild(msgDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      };
+
+      const handleSend = async () => {
+        const text = userInput.value.trim();
+        if (!text) return;
+
+        appendMessage(text, 'user');
+        userInput.value = '';
+
+        conversationHistory.push({
+          role: 'user',
+          parts: [{ text: text }]
+        });
+
+        const loadingId = 'henry-loading';
+        const loadingDiv = document.createElement('div');
+        loadingDiv.id = loadingId;
+        loadingDiv.classList.add('henry-message', 'henry-ai');
+        loadingDiv.innerHTML = '<i class="fa-solid fa-ellipsis"></i>';
+        messagesContainer.appendChild(loadingDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+        try {
+          // SECURE FETCH: Sending payload to secure internal backend route on Vercel
+          const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              systemInstruction: systemInstruction,
+              conversationHistory: conversationHistory
+            })
+          });
+
+          const data = await response.json();
+          
+          if (document.getElementById(loadingId)) {
+            document.getElementById(loadingId).remove();
+          }
+
+          if (data.error) {
+            appendMessage("I ran into an issue handling that request. Please try again.", 'ai');
+            conversationHistory.pop(); 
+            return;
+          }
+
+          if (data.candidates && data.candidates.length > 0 && data.candidates[0].content) {
+            const aiText = data.candidates[0].content.parts[0].text;
+            appendMessage(aiText, 'ai');
+            
+            conversationHistory.push({
+              role: 'model',
+              parts: [{ text: aiText }]
+            });
+          } else {
+            appendMessage("I couldn't process that query. Could you rephrase it?", 'ai');
+            conversationHistory.pop();
+          }
+        } catch (error) {
+          if (document.getElementById(loadingId)) {
+            document.getElementById(loadingId).remove();
+          }
+          appendMessage("Connection error. The network is currently unavailable.", 'ai');
+          console.error("Henry AI Error:", error);
+        }
+      };
+
+      if (sendBtn) sendBtn.addEventListener('click', handleSend);
+      if (userInput) {
+        userInput.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') handleSend();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
