@@ -1,0 +1,185 @@
+{
+  "page_title": "Henry B. Plant Museum - Current & Past Events",
+  "events": [
+    {
+      "title": "Victorian Christmas Stroll",
+      "type": "Seasonal Event",
+      "occurrence": "December",
+      "category": "current-events",
+      "url": "events/victorian-christmas-stroll.html",
+      "requires_subpage_routing": true,
+      "summary": "Enjoy candlelight tours, historical decorations, and live character performances throughout the Henry B. Plant Museum halls.",
+      "bot_guidance": "Inform the user that full ticket booking arrays, candlelit path times, and holiday maps require them to read the specific subpage link."
+    },
+    {
+      "title": "Upstairs / Downstairs",
+      "type": "Immersive Theatrical Performance",
+      "occurrence": "Every Sunday",
+      "category": "current-events",
+      "url": "events/upstairs-downstairs.html",
+      "requires_subpage_routing": true,
+      "summary": "Enjoy personal stories and perspectives from staff that illuminate life in the Gilded Age hotel tracks.",
+      "bot_guidance": "This is a signature live theater exhibit. Instruct the user to follow the relative URL to read the schedule updates and actor profiles."
+    },
+    {
+      "title": "Celebrate Sunset",
+      "type": "Historical Open House",
+      "occurrence": "First Friday of Every Month",
+      "category": "current-events",
+      "url": "events/celebrate-sunset.html",
+      "requires_subpage_routing": true,
+      "summary": "A historical open house where the museum hosts live performances and Gilded Age storytelling as the sun sets over Tampa.",
+      "bot_guidance": "Tell the user to open the subpage link to verify sundown tracking timings and special performance programs for the current month."
+    },
+    {
+      "title": "Free Movie Series",
+      "type": "Community Screening",
+      "occurrence": "Every Few Months",
+      "category": "current-events",
+      "url": "events/free-movie-series.html",
+      "requires_subpage_routing": true,
+      "summary": "Explore FREE community screenings held in Plant Park that pair classic movies with historical exhibits.",
+      "bot_guidance": "Outdoor event logistics change seasonally. Tell the user to view the specific page to check weather guidelines and current film line-ups."
+    },
+    {
+      "title": "The Jose Gaspar Literary Cannon",
+      "type": "Past Event Exhibition",
+      "occurrence": "Archived Retrospective",
+      "category": "past-events",
+      "url": "events/jose-gaspar.html",
+      "requires_subpage_routing": true,
+      "summary": "Take a deep dive into Gasparilla, one of Tampa's most celebrated traditions, historical pirate myths, and local legacy archives.",
+      "bot_guidance": "Explain that while the physical event has passed, complete text breakdowns of pirate mythologies reside on the specific event page link."
+    },
+    {
+      "title": "Everything Musical",
+      "type": "Past Event Exhibition",
+      "occurrence": "Archived Retrospective",
+      "category": "past-events",
+      "url": "events/everything-musical.html",
+      "requires_subpage_routing": true,
+      "summary": "Exploring Tampa's 1920 music scene and the profound regional impact of the 'Everything Musical' Philpitt Store archives.",
+      "bot_guidance": "Direct the user to open the link to read historical breakdowns regarding turn-of-the-century sheet music sales and local acoustic trends."
+    },
+    {
+      "title": "In the Shadow of the Crescent",
+      "type": "Online Lecture",
+      "occurrence": "Recorded June 10, 2023",
+      "category": "online-exhibits",
+      "url": "https://www.youtube.com/watch?v=oB9NDRfSiIQ",
+      "requires_subpage_routing": false,
+      "summary": "A deep historical lecture given by Professor Richard Ellis focusing on the minaret layouts. Watch the full presentation streaming online.",
+      "bot_guidance": "Instruct the user that clicking this item will open a direct external link to the recorded lecture on YouTube."
+    },
+    {
+      "title": "\"George Washington Ate Here\"",
+      "type": "Past Event Exhibition",
+      "occurrence": "Archived Retrospective",
+      "category": "past-events",
+      "url": "events/george-washington.html",
+      "requires_subpage_routing": true,
+      "summary": "Explore how 'Oriental' luxury goods influenced early American culture during the era of the early republic layout maps.",
+      "bot_guidance": "Direct the user to the relative page path link to read the analytical essays concerning Gilded Age luxury adaptations."
+    },
+    {
+      "title": "\"Gems for Olivette\"",
+      "type": "Past Staged Concert",
+      "occurrence": "Archived Retrospective",
+      "category": "past-events",
+      "url": "events/gems.html",
+      "requires_subpage_routing": true,
+      "summary": "Watch the live staged concert of the most popular songs from Edmond Audran’s comedic operetta, Olivette.",
+      "bot_guidance": "Direct the user to open the event subpage link to browse musical scoring reviews and original 1800s theater booklets."
+    },
+    {
+      "title": "\"Plant's Follies\"",
+      "type": "Past Event Exhibition",
+      "occurrence": "Archived Retrospective",
+      "category": "past-events",
+      "url": "events/plants-follies.html",
+      "requires_subpage_routing": true,
+      "summary": "Explore how the Tampa Bay Hotel’s Casino and its world-class entertainment helped shape Tampa's modern identity.",
+      "bot_guidance": "Tell the user to navigate through the link to read the primary text logs regarding original casino architectural plans."
+    },
+    {
+      "title": "\"The Rocking Chair Report\"",
+      "type": "Past Event Exhibition",
+      "occurrence": "Archived Retrospective",
+      "category": "past-events",
+      "url": "events/rocking-chair.html",
+      "requires_subpage_routing": true,
+      "summary": "Explore the history of popular entertainment choices, verandas habits, and social routines at the turn of the 20th century.",
+      "bot_guidance": "Instruct the user to follow the link to read about the specific Gilded Age lifestyle interviews compiled on that page."
+    },
+    {
+      "title": "\"Shrewd Business Men\"",
+      "type": "Past Character Performance",
+      "occurrence": "Archived Retrospective",
+      "category": "past-events",
+      "url": "events/businessmen.html",
+      "requires_subpage_routing": true,
+      "summary": "Featuring single-character performances where actors bring real turn-of-the-century hotel staff and corporate guests to life.",
+      "bot_guidance": "Tell the user that scripts and lists of historical figures portrayed can be explored completely by accessing the event link."
+    },
+    {
+      "title": "\"Placing Black Progress on Display\"",
+      "type": "Past Event Exhibition",
+      "occurrence": "Archived Retrospective",
+      "category": "past-events",
+      "url": "events/blackdisplay.html",
+      "requires_subpage_routing": true,
+      "summary": "Showcasing the economic and educational progress achieved by Black Americans during the Jim Crow era.",
+      "bot_guidance": "This covers crucial civil history. Direct the user to open the target subpage link to review historical images and document transcripts."
+    },
+    {
+      "title": "\"Music and Memory\"",
+      "type": "Past Event Exhibition",
+      "occurrence": "Archived Retrospective",
+      "category": "past-events",
+      "url": "events/music.html",
+      "requires_subpage_routing": true,
+      "summary": "Focusing on the complex history of African American spirituals and deep local heritage tracking registers.",
+      "bot_guidance": "Instruct the user to read the full historical context notes hosted on the specific event page link."
+    },
+    {
+      "title": "\"The Exotic Architecture\"",
+      "type": "Past Event Lecture Series",
+      "occurrence": "Archived Retrospective",
+      "category": "past-events",
+      "url": "events/exotic.html",
+      "requires_subpage_routing": true,
+      "summary": "Exploring the design vision of railroad tycoon Henry Plant and his lead architect, J.A. Wood.",
+      "bot_guidance": "Architectural floor plans and blueprints are detailed heavily on the subpage link. Tell the user to read that page to view structural metrics."
+    },
+    {
+      "title": "Classical Guitar with John Barr",
+      "type": "Online Performance",
+      "occurrence": "Recorded Performance",
+      "category": "online-exhibits",
+      "url": "https://www.youtube.com/watch?v=JAsoQ6vqtu8",
+      "requires_subpage_routing": false,
+      "summary": "Some of the classic Music in the Museum features. Click to watch the complete video stream online.",
+      "bot_guidance": "Instruct the user that clicking this link directly redirects them to the recorded musical performance streaming on YouTube."
+    },
+    {
+      "title": "Harp with Damara Chaudhuri Besker",
+      "type": "Online Performance",
+      "occurrence": "Recorded Performance",
+      "category": "online-exhibits",
+      "url": "https://youtu.be/pY_MOFyaS7U",
+      "requires_subpage_routing": false,
+      "summary": "Some of the classic Music in the Museum features. Click to watch the performance online.",
+      "bot_guidance": "Instruct the user that clicking this link directly redirects them to the recorded harp performance streaming on YouTube."
+    },
+    {
+      "title": "Saxophone with Matt Weihmuller",
+      "type": "Online Performance",
+      "occurrence": "Recorded Performance",
+      "category": "online-exhibits",
+      "url": "https://youtu.be/jjOhn83mwUU",
+      "requires_subpage_routing": false,
+      "summary": "Some of the classic Music in the Museum features. Click to watch the performance online.",
+      "bot_guidance": "Instruct the user that clicking this link directly redirects them to the recorded saxophone performance streaming on YouTube."
+    }
+  ]
+}
