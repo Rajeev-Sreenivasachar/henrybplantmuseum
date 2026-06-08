@@ -2363,7 +2363,7 @@ body {
 /* Auth Popup */
 .auth-popup {
   position: fixed;
-  bottom: 20px;
+  bottom: 60px;
   left: 20px;
   background: #722F37;
   color: white;
@@ -2375,7 +2375,7 @@ body {
   z-index: 3000;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(60px);
   transition: all 0.4s ease;
   pointer-events: none;
   border: 1px solid #D4AF37;
