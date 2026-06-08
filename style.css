@@ -658,23 +658,28 @@ img { max-width: 100%; height: auto; display: block; }
 /* This makes the text label burgundy */
 /* This makes the labels, descriptions, and all text inside the settings burgundy */
 /* Accessibility Drawer - Burgundy Theme */
+/* Accessibility Drawer - Burgundy Theme (Forced) */
 #drawerA11y .panel-header h3 {
-    color: var(--brand-primary);
+    color: var(--brand-primary) !important;
 }
 
 #drawerA11y label {
-    color: var(--brand-primary);
+    color: var(--brand-primary) !important;
     font-size: 0.95rem;
     font-weight: 500;
     cursor: pointer;
 }
 
 #drawerA11y .a11y-desc {
-    color: var(--brand-primary);
+    color: var(--brand-primary) !important;
     display: block;
-    margin-bottom: 15px; /* Adds a little breathing room below the description */
+    margin-bottom: 15px;
 }
 
+/* The Toggle Switch Color */
+#drawerA11y input:checked + .slider { 
+    background-color: var(--brand-primary) !important; 
+}
 /* The Toggle Switch Color */
 #drawerA11y input:checked + .slider { 
     background-color: var(--brand-primary); 
