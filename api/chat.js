@@ -1,22 +1,19 @@
-// By directly requiring the JSON files, Vercel automatically includes them in your build.
-// This completely bypasses the need for the 'fs' module.
-const artifacts = require('../data/artifacts.json');
-const exhibits = require('../data/exhibits.json');
-const events = require('../data/events.json');
-const main = require('../data/main.json');
-
 module.exports = async function handler(req, res) {
-    // Block direct browser visits (which are GET requests)
     if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method not allowed. Use the chat interface.' });
+        return res.status(405).json({ error: 'Method not allowed.' });
     }
 
     const { message } = req.body;
-    
-    // Pulls your key safely from Vercel's Environment Variables
     const apiKey = process.env.GEMINI_API_KEY;
 
     try {
+        // By moving these inside the try/catch, we prevent a hard crash
+        // and force Vercel to tell us EXACTLY what went wrong.
+        const artifacts = require('../data/artifacts.json');
+        const exhibits = require('../data/exhibits.json');
+        const events = require('../data/events.json');
+        const main = require('../data/main.json');
+
         const systemPrompt = `
         You are a helpful virtual assistant and guide for our new museum website. 
         
@@ -30,7 +27,6 @@ module.exports = async function handler(req, res) {
         
         User Question: ${message}`;
 
-        // Directly call the Gemini REST API
         const geminiUrl = \`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=\${apiKey}\`;
         
         const response = await fetch(geminiUrl, {
@@ -47,18 +43,17 @@ module.exports = async function handler(req, res) {
 
         const data = await response.json();
 
-        // Safety check to ensure we got a valid response back
         if (!data.candidates || data.candidates.length === 0) {
             console.error("API Error:", data);
-            return res.status(500).json({ error: 'Invalid response from Gemini API' });
+            return res.status(500).json({ error: 'Gemini API rejected the request. Check your API key.' });
         }
 
-        // Extract the text from Gemini's JSON structure
         const responseText = data.candidates[0].content.parts[0].text;
-
         res.status(200).json({ reply: responseText });
+
     } catch (error) {
-        console.error("Server Error:", error);
-        res.status(500).json({ error: 'Failed to fetch response' });
+        // If it crashes now, it will spit the exact error to your Vercel logs AND your chat window
+        console.error("Server Crash Details:", error.message);
+        res.status(500).json({ error: "Backend error: " + error.message });
     }
 }
