@@ -439,21 +439,20 @@
       <i class="fa-solid fa-comment-dots"></i>
     </button>
   </div>
-
-  <script>
+<script type="module">
   let museumKnowledgeBase = "";
 
-  // 1. Automatically read and merge all 4 JSON files right when the page loads
+  // 1. Load ALL 4 JSON files right when the page opens
   async function loadMuseumData() {
     try {
       const [mainData, artifacts, events, exhibits] = await Promise.all([
         fetch('/main.json').then(res => res.json()),
-        fetch('/artifacts.json').then(res => res.json()),
         fetch('/events.json').then(res => res.json()),
-        fetch('/exhibits.json').then(res => res.json())
+        fetch('/exhibits.json').then(res => res.json()),
+        fetch('/artifacts.json').then(res => res.json()) // Added back!
       ]);
 
-      // Compress all your custom data structures into a massive system context string
+      // Compress all 4 data structures into the AI's system memory
       museumKnowledgeBase = `
         You are Henry AI, the elite interactive historian chatbot for the Henry B. Plant Museum.
         You have absolute context over the entire museum data structures provided below. Answer questions with accurate, engaging, and historical precision.
@@ -471,87 +470,19 @@
         ${JSON.stringify(artifacts)}
       `;
       
-      console.log("Henry AI dataset is fully loaded into memory!");
+      console.log("Henry AI dataset is fully loaded into memory (with artifacts)!");
     } catch (error) {
       console.error("Error bundling museum datasets:", error);
     }
   }
 
-  // 2. The streamlined function to send the chat data securely to your Vercel backend
+  // 2. The secure function to pass user chat inputs to your Vercel backend
   async function talkToHenry(userMessage) {
     if (!museumKnowledgeBase) {
       return "Hold on a second, I am still loading up the museum archives!";
     }
 
-// 3. UI Interaction Logic (Handles opening, closing, and typing)
-document.addEventListener("DOMContentLoaded", () => {
-  const chatToggle = document.getElementById("henry-chat-toggle");
-  const chatWindow = document.getElementById("henry-chat-window");
-  const closeBtn = document.getElementById("henry-close-btn");
-  const sendBtn = document.getElementById("henry-send-btn");
-  const userInput = document.getElementById("henry-user-input");
-  const chatMessages = document.getElementById("henry-chat-messages");
-
-  // Toggle Chat Window Open/Closed when clicking the golden circle
-  chatToggle.addEventListener("click", () => {
-    chatWindow.classList.toggle("hidden");
-    if (!chatWindow.classList.contains("hidden")) {
-      userInput.focus(); // Autocomplete cursor inside the input box
-    }
-  });
-
-  // Close the window when clicking the X button
-  closeBtn.addEventListener("click", () => {
-    chatWindow.classList.add("hidden");
-  });
-
-  // Helper function to append message bubbles to the screen
-  function appendMessage(text, className) {
-    const messageBubble = document.createElement("div");
-    messageBubble.classList.add("henry-message", className);
-    messageBubble.textContent = text;
-    chatMessages.appendChild(messageBubble);
-    
-    // Smooth scroll down to show the latest text bubble
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
-
-  // Handle the action of sending a user message
-  async function handleSend() {
-    const messageText = userInput.value.trim();
-    if (!messageText) return;
-
-    // 1. Instantly display user text in gold bubble
-    appendMessage(messageText, "henry-user");
-    userInput.value = "";
-
-    // 2. Display a temporary placeholder while waiting for Gemini
-    const thinkingBubble = document.createElement("div");
-    thinkingBubble.classList.add("henry-message", "henry-ai");
-    thinkingBubble.textContent = "Henry AI is looking through the archives...";
-    chatMessages.appendChild(thinkingBubble);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-
-    // 3. Dispatch data to your Vercel backend
-    const aiReply = await talkToHenry(messageText);
-
-    // 4. Wipe out the thinking placeholder and render the actual answer
-    thinkingBubble.remove();
-    appendMessage(aiReply, "henry-ai");
-  }
-
-  // Fire when clicking the paper plane button
-  sendBtn.addEventListener("click", handleSend);
-
-  // Fire when pressing the 'Enter' key inside the text field
-  userInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-      handleSend();
-    }
-  });
-});
-
-    // Format the conversation history to match what Gemini expects
+    // Format the history structure to match Google's API standard
     const conversationHistory = [
       {
         role: "user",
@@ -560,7 +491,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     try {
-      // Fetch our clean, key-hidden serverless backend route
+      // Send the payload to your secure hidden server route
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -572,7 +503,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const data = await response.json();
       
-      // Extract the text output from the direct API response layout
+      // Pull the exact text reply out of the returned data stream layout
       const replyText = data.candidates?.[0]?.content?.parts?.[0]?.text;
       return replyText || "I couldn't quite unpack that historical thought. Try again!";
       
@@ -582,8 +513,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Start reading the files immediately on page load
+  // Start reading all files immediately on page load
   loadMuseumData();
+
+  // Make the function globally accessible so your chat window buttons can find it
+  window.talkToHenry = talkToHenry;
 </script>
 </body>
 </html>
+  
