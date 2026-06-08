@@ -103,3 +103,28 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const darkToggle = document.getElementById('toggle-dark');
+
+  // 1. Check local storage or system preference on load
+  const savedTheme = localStorage.getItem('dark-mode');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme === 'enabled' || (!savedTheme && prefersDark)) {
+    document.body.classList.add('dark-mode');
+    if (darkToggle) darkToggle.checked = true;
+  }
+
+  // 2. Listen for switch toggles
+  if (darkToggle) {
+    darkToggle.addEventListener('change', () => {
+      if (darkToggle.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('dark-mode', 'enabled');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('dark-mode', 'disabled');
+      }
+    });
+  }
+});

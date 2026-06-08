@@ -491,6 +491,33 @@ body.reduced-motion *, body.reduced-motion *::before, body.reduced-motion *::aft
   display: block;
 }
 
+/* Accessibility Settings Layout */
+.a11y-setting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color, #eee); /* Optional clean divider line */
+}
+
+.setting-text {
+  display: flex;
+  flex-direction: column; /* This forces description to the bottom */
+  gap: 4px;              /* Clean spacing between title and description */
+  text-align: left;
+}
+
+.setting-text label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.a11y-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted, #666);
+  display: block;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
