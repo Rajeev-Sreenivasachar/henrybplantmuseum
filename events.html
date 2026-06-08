@@ -282,27 +282,60 @@
       <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div class="panel-body">
-      <div class="a11y-setting">
-        <label for="toggle-contrast">High Contrast Mode</label>
-        <label class="switch"><input type="checkbox" id="toggle-contrast"><span class="slider"></span></label>
-      </div>
-      <div class="a11y-setting">
-        <label for="toggle-text">Large Text</label>
-        <label class="switch"><input type="checkbox" id="toggle-text"><span class="slider"></span></label>
-      </div>
-      <div class="a11y-setting">
-        <label for="toggle-dyslexia">Dyslexia Friendly Font</label>
-        <label class="switch"><input type="checkbox" id="toggle-dyslexia"><span class="slider"></span></label>
-      </div>
-      <div class="a11y-setting">
-        <label for="toggle-motion">Reduce Motion</label>
-        <label class="switch"><input type="checkbox" id="toggle-motion"><span class="slider"></span></label>
-      </div>
-      <div class="a11y-setting">
-        <label for="toggle-links">Highlight Links</label>
-        <label class="switch"><input type="checkbox" id="toggle-links"><span class="slider"></span></label>
-      </div>
+  <div class="a11y-setting">
+    <div class="setting-text">
+      <label for="toggle-contrast">High Contrast Mode</label>
+      <small class="a11y-desc">High contrast black and white theme.</small>
     </div>
+    <label class="switch">
+      <input type="checkbox" id="toggle-contrast">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+<div class="a11y-setting">
+  <div class="setting-text">
+    <label for="toggle-dark">Dark Mode</label>
+    <small class="a11y-desc">Switch to a sleek, dark color palette.</small>
+  </div>
+  <label class="switch">
+    <input type="checkbox" id="toggle-dark"> <span class="slider"></span>
+  </label>
+</div>
+
+  <div class="a11y-setting">
+    <div class="setting-text">
+      <label for="toggle-dyslexia">Dyslexia Friendly Font</label>
+      <small class="a11y-desc">Changes text to an easier-to-read font style.</small>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="toggle-dyslexia">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="a11y-setting">
+    <div class="setting-text">
+      <label for="toggle-motion">Reduce Motion</label>
+      <small class="a11y-desc">Minimizes animations and transitions.</small>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="toggle-motion">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="a11y-setting">
+    <div class="setting-text">
+      <label for="toggle-links">Highlight Links</label>
+      <small class="a11y-desc">Adds clear underlines to all interactive links.</small>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="toggle-links">
+      <span class="slider"></span>
+    </label>
+  </div>
+</div>
   </aside>
 
   <footer class="footer">
@@ -335,7 +368,7 @@
     </ul>
 
     <ul class="footer-links">
-      <li><a href="/get-involved.html" target="_blank">Get Involved</a></li>
+      <li><a href="/get_involved.html" target="_blank">Get Involved</a></li>
       <li><a href="/profile.html" target="_blank">Profile</a></li>
       <li><a href="/visitor.html" target="_blank">Plan Your Visit</a></li>
       <li><a href="/credit.html" target="_blank">Credits</a></li>
@@ -356,6 +389,27 @@
     </div>
   </footer>
 
+
+ <!-- Chat Toggle Button -->
+<button id="chat-toggle-btn" aria-label="Open Chat">💬</button>
+
+<!-- Chat Window Pop-up -->
+<div id="chat-window" class="hidden">
+    <div class="chat-header">
+        <h3>Museum Virtual Guide</h3>
+        <button id="close-chat-btn">×</button>
+    </div>
+    <div id="chat-messages">
+        <div class="msg bot">Hello! Ask me about our exhibits, artifacts, or upcoming events.</div>
+    </div>
+    <div class="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Type a message...">
+        <button id="send-btn">Send</button>
+    </div>
+</div>
+
+<!-- Links your logic to the HTML -->
+<script src="ai.js"></script>
 
 </body>
 </html>

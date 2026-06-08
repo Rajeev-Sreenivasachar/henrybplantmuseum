@@ -498,7 +498,7 @@
     </ul>
 
     <ul class="footer-links">
-      <li><a href="/get-involved.html" target="_blank">Get Involved</a></li>
+      <li><a href="/get_involved.html" target="_blank">Get Involved</a></li>
       <li><a href="/profile.html" target="_blank">Profile</a></li>
       <li><a href="/visitor.html" target="_blank">Plan Your Visit</a></li>
       <li><a href="/credit.html" target="_blank">Credits</a></li>
@@ -519,5 +519,26 @@
     </div>
   </footer>
       <script src="script.js"></script>
-   </body>
+    <!-- Chat Toggle Button -->
+<button id="chat-toggle-btn" aria-label="Open Chat">💬</button>
+
+<!-- Chat Window Pop-up -->
+<div id="chat-window" class="hidden">
+    <div class="chat-header">
+        <h3>Museum Virtual Guide</h3>
+        <button id="close-chat-btn">×</button>
+    </div>
+    <div id="chat-messages">
+        <div class="msg bot">Hello! Ask me about our exhibits, artifacts, or upcoming events.</div>
+    </div>
+    <div class="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Type a message...">
+        <button id="send-btn">Send</button>
+    </div>
+</div>
+
+<!-- Links your logic to the HTML -->
+<script src="ai.js"></script>
+
+</body>
 </html>
