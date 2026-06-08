@@ -1,4 +1,152 @@
-        .scroll-progress { position: fixed; top: 0; left: 0; height: 4px; background: var(--brand-primary); width: 0%; z-index: 10000; transition: width 0.1s ease; }
+    /* =========================================
+   Chatbot Floating Button
+========================================= */
+#chat-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #D4AF37; /* Gold */
+    color: #000000; /* Black */
+    border: 2px solid #000000;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: transform 0.2s ease;
+}
+
+#chat-toggle-btn:hover {
+    transform: scale(1.05); /* Adds a little pop when hovered */
+}
+
+/* =========================================
+   Main Chat Window
+========================================= */
+#chat-window {
+    position: fixed;
+    bottom: 95px; /* Sits right above the button */
+    left: 20px;
+    width: 320px;
+    height: 450px;
+    background-color: #ffffff; /* White background */
+    border: 2px solid #D4AF37; /* Gold border hint */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    z-index: 9999;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+/* Hides the chat window when closed */
+.hidden {
+    display: none !important;
+}
+
+/* =========================================
+   Chat Header
+========================================= */
+.chat-header {
+    background-color: #000000; /* Black */
+    color: #D4AF37; /* Gold text */
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+#close-chat-btn {
+    background: none;
+    border: none;
+    color: #D4AF37;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#close-chat-btn:hover {
+    color: #ffffff;
+}
+
+/* =========================================
+   Message Area
+========================================= */
+#chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fafafa;
+}
+
+/* Individual Message Bubbles */
+.msg {
+    padding: 10px 14px;
+    border-radius: 8px;
+    max-width: 85%;
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+/* User Messages */
+.msg.user {
+    background-color: #000000;
+    color: #ffffff;
+    align-self: flex-end; /* Pushes user messages to the right */
+}
+
+/* Bot Messages */
+.msg.bot {
+    background-color: #ffffff;
+    border: 1px solid #D4AF37; /* Gold hint on bot messages */
+    color: #000000;
+    align-self: flex-start; /* Pushes bot messages to the left */
+}
+
+/* =========================================
+   Input Area (Bottom)
+========================================= */
+.chat-input-area {
+    display: flex;
+    padding: 10px;
+    background-color: #ffffff;
+    border-top: 1px solid #eeeeee;
+}
+
+#chat-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+#chat-input:focus {
+    border-color: #D4AF37; /* Turns gold when typing */
+}
+
+#send-btn {
+    background-color: #D4AF37; /* Gold */
+    color: #000000; /* Black */
+    font-weight: bold;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#send-btn:hover {
+    background-color: #bfa030; /* Slightly darker gold on hover */
+}
+    .scroll-progress { position: fixed; top: 0; left: 0; height: 4px; background: var(--brand-primary); width: 0%; z-index: 10000; transition: width 0.1s ease; }
      .reveal {
       opacity: 0;
       transform: translateY(40px);
