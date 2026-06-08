@@ -419,20 +419,17 @@
     </div>
   </footer>
 
-  <div id="henry-chat-widget">
-    <div id="henry-chat-window" class="hidden">
-      <div id="henry-chat-header">
-        <span><i class="fa-solid fa-robot"></i> Henry AI</span>
-        <button id="henry-close-btn"><i class="fa-solid fa-xmark"></i></button>
-      </div>
-      <div id="henry-chat-messages">
-        <div class="henry-message henry-ai">
-          Hello! I am Henry AI, the virtual assistant for the Henry B. Plant Museum. Ask me anything about our history, exhibits, tickets, or general questions, and I can guide you to the right page!
-        </div>
-      </div>
-      <div id="henry-chat-input-area">
-        <input type="text" id="henry-user-input" placeholder="Ask Henry AI anything..." autocomplete="off">
-        <button id="henry-send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+ <div id="henry-chat-widget" style="max-width: 500px; background: white; padding: 15px; border-radius: 8px; border: 1px solid #ccc; font-family: sans-serif;">
+  <h3 style="margin-top: 0; text-align: center;">Ask Henry AI</h3>
+  <div id="chat-box" style="height: 300px; overflow-y: auto; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; background: #fafafa; display: flex; flex-direction: column; gap: 8px;">
+    <div style="background: #e9ecef; color: black; padding: 8px 12px; border-radius: 6px; align-self: flex-start;">Booting up system... loading museum archives!</div>
+  </div>
+  <div style="display: flex; gap: 5px;">
+    <input type="text" id="user-input" placeholder="Ask about exhibits..." style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+    <button onclick="handleSend()" style="padding: 10px 15px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Send</button>
+  </div>
+</div>
+
 <script type="module">
   let museumKnowledgeBase = "";
 
