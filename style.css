@@ -656,6 +656,21 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* This makes the text label burgundy */
+/* This makes the labels, descriptions, and all text inside the settings burgundy */
+.a11y-setting,
+.a11y-setting label,
+.a11y-setting p,
+.a11y-setting span,
+.a11y-setting .description { 
+    font-size: 0.95rem; 
+    color: var(--brand-primary) !important; 
+}
+
+/* This makes the main "Accessibility Settings" title burgundy too */
+.panel-content h3,
+.accessibility-header h3 {
+    color: var(--brand-primary);
+}
 .a11y-setting label { 
     font-size: 0.95rem; 
     font-weight: 500; 
