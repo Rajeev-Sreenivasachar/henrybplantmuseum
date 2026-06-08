@@ -28,9 +28,10 @@
       --border-color: #EAEAEA;
     }
 
+    /* Increased top padding for better breathing room */
     .new-prof-wrapper {
       background-color: var(--app-bg);
-      padding: 3rem 5%;
+      padding: 4rem 5%; 
       font-family: 'Outfit', sans-serif;
       min-height: 85vh;
       color: var(--dark-text);
@@ -81,14 +82,14 @@
     }
     .new-auth-btn:hover { background: transparent; color: var(--burgundy); }
 
-    /* DASHBOARD LAYOUT */
+    /* DASHBOARD LAYOUT - Increased grid gaps for more space */
     .dashboard-grid-container {
-      max-width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem;
+      max-width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 3.5rem; 
     }
 
-    /* Welcome Row Header */
+    /* Welcome Row Header - Bumped up padding */
     .new-dash-header {
-      background: var(--card-bg); border-radius: 12px; padding: 2rem 3rem;
+      background: var(--card-bg); border-radius: 12px; padding: 2.5rem 3.5rem;
       display: flex; justify-content: space-between; align-items: center;
       box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid var(--border-color);
       border-left: 4px solid var(--burgundy);
@@ -105,12 +106,14 @@
     }
     .new-signout-btn:hover { background: var(--crimson); color: #fff; border-color: var(--crimson); }
 
+    /* Increased gap between side-by-side components */
     .user-top-layout {
-      display: grid; grid-template-columns: 380px 1fr; gap: 2.5rem; align-items: start;
+      display: grid; grid-template-columns: 380px 1fr; gap: 3.5rem; align-items: start;
     }
 
+    /* Increased padding on panels for a roomier feel */
     .sleek-panel {
-      background: var(--card-bg); border-radius: 12px; padding: 2rem;
+      background: var(--card-bg); border-radius: 12px; padding: 2.5rem;
       box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid var(--border-color);
     }
     .sleek-panel h3 { font-size: 1.2rem; color: var(--dark-text); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.6rem; border-bottom: 1px solid #f5f5f5; padding-bottom: 0.8rem; }
@@ -148,17 +151,19 @@
 
     /* Forms Layout Update styling */
     .settings-form { display: flex; flex-direction: column; gap: 0; }
-    .settings-form label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: #666; letter-spacing: 0.5px; }
+    .settings-form label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: #666; letter-spacing: 0.5px; margin-bottom: 0.2rem; }
     .settings-form input { padding: 0.75rem; border: 1px solid #e0e0e0; border-radius: 4px; font-family: 'Outfit', sans-serif; background: var(--app-bg); transition: border-color 0.2s; width: 100%; box-sizing: border-box; }
     .settings-form input:focus { outline: none; border-color: var(--burgundy); background: #fff; }
     .settings-form button {
       background: var(--burgundy); color: #fff; border: none; padding: 0.8rem;
-      border-radius: 4px; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; transition: background 0.2s; letter-spacing: 0.5px; margin-top: 0;
+      border-radius: 4px; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; transition: background 0.2s; letter-spacing: 0.5px; margin-top: 1rem;
     }
     .settings-form button:hover { background: var(--dark-text); }
+    
+    .form-input-group { display: flex; flex-direction: column; gap: 0; margin-bottom: 1rem; }
 
     /* Main Grid Items */
-    .new-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+    .new-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2rem; }
     .new-card {
       background: var(--card-bg); padding: 2rem 1.5rem; border-radius: 12px;
       border: 1px solid var(--border-color); text-align: left; position: relative; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -230,7 +235,6 @@
   </nav>
 
   <main class="new-prof-wrapper">
-    <!-- AUTH VIEW -->
     <div id="fbla-auth-view" class="new-auth-box">
       <h2>Museum Portal</h2>
       <p>Curate your Gilded Age experience</p>
@@ -240,7 +244,6 @@
         <button id="tab-signup" class="new-auth-tab" onclick="window.switchTab('signup')">Sign Up</button>
       </div>
       
-      <!-- Log In Subform Container -->
       <div id="form-login">
         <div class="new-input-wrap">
           <i class="fa-solid fa-user"></i>
@@ -255,7 +258,6 @@
         <button class="new-auth-btn" onclick="window.signIn()">ACCESS PORTAL</button>
       </div>
       
-      <!-- Sign Up Subform Container -->
       <div id="form-signup" class="fbla-hidden">
         <div class="new-input-wrap">
           <i class="fa-solid fa-id-card"></i>
@@ -275,11 +277,9 @@
       </div>
     </div>
 
-    <!-- MAIN DASHBOARD -->
     <div id="fbla-dash-view" class="fbla-hidden">
       <div class="dashboard-grid-container">
         
-        <!-- Welcome Header Banner -->
         <div class="new-dash-header">
           <div class="new-dash-header-text">
             <h2>Welcome back, <span id="ui-name">---</span></h2>
@@ -290,20 +290,16 @@
           </button>
         </div>
 
-        <!-- MAIN SECTION -->
         <div class="user-top-layout">
           
-          <!-- REMOVED THE GAP HERE. Now the two sleek panels touch perfectly. -->
           <div style="display:flex; flex-direction:column; gap:0;">
             
-            <!-- Itinerary Module -->
             <div class="sleek-panel" style="border-bottom-left-radius: 0; border-bottom-right-radius: 0; border-bottom: none;">
               <h3><i class="fa-solid fa-list-check"></i> My Itinerary</h3>
               <ul id="fbla-wishlist-box" class="new-wishlist">
                 <li style="color:#888; font-size:14px; background:none; border:none; padding:0;">Loading Itinerary...</li>
               </ul>
               
-              <!-- Artifacts Reference Block -->
               <div class="artifacts-promo-box">
                 <h4><i class="fa-solid fa-bookmark"></i> Favorite Artifacts</h4>
                 <p>Visit artifacts.html to save your artifacts to your gilded experience!</p>
@@ -311,7 +307,6 @@
               </div>
             </div>
 
-            <!-- Unified Tabbed Configuration Module -->
             <div class="sleek-panel" style="border-top-left-radius: 0; border-top-right-radius: 0;">
               <h3><i class="fa-solid fa-user-gear"></i> Account Manager</h3>
               
@@ -322,41 +317,54 @@
               </div>
 
               <form class="settings-form" onsubmit="window.updateCredentials(event)">
-                <!-- Pane 1: Update Name Box container -->
+                
                 <div id="pane-name" class="settings-pane">
-                  <div style="display:flex; flex-direction:column; gap:0;">
+                  <div class="form-input-group" style="margin-top: 1rem;">
                     <label>Current Password <span style="color:var(--crimson);">*</span></label>
                     <input type="password" id="settings-name-curr-pass" placeholder="Enter current password...">
                   </div>
-                  <div style="display:flex; flex-direction:column; gap:0;">
-                    <label>New Display Name</label>
+                  <div class="form-input-group">
+                    <label>Current Display Name</label>
+                    <input type="text" id="settings-name-curr-name" placeholder="Confirm current display name...">
+                  </div>
+                  <div class="form-input-group">
+                    <label>New Display Name <span style="color:var(--crimson);">*</span></label>
                     <input type="text" id="settings-new-name" placeholder="Enter new display name...">
                   </div>
                 </div>
 
-                <!-- Pane 2: Update Username Box container -->
                 <div id="pane-user" class="settings-pane fbla-hidden">
-                  <div style="display:flex; flex-direction:column; gap:0;">
+                  <div class="form-input-group" style="margin-top: 1rem;">
                     <label>Current Password <span style="color:var(--crimson);">*</span></label>
                     <input type="password" id="settings-user-curr-pass" placeholder="Enter current password...">
                   </div>
-                  <div style="display:flex; flex-direction:column; gap:0;">
-                    <label>New Username</label>
+                  <div class="form-input-group">
+                    <label>Current Username</label>
+                    <input type="text" id="settings-user-curr-user" placeholder="Confirm current username...">
+                  </div>
+                  <div class="form-input-group">
+                    <label>New Username <span style="color:var(--crimson);">*</span></label>
                     <input type="text" id="settings-new-user" placeholder="Enter new custom account handle...">
                   </div>
                 </div>
 
-                <!-- Pane 3: Update Password Box container -->
                 <div id="pane-pass" class="settings-pane fbla-hidden">
-                  <div style="display:flex; flex-direction:column; gap:0;">
-                    <label>Current Username <span style="color:var(--crimson);">*</span></label>
-                    <input type="text" id="settings-pass-curr-user" placeholder="Confirm your current username...">
+                  <div class="form-input-group" style="margin-top: 1rem;">
+                    <label>Current Password <span style="color:var(--crimson);">*</span></label>
+                    <input type="password" id="settings-pass-curr-pass" placeholder="Enter current password...">
                   </div>
-                  <div style="display:flex; flex-direction:column; gap:0;">
-                    <label>New Password</label>
+                  <div class="form-input-group">
+                    <label>New Password <span style="color:var(--crimson);">*</span></label>
                     <div style="position:relative; width:100%;">
-                      <input type="password" id="settings-new-pass" placeholder="Input fresh password sequence (6+ chars)...">
+                      <input type="password" id="settings-new-pass" placeholder="Input fresh password (6+ chars)...">
                       <i class="fa-regular fa-eye toggle-password" style="right:1rem;" onclick="window.togglePasswordVisibility('settings-new-pass', this)"></i>
+                    </div>
+                  </div>
+                  <div class="form-input-group">
+                    <label>Confirm New Password <span style="color:var(--crimson);">*</span></label>
+                    <div style="position:relative; width:100%;">
+                      <input type="password" id="settings-confirm-pass" placeholder="Re-type new password...">
+                      <i class="fa-regular fa-eye toggle-password" style="right:1rem;" onclick="window.togglePasswordVisibility('settings-confirm-pass', this)"></i>
                     </div>
                   </div>
                 </div>
@@ -366,7 +374,6 @@
             </div>
           </div>
 
-          <!-- Catalog Listing View Block Options -->
           <div class="sleek-panel">
             <h3><i class="fa-solid fa-compass"></i> Discover Portfolio Items</h3>
             <div class="new-cards-grid">
@@ -422,7 +429,6 @@
           </div>
         </div>
 
-        <!-- NEWSLETTER BANNER BLOCK -->
         <section class="new-newsletter-banner">
           <div class="new-news-left">
             <div class="new-news-badge"><i class="fa-solid fa-envelope-open-text"></i> The Gilded Dispatch</div>
@@ -682,7 +688,6 @@
       const p = document.getElementById('reg-pass').value;
       try {
         const cred = await createUserWithEmailAndPassword(auth, `${u.toLowerCase()}@museum.local`, p);
-        // Seeds 7 entries out of the box (with Christmas omitted explicitly)
         const initialWishlist = [
           { name: "Upstairs / Downstairs", url: "events/upstairs-downstairs.html" },
           { name: "Free Movie Series", url: "events/free-movie-series.html" },
@@ -720,9 +725,14 @@
 
         if (activeTabId === 'subtab-name') {
           const currPass = document.getElementById('settings-name-curr-pass').value;
+          const currName = document.getElementById('settings-name-curr-name').value.trim();
           const newName = document.getElementById('settings-new-name').value.trim();
           
-          if(!currPass || !newName) return alert("Please fill out both fields.");
+          if(!currPass || !currName || !newName) return alert("Please fill out all fields.");
+          
+          if(currName.toLowerCase() !== userData.realName.toLowerCase()) {
+            return alert("Validation error: Current display name is incorrect.");
+          }
           
           const credential = EmailAuthProvider.credential(auth.currentUser.email, currPass);
           await reauthenticateWithCredential(auth.currentUser, credential);
@@ -733,9 +743,14 @@
           
         } else if (activeTabId === 'subtab-user') {
           const currPass = document.getElementById('settings-user-curr-pass').value;
+          const currUser = document.getElementById('settings-user-curr-user').value.trim();
           const newUsername = document.getElementById('settings-new-user').value.trim();
           
-          if(!currPass || !newUsername) return alert("Please fill out both fields.");
+          if(!currPass || !currUser || !newUsername) return alert("Please fill out all fields.");
+          
+          if(currUser.toLowerCase() !== userData.username.toLowerCase()) {
+            return alert("Validation error: Current username is incorrect.");
+          }
           
           const credential = EmailAuthProvider.credential(auth.currentUser.email, currPass);
           await reauthenticateWithCredential(auth.currentUser, credential);
@@ -745,18 +760,21 @@
           alert("Username updated successfully.");
           
         } else if (activeTabId === 'subtab-pass') {
-          const currUser = document.getElementById('settings-pass-curr-user').value.trim();
+          const currPass = document.getElementById('settings-pass-curr-pass').value;
           const newPass = document.getElementById('settings-new-pass').value;
+          const confirmPass = document.getElementById('settings-confirm-pass').value;
           
-          if(!currUser || !newPass) return alert("Please fill out both fields.");
+          if(!currPass || !newPass || !confirmPass) return alert("Please fill out all fields.");
           
-          if(currUser.toLowerCase() !== userData.username.toLowerCase()) {
-            return alert("Validation error: The current username you entered is incorrect.");
+          if(newPass !== confirmPass) {
+            return alert("Validation error: New passwords do not match.");
           }
-          
           if(newPass.length < 6) {
             return alert("Security exception: Password requires 6+ characters minimum.");
           }
+          
+          const credential = EmailAuthProvider.credential(auth.currentUser.email, currPass);
+          await reauthenticateWithCredential(auth.currentUser, credential);
           
           await updatePassword(auth.currentUser, newPass);
           alert("Password updated successfully.");
