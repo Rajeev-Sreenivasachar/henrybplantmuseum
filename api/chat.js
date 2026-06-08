@@ -1,37 +1,32 @@
-import fs from 'fs';
-import path from 'path';
+// By directly requiring the JSON files, Vercel automatically includes them in your build.
+// This completely bypasses the need for the 'fs' module.
+const artifacts = require('../data/artifacts.json');
+const exhibits = require('../data/exhibits.json');
+const events = require('../data/events.json');
+const main = require('../data/main.json');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
+    // Block direct browser visits (which are GET requests)
     if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method not allowed' });
+        return res.status(405).json({ error: 'Method not allowed. Use the chat interface.' });
     }
 
     const { message } = req.body;
     
-    // Vercel automatically loads this from your environment variables
+    // Pulls your key safely from Vercel's Environment Variables
     const apiKey = process.env.GEMINI_API_KEY;
 
     try {
-        // Helper to load your 4 JSON files
-        const loadJson = (filename) => {
-            const filePath = path.join(process.cwd(), 'data', filename);
-            return JSON.parse(fs.readFileSync(filePath, 'utf8'));
-        };
-
-        const artifacts = loadJson('artifacts.json');
-        const exhibits = loadJson('exhibits.json');
-        const events = loadJson('events.json');
-        const main = loadJson('main.json');
-
-        // Bundle the instructions with your JSON data
         const systemPrompt = `
-        You are a helpful and knowledgeable guide for a museum website. Use ONLY the following JSON data to answer the user's question. 
-        If the answer isn't in the data, politely say you don't have that information. Keep answers concise.
+        You are a helpful virtual assistant and guide for our new museum website. 
         
+        1. If the user asks about the museum, exhibits, artifacts, or events, use ONLY this data to answer:
         Main Info: ${JSON.stringify(main)}
         Artifacts: ${JSON.stringify(artifacts)}
         Exhibits: ${JSON.stringify(exhibits)}
         Events: ${JSON.stringify(events)}
+
+        2. If the user asks a math question, a coding question, or a general knowledge question unrelated to the museum, go ahead and answer it normally using your general knowledge. Keep all answers concise and helpful.
         
         User Question: ${message}`;
 
@@ -63,7 +58,7 @@ export default async function handler(req, res) {
 
         res.status(200).json({ reply: responseText });
     } catch (error) {
-        console.error(error);
+        console.error("Server Error:", error);
         res.status(500).json({ error: 'Failed to fetch response' });
     }
 }
