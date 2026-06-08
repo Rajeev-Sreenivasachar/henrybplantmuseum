@@ -23,6 +23,12 @@ function loadChatHistory() {
 // Pop open or close the chat window
 toggleBtn.addEventListener('click', () => {
     chatWindow.classList.toggle('hidden');
+
+    if (!chatWindow.classList.contains('hidden')) {
+        setTimeout(() => {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 0);
+    }
 });
 
 closeBtn.addEventListener('click', () => {
