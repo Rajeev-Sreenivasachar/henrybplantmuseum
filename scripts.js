@@ -62,7 +62,10 @@ chatInput.addEventListener('keypress', (e) => {
 function appendMessage(sender, text) {
     const div = document.createElement('div');
     div.className = `msg ${sender}`;
-    div.id = `msg-${Date.now()}`; // Give it a unique ID so we can update it later
+    
+    // THE FIX: Added Math.random() so the User and Bot bubbles NEVER share the same ID
+    div.id = `msg-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`; 
+    
     div.innerText = text;
     chatMessages.appendChild(div);
     
