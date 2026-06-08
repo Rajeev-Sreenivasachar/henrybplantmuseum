@@ -25,10 +25,10 @@ export default async function handler(req, res) {
             return JSON.parse(fs.readFileSync(filePath, 'utf8'));
         };
 
-        const artifacts = loadJson('artifacts.json');
-        const exhibits = loadJson('exhibits.json');
-        const events = loadJson('events.json');
-        const main = loadJson('main.json');
+        const artifacts = loadJson('/artifacts.json');
+        const exhibits = loadJson('/exhibits.json');
+        const events = loadJson('/events.json');
+        const main = loadJson('/main.json');
 
         const message = req.body.message;
         
