@@ -1276,8 +1276,8 @@
       <span class="slider"></span>
     </label>
   </div>
-</div>
-  </aside>
+ </div>
+</aside>
 
   <footer class="footer">
     <div class="footer-grid">
@@ -1333,6 +1333,27 @@
 <button id="backToTop" class="sticky-ticket-btn back-to-top-btn" aria-label="Back to top">
   <i class="fa-solid fa-arrow-up"></i> Back to Top
 </button>
+
+ <!-- Chat Toggle Button -->
+<button id="chat-toggle-btn" aria-label="Open Chat">💬</button>
+
+<!-- Chat Window Pop-up -->
+<div id="chat-window" class="hidden">
+    <div class="chat-header">
+        <h3>Museum Virtual Guide</h3>
+        <button id="close-chat-btn">×</button>
+    </div>
+    <div id="chat-messages">
+        <div class="msg bot">Hello! Ask me about our exhibits, artifacts, or upcoming events.</div>
+    </div>
+    <div class="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Type a message...">
+        <button id="send-btn">Send</button>
+    </div>
+</div>
+
+<!-- Links your logic to the HTML -->
+<script src="ai.js"></script>
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
