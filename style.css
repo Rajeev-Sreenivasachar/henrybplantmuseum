@@ -875,7 +875,7 @@ input:checked + .slider:before { transform: translateX(20px); }
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: url("https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1982-010-001J-026.jpg?ext=.jpg") center/cover no-repeat;
+  background: url("https://studio.code.org/v3/files/CgcsctcM6hQFGYaI-obuqdkIeduxn9Z1z5zzVima8Gg/artifacts_header.png?t=1767635183436") center/cover no-repeat;
   background-attachment: fixed;
   color: #fff;
   overflow: hidden;
@@ -1014,7 +1014,7 @@ input:checked + .slider:before { transform: translateX(20px); }
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: url("https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2006-016-002-TBH1889.jpg?ext=.jpg") center/cover no-repeat;
+  background: url("https://studio.code.org/v3/files/CgcsctcM6hQFGYaI-obuqdkIeduxn9Z1z5zzVima8Gg/info_header.png?t=1767635245448") center/cover no-repeat;
   background-attachment: fixed;
   color: #fff;
   overflow: hidden;
