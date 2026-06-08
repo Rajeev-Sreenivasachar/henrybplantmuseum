@@ -13,8 +13,8 @@ export default async function handler(req, res) {
         const message = req.body.message;
         const systemPrompt = `You are a helpful virtual assistant. Answer concisely: ${message}`;
         
-        // THE FIX: Switching to the ultra-stable 'gemini-pro' alias
-        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
+        // THE FIX: Using the active 2.5 model 
+        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
         const response = await fetch(geminiUrl, {
             method: 'POST',
