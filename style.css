@@ -635,6 +635,29 @@ img { max-width: 100%; height: auto; display: block; }
   margin-inline: auto;
 }
 
+
+/* Burgundy Drawer Icons */
+    .resource-icon { color: var(--brand-primary); font-size: 1.25rem; width: 24px; text-align: center; }
+    .resource-text h5 { font-family: var(--font-sans); font-size: 0.95rem; margin: 0 0 0.1rem 0; font-weight: 600; color: var(--text-main);}
+    .resource-text p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+
+    .drawer-socials { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-top: 1rem; }
+    .social-btn { display: flex; align-items: center; justify-content: center; padding: 1rem; border-radius: var(--radius-sm); background: var(--bg-alt); color: var(--text-main); font-size: 1.2rem; transition: var(--transition); text-decoration: none;}
+    /* Burgundy Hover for Socials */
+    .social-btn:hover { background: var(--brand-primary); color: #fff; transform: translateY(-2px); }
+
+    .a11y-setting { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border-color); }
+    .a11y-setting label { font-size: 0.95rem; font-weight: 500; color: #000; cursor: pointer;}
+    .switch { position: relative; display: inline-block; width: 44px; height: 24px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--border-color); transition: .4s; border-radius: 34px; }
+    .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; box-shadow: var(--shadow-sm); }
+    input:checked + .slider { background-color: var(--brand-gold); }
+    input:checked + .slider:before { transform: translateX(20px); }
+
+    .panel-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(3px); z-index: 10000; opacity: 0; visibility: hidden; transition: 0.4s ease; }
+    .panel-overlay.open { opacity: 1; visibility: visible; }
+    
 .exhibitions-filters label {
   padding: 0.6rem 1.5rem;
   background: var(--bg-surface);
