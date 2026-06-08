@@ -13,22 +13,22 @@ export default async function handler(req, res) {
             return res.status(200).json({ reply: 'SYSTEM ERROR: Vercel cannot find GEMINI_API_KEY.' });
         }
 
-        // THE FIX: We are now looking in the root folder, right next to your HTML files!
-        const loadJson = (filename) => {
-            const filePath = path.join(process.cwd(), filename);
-            
-            // Safety check so it doesn't crash if a file is missing
-            if (!fs.existsSync(filePath)) {
-                return { warning: `${filename} is missing from the folder.` };
+        const safeRead = (filePath) => {
+            if (fs.existsSync(filePath)) {
+                try {
+                    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+                } catch (e) {
+                    return { error: "Formatting error in file" };
+                }
             }
-            
-            return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+            return { note: "File not provided." };
         };
 
-        const artifacts = loadJson('/artifacts.json');
-        const exhibits = loadJson('/exhibits.json');
-        const events = loadJson('/events.json');
-        const main = loadJson('/main.json');
+        // THE FIX: Hardcoding the exact string paths so Vercel's bundler can see them!
+        const artifacts = safeRead(path.join(process.cwd(), 'artifacts.json'));
+        const exhibits = safeRead(path.join(process.cwd(), 'exhibits.json'));
+        const events = safeRead(path.join(process.cwd(), 'events.json'));
+        const main = safeRead(path.join(process.cwd(), 'main.json'));
 
         const message = req.body.message;
         
