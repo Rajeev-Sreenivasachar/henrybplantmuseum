@@ -441,17 +441,54 @@
 }
 
 /* Accessibility Modes */
+/* Accessibility Modes */
+body.dark-mode {
+  --bg-main: #121212;       /* Deep matte dark background */
+  --bg-surface: #1e1e1e;    /* Slightly lighter dark for cards/navbars */
+  --bg-alt: #252525;        /* For subtle section backgrounds */
+  --text-main: #f0f0f0;     /* Soft white for primary text */
+  --text-muted: #b0b0b0;    /* Muted gray for subtitles */
+  --border-color: #333333;  /* Subdued borders */
+  /* Your --brand-primary (burgundy) and --brand-gold should still pop beautifully on this! */
+}
+
 body.high-contrast {
   --bg-main: #000; --bg-surface: #000; --bg-alt: #111;
   --text-main: #fff; --text-muted: #ddd;
   --brand-primary: #ffcc00; --brand-primary-hover: #e6b800;
   --brand-gold: #ffcc00; --border-color: #fff;
 }
-body.large-text { font-size: 115%; }
-body.dyslexia-mode { --font-sans: 'OpenDyslexic', sans-serif; --font-serif: 'OpenDyslexic', sans-serif; letter-spacing: 0.05em; line-height: 2; }
-body.highlight-links a { text-decoration: underline; text-decoration-color: var(--brand-primary); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+body.dyslexia-mode { 
+  --font-sans: 'OpenDyslexic', sans-serif; --font-serif: 'OpenDyslexic', sans-serif; letter-spacing: 0.05em; line-height: 2; 
+}
+
+body.highlight-links a { 
+  text-decoration: underline; text-decoration-color: var(--brand-primary); text-decoration-thickness: 2px; text-underline-offset: 4px; 
+}
+
 body.reduced-motion *, body.reduced-motion *::before, body.reduced-motion *::after {
   animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; transform: none !important;
+}
+
+/* Accessibility Settings Layout Adjustments */
+.a11y-setting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem; /* Adjust spacing between rows if needed */
+}
+
+.setting-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* Small gap between the main label and the description */
+}
+
+.a11y-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted); /* Uses your existing muted text color variable */
+  display: block;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
