@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +7,208 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="/style.css">
-
   <link rel="icon" type="image/jpeg" href="https://www.plantmuseum.com/App_Themes/PlantMuseum/images/favicon.ico">
   
+  <style>
+    /* --- BURGUNDY, RED, & GOLD FUTURISTIC LIGHT THEME --- */
+    :root {
+      --burgundy: #722F37;
+      --burgundy-glow: rgba(114, 47, 55, 0.05);
+      --crimson: #A6192E;
+      --gold: #D4AF37;
+      --gold-glow: rgba(212, 175, 55, 0.1);
+      --dark-text: #1C1C1C;
+      --card-bg: #FFFFFF;
+      --app-bg: #F7F8FA;
+      --border-color: #EAEAEA;
+    }
+
+    /* Increased top padding for better breathing room */
+    .new-prof-wrapper {
+      background-color: var(--app-bg);
+      padding: 4rem 5%; 
+      font-family: 'Outfit', sans-serif;
+      min-height: 85vh;
+      color: var(--dark-text);
+    }
+
+    h1, h2, h3, h4, h5 { font-family: 'Cinzel', serif; margin: 0; }
+
+    /* AUTHENTICATION BOX */
+    .new-auth-box {
+      max-width: 420px; margin: 4rem auto; background: var(--card-bg);
+      padding: 3rem 2.5rem; border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.03); text-align: center;
+      border: 1px solid var(--border-color); border-top: 4px solid var(--gold);
+    }
+    .new-auth-box h2 { color: var(--burgundy); font-size: 2.2rem; margin-bottom: 0.5rem; }
+    .new-auth-box p { color: #666; margin-bottom: 2rem; font-weight: 300; }
+    
+    .new-auth-tabs { display: flex; gap: 1rem; margin-bottom: 2rem; justify-content: center; border-bottom: 1px solid #eee; }
+    .new-auth-tab {
+      background: none; border: none; padding: 0.5rem 1rem; font-size: 1rem;
+      cursor: pointer; color: #999; border-bottom: 2px solid transparent;
+      margin-bottom: -1px; font-family: 'Outfit', sans-serif; font-weight: 500; transition: all 0.3s ease;
+    }
+    .new-auth-tab.active { color: var(--burgundy); border-bottom-color: var(--burgundy); font-weight: 600; }
+    
+    .new-input-wrap { position: relative; margin-bottom: 1.2rem; }
+    .new-input-wrap i:not(.toggle-password) { position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: #888; }
+    
+    /* Password Visibility Icon */
+    .toggle-password {
+      position: absolute; right: 1.2rem; top: 50%; transform: translateY(-50%);
+      color: #999; cursor: pointer; transition: color 0.2s; z-index: 10;
+    }
+    .toggle-password:hover { color: var(--burgundy); }
+
+    .new-auth-input {
+      width: 100%; padding: 0.9rem 2.8rem; border: 1px solid #e0e0e0;
+      border-radius: 6px; box-sizing: border-box; font-family: 'Outfit', sans-serif;
+      background: #fff; transition: all 0.3s ease; font-size: 0.95rem;
+    }
+    .new-auth-input:focus { outline: none; border-color: var(--burgundy); box-shadow: 0 0 0 3px var(--burgundy-glow); }
+    
+    .new-auth-btn {
+      width: 100%; background: var(--burgundy); color: white; border: none;
+      padding: 1rem; border-radius: 6px; cursor: pointer; font-weight: 600;
+      font-family: 'Outfit', sans-serif; letter-spacing: 1px; margin-top: 1rem;
+      transition: all 0.3s ease; border: 1px solid var(--burgundy);
+    }
+    .new-auth-btn:hover { background: transparent; color: var(--burgundy); }
+
+    /* DASHBOARD LAYOUT - Increased grid gaps for more space */
+    .dashboard-grid-container {
+      max-width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 3.5rem; 
+    }
+
+    /* Welcome Row Header - Bumped up padding */
+    .new-dash-header {
+      background: var(--card-bg); border-radius: 12px; padding: 2.5rem 3.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid var(--border-color);
+      border-left: 4px solid var(--burgundy);
+    }
+    .new-dash-header-text h2 { font-size: 2.4rem; color: var(--dark-text); }
+    .new-dash-header-text h2 span { color: var(--burgundy); font-weight: 700; }
+    .new-dash-header-text p { margin: 0.4rem 0 0 0; color: #666; font-weight: 300; }
+    
+    .new-signout-btn {
+      padding: 0.6rem 1.4rem; border: 1px solid #ddd; border-radius: 4px;
+      background: transparent; cursor: pointer; font-family: 'Outfit', sans-serif;
+      font-weight: 500; display: flex; align-items: center; gap: 0.6rem; color: var(--dark-text);
+      transition: all 0.3s ease;
+    }
+    .new-signout-btn:hover { background: var(--crimson); color: #fff; border-color: var(--crimson); }
+
+    /* Increased gap between side-by-side components */
+    .user-top-layout {
+      display: grid; grid-template-columns: 380px 1fr; gap: 3.5rem; align-items: start;
+    }
+
+    /* Increased padding on panels for a roomier feel */
+    .sleek-panel {
+      background: var(--card-bg); border-radius: 12px; padding: 2.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid var(--border-color);
+    }
+    .sleek-panel h3 { font-size: 1.2rem; color: var(--dark-text); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.6rem; border-bottom: 1px solid #f5f5f5; padding-bottom: 0.8rem; }
+    .sleek-panel h3 i { color: var(--gold); }
+
+    /* Nested Settings Sub-Tabs Styling */
+    .nested-tabs { display: flex; gap: 0; margin-bottom: 0; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; }
+    .nested-tab-btn {
+      background: none; border: none; padding: 0.4rem 0.8rem; font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem; font-weight: 500; color: #777; cursor: pointer; border-radius: 4px; transition: all 0.2s;
+    }
+    .nested-tab-btn.active { background: var(--burgundy-glow); color: var(--burgundy); font-weight: 600; }
+
+    /* Wishlist Elements */
+    .new-wishlist { list-style: none; padding: 0; margin: 0; }
+    .new-wishlist li {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.9rem 1.2rem; border: 1px solid var(--border-color); border-radius: 6px;
+      margin-bottom: 0; background: var(--app-bg); transition: all 0.25s ease;
+    }
+    .new-wishlist li:hover { background: #fff; border-color: var(--burgundy); box-shadow: 0 4px 12px rgba(114, 47, 55, 0.04); }
+    .new-wishlist li a { text-decoration: none; color: var(--dark-text); font-size: 0.9rem; font-weight: 500; }
+    .new-wishlist li button { background: none; border: none; color: #ccc; cursor: pointer; transition: color 0.2s; }
+    .new-wishlist li button:hover { color: var(--crimson); }
+
+    /* Artifacts Custom Section Box */
+    .artifacts-promo-box {
+      margin-top: 0; padding: 1.2rem; border: 1px solid rgba(212, 175, 55, 0.3);
+      background-color: #fdfbf7; border-radius: 8px; text-align: left;
+    }
+    .artifacts-promo-box h4 { font-size: 0.95rem; color: var(--burgundy); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem; }
+    .artifacts-promo-box p { font-size: 0.85rem; color: #555; margin: 0 0 0.8rem 0; line-height: 1.4; }
+    .artifacts-promo-box a { color: var(--crimson); font-weight: 600; text-decoration: none; font-size: 0.85rem; }
+    .artifacts-promo-box a:hover { text-decoration: underline; }
+
+    /* Forms Layout Update styling */
+    .settings-form { display: flex; flex-direction: column; gap: 0; }
+    .settings-form label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: #666; letter-spacing: 0.5px; margin-bottom: 0.2rem; }
+    .settings-form input { padding: 0.75rem; border: 1px solid #e0e0e0; border-radius: 4px; font-family: 'Outfit', sans-serif; background: var(--app-bg); transition: border-color 0.2s; width: 100%; box-sizing: border-box; }
+    .settings-form input:focus { outline: none; border-color: var(--burgundy); background: #fff; }
+    .settings-form button {
+      background: var(--burgundy); color: #fff; border: none; padding: 0.8rem;
+      border-radius: 4px; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; transition: background 0.2s; letter-spacing: 0.5px; margin-top: 1rem;
+    }
+    .settings-form button:hover { background: var(--dark-text); }
+    
+    .form-input-group { display: flex; flex-direction: column; gap: 0; margin-bottom: 1rem; }
+
+    /* Main Grid Items */
+    .new-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2rem; }
+    .new-card {
+      background: var(--card-bg); padding: 2rem 1.5rem; border-radius: 12px;
+      border: 1px solid var(--border-color); text-align: left; position: relative; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .new-card:hover { border-color: var(--gold); box-shadow: 0 10px 30px var(--gold-glow); transform: translateY(-3px); }
+    .new-card i { font-size: 1.8rem; color: var(--burgundy); margin-bottom: 1rem; display: block; }
+    .new-card h4 { font-size: 1.1rem; color: var(--dark-text); margin-bottom: 0.4rem; }
+    .new-card p { font-size: 0.85rem; color: #777; margin-bottom: 1.5rem; font-weight: 300; }
+    
+    .new-card-btn {
+      width: 100%; padding: 0.75rem; border-radius: 4px; border: 1px solid var(--burgundy);
+      background: transparent; color: var(--burgundy); cursor: pointer;
+      font-weight: 600; font-family: 'Outfit', sans-serif; transition: all 0.25s;
+    }
+    .new-card-btn:hover:not(:disabled) { background: var(--burgundy); color: #fff; }
+    .new-card-btn:disabled { background: #fdfaf2; color: var(--gold); border-color: var(--gold); cursor: not-allowed; }
+
+    /* INTEGRATED DISPATCH NEWSLETTER BOX */
+    .new-newsletter-banner {
+      background: linear-gradient(135deg, var(--burgundy) 0%, #4a1920 100%);
+      border-radius: 12px; padding: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+      color: white; margin-top: 1rem; align-items: center; position: relative; box-shadow: 0 15px 35px rgba(114, 47, 55, 0.1);
+    }
+    .new-news-badge {
+      background: rgba(212, 175, 55, 0.15); color: var(--gold); padding: 0.4rem 1.2rem;
+      border-radius: 4px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-bottom: 1.5rem; font-weight: 600; border: 1px solid rgba(212, 175, 55, 0.3); letter-spacing: 0.5px;
+    }
+    .new-news-left h3 { font-size: 2.8rem; margin-bottom: 1.2rem; line-height: 1.1; color: #fff; }
+    .new-news-left > p { font-size: 1rem; color: #eee; margin-bottom: 2rem; line-height: 1.5; font-weight: 300; }
+    .new-news-features { display: flex; flex-direction: column; gap: 1.2rem; }
+    .new-feature-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .new-feature-item i { color: var(--gold); font-size: 1.1rem; margin-top: 0.2rem; }
+    .new-feature-item div h5 { font-family: 'Outfit', sans-serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.1rem; color: #fff; }
+    .new-feature-item div p { margin: 0; font-size: 0.85rem; color: #ccc; line-height: 1.4; font-weight: 300; }
+    .new-news-right { background: #fff; border-radius: 8px; overflow: hidden; padding: 0.8rem; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+    
+    .fbla-hidden { display: none !important; }
+
+    @media(max-width: 1024px) {
+      .user-top-layout, .new-newsletter-banner { grid-template-columns: 1fr; }
+      .new-newsletter-banner { padding: 2.5rem; gap: 2.5rem; }
+      .new-dash-header { flex-direction: column; text-align: center; gap: 1.5rem; padding: 2rem 1.5rem; }
+    }
+  </style>
 </head>
 
 <body>
@@ -23,7 +216,7 @@
   <div class="scroll-progress" id="progressBar"></div>
   <script src="script.js"></script>
 
-<nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="/index.html" class="logo">Henry B. Plant Museum</a>
       <i class="fa-solid fa-bars menu-toggle" id="menuToggle"></i>
@@ -41,155 +234,231 @@
     </div>
   </nav>
 
-<main class="fbla-profile-wrapper">
-    <div id="fbla-auth-view" class="fbla-auth-container">
-      <div class="fbla-auth-header">
-        <h2>Museum Portal</h2>
-        <p>Curate your Gilded Age experience</p>
+  <main class="new-prof-wrapper">
+    <div id="fbla-auth-view" class="new-auth-box">
+      <h2>Museum Portal</h2>
+      <p>Curate your Gilded Age experience</p>
+      
+      <div class="new-auth-tabs">
+        <button id="tab-login" class="new-auth-tab active" onclick="window.switchTab('login')">Sign In</button>
+        <button id="tab-signup" class="new-auth-tab" onclick="window.switchTab('signup')">Sign Up</button>
       </div>
-      <div class="fbla-auth-body">
-        <div class="fbla-tabs">
-          <button id="tab-login" class="fbla-tab active" onclick="window.switchTab('login')">Sign In</button>
-          <button id="tab-signup" class="fbla-tab" onclick="window.switchTab('signup')">Sign Up</button>
+      
+      <div id="form-login">
+        <div class="new-input-wrap">
+          <i class="fa-solid fa-user"></i>
+          <input type="text" id="log-user" class="new-auth-input" placeholder="Username">
         </div>
-        
-        <div id="form-login" class="fbla-form-group">
-          <div class="fbla-input-wrap">
-            <i class="fa-solid fa-user"></i>
-            <input type="text" id="log-user" placeholder="Username">
-          </div>
-          <div class="fbla-input-wrap">
-            <i class="fa-solid fa-lock"></i>
-            <input type="password" id="log-pass" placeholder="Password">
-          </div>
-          <div id="log-err" class="fbla-error"></div>
-          <button class="fbla-btn" onclick="window.signIn()">Access Portal</button>
+        <div class="new-input-wrap">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="log-pass" class="new-auth-input" placeholder="Password">
+          <i class="fa-regular fa-eye toggle-password" onclick="window.togglePasswordVisibility('log-pass', this)"></i>
         </div>
-        
-        <div id="form-signup" class="fbla-form-group fbla-hidden">
-          <div class="fbla-input-wrap">
-            <i class="fa-solid fa-id-card"></i>
-            <input type="text" id="reg-name" placeholder="Full Name">
-          </div>
-          <div class="fbla-input-wrap">
-            <i class="fa-solid fa-user-plus"></i>
-            <input type="text" id="reg-user" placeholder="Choose Username">
-          </div>
-          <div class="fbla-input-wrap">
-            <i class="fa-solid fa-lock"></i>
-            <input type="password" id="reg-pass" placeholder="Password (6+ chars)">
-          </div>
-          <div id="reg-err" class="fbla-error"></div>
-          <button class="fbla-btn" onclick="window.signUp()">Create Account</button>
+        <div id="log-err" style="color:var(--crimson); font-size:14px; margin-bottom: 12px; font-weight:500;"></div>
+        <button class="new-auth-btn" onclick="window.signIn()">ACCESS PORTAL</button>
+      </div>
+      
+      <div id="form-signup" class="fbla-hidden">
+        <div class="new-input-wrap">
+          <i class="fa-solid fa-id-card"></i>
+          <input type="text" id="reg-name" class="new-auth-input" placeholder="Full Name">
         </div>
+        <div class="new-input-wrap">
+          <i class="fa-solid fa-user-plus"></i>
+          <input type="text" id="reg-user" class="new-auth-input" placeholder="Choose Username">
+        </div>
+        <div class="new-input-wrap">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="reg-pass" class="new-auth-input" placeholder="Password (6+ chars)">
+          <i class="fa-regular fa-eye toggle-password" onclick="window.togglePasswordVisibility('reg-pass', this)"></i>
+        </div>
+        <div id="reg-err" style="color:var(--crimson); font-size:14px; margin-bottom: 12px; font-weight:500;"></div>
+        <button class="new-auth-btn" onclick="window.signUp()">CREATE ACCOUNT</button>
       </div>
     </div>
 
-    <div id="fbla-dash-view" class="fbla-dash-container fbla-hidden">
-      <div class="fbla-dash-hero">
-        <div>
-          <h2>Welcome back, <span id="ui-name" class="fbla-gold"></span></h2>
-          <p>Username: <span id="ui-user"></span></p>
+    <div id="fbla-dash-view" class="fbla-hidden">
+      <div class="dashboard-grid-container">
+        
+        <div class="new-dash-header">
+          <div class="new-dash-header-text">
+            <h2>Welcome back, <span id="ui-name">---</span></h2>
+            <p>Identity Signature: <span id="ui-user">---</span></p>
+          </div>
+          <button class="new-signout-btn" onclick="window.logout()">
+            Sign Out <i class="fa-solid fa-right-from-bracket"></i>
+          </button>
         </div>
-        <button class="fbla-btn-logout" onclick="window.logout()">Sign Out <i class="fa-solid fa-right-from-bracket"></i></button>
-      </div>
 
-      <div class="fbla-dash-grid">
-        <aside class="fbla-sidebar">
-          <div class="fbla-panel-header">
-            <h3><i class="fa-solid fa-bookmark"></i> My Itinerary</h3>
+        <div class="user-top-layout">
+          
+          <div style="display:flex; flex-direction:column; gap:2.5rem;">
+            
+            <div class="sleek-panel">
+              <h3><i class="fa-solid fa-list-check"></i> My Itinerary</h3>
+              <ul id="fbla-wishlist-box" class="new-wishlist">
+                <li style="color:#888; font-size:14px; background:none; border:none; padding:0;">Loading Itinerary...</li>
+              </ul>
+              
+              <div class="artifacts-promo-box">
+                <h4><i class="fa-solid fa-bookmark"></i> Favorite Artifacts</h4>
+                <p>Visit artifacts.html to save your artifacts to your gilded experience!</p>
+                <a href="/artifacts.html">Explore Collections →</a>
+              </div>
+            </div>
+
+            <div class="sleek-panel" style="border-top-left-radius: 0; border-top-right-radius: 0;">
+              <h3><i class="fa-solid fa-user-gear"></i> Account Manager</h3>
+              
+              <div class="nested-tabs">
+                <button id="subtab-name" class="nested-tab-btn active" onclick="window.switchSettingsPane('name')">Display Name</button>
+                <button id="subtab-user" class="nested-tab-btn" onclick="window.switchSettingsPane('user')">Username</button>
+                <button id="subtab-pass" class="nested-tab-btn" onclick="window.switchSettingsPane('pass')">Password</button>
+              </div>
+
+              <form class="settings-form" onsubmit="window.updateCredentials(event)">
+                
+                <div id="pane-name" class="settings-pane">
+                  <div class="form-input-group" style="margin-top: 1rem;">
+                    <label>Current Password <span style="color:var(--crimson);">*</span></label>
+                    <input type="password" id="settings-name-curr-pass" placeholder="Enter current password...">
+                  </div>
+                  <div class="form-input-group">
+                    <label>Current Display Name</label>
+                    <input type="text" id="settings-name-curr-name" placeholder="Confirm current display name...">
+                  </div>
+                  <div class="form-input-group">
+                    <label>New Display Name <span style="color:var(--crimson);">*</span></label>
+                    <input type="text" id="settings-new-name" placeholder="Enter new display name...">
+                  </div>
+                </div>
+
+                <div id="pane-user" class="settings-pane fbla-hidden">
+                  <div class="form-input-group" style="margin-top: 1rem;">
+                    <label>Current Password <span style="color:var(--crimson);">*</span></label>
+                    <input type="password" id="settings-user-curr-pass" placeholder="Enter current password...">
+                  </div>
+                  <div class="form-input-group">
+                    <label>Current Username</label>
+                    <input type="text" id="settings-user-curr-user" placeholder="Confirm current username...">
+                  </div>
+                  <div class="form-input-group">
+                    <label>New Username <span style="color:var(--crimson);">*</span></label>
+                    <input type="text" id="settings-new-user" placeholder="Enter new custom account handle...">
+                  </div>
+                </div>
+
+                <div id="pane-pass" class="settings-pane fbla-hidden">
+                  <div class="form-input-group" style="margin-top: 1rem;">
+                    <label>Current Password <span style="color:var(--crimson);">*</span></label>
+                    <input type="password" id="settings-pass-curr-pass" placeholder="Enter current password...">
+                  </div>
+                  <div class="form-input-group">
+                    <label>New Password <span style="color:var(--crimson);">*</span></label>
+                    <div style="position:relative; width:100%;">
+                      <input type="password" id="settings-new-pass" placeholder="Input fresh password (6+ chars)...">
+                      <i class="fa-regular fa-eye toggle-password" style="right:1rem;" onclick="window.togglePasswordVisibility('settings-new-pass', this)"></i>
+                    </div>
+                  </div>
+                  <div class="form-input-group">
+                    <label>Confirm New Password <span style="color:var(--crimson);">*</span></label>
+                    <div style="position:relative; width:100%;">
+                      <input type="password" id="settings-confirm-pass" placeholder="Re-type new password...">
+                      <i class="fa-regular fa-eye toggle-password" style="right:1rem;" onclick="window.togglePasswordVisibility('settings-confirm-pass', this)"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <button type="submit">Commit Changes</button>
+              </form>
+            </div>
           </div>
-          <ul id="fbla-wishlist-box" class="fbla-wishlist-list">
-            <li class="fbla-empty">Loading your saved exhibits...</li>
-          </ul>
-        </aside>
 
-        <section class="fbla-main-content">
-          <div class="fbla-panel-header">
-            <h3><i class="fa-solid fa-compass"></i> Discover & Save</h3>
+          <div class="sleek-panel">
+            <h3><i class="fa-solid fa-compass"></i> Discover Portfolio Items</h3>
+            <div class="new-cards-grid">
+              <div class="new-card">
+                <i class="fa-solid fa-masks-theater"></i>
+                <h4>Upstairs / Downstairs</h4>
+                <p>Live Performance Block</p>
+                <button class="new-card-btn fbla-add-btn" data-name="Upstairs / Downstairs" onclick="window.addWish('Upstairs / Downstairs', 'events/upstairs-downstairs.html')">Save</button>
+              </div>
+
+              <div class="new-card">
+                <i class="fa-solid fa-film"></i>
+                <h4>Free Movie Series</h4>
+                <p>Community Event Block</p>
+                <button class="new-card-btn fbla-add-btn" data-name="Free Movie Series" onclick="window.addWish('Free Movie Series', 'events/free-movie-series.html')">Save</button>
+              </div>
+
+              <div class="new-card">
+                <i class="fa-regular fa-sun"></i>
+                <h4>Celebrate Sunset</h4>
+                <p>Special Event Block</p>
+                <button class="new-card-btn fbla-add-btn" data-name="Celebrate Sunset" onclick="window.addWish('Celebrate Sunset', 'events/celebrate-sunset.html')">Save</button>
+              </div>
+
+              <div class="new-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h4>Tampa at War</h4>
+                <p>History Exhibit Block</p>
+                <button class="new-card-btn fbla-add-btn" data-name="Tampa at War" onclick="window.addWish('Tampa at War', 'exhibits/tampa-at-war.html')">Save</button>
+              </div>
+
+              <div class="new-card">
+                <i class="fa-solid fa-building"></i>
+                <h4>Grand Hotel</h4>
+                <p>Permanent Exhibit Block</p>
+                <button class="new-card-btn fbla-add-btn" data-name="Grand Hotel" onclick="window.addWish('Grand Hotel', 'exhibits/grand-hotel.html')">Save</button>
+              </div>
+
+              <div class="new-card">
+                <i class="fa-solid fa-coins"></i>
+                <h4>Gaspar's Gold</h4>
+                <p>Temporary Exhibit Block</p>
+                <button class="new-card-btn fbla-add-btn" data-name="Gaspar's Gold" onclick="window.addWish('Gaspar\'s Gold', 'exhibits/gaspar_gold.html')">Save</button>
+              </div>
+
+              <div class="new-card">
+                <i class="fa-solid fa-train-tram"></i>
+                <h4>Plants Southern Empire</h4>
+                <p>Permanent Exhibit Block</p>
+                <button class="new-card-btn fbla-add-btn" data-name="Plants Southern Empire" onclick="window.addWish('Plants Southern Empire', 'exhibits/plants-southern-empire.html')">Save</button>
+              </div>
+            </div>
           </div>
-          <div class="fbla-cards-grid">
-            <div class="fbla-card">
-              <i class="fa-solid fa-tree fbla-card-icon"></i>
-              <h4>Victorian Christmas Stroll</h4>
-              <p>Seasonal Event</p>
-              <button class="fbla-add-btn" 
-              data-name="Victorian Christmas"
-              onclick="window.addWish('Victorian Christmas', 'events/victorian-christmas-stroll.html')">Save to Itinerary</button>
-            </div>
-            <div class="fbla-card">
-              <i class="fa-solid fa-masks-theater fbla-card-icon"></i>
-              <h4>Upstairs / Downstairs</h4>
-              <p>Live Performance</p>
-              <button class="fbla-add-btn" 
-              data-name="Upstairs / Downstairs"
-              onclick="window.addWish('Upstairs / Downstairs', 'events/upstairs-downstairs.html')">Save to Itinerary</button>
-            </div>
+        </div>
 
-            <div class="fbla-card">
-  <i class="fa-solid fa-film fbla-card-icon"></i>
-  <h4>Free Movie Series</h4>
-  <p>Community Event</p>
-  <button class="fbla-add-btn" 
-  data-name="Free Movie Series"
-  onclick="window.addWish('Free Movie Series', 'events/free-movie-series.html')">Save to Itinerary</button>
-</div>
-
-<div class="fbla-card">
-  <i class="fa-solid fa-sun fbla-card-icon"></i>
-  <h4>Celebrate Sunset</h4>
-  <p>Social Gathering</p>
-  <button class="fbla-add-btn" 
-  data-name="Celebrate Sunset"
-  onclick="window.addWish('Celebrate Sunset', 'events/celebrate-sunset.html')">Save to Itinerary</button>
-</div>
-
-            <div class="fbla-card">
-              <i class="fa-solid fa-shield-halved fbla-card-icon"></i>
-              <h4>Tampa at War</h4>
-              <p>Permanent Exhibit</p>
-              <button class="fbla-add-btn" 
-              data-name="Tampa at War" 
-              onclick="window.addWish('Tampa at War', 'exhibits/tampa-at-war.html')">Save to Itinerary</button>
+        <section class="new-newsletter-banner">
+          <div class="new-news-left">
+            <div class="new-news-badge"><i class="fa-solid fa-envelope-open-text"></i> The Gilded Dispatch</div>
+            <h3>The Official Museum Chronicle</h3>
+            <p>Join our group of patrons. Verify your account to subscribe to real-time updates regarding our historical restoration collections.</p>
+            
+            <div class="new-news-features">
+              <div class="new-feature-item">
+                <i class="fa-solid fa-star"></i>
+                <div>
+                  <h5>Private Showings</h5>
+                  <p>Get priority alerts for special members galas and opening windows.</p>
+                </div>
+              </div>
+              <div class="new-feature-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <div>
+                  <h5>Curator Logs</h5>
+                  <p>Review insights and records delivered straight from our restoration department experts.</p>
+                </div>
+              </div>
             </div>
-            <div class="fbla-card">
-              <i class="fa-solid fa-bell-concierge fbla-card-icon"></i>
-              <h4>Grand Hotel</h4>
-              <p>Permanent Exhibit</p>
-              <button class="fbla-add-btn" 
-              data-name="Grand Hotel"
-              onclick="window.addWish('Grand Hotel', 'exhibits/grand-hotel.html')">Save to Itinerary</button>
-            </div>
-            <div class="fbla-card">
-              <i class="fa-solid fa-coins fbla-card-icon"></i>
-              <h4>Gaspar's Gold</h4>
-              <p>Temporary Exhibit</p>
-              <button class="fbla-add-btn" 
-              data-name="Gaspar's Gold"
-              onclick="window.addWish('Gaspar\'s Gold', 'exhibits/gaspar_gold.html')">Save to Itinerary</button>
-            </div>
-            <div class="fbla-card">
-              <i class="fa-solid fa-train-tram fbla-card-icon"></i>
-              <h4>Plants Southern Empire</h4>
-              <p>Permanent Exhibit</p>
-              <button class="fbla-add-btn" 
-              data-name="Plants Southern Empire"
-              onclick="window.addWish('Plants Southern Empire', 'exhibits/plants-southern-empire.html')">Save to Itinerary</button>
-            </div>
+          </div>
+          
+          <div class="new-news-right">
+            <iframe width="100%" height="320" src="https://0763f376.sibforms.com/serve/MUIFABoisAy02GbeNr_nExJDu4nEjDi2ahR0wE9fteVjvwf7e_0YHnmPJzaqkhfadwAVyEdfti2G-TaerEzSXPLbqScpowgCmb78cRlm1T5wWCkseVx0jssR1cZxWTZCIB3y22ohECR_Lqb1UzAjpA5HosBjAdJVqab032fJAaw9voNAEKUzqpY5zMNZ3djfXB2ospCRTenMiDRuCg==" frameborder="0" scrolling="auto" allowfullscreen style="display: block; margin: 0 auto; background: white; border: none; border-radius: 4px;"></iframe>
           </div>
         </section>
+
       </div>
-
-      <section class="gilded-newsletter-wrapper">
-        <div class="gilded-newsletter-content">
-          <h3><i class="fa-solid fa-envelope-open-text"></i> The Gilded Dispatch</h3>
-          <p>Verify your identity to access exclusive historical insights, private event invites, and the latest news directly from the archives of the Henry B. Plant Museum.</p>
-        </div>
-        <div class="gilded-newsletter-iframe-box">
-          <iframe width="100%" height="305" src="https://5560cd82.sibforms.com/serve/MUIFAM9istJWBRQKTdlA9CVlFkqzhIyIo8o4y7wzXySA8MeoXCf8JWfwUcZ-FtusLmrJMj860GL5-NdcrzeAE_omQ7a-9J3zlWFxJp5OVdQrs5NymfDZ5jbLpxM6oumqwVWYD8k-e9ChXZmktyQBxjALWfBtdKdFtq62yXIqhPfm7kdv8a0A0pYqVaMHrg89U5OGDcgrdhHB3V0XPQ==" frameborder="0" scrolling="auto" allowfullscreen style="display: block; margin-left: auto; margin-right: auto;"></iframe>
-        </div>
-      </section>
-
     </div>
   </main>
 
@@ -216,7 +485,7 @@
           <div class="resource-icon"><i class="fa-solid fa-envelope"></i></div>
           <div class="resource-text"><h5>Email</h5><p>info@plantmuseum.com</p></div>
         </a>
-        <a href="https://henrybplantmuseum.com/visitor-info" class="resource-item">
+        <a href="https://www.google.com/maps?q=401+W+Kennedy+Blvd,+Tampa,+FL" target="_blank" class="resource-item">
           <div class="resource-icon"><i class="fa-solid fa-location-dot"></i></div>
           <div class="resource-text"><h5>Location</h5><p>401 W. Kennedy Blvd, Tampa</p></div>
         </a>
@@ -227,11 +496,11 @@
       </div>
       <div class="drawer-group">
         <h4>Support the Museum</h4>
-        <a href="visitor.html" class="resource-item">
+        <a href="/visitor.html" target="_blank" class="resource-item">
           <div class="resource-icon"><i class="fa-solid fa-ticket"></i></div>
           <div class="resource-text"><h5>Buy Tickets</h5><p>Admissions & Tours</p></div>
         </a>
-        <a href="membership.html" class="resource-item">
+        <a href="/membership.html" target="_blank" class="resource-item">
           <div class="resource-icon"><i class="fa-solid fa-id-card"></i></div>
           <div class="resource-text"><h5>Membership</h5><p>Join the Museum Society</p></div>
         </a>
@@ -286,26 +555,38 @@
       <div class="footer-col">
         <h3>Museum Support</h3>
         <ul class="footer-links">
-          <li><a href="visitor.html">Buy Tickets</a></li>
-          <li><a href="membership.html">Membership</a></li>
+          <li><a href="/visitor.html" target="_blank">Buy Tickets</a></li>
+          <li><a href="/membership.html" target="_blank">Membership</a></li>
           <li><a href="https://henry-b-plant-museum.square.site/product/donation/101" target="_blank">Donate Now</a></li>
         </ul>
         <div class="footer-socials">
           <a href="https://twitter.com/HBPlantMuseum" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
           <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
-      <div class="footer-col">
-        <h3>Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="visitor.html">Plan Your Visit</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="exhibits.html">Exhibitions</a></li>
-          <li><a href="get-involved.html">Get Involved</a></li>
-        </ul>
-      </div>
+
+<div class="footer-col">
+  <h3>Quick Links</h3>
+
+  <div class="quick-links-grid">
+    <ul class="footer-links">
+      <li><a href="/index.html" target="_blank">Home</a></li>
+      <li><a href="/about.html" target="_blank">About Us</a></li>
+      <li><a href="/events.html" target="_blank">Events</a></li>
+      <li><a href="/exhibits.html" target="_blank">Exhibits</a></li>
+      <li><a href="/artifacts.html" target="_blank">Artifacts</a></li>
+    </ul>
+
+    <ul class="footer-links">
+      <li><a href="/get-involved.html" target="_blank">Get Involved</a></li>
+      <li><a href="/profile.html" target="_blank">Profile</a></li>
+      <li><a href="/visitor.html" target="_blank">Plan Your Visit</a></li>
+      <li><a href="/credit.html" target="_blank">Credits</a></li>
+    </ul>
+  </div>
+</div>
       <div class="footer-col">
         <h3>Contact</h3>
         <ul class="footer-links">
@@ -320,11 +601,9 @@
     </div>
   </footer>
 
-  
-
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updatePassword, EmailAuthProvider, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
     import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, arrayRemove } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
     const firebaseConfig = {
@@ -340,51 +619,68 @@
     const auth = getAuth(app);
     const db = getFirestore(app);
 
+    // Password View/Hide Toggle Utility Function Logic
+    window.togglePasswordVisibility = (inputId, iconEl) => {
+      const input = document.getElementById(inputId);
+      if(input.type === "password") {
+        input.type = "text";
+        iconEl.classList.replace("fa-eye", "fa-eye-slash");
+      } else {
+        input.type = "password";
+        iconEl.classList.replace("fa-eye-slash", "fa-eye");
+      }
+    };
+
+    // Sub-pane Switching Control logic loop for management panel
+    window.switchSettingsPane = (paneKey) => {
+      document.querySelectorAll('.settings-pane').forEach(p => p.classList.add('fbla-hidden'));
+      document.querySelectorAll('.nested-tab-btn').forEach(b => b.classList.remove('active'));
+      
+      document.getElementById(`pane-${paneKey}`).classList.remove('fbla-hidden');
+      document.getElementById(`subtab-${paneKey}`).classList.add('active');
+    };
+
     window.switchTab = (tab) => {
       document.getElementById('form-login').classList.toggle('fbla-hidden', tab !== 'login');
       document.getElementById('form-signup').classList.toggle('fbla-hidden', tab !== 'signup');
       document.getElementById('tab-login').classList.toggle('active', tab === 'login');
       document.getElementById('tab-signup').classList.toggle('active', tab === 'signup');
+      document.getElementById('log-err').innerText = "";
+      document.getElementById('reg-err').innerText = "";
     };
 
     function drawWishlist(arr) {
-  const box = document.getElementById('fbla-wishlist-box');
+      const box = document.getElementById('fbla-wishlist-box');
+      box.innerHTML = "";
 
-  box.innerHTML = "";
+      document.querySelectorAll('.fbla-add-btn').forEach(btn => {
+        btn.textContent = 'Save';
+        btn.disabled = false;
+      });
 
-  // Reset all buttons
-  document.querySelectorAll('.fbla-add-btn').forEach(btn => {
-    btn.textContent = 'Save to Itinerary';
-    btn.disabled = false;
-  });
+      if (!arr || arr.length === 0) {
+        box.innerHTML = "<li style='color:#888; font-size:14px; border:none; background:none; padding-left:0;'>Your itinerary is currently empty.</li>";
+        return;
+      }
 
-  if (!arr || arr.length === 0) {
-    box.innerHTML = "<li class='fbla-empty'>Your itinerary is empty.</li>";
-    return;
-  }
+      arr.forEach(item => {
+        const escapedName = item.name.replace(/'/g, "\\'");
+        const btn = document.querySelector(`.fbla-add-btn[data-name="${item.name}"]`);
 
-  arr.forEach(item => {
-    const escapedName = item.name.replace(/'/g, "\\'");
+        if (btn) {
+          btn.textContent = "Saved";
+          btn.disabled = true;
+        }
 
-    // Mark matching button as saved
-    const btn = document.querySelector(
-      `.fbla-add-btn[data-name="${item.name}"]`
-    );
-
-    if (btn) {
-      btn.textContent = "Saved";
-      btn.disabled = true;
+        box.innerHTML += `
+          <li>
+            <a href="${item.url}" target="_blank">${item.name}</a>
+            <button onclick="window.removeWish('${escapedName}', '${item.url}')" title="Remove Entry">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>`;
+      });
     }
-
-    box.innerHTML += `
-      <li class="fbla-wish-item">
-        <a href="${item.url}" target="_blank">${item.name}</a>
-        <button onclick="window.removeWish('${escapedName}', '${item.url}')">
-          <i class="fa-solid fa-trash"></i>
-        </button>
-      </li>`;
-  });
-}
 
     window.signUp = async () => {
       const n = document.getElementById('reg-name').value;
@@ -392,18 +688,104 @@
       const p = document.getElementById('reg-pass').value;
       try {
         const cred = await createUserWithEmailAndPassword(auth, `${u.toLowerCase()}@museum.local`, p);
-        await setDoc(doc(db, "users", cred.user.uid), { realName: n, username: u, wishlist: [] });
-      } catch (e) { alert(e.message); }
+        const initialWishlist = [
+          { name: "Upstairs / Downstairs", url: "events/upstairs-downstairs.html" },
+          { name: "Free Movie Series", url: "events/free-movie-series.html" },
+          { name: "Celebrate Sunset", url: "events/celebrate-sunset.html" },
+          { name: "Tampa at War", url: "exhibits/tampa-at-war.html" },
+          { name: "Grand Hotel", url: "exhibits/grand-hotel.html" },
+          { name: "Gaspar's Gold", url: "exhibits/gaspar_gold.html" },
+          { name: "Plants Southern Empire", url: "exhibits/plants-southern-empire.html" }
+        ];
+        await setDoc(doc(db, "users", cred.user.uid), { realName: n, username: u, wishlist: initialWishlist });
+      } catch (e) { document.getElementById('reg-err').innerText = e.message; }
     };
 
     window.signIn = async () => {
       const u = document.getElementById('log-user').value;
       const p = document.getElementById('log-pass').value;
       try { await signInWithEmailAndPassword(auth, `${u.toLowerCase()}@museum.local`, p); } 
-      catch (e) { alert("Invalid login."); }
+      catch (e) { document.getElementById('log-err').innerText = "Credentials verification failed."; }
     };
 
     window.logout = () => signOut(auth);
+
+    /* --- TABBED CONFIGURATION CREDENTIAL CONTROLLER PROCESSING LOGIC --- */
+    window.updateCredentials = async (e) => {
+      e.preventDefault();
+      if(!auth.currentUser) return;
+
+      const activeTabId = document.querySelector('.nested-tab-btn.active').id;
+      
+      try {
+        const ref = doc(db, "users", auth.currentUser.uid);
+        const snap = await getDoc(ref);
+        if (!snap.exists()) return;
+        const userData = snap.data();
+
+        if (activeTabId === 'subtab-name') {
+          const currPass = document.getElementById('settings-name-curr-pass').value;
+          const currName = document.getElementById('settings-name-curr-name').value.trim();
+          const newName = document.getElementById('settings-new-name').value.trim();
+          
+          if(!currPass || !currName || !newName) return alert("Please fill out all fields.");
+          
+          if(currName.toLowerCase() !== userData.realName.toLowerCase()) {
+            return alert("Validation error: Current display name is incorrect.");
+          }
+          
+          const credential = EmailAuthProvider.credential(auth.currentUser.email, currPass);
+          await reauthenticateWithCredential(auth.currentUser, credential);
+          
+          await updateDoc(ref, { realName: newName });
+          document.getElementById('ui-name').innerText = newName;
+          alert("Display name updated successfully.");
+          
+        } else if (activeTabId === 'subtab-user') {
+          const currPass = document.getElementById('settings-user-curr-pass').value;
+          const currUser = document.getElementById('settings-user-curr-user').value.trim();
+          const newUsername = document.getElementById('settings-new-user').value.trim();
+          
+          if(!currPass || !currUser || !newUsername) return alert("Please fill out all fields.");
+          
+          if(currUser.toLowerCase() !== userData.username.toLowerCase()) {
+            return alert("Validation error: Current username is incorrect.");
+          }
+          
+          const credential = EmailAuthProvider.credential(auth.currentUser.email, currPass);
+          await reauthenticateWithCredential(auth.currentUser, credential);
+          
+          await updateDoc(ref, { username: newUsername });
+          document.getElementById('ui-user').innerText = newUsername;
+          alert("Username updated successfully.");
+          
+        } else if (activeTabId === 'subtab-pass') {
+          const currPass = document.getElementById('settings-pass-curr-pass').value;
+          const newPass = document.getElementById('settings-new-pass').value;
+          const confirmPass = document.getElementById('settings-confirm-pass').value;
+          
+          if(!currPass || !newPass || !confirmPass) return alert("Please fill out all fields.");
+          
+          if(newPass !== confirmPass) {
+            return alert("Validation error: New passwords do not match.");
+          }
+          if(newPass.length < 6) {
+            return alert("Security exception: Password requires 6+ characters minimum.");
+          }
+          
+          const credential = EmailAuthProvider.credential(auth.currentUser.email, currPass);
+          await reauthenticateWithCredential(auth.currentUser, credential);
+          
+          await updatePassword(auth.currentUser, newPass);
+          alert("Password updated successfully.");
+        }
+
+        e.target.reset();
+
+      } catch(err) {
+        alert("Verification failed or update error: " + err.message);
+      }
+    };
 
     window.addWish = async (name, url) => {
       if(!auth.currentUser) return;
@@ -440,5 +822,5 @@
       }
     });
   </script>
-  </body>
+</body>
 </html>
