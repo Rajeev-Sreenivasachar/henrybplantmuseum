@@ -13,6 +13,11 @@ function loadChatHistory() {
         div.innerText = msg.text;
         chatMessages.appendChild(div);
     });
+
+    // Scroll to the newest message
+    setTimeout(() => {
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }, 0);
 }
 
 // Pop open or close the chat window
