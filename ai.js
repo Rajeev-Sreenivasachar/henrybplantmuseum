@@ -4,6 +4,16 @@ const closeBtn = document.getElementById('close-chat-btn');
 const chatMessages = document.getElementById('chat-messages');
 const chatInput = document.getElementById('chat-input');
 const sendBtn = document.getElementById('send-btn');
+function loadChatHistory() {
+    const history = JSON.parse(localStorage.getItem('museumChatHistory')) || [];
+
+    history.forEach(msg => {
+        const div = document.createElement('div');
+        div.className = `msg ${msg.sender}`;
+        div.innerText = msg.text;
+        chatMessages.appendChild(div);
+    });
+}
 
 // Pop open or close the chat window
 toggleBtn.addEventListener('click', () => {
@@ -24,7 +34,13 @@ async function sendMessage() {
     chatInput.value = ''; // Clear the input box
 
     // 2. Put a temporary "Thinking..." message for the bot
-    const loadingId = appendMessage('bot', 'Thinking...');
+    const loadingDiv = document.createElement('div');
+    loadingDiv.className = 'msg bot';
+    loadingDiv.id = `msg-${Date.now()}-loading`;
+    loadingDiv.innerText = 'Thinking...';
+    chatMessages.appendChild(loadingDiv);
+
+    const loadingId = loadingDiv.id;
 
     try {
         // 3. Send the message to your Vercel backend (/api/chat)
@@ -42,6 +58,9 @@ async function sendMessage() {
         const loadingMessageElement = document.getElementById(loadingId);
         if (data.reply) {
             loadingMessageElement.innerText = data.reply;
+            const history = JSON.parse(localStorage.getItem('museumChatHistory')) || [];
+            history.push({ sender: 'bot', text: data.reply });
+            localStorage.setItem('museumChatHistory', JSON.stringify(history));
         } else {
             loadingMessageElement.innerText = "Error: Couldn't generate a response.";
         }
@@ -60,6 +79,7 @@ chatInput.addEventListener('keypress', (e) => {
 
 // A quick helper function to draw the chat bubbles on screen
 function appendMessage(sender, text) {
+
     const div = document.createElement('div');
     div.className = `msg ${sender}`;
     
@@ -71,6 +91,11 @@ function appendMessage(sender, text) {
     
     // Auto-scroll to the bottom so the newest message is always visible
     chatMessages.scrollTop = chatMessages.scrollHeight;
-    
+
+    const history = JSON.parse(localStorage.getItem('museumChatHistory')) || [];
+    history.push({ sender, text });
+    localStorage.setItem('museumChatHistory', JSON.stringify(history));
+
     return div.id;
 }
+loadChatHistory();
