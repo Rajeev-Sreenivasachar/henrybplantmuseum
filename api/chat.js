@@ -13,9 +13,15 @@ export default async function handler(req, res) {
             return res.status(200).json({ reply: 'SYSTEM ERROR: Vercel cannot find GEMINI_API_KEY.' });
         }
 
-        // Safely load the 4 JSON files
+        // THE FIX: We are now looking in the root folder, right next to your HTML files!
         const loadJson = (filename) => {
-            const filePath = path.join(process.cwd(), 'data', filename);
+            const filePath = path.join(process.cwd(), filename);
+            
+            // Safety check so it doesn't crash if a file is missing
+            if (!fs.existsSync(filePath)) {
+                return { warning: `${filename} is missing from the folder.` };
+            }
+            
             return JSON.parse(fs.readFileSync(filePath, 'utf8'));
         };
 
@@ -26,7 +32,6 @@ export default async function handler(req, res) {
 
         const message = req.body.message;
         
-        // The Museum Guide Instructions
         const systemPrompt = `
         You are a helpful virtual assistant and guide for our new museum website. 
         
@@ -64,7 +69,6 @@ export default async function handler(req, res) {
         }
 
     } catch (error) {
-        // If Vercel complains about your JSON files, it will tell you exactly why right in the chat window!
         return res.status(200).json({ reply: "BACKEND CRASH: " + error.message });
     }
 }
