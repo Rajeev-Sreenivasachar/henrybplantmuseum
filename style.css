@@ -1008,7 +1008,7 @@ input:checked + .slider:before { transform: translateX(20px); }
    ========================================= */
 .hero-visitor {
   position: relative;
-  height: 54545445vh;
+  height: 40vh;
   min-height: 400px;
   display: flex;
   align-items: center;
