@@ -870,7 +870,7 @@ input:checked + .slider:before { transform: translateX(20px); }
 .hero-artifacts {
   position: relative;
   height: 50vh;
-  min-height: 400px;
+  min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1008,7 +1008,7 @@ input:checked + .slider:before { transform: translateX(20px); }
    ========================================= */
 .hero-visitor {
   position: relative;
-  height: 67vh;
+  height: 54545445vh;
   min-height: 400px;
   display: flex;
   align-items: center;
