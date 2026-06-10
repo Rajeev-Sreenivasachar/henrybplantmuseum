@@ -182,8 +182,9 @@
       padding: 0.6rem 1.5rem; background: #000 !important; color: #fff !important; 
       border-radius: var(--radius-sm); font-weight: 700; font-size: 0.9rem; transition: all 0.3s ease;
     }
-    .nav-links .nav-cta:hover, .nav-container > .nav-cta:hover { background: #333 !important; transform: translateY(-2px); }
+    .nav-links .nav-cta:hover, .nav-container > .nav-cta:hover { background: #7A1E2C !important; transform: translateY(-2px); }
     .nav-links .nav-cta::after { display: none; }
+    .nav-links .nav-cta a.active { background: #7A1E2C;}
     
     .menu-toggle { display: none !important; } 
     .nav-links .nav-cta { display: none; } 
@@ -2236,7 +2237,7 @@ body {
 /* We need relative positioning on the card so the star stays inside it */
 .card-artifacts { 
   position: relative; 
-  padding-bottom: 50px; /* Gives room so text doesn't hit the button */
+  padding-bottom: 50px;
   background: white;
   border-radius: 8px;
   overflow: hidden;
@@ -2313,6 +2314,7 @@ body {
   padding: 30px 20px;
   overflow-y: auto;
   border-left: 6px solid #722F37;
+  z-index: 9999;
 }
 .fav-sidebar.open { right: 0; }
 
