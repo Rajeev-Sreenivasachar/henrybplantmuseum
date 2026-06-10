@@ -184,7 +184,7 @@
     }
     .nav-links .nav-cta:hover, .nav-container > .nav-cta:hover { background: #7A1E2C !important; transform: translateY(-2px); }
     .nav-links .nav-cta::after { display: none; }
-    .nav-links .nav-cta a.active { background: #7A1E2C;}
+    .nav-links a.nav-cta.active { background: #651B28;}
     
     .menu-toggle { display: none !important; } 
     .nav-links .nav-cta { display: none; } 
