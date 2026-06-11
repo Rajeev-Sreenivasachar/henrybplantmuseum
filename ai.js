@@ -10,8 +10,23 @@ function loadChatHistory() {
     history.forEach(msg => {
         const div = document.createElement('div');
         div.className = `msg ${msg.sender}`;
-        div.innerText = msg.text;
-        chatMessages.appendChild(div);
+
+// Delete Conversation
+        div.textContent = msg.text;
+
+if (msg.sender === 'user') {
+    const trash = document.createElement('span');
+    trash.className = 'delete-msg';
+    trash.innerHTML = '🗑️';
+
+    trash.addEventListener('click', () => {
+        deleteConversation(div);
+    });
+
+    div.appendChild(trash);
+}
+
+chatMessages.appendChild(div);
     });
 
     // Scroll to the newest message
@@ -94,11 +109,25 @@ function appendMessage(sender, text) {
     const div = document.createElement('div');
     div.className = `msg ${sender}`;
     
-    // THE FIX: Added Math.random() so the User and Bot bubbles NEVER share the same ID
-    div.id = `msg-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`; 
+    div.id = `msg-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
+
+// Delete Conversation
     
-    div.innerText = text;
-    chatMessages.appendChild(div);
+div.textContent = text;
+
+if (sender === 'user') {
+    const trash = document.createElement('span');
+    trash.className = 'delete-msg';
+    trash.innerHTML = '🗑️';
+
+    trash.addEventListener('click', () => {
+        deleteConversation(div);
+    });
+
+    div.appendChild(trash);
+}
+
+chatMessages.appendChild(div);
     
     // Auto-scroll to the bottom so the newest message is always visible
     chatMessages.scrollTop = chatMessages.scrollHeight;
