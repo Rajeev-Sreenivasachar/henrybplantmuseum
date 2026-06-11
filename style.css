@@ -305,7 +305,7 @@
 
     .btn-gold-link {
       background: var(--brand-gold); color: #000; text-decoration: none; font-weight: 700;
-      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em;
+      font-size: 0.7rem; letter-spacing: 0.05em;
       padding: 8px 16px; border-radius: 20px; display: inline-flex; align-items: center;
       gap: 6px; margin-top: 15px; transition: all 0.3s ease; width: fit-content !important;
     }
