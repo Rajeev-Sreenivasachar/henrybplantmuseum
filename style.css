@@ -547,9 +547,12 @@ img { max-width: 100%; height: auto; display: block; }
     .hero-common-content {
       position: relative; z-index: 2; padding: 0 2rem;
     }
-    .hero-common-content h1 {
-      font-size: clamp(3rem, 6vw, 4.5rem); text-shadow: 0 4px 20px rgba(0,0,0,0.5); letter-spacing: -0.02em;
-    }
+  .hero-common-content h1 {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    letter-spacing: -0.02em;
+    text-transform: none; /* 👈 Add this line to force normal casing */
+}
 
     .history, .highlights { padding: 5rem 2rem; background: var(--bg-main); }
     .highlights { background: var(--bg-surface); }
