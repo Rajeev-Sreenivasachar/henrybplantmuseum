@@ -6,27 +6,25 @@ const chatInput = document.getElementById('chat-input');
 const sendBtn = document.getElementById('send-btn');
 function loadChatHistory() {
     const history = JSON.parse(localStorage.getItem('museumChatHistory')) || [];
-
+    
     history.forEach(msg => {
         const div = document.createElement('div');
         div.className = `msg ${msg.sender}`;
 
-// Delete Conversation
-        div.textContent = msg.text;
+        // Wrap the text in a span so it matches appendMessage perfectly
+        const textSpan = document.createElement('span');
+        textSpan.textContent = msg.text;
+        div.appendChild(textSpan);
 
-if (msg.sender === 'user') {
-    const trash = document.createElement('span');
-    trash.className = 'delete-msg';
-    trash.innerHTML = '‎<i class="fa-solid fa-trash"></i>';
+        if (msg.sender === 'user') {
+            const trash = document.createElement('span');
+            trash.className = 'delete-msg';
+            trash.innerHTML = '<i class="fa-solid fa-trash"></i>';
+            trash.addEventListener('click', () => { deleteConversation(div); });
+            div.appendChild(trash);
+        }
 
-    trash.addEventListener('click', () => {
-        deleteConversation(div);
-    });
-
-    div.appendChild(trash);
-}
-
-chatMessages.appendChild(div);
+        chatMessages.appendChild(div);
     });
 
     // Scroll to the newest message
