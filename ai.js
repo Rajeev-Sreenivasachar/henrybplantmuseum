@@ -17,7 +17,7 @@ function loadChatHistory() {
 if (msg.sender === 'user') {
     const trash = document.createElement('span');
     trash.className = 'delete-msg';
-    trash.innerHTML = '🗑️';
+    trash.innerHTML = '‎<i class="fa-solid fa-trash"></i>';
 
     trash.addEventListener('click', () => {
         deleteConversation(div);
@@ -118,7 +118,7 @@ div.textContent = text;
 if (sender === 'user') {
     const trash = document.createElement('span');
     trash.className = 'delete-msg';
-    trash.innerHTML = '🗑️';
+    trash.innerHTML = '<i class="fa-solid fa-trash"></i>';
 
     trash.addEventListener('click', () => {
         deleteConversation(div);
