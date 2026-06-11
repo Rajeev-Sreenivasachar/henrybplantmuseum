@@ -30,9 +30,8 @@
     cursor: pointer;
     opacity: 0;
     transition: opacity 0.2s ease;
-
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.6);
+    color: white;
 }
 
 .msg.user:hover .delete-msg {
@@ -120,6 +119,10 @@
     background-color: #000000;
     color: #ffffff;
     align-self: flex-end; /* Pushes user messages to the right */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
 }
 
 /* Bot Messages */
