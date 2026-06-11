@@ -105,37 +105,34 @@ chatInput.addEventListener('keypress', (e) => {
 
 // A quick helper function to draw the chat bubbles on screen
 function appendMessage(sender, text) {
-
     const div = document.createElement('div');
     div.className = `msg ${sender}`;
-    
-    div.id = `msg-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
 
-// Delete Conversation
-    
-div.textContent = text;
+    const textSpan = document.createElement('span');
+    textSpan.textContent = text;
 
-if (sender === 'user') {
-    const trash = document.createElement('span');
-    trash.className = 'delete-msg';
-    trash.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    div.appendChild(textSpan);
 
-    trash.addEventListener('click', () => {
-        deleteConversation(div);
-    });
+    // only add trash for USER messages
+    if (sender === 'user') {
+        const trash = document.createElement('span');
+        trash.className = 'delete-msg';
+        trash.innerHTML = '<i class="fa-solid fa-trash"></i>';
 
-    div.appendChild(trash);
-}
+        trash.addEventListener('click', () => {
+            deleteConversation(div);
+        });
 
-chatMessages.appendChild(div);
-    
-    // Auto-scroll to the bottom so the newest message is always visible
+        div.appendChild(trash);
+    }
+
+    chatMessages.appendChild(div);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 
     const history = JSON.parse(localStorage.getItem('museumChatHistory')) || [];
     history.push({ sender, text });
     localStorage.setItem('museumChatHistory', JSON.stringify(history));
 
-    return div.id;
+    return div;
 }
 loadChatHistory();
