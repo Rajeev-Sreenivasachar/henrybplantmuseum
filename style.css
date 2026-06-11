@@ -19,7 +19,7 @@
 }
 
 #chat-toggle-btn:hover {
-    transform: scale(1.05); /* Adds a little pop when hovered */
+    transform: scale(1.05);
 }
 
 .delete-msg {
@@ -39,9 +39,8 @@
 }
 
 .delete-msg:hover {
-    color: white;
+    color: #ff4d4d;
 }
-
 /* =========================================
    Main Chat Window
 ========================================= */
@@ -116,13 +115,15 @@
 
 /* User Messages */
 .msg.user {
+    position: relative;
     background-color: #000000;
     color: #ffffff;
-    align-self: flex-end; /* Pushes user messages to the right */
+    align-self: flex-end;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    padding-right: 30px;
 }
 
 /* Bot Messages */
