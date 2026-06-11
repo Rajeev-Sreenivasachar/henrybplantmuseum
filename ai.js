@@ -135,4 +135,39 @@ function appendMessage(sender, text) {
 
     return div;
 }
+// Function to delete the message bubble AND the bot's reply
+function deleteConversation(messageDiv) {
+    // 1. Grab the text of the user's message before we delete it
+    const textSpan = messageDiv.querySelector('span:not(.delete-msg)');
+    const messageText = textSpan ? textSpan.textContent : '';
+
+    // 2. Find and remove the bot's reply from the screen (the very next element)
+    const botReplyDiv = messageDiv.nextElementSibling;
+    if (botReplyDiv && botReplyDiv.classList.contains('bot')) {
+        botReplyDiv.remove();
+    }
+
+    // 3. Remove the user's message from the screen
+    messageDiv.remove();
+
+    // 4. Update localStorage to remove both
+    if (messageText) {
+        const history = JSON.parse(localStorage.getItem('museumChatHistory')) || [];
+        
+        // Find exactly where this user message is in the saved history array
+        const indexToDelete = history.findIndex(msg => msg.sender === 'user' && msg.text === messageText);
+
+        if (indexToDelete !== -1) {
+            // Check if the message immediately after it is from the bot
+            let itemsToDelete = 1; 
+            if (indexToDelete + 1 < history.length && history[indexToDelete + 1].sender === 'bot') {
+                itemsToDelete = 2; // Delete BOTH the user message and the bot reply
+            }
+            
+            // Slice them out of the history array and save the updated version
+            history.splice(indexToDelete, itemsToDelete);
+            localStorage.setItem('museumChatHistory', JSON.stringify(history));
+        }
+    }
+}
 loadChatHistory();
