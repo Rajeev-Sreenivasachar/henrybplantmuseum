@@ -816,19 +816,17 @@ input:checked + .slider:before { transform: translateX(20px); }
 
 .upcoming-tag {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: var(--bg-main);
-  border: 1px solid var(--border-color);
-  color: var(--brand-primary);
-  padding: 0.3rem 0.8rem;
-  border-radius: 50px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  top: 18px;
+  left: -38px;
+  padding: 8px 50px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  z-index: 10;
-  transition: var(--transition);
+  color: #ffffff;
+  background: linear-gradient(135deg, #7a0f24, #9e1b32);
+  transform: rotate(-45deg);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
 
 .card-exhibits:hover .upcoming-tag {
