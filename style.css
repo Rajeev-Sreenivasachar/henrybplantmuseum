@@ -22,23 +22,25 @@
     transform: scale(1.05); /* Adds a little pop when hovered */
 }
 
-.msg.user {
-    position: relative;
-}
-
 .delete-msg {
     position: absolute;
-    right: -25px;
+    right: 8px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
     opacity: 0;
-    transition: opacity 0.2s;
-    font-size: 14px;
+    transition: opacity 0.2s ease;
+
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .msg.user:hover .delete-msg {
     opacity: 1;
+}
+
+.delete-msg:hover {
+    color: white;
 }
 
 /* =========================================
