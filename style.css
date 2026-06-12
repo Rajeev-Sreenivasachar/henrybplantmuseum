@@ -2471,3 +2471,23 @@ body.high-contrast .navbar .logo,
 body.high-contrast .navbar i {
     color: #000 !important;
 }
+
+/* Force Card Text Black */
+
+.card h3, .card p, .card h4, .card span,
+.card-exhibits h3, .card-exhibits p, .card-exhibits h4, .card-exhibits span,
+.card-artifacts h3, .card-artifacts p, .card-artifacts h4, .card-artifacts span {
+    color: #000000 !important;
+}
+
+/* Nav CTA Overrides */
+.nav-cta {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #ddd;
+}
+.nav-cta:hover {
+    background-color: var(--brand-primary) !important;
+    color: #000000 !important;
+    border-color: var(--brand-primary) !important;
+}
