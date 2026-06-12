@@ -126,3 +126,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// State retention for Events/Exhibits scroll position
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.pathname.includes('events.html') || window.location.pathname.includes('exhibits.html')) {
+        const savedScroll = sessionStorage.getItem(window.location.pathname + '_scroll');
+        if (savedScroll) {
+            window.scrollTo(0, parseInt(savedScroll, 10));
+        }
+        
+        document.querySelectorAll('.card, .card a').forEach(el => {
+            el.addEventListener('click', () => {
+                sessionStorage.setItem(window.location.pathname + '_scroll', window.scrollY);
+            });
+        });
+    }
+});

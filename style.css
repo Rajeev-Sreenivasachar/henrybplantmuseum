@@ -357,7 +357,7 @@
     .panel-body { padding: 2rem; overflow-y: auto; flex-grow: 1; }
 
     .drawer-group { margin-bottom: 2rem; }
-    .drawer-group h4 { font-family: var(--font-sans); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;}
+    .drawer-group h4 { font-family: var(--font-sans); font-size: 0.85rem; /* text-transform removed */ letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;}
 
     .resource-item { display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 0.75rem; transition: var(--transition); background: var(--bg-surface); text-decoration: none; color: #000;}
     a.resource-item:hover { border-color: var(--brand-primary); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
@@ -589,12 +589,12 @@ img { max-width: 100%; height: auto; display: block; }
     .cards-grid-involved { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
 
     .card {
-      background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md);
+      background: #fdf5d6; border: 1px solid var(--border-color); border-radius: var(--radius-md);
       padding: 3rem 2.5rem; display: flex; flex-direction: column; position: relative; z-index: 1;
       transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
     }
-    .history .card { background: var(--bg-surface); }
-    .highlights .card { background: var(--bg-main); }
+    .history .card { background: #fdf5d6; }
+    .highlights .card { background: #fdf5d6; }
 
     .card::before {
       content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
@@ -624,7 +624,7 @@ img { max-width: 100%; height: auto; display: block; }
     }
     .mission-content-wrapper:hover .mission-bg-accent { transform: scale(1.1) translate(-20px, 20px); }
     .mission-content { position: relative; z-index: 2; }
-    .mission-content h2 { font-size: clamp(1.5rem, 3vw, 1.8rem); color: var(--brand-primary); margin-bottom: 1.5rem; letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--font-sans); font-weight: 600; }
+    .mission-content h2 { font-size: clamp(1.5rem, 3vw, 1.8rem); color: var(--brand-primary); margin-bottom: 1.5rem; letter-spacing: 0.1em; /* text-transform removed */ font-family: var(--font-sans); font-weight: 600; }
     .mission-content p { font-size: clamp(1.1rem, 2.5vw, 1.3rem); font-family: var(--font-sans); font-style: normal; font-weight: 400; line-height: 1.8; color: var(--text-muted); max-width: 750px; margin: 0 auto; }
     
     @media (max-width: 768px) {
@@ -779,7 +779,7 @@ input:checked + .slider:before { transform: translateX(20px); }
 
 .card-exhibits {
   position: relative;
-  background: var(--bg-surface);
+  background: #fdf5d6;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 3rem 2.5rem;
@@ -828,7 +828,7 @@ input:checked + .slider:before { transform: translateX(20px); }
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
+  /* text-transform removed */
   color: #ffffff;
   background: linear-gradient(135deg, #7a0f24, #9e1b32);
   transform: rotate(-45deg);
@@ -855,7 +855,7 @@ input:checked + .slider:before { transform: translateX(20px); }
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--brand-gold);
-  text-transform: uppercase;
+  /* text-transform removed */
   letter-spacing: 0.05em;
   margin-bottom: 1rem;
 }
@@ -1015,7 +1015,7 @@ input:checked + .slider:before { transform: translateX(20px); }
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--brand-gold);
-  text-transform: uppercase;
+  /* text-transform removed */
   letter-spacing: 0.05em;
   margin-bottom: 1rem;
 }
@@ -1886,21 +1886,21 @@ body {
 .hero-common-content {
   position: relative;
   z-index: 2;
-  padding: 0 20px;
+  padding:  0 20px;
 }
 
 .hero-common-content h1 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.5rem, 7vw, 4.5rem);
   color: white;
-  text-transform: uppercase;
+  /* text-transform removed */
   letter-spacing: 6px;
   margin: 0;
 }
 
 .hero-common-content p {
   color: var(--gold);
-  text-transform: uppercase;
+  /* text-transform removed */
   letter-spacing: 3px;
   font-weight: 600;
   margin-top: 15px;
@@ -1990,7 +1990,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
-  text-transform: uppercase;
+  /* text-transform removed */
   letter-spacing: 2.5px; /* This makes it look "expensive" */
   border-radius: 2px;
   margin-bottom: 15px;
@@ -2145,7 +2145,7 @@ body {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.4px;
-  text-transform: uppercase;
+  /* text-transform removed */
 
   border-radius: 999px;
 
@@ -2422,3 +2422,38 @@ body {
   cursor: pointer;
   font-weight: bold;
 }
+
+/* Card Ribbon & Back Button Styles */
+.card-ribbon {
+    position: absolute;
+    top: 15px;
+    right: -10px;
+    background: #4A3525;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    border-radius: 4px 0 0 4px;
+    z-index: 10;
+}
+.back-link, a:has(.fa-arrow-left) {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    background: #fdf5d6;
+    border: 1px solid #e0ce9a;
+    color: #4A3525;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+.back-link:hover, a:has(.fa-arrow-left):hover {
+    background: #4A3525;
+    color: #fff;
+}
+
+.card-exhibits { background: #fdf5d6 !important; position: relative; }

@@ -1511,6 +1511,40 @@ if (backToTopBtn) {
   });
 }
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.getElementById('favSidebar');
+    const toggleBtn = document.getElementById('floatingFavBtn');
+    
+    // Create an overlay div
+    const overlay = document.createElement('div');
+    overlay.className = 'close-curate-backdrop';
+    overlay.style.cssText = 'position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 99; display: none;';
+    document.body.appendChild(overlay);
+
+    toggleBtn.addEventListener('click', () => {
+        // If sidebar becomes active, show overlay
+        setTimeout(() => {
+            if (sidebar.classList.contains('active')) {
+                overlay.style.display = 'block';
+            }
+        }, 50);
+    });
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+        overlay.style.display = 'none';
+    });
+    
+    const closeBtn = document.getElementById('closeFavBtn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            overlay.style.display = 'none';
+        });
+    }
+});
+</script>
 </body>
 <script src="script.js"></script>
 </html>
