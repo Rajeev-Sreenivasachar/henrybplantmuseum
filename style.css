@@ -2492,3 +2492,11 @@ body.high-contrast .navbar i {
     color: #000000 !important;
     border-color: var(--brand-primary) !important;
 }
+
+/* Reduced padding between hero and filters */
+.exhibitions-wrapper, .artifacts-wrapper {
+    padding-top: 1.5rem !important;
+}
+.exhibitions-filters, .artifact-filters {
+    margin-top: 0 !important;
+}
