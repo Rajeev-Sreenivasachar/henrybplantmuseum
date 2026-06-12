@@ -2480,13 +2480,14 @@ body.high-contrast .navbar i {
     color: #000000 !important;
 }
 
-/* Nav CTA Overrides */
-.nav-cta {
+
+/* Nav CTA Overrides - Fixed Specificity */
+.nav-links .nav-cta, .nav-container > .nav-cta, .nav-links a.nav-cta.active {
     background-color: #ffffff !important;
     color: #000000 !important;
     border: 1px solid #ddd;
 }
-.nav-cta:hover {
+.nav-links .nav-cta:hover, .nav-container > .nav-cta:hover, .nav-links a.nav-cta.active:hover {
     background-color: var(--brand-primary) !important;
     color: #000000 !important;
     border-color: var(--brand-primary) !important;
