@@ -128,13 +128,21 @@
     .nested-tab-btn.active { background: var(--burgundy-glow); color: var(--burgundy); font-weight: 600; }
 
     /* Wishlist Elements */
-    .new-wishlist { list-style: none; padding: 0; margin: 0; }
+    .new-wishlist { 
+      list-style: none; padding: 0; margin: 0; 
+      border: 1px solid var(--border-color); 
+      border-radius: 6px; 
+      overflow: hidden;
+    }
     .new-wishlist li {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 0.9rem 1.2rem; border: 1px solid var(--border-color); border-radius: 6px;
+      padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--border-color); 
       margin-bottom: 0; background: var(--app-bg); transition: all 0.25s ease;
     }
-    .new-wishlist li:hover { background: #fff; border-color: var(--burgundy); box-shadow: 0 4px 12px rgba(114, 47, 55, 0.04); }
+    .new-wishlist li:last-child {
+      border-bottom: none;
+    }
+    .new-wishlist li:hover { background: #fff; box-shadow: inset 2px 0 0 var(--burgundy); }
     .new-wishlist li a { text-decoration: underline; color: var(--dark-text); font-size: 0.9rem; font-weight: 500; }
     .new-wishlist li button { background: none; border: none; color: #ccc; cursor: pointer; transition: color 0.2s; }
     .new-wishlist li button:hover { color: var(--crimson); }
