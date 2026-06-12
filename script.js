@@ -99,6 +99,16 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.addEventListener('change', e => {
       document.body.classList.toggle(cls, e.target.checked);
       localStorage.setItem(cls, e.target.checked);
+      
+      // Mutual Exclusivity
+      if (id === 'toggle-contrast' && e.target.checked) {
+          const darkToggle = document.getElementById('toggle-dark');
+          if (darkToggle && darkToggle.checked) {
+              darkToggle.checked = false;
+              document.body.classList.remove('dark-mode');
+              localStorage.setItem('dark-mode', 'disabled');
+          }
+      }
     });
   });
 
@@ -109,8 +119,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   if (savedTheme === 'enabled' || (!savedTheme && prefersDark)) {
-    document.body.classList.add('dark-mode');
-    if (darkToggle) darkToggle.checked = true;
+    const contrastToggle = document.getElementById('toggle-contrast');
+    if (!contrastToggle || !contrastToggle.checked) {
+        document.body.classList.add('dark-mode');
+        if (darkToggle) darkToggle.checked = true;
+    }
   }
 
   // 2. Listen for switch toggles

@@ -2469,3 +2469,9 @@ body.high-contrast .btn:hover, body.high-contrast .nav-cta:hover, body.high-cont
   color: #000000 !important;
   border: 2px solid #000000 !important;
 }
+
+body.dark-mode #drawerA11y .panel-header h3,
+body.dark-mode #drawerA11y label,
+body.dark-mode #drawerA11y .a11y-desc {
+    color: var(--brand-primary) !important;
+}
