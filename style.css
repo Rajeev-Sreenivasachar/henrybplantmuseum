@@ -2455,3 +2455,19 @@ body.high-contrast {
   --brand-primary: #ffcc00; --brand-primary-hover: #e6b800;
   --brand-gold: #ffcc00; --border-color: #fff;
 }
+
+body.high-contrast #drawerA11y .panel-header h3,
+body.high-contrast #drawerA11y label,
+body.high-contrast #drawerA11y .a11y-desc {
+    color: #ffcc00 !important;
+}
+
+body.high-contrast .navbar { 
+    background: #ffcc00 !important; 
+    border-bottom: 2px solid #000 !important; 
+}
+body.high-contrast .navbar a, 
+body.high-contrast .navbar .logo, 
+body.high-contrast .navbar i {
+    color: #000 !important;
+}
