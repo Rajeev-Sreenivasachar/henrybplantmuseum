@@ -693,14 +693,14 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 #drawerA11y label {
-    color: var(--brand-primary) !important;
+    color: #000 !important;
     font-size: 0.95rem;
     font-weight: 500;
     cursor: pointer;
 }
 
 #drawerA11y .a11y-desc {
-    color: var(--brand-primary) !important;
+    color: #000 !important;
     display: block;
     margin-bottom: 15px;
 }
