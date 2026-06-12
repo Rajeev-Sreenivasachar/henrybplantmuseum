@@ -478,12 +478,7 @@ body.dark-mode {
   /* Your --brand-primary (burgundy) and --brand-gold should still pop beautifully on this! */
 }
 
-body.high-contrast {
-  --bg-main: #000; --bg-surface: #000; --bg-alt: #111;
-  --text-main: #fff; --text-muted: #ddd;
-  --brand-primary: #ffcc00; --brand-primary-hover: #e6b800;
-  --brand-gold: #ffcc00; --border-color: #fff;
-}
+
 
 body.dyslexia-mode { 
   --font-sans: 'OpenDyslexic', sans-serif; --font-serif: 'OpenDyslexic', sans-serif; letter-spacing: 0.05em; line-height: 2; 
@@ -689,7 +684,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* Accessibility Drawer - Burgundy Theme */
 /* Accessibility Drawer - Burgundy Theme (Forced) */
 #drawerA11y .panel-header h3 {
-    color: var(--brand-primary) !important;
+    color: #000 !important;
 }
 
 #drawerA11y label {
@@ -2444,3 +2439,33 @@ body {
 }
 
 .card-exhibits { background: linear-gradient(135deg, #fffcf2 0%, #fdf5d6 100%) !important; position: relative; }
+
+
+body.high-contrast {
+  --bg-main: #FFFF00 !important;
+  --bg-surface: #FFFF00 !important;
+  --bg-alt: #FFFF00 !important;
+  --text-main: #000000 !important;
+  --text-muted: #000000 !important;
+  --brand-primary: #000000 !important;
+  --brand-gold: #000000 !important;
+  --border-color: #000000 !important;
+  background-color: #FFFF00 !important;
+  color: #000000 !important;
+}
+body.high-contrast * {
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+body.high-contrast .card, body.high-contrast .card-exhibits, body.high-contrast .card-artifacts, body.high-contrast .new-card, body.high-contrast .sleek-panel, body.high-contrast .new-auth-box, body.high-contrast .new-dash-header {
+  background: #FFFF00 !important;
+}
+body.high-contrast .btn, body.high-contrast .nav-cta, body.high-contrast .back-link, body.high-contrast .new-auth-btn, body.high-contrast button {
+  background-color: #000000 !important;
+  color: #FFFF00 !important;
+}
+body.high-contrast .btn:hover, body.high-contrast .nav-cta:hover, body.high-contrast .back-link:hover, body.high-contrast button:hover {
+  background-color: #FFFF00 !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}

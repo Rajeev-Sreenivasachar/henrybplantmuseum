@@ -119,6 +119,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (darkToggle.checked) {
         document.body.classList.add('dark-mode');
         localStorage.setItem('dark-mode', 'enabled');
+        
+        // Mutual Exclusivity: High Contrast vs Dark Mode
+        const contrastToggle = document.getElementById('toggle-contrast');
+        if (contrastToggle && contrastToggle.checked) {
+            contrastToggle.checked = false;
+            document.body.classList.remove('high-contrast');
+            localStorage.setItem('high-contrast', 'false');
+        }
       } else {
         document.body.classList.remove('dark-mode');
         localStorage.setItem('dark-mode', 'disabled');
