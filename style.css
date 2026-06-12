@@ -2423,20 +2423,7 @@ body {
   font-weight: bold;
 }
 
-/* Card Ribbon & Back Button Styles */
-.card-ribbon {
-    position: absolute;
-    top: 15px;
-    right: -10px;
-    background: #4A3525;
-    color: #fff;
-    padding: 5px 15px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    border-radius: 4px 0 0 4px;
-    z-index: 10;
-}
+/* Back Button Styles */
 .back-link, a:has(.fa-arrow-left) {
     display: inline-flex;
     align-items: center;
