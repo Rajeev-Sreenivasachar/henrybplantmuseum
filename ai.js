@@ -1,9 +1,12 @@
-const chatWindow = document.getElementById('chat-window');
-const toggleBtn = document.getElementById('chat-toggle-btn');
-const closeBtn = document.getElementById('close-chat-btn');
-const chatMessages = document.getElementById('chat-messages');
-const chatInput = document.getElementById('chat-input');
-const sendBtn = document.getElementById('send-btn');
+document.addEventListener('DOMContentLoaded', () => {
+    const chatWindow = document.getElementById('chat-window');
+    const toggleBtn = document.getElementById('chat-toggle-btn');
+    const closeBtn = document.getElementById('close-chat-btn');
+    const chatMessages = document.getElementById('chat-messages');
+    const chatInput = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('send-btn');
+
+    if (!chatWindow || !toggleBtn || !closeBtn || !chatMessages || !chatInput || !sendBtn) return;
 function loadChatHistory() {
     const history = JSON.parse(localStorage.getItem('museumChatHistory')) || [];
     
@@ -169,3 +172,4 @@ function deleteConversation(messageDiv) {
     }
 }
 loadChatHistory();
+});

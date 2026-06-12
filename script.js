@@ -102,8 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-});
-document.addEventListener('DOMContentLoaded', () => {
   const darkToggle = document.getElementById('toggle-dark');
 
   // 1. Check local storage or system preference on load
