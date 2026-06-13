@@ -132,15 +132,23 @@
       list-style: none; padding: 0; margin: 0; 
       border: 1px solid var(--border-color); 
       border-radius: 6px; 
-      overflow: hidden;
+      overflow-y: auto;
+      max-height: 220px;
       display: flex !important;
       flex-direction: column !important;
       gap: 0 !important;
     }
+    /* Scrollbar styling for wishlist */
+    .new-wishlist::-webkit-scrollbar { width: 6px; }
+    .new-wishlist::-webkit-scrollbar-track { background: transparent; }
+    .new-wishlist::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
+    .new-wishlist::-webkit-scrollbar-thumb:hover { background: #bbb; }
+
     .new-wishlist li {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 0.6rem 1rem; border-bottom: 1px solid var(--border-color); 
+      padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border-color); 
       margin: 0 !important; background: var(--app-bg); transition: all 0.25s ease;
+      min-height: 40px;
     }
     .new-wishlist li:last-child {
       border-bottom: none;
