@@ -163,3 +163,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+window.validateEmail = () => {
+  const emailInput = document.querySelector('input[type="email"]');
+  const email = emailInput ? emailInput.value : "";
+  
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid email address (e.g., name@domain.com)");
+    return false;
+  }
+  return true;
+};
