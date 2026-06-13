@@ -227,6 +227,34 @@
       .new-newsletter-banner { padding: 2.5rem; gap: 2.5rem; }
       .new-dash-header { flex-direction: column; text-align: center; gap: 1.5rem; padding: 2rem 1.5rem; }
     }
+
+    /* Archive Link Button Styling */
+.archive-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 10px 18px;
+  background: transparent;
+  color: #D4AF37; /* Regal Gold */
+  border: 1px solid #D4AF37;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.archive-view-btn i {
+  font-size: 13px;
+}
+
+.archive-view-btn:hover {
+  background: #D4AF37;
+  color: #5A1827; /* Flips to Burgundy text on Gold background */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(214, 175, 55, 0.2);
+}
   </style>
 </head>
 
@@ -448,34 +476,38 @@
           </div>
         </div>
 
-        <section class="new-newsletter-banner">
-          <div class="new-news-left">
-            <div class="new-news-badge"><i class="fa-solid fa-envelope-open-text"></i> The Gilded Dispatch</div>
-            <h3>The Official Museum Chronicle</h3>
-            <p>Join our group of patrons. Verify your account to subscribe to real-time updates regarding our historical restoration collections.</p>
-            
-            <div class="new-news-features">
-              <div class="new-feature-item">
-                <i class="fa-solid fa-star"></i>
-                <div>
-                  <h5>Private Showings</h5>
-                  <p>Get priority alerts for special members galas and opening windows.</p>
-                </div>
-              </div>
-              <div class="new-feature-item">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <div>
-                  <h5>Curator Logs</h5>
-                  <p>Review insights and records delivered straight from our restoration department experts.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="new-news-right">
-            <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="8baff465-7c67-45ee-bddb-09edafe494d7"></script>
-          </div>
-        </section>
+<section class="new-newsletter-banner">
+  <div class="new-news-left">
+    <div class="new-news-badge"><i class="fa-solid fa-envelope-open-text"></i> The Gilded Dispatch</div>
+    <h3>The Official Museum Chronicle</h3>
+    <p>Join our group of patrons. Verify your account to subscribe to real-time updates regarding our historical restoration collections.</p>
+    
+    <div class="new-news-features">
+      <div class="new-feature-item">
+        <i class="fa-solid fa-star"></i>
+        <div>
+          <h5>Private Showings</h5>
+          <p>Get priority alerts for special members galas and opening windows.</p>
+        </div>
+      </div>
+      <div class="new-feature-item">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <div>
+          <h5>Curator Logs</h5>
+          <p>Review insights and records delivered straight from our restoration department experts.</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="newsletter.html" class="archive-view-btn">
+      <i class="fa-solid fa-book-open"></i> Browse Past Editions →
+    </a>
+  </div>
+  
+  <div class="new-news-right">
+    <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="8baff465-7c67-45ee-bddb-09edafe494d7"></script>
+  </div>
+</section>
 
       </div>
     </div>
