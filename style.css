@@ -179,11 +179,24 @@
       transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
     }
     .reveal.active { opacity: 1; transform: translateY(0); visibility: visible; }
-    .sticky-ticket-btn {
-      position: fixed; bottom: 2rem; right: 2rem; background: var(--brand-gold); color: #000; padding: 0.8rem 1.5rem;
-      border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 0.9rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9990; display: flex; align-items: center; gap: 0.5rem; transition: 0.3s;
-    }
+.sticky-ticket-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: fixed;
+    top: 6rem;
+    left: 2rem;
+    z-index: 999;
+    background: var(--brand-gold);
+    color: #000;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
     .sticky-ticket-btn:hover { transform: translateY(-3px); background: #fff; }
     .panel-overlay.open ~ .sticky-ticket-btn { opacity: 0; pointer-events: none; }
 
