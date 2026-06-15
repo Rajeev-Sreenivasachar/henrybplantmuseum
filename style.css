@@ -213,7 +213,7 @@
     
     .nav-links .nav-cta, .nav-container > .nav-cta { 
       padding: 0.6rem 1.5rem; background: #000 !important; color: #fff !important; 
-      border-radius: 50px !important; font-weight: 700; font-size: 0.9rem; transition: all 0.3s ease; border: none !important;
+      border-radius: 0 !important; font-weight: 700; font-size: 0.9rem; transition: all 0.3s ease; border: none !important;
     }
     .nav-links .nav-cta:hover, .nav-container > .nav-cta:hover { background: var(--brand-primary) !important; color: #fff !important; transform: translateY(-2px); }
     .nav-links .nav-cta::after { display: none; }
@@ -469,13 +469,12 @@
 /* Accessibility Modes */
 /* Accessibility Modes */
 body.dark-mode {
-  --bg-main: #121212;       /* Deep matte dark background */
-  --bg-surface: #1e1e1e;    /* Slightly lighter dark for cards/navbars */
-  --bg-alt: #252525;        /* For subtle section backgrounds */
-  --text-main: #f0f0f0;     /* Soft white for primary text */
-  --text-muted: #b0b0b0;    /* Muted gray for subtitles */
-  --border-color: #333333;  /* Subdued borders */
-  /* Your --brand-primary (burgundy) and --brand-gold should still pop beautifully on this! */
+  --bg-main: #000000;       /* Pure black background */
+  --bg-surface: #1a1a1a;    /* Light black for cards/navbars */
+  --bg-alt: #0a0a0a;        /* For subtle section backgrounds */
+  --text-main: #ffffff;     /* Pure white for primary text */
+  --text-muted: #e0e0e0;    /* Very light gray for subtitles */
+  --border-color: #555555;  /* High contrast borders */
 }
 
 
@@ -2514,7 +2513,7 @@ body.high-contrast .navbar i {
     background-color: #000 !important;
     color: #fff !important;
     border: none !important;
-    border-radius: 50px !important;
+    border-radius: 0 !important;
 }
 .nav-links .nav-cta:hover, .nav-container > .nav-cta:hover, .nav-links a.nav-cta.active, .nav-links a.nav-cta.active:hover {
     background-color: var(--brand-primary) !important;
