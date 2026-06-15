@@ -213,11 +213,11 @@
     
     .nav-links .nav-cta, .nav-container > .nav-cta { 
       padding: 0.6rem 1.5rem; background: #000 !important; color: #fff !important; 
-      border-radius: var(--radius-sm); font-weight: 700; font-size: 0.9rem; transition: all 0.3s ease;
+      border-radius: 50px !important; font-weight: 700; font-size: 0.9rem; transition: all 0.3s ease; border: none !important;
     }
-    .nav-links .nav-cta:hover, .nav-container > .nav-cta:hover { background: #7A1E2C !important; transform: translateY(-2px); }
+    .nav-links .nav-cta:hover, .nav-container > .nav-cta:hover { background: var(--brand-primary) !important; color: #fff !important; transform: translateY(-2px); }
     .nav-links .nav-cta::after { display: none; }
-    .nav-links a.nav-cta.active { background: #651B28 !important;}
+    .nav-links a.nav-cta.active { background: var(--brand-primary) !important; color: #fff !important; }
     
     .menu-toggle { display: none !important; } 
     .nav-links .nav-cta { display: none; } 
@@ -2510,15 +2510,15 @@ body.high-contrast .navbar i {
 
 
 /* Nav CTA Overrides - Fixed Specificity */
-.nav-links .nav-cta, .nav-container > .nav-cta, .nav-links a.nav-cta.active {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border: 1px solid #ddd;
+.nav-links .nav-cta, .nav-container > .nav-cta {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 50px !important;
 }
-.nav-links .nav-cta:hover, .nav-container > .nav-cta:hover, .nav-links a.nav-cta.active:hover {
+.nav-links .nav-cta:hover, .nav-container > .nav-cta:hover, .nav-links a.nav-cta.active, .nav-links a.nav-cta.active:hover {
     background-color: var(--brand-primary) !important;
-    color: #000000 !important;
-    border-color: var(--brand-primary) !important;
+    color: #fff !important;
 }
 
 /* Reduced padding between hero and filters */
