@@ -143,6 +143,19 @@
     .new-wishlist::-webkit-scrollbar { display: none; }
     .new-wishlist { -ms-overflow-style: none; scrollbar-width: none; }
 
+    /* Itinerary Action Buttons */
+    .itinerary-actions {
+      display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2rem;
+    }
+    .itin-action-btn {
+      width: 100%; padding: 0.75rem; background: var(--app-bg); border: 1px solid var(--border-color);
+      border-radius: 6px; color: var(--dark-text); font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 0.9rem;
+      cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.6rem; transition: all 0.2s ease;
+    }
+    .itin-action-btn:hover { background: #EAEAEA; border-color: #ccc; }
+    .itin-action-btn i { color: #888; transition: color 0.2s; }
+    .itin-action-btn:hover i { color: var(--burgundy); }
+
     .new-wishlist li {
       display: flex; justify-content: space-between; align-items: center;
       padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border-color); 
@@ -455,6 +468,12 @@
           <ul id="fbla-wishlist-box" class="new-wishlist">
             <li style="color:#888; font-size:14px; background:none; border:none; padding:0;">Loading Itinerary...</li>
           </ul>
+          
+          <div class="itinerary-actions">
+            <button class="itin-action-btn" onclick="window.clearItinerary()"><i class="fa-solid fa-trash-can"></i> Clear Itinerary</button>
+            <button class="itin-action-btn" onclick="window.copyItinerary()"><i class="fa-solid fa-share-nodes"></i> Copy to Clipboard</button>
+            <button class="itin-action-btn" onclick="window.printItinerary()"><i class="fa-solid fa-print"></i> Print Page</button>
+          </div>
           <div class="artifacts-promo-box">
             <h4><i class="fa-solid fa-bookmark"></i> Favorite Artifacts</h4>
             <p>Visit artifacts.html to save your artifacts to your gilded experience!</p>

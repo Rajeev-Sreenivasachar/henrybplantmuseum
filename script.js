@@ -179,3 +179,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+window.clearItinerary = function() {
+    if(confirm("Are you sure you want to clear your entire itinerary?")) {
+        localStorage.removeItem('fbla_wishlist');
+        if(typeof renderWishlist === 'function') renderWishlist();
+    }
+};
+
+window.copyItinerary = function() {
+    let wishlist = JSON.parse(localStorage.getItem('fbla_wishlist')) || [];
+    if(wishlist.length === 0) {
+        alert("Your itinerary is empty!");
+        return;
+    }
+    let text = "My Henry B. Plant Museum Itinerary:\n";
+    wishlist.forEach(item => { text += "- " + item.name + "\n"; });
+    navigator.clipboard.writeText(text).then(() => {
+        alert("Itinerary copied to clipboard!");
+    }).catch(err => {
+        console.error("Could not copy text: ", err);
+    });
+};
+
+window.printItinerary = function() {
+    window.print();
+};
