@@ -481,7 +481,8 @@ body.dark-mode .card,
 body.dark-mode .card-exhibits,
 body.dark-mode .card-artifacts,
 body.dark-mode .history .card,
-body.dark-mode .highlights .card {
+body.dark-mode .highlights .card,
+body.dark-mode .discover-card {
     background: var(--bg-surface) !important;
 }
 
@@ -2495,7 +2496,8 @@ body.high-contrast .card,
 body.high-contrast .card-exhibits,
 body.high-contrast .card-artifacts,
 body.high-contrast .history .card,
-body.high-contrast .highlights .card {
+body.high-contrast .highlights .card,
+body.high-contrast .discover-card {
     background: var(--bg-surface) !important;
 }
 
@@ -2509,7 +2511,7 @@ body.high-contrast .navbar {
     background: #ffcc00 !important; 
     border-bottom: 2px solid #000 !important; 
 }
-body.high-contrast .navbar a, 
+body.high-contrast .navbar a:not(.nav-cta), 
 body.high-contrast .navbar .logo, 
 body.high-contrast .navbar i {
     color: #000 !important;
