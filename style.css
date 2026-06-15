@@ -470,8 +470,8 @@
 /* Accessibility Modes */
 body.dark-mode {
   --bg-main: #000000;       /* Pure black background */
-  --bg-surface: #1a1a1a;    /* Light black for cards/navbars */
-  --bg-alt: #0a0a0a;        /* For subtle section backgrounds */
+  --bg-surface: #333333;    /* Light gray for cards to contrast black bg */
+  --bg-alt: #111111;        /* For subtle section backgrounds */
   --text-main: #ffffff;     /* Pure white for primary text */
   --text-muted: #e0e0e0;    /* Very light gray for subtitles */
   --border-color: #555555;  /* High contrast borders */
@@ -2477,10 +2477,10 @@ body.dark-mode #drawerA11y .a11y-desc {
 }
 
 body.high-contrast {
-  --bg-main: #000; --bg-surface: #000; --bg-alt: #111;
-  --text-main: #fff; --text-muted: #ddd;
+  --bg-main: #000000; --bg-surface: #333333; --bg-alt: #111111;
+  --text-main: #ffffff; --text-muted: #ffffff;
   --brand-primary: #ffcc00; --brand-primary-hover: #e6b800;
-  --brand-gold: #ffcc00; --border-color: #fff;
+  --brand-gold: #ffcc00; --border-color: #ffffff;
 }
 
 body.high-contrast #drawerA11y .panel-header h3,
@@ -2498,15 +2498,6 @@ body.high-contrast .navbar .logo,
 body.high-contrast .navbar i {
     color: #000 !important;
 }
-
-/* Force Card Text Black */
-
-.card h3, .card p, .card h4, .card span,
-.card-exhibits h3, .card-exhibits p, .card-exhibits h4, .card-exhibits span,
-.card-artifacts h3, .card-artifacts p, .card-artifacts h4, .card-artifacts span {
-    color: #000000 !important;
-}
-
 
 /* Nav CTA Overrides - Fixed Specificity */
 .nav-links .nav-cta, .nav-container > .nav-cta {
