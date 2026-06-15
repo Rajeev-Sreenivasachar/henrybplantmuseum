@@ -47,8 +47,19 @@ export default async function handler(req, res) {
         3. ALWAYS output a valid JSON object in the following format:
         {
           "reply": "Your response to the user",
-          "redirect": "/target-page.html" // ONLY include this key if the user explicitly asks to be taken/redirected to a specific page (e.g., /about.html, /events.html, /exhibits.html, /artifacts.html, /profile.html, /get_involved.html). If no redirection is requested, omit the "redirect" key or set it to null.
-        }`;
+          "redirect": "/target-page.html", // ONLY include if the user explicitly asks to be taken/redirected to a specific page. Otherwise null.
+          "action": "ACTION_NAME" // ONLY include if the user asks you to perform one of the 30 interactive capabilities. Otherwise null.
+        }
+
+        4. ALLOWED ACTION_NAME VALUES:
+        "toggleDarkMode", "toggleHighContrast", "toggleDyslexia", "toggleText", "openA11y",
+        "openResources", "scrollToTop", "scrollToBottom", "goBack", "goForward", "refreshPage",
+        "toggleMenu", "hideChat", "printPage", "copyUrl", "sharePage", "clearChat", "showLocation",
+        "showPhone", "showEmail", "openNewsletter", "donate", "buyTickets", "login", "logout",
+        "clearItinerary", "copyItinerary", "playAudioTour", "pauseAudioTour", "confetti"
+        
+        If the user intent matches one of those commands, set the "action" key to the exact string value.
+        `;
 
         const contents = [];
         for (const msg of history) {
@@ -88,7 +99,11 @@ export default async function handler(req, res) {
             } catch (e) {
                 return res.status(200).json({ reply: responseText });
             }
-            return res.status(200).json({ reply: parsed.reply || "No reply generated", redirect: parsed.redirect || null });
+            return res.status(200).json({ 
+                reply: parsed.reply || "No reply generated", 
+                redirect: parsed.redirect || null,
+                action: parsed.action || null
+            });
         } else {
             return res.status(200).json({ reply: 'UNKNOWN ERROR: ' + JSON.stringify(data) });
         }

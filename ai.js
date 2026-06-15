@@ -95,6 +95,10 @@ async function sendMessage() {
                     window.location.href = data.redirect;
                 }, 1500); // Wait 1.5 seconds so they can read the reply
             }
+
+            if (data.action) {
+                executeChatAction(data.action);
+            }
         } else {
             loadingMessageElement.innerText = "Error: Couldn't generate a response.";
         }
@@ -178,5 +182,80 @@ function deleteConversation(messageDiv) {
         }
     }
 }
+
+function executeChatAction(action) {
+    const clickIfFound = (id) => { const el = document.getElementById(id); if (el) el.click(); };
+    
+    switch (action) {
+        case 'toggleDarkMode': clickIfFound('toggle-dark'); break;
+        case 'toggleHighContrast': clickIfFound('toggle-contrast'); break;
+        case 'toggleDyslexia': clickIfFound('toggle-dyslexia'); break;
+        case 'toggleText': clickIfFound('toggle-text'); break;
+        case 'openA11y': clickIfFound('btnA11y'); break;
+        case 'openResources': clickIfFound('btnResources'); break;
+        case 'scrollToTop': window.scrollTo({top: 0, behavior: 'smooth'}); break;
+        case 'scrollToBottom': window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'}); break;
+        case 'goBack': window.history.back(); break;
+        case 'goForward': window.history.forward(); break;
+        case 'refreshPage': window.location.reload(); break;
+        case 'toggleMenu': clickIfFound('menuToggle'); break;
+        case 'hideChat': clickIfFound('close-chat-btn'); break;
+        case 'printPage': window.print(); break;
+        case 'copyUrl': navigator.clipboard.writeText(window.location.href).then(() => alert('URL Copied!')); break;
+        case 'sharePage': 
+            if (navigator.share) navigator.share({title: document.title, url: window.location.href}); 
+            else alert('Share not supported on this browser.');
+            break;
+        case 'clearChat': 
+            localStorage.removeItem('museumChatHistory'); 
+            const chatMessages = document.getElementById('chat-messages');
+            if (chatMessages) chatMessages.innerHTML = '';
+            break;
+        case 'showLocation': window.open('https://maps.google.com/?q=Henry+B.+Plant+Museum', '_blank'); break;
+        case 'showPhone': window.location.href = 'tel:8132541891'; break;
+        case 'showEmail': window.location.href = 'mailto:info@plantmuseum.com'; break;
+        case 'openNewsletter': window.open('https://henrybplantmuseum.beehiiv.com/', '_blank'); break;
+        case 'donate': window.location.href = '/get_involved.html'; break;
+        case 'buyTickets': window.location.href = '/visitor.html'; break;
+        case 'login': window.location.href = '/profile.html'; break;
+        case 'logout': if (typeof window.logout === 'function') window.logout(); break;
+        case 'clearItinerary': if (typeof window.clearItinerary === 'function') window.clearItinerary(); break;
+        case 'copyItinerary': if (typeof window.copyItinerary === 'function') window.copyItinerary(); break;
+        case 'playAudioTour': alert('Simulated: Starting Audio Tour. Please connect your headphones.'); break;
+        case 'pauseAudioTour': alert('Simulated: Audio Tour Paused.'); break;
+        case 'confetti': triggerConfetti(); break;
+        default: console.log('Unknown action:', action);
+    }
+}
+
+function triggerConfetti() {
+    const colors = ['#800020', '#D4AF37', '#ffffff', '#000000'];
+    for (let i = 0; i < 80; i++) {
+        const conf = document.createElement('div');
+        conf.style.position = 'fixed';
+        conf.style.width = '10px';
+        conf.style.height = '10px';
+        conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        conf.style.left = Math.random() * 100 + 'vw';
+        conf.style.top = '-10px';
+        conf.style.zIndex = '99999';
+        conf.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+        conf.style.transform = `rotate(${Math.random() * 360}deg)`;
+        conf.style.pointerEvents = 'none';
+        
+        document.body.appendChild(conf);
+        
+        const animation = conf.animate([
+            { transform: `translate3d(0,0,0) rotate(0deg)`, opacity: 1 },
+            { transform: `translate3d(${Math.random()*200 - 100}px, 100vh, 0) rotate(${Math.random()*720}deg)`, opacity: 0 }
+        ], {
+            duration: Math.random() * 2000 + 2000,
+            easing: 'cubic-bezier(.37,0,.63,1)'
+        });
+        
+        animation.onfinish = () => conf.remove();
+    }
+}
+
 loadChatHistory();
 });
