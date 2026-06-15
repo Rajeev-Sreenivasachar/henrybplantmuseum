@@ -162,4 +162,20 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // State retention for Radio Filters
+    const filterKey = window.location.pathname + '_filter';
+    const savedFilterId = sessionStorage.getItem(filterKey);
+    if (savedFilterId) {
+        const radio = document.getElementById(savedFilterId);
+        if (radio) radio.checked = true;
+    }
+
+    document.querySelectorAll('input[type="radio"][name="category"]').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                sessionStorage.setItem(filterKey, e.target.id);
+            }
+        });
+    });
 });
