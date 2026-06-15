@@ -139,10 +139,8 @@
       gap: 0.5rem !important;
     }
     /* Scrollbar styling for wishlist */
-    .new-wishlist::-webkit-scrollbar { width: 6px; }
-    .new-wishlist::-webkit-scrollbar-track { background: transparent; }
-    .new-wishlist::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
-    .new-wishlist::-webkit-scrollbar-thumb:hover { background: #bbb; }
+    .new-wishlist::-webkit-scrollbar { display: none; }
+    .new-wishlist { -ms-overflow-style: none; scrollbar-width: none; }
 
     .new-wishlist li {
       display: flex; justify-content: space-between; align-items: center;
