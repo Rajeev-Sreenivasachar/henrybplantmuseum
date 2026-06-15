@@ -477,6 +477,14 @@ body.dark-mode {
   --border-color: #555555;  /* High contrast borders */
 }
 
+body.dark-mode .card,
+body.dark-mode .card-exhibits,
+body.dark-mode .card-artifacts,
+body.dark-mode .history .card,
+body.dark-mode .highlights .card {
+    background: var(--bg-surface) !important;
+}
+
 
 
 body.dyslexia-mode { 
@@ -2481,6 +2489,14 @@ body.high-contrast {
   --text-main: #ffffff; --text-muted: #ffffff;
   --brand-primary: #ffcc00; --brand-primary-hover: #e6b800;
   --brand-gold: #ffcc00; --border-color: #ffffff;
+}
+
+body.high-contrast .card,
+body.high-contrast .card-exhibits,
+body.high-contrast .card-artifacts,
+body.high-contrast .history .card,
+body.high-contrast .highlights .card {
+    background: var(--bg-surface) !important;
 }
 
 body.high-contrast #drawerA11y .panel-header h3,
