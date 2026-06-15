@@ -82,9 +82,9 @@
     }
     .new-auth-btn:hover { background: transparent; color: var(--burgundy); }
 
-    /* DASHBOARD LAYOUT - Increased grid gaps for more space */
+    /* DASHBOARD LAYOUT - Fixed grid gaps for natural look */
     .dashboard-grid-container {
-      max-width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 3.5rem; 
+      max-width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; 
     }
 
     /* Welcome Row Header - Bumped up padding */
@@ -106,9 +106,9 @@
     }
     .new-signout-btn:hover { background: #EAEAEA; color: var(--dark-text); border-color: #ccc; }
 
-    /* Increased gap between side-by-side components */
+    /* Natural gap between side-by-side components */
     .user-top-layout {
-      display: grid; grid-template-columns: 380px 1fr; gap: 3.5rem; align-items: start;
+      display: grid; grid-template-columns: 380px 1fr; gap: 2rem; align-items: start;
     }
 
     /* Increased padding on panels for a roomier feel */
@@ -132,8 +132,6 @@
       list-style: none; padding: 0; margin: 0; 
       border: 1px solid var(--border-color); 
       border-radius: 6px; 
-      overflow-y: auto;
-      max-height: 220px;
       display: flex !important;
       flex-direction: column !important;
       gap: 0.5rem !important;
