@@ -70,13 +70,14 @@ async function sendMessage() {
     const loadingId = loadingDiv.id;
 
     try {
-        // 3. Send the message to your Vercel backend (/api/chat)
+        // 3. Send the message and history to your Vercel backend (/api/chat)
+        const history = JSON.parse(localStorage.getItem('museumChatHistory')) || [];
         const response = await fetch('/api/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ message })
+            body: JSON.stringify({ message, history })
         });
 
         const data = await response.json();
@@ -85,9 +86,15 @@ async function sendMessage() {
         const loadingMessageElement = document.getElementById(loadingId);
         if (data.reply) {
             loadingMessageElement.innerText = data.reply;
-            const history = JSON.parse(localStorage.getItem('museumChatHistory')) || [];
-            history.push({ sender: 'bot', text: data.reply });
-            localStorage.setItem('museumChatHistory', JSON.stringify(history));
+            const historyList = JSON.parse(localStorage.getItem('museumChatHistory')) || [];
+            historyList.push({ sender: 'bot', text: data.reply });
+            localStorage.setItem('museumChatHistory', JSON.stringify(historyList));
+            
+            if (data.redirect) {
+                setTimeout(() => {
+                    window.location.href = data.redirect;
+                }, 1500); // Wait 1.5 seconds so they can read the reply
+            }
         } else {
             loadingMessageElement.innerText = "Error: Couldn't generate a response.";
         }

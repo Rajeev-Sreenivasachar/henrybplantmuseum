@@ -461,7 +461,19 @@
           </button>
         </div>
 
-<div class="user-top-layout" style="grid-template-columns: 380px 1fr;">
+<div class="prof-tabs-wrapper">
+    <input type="radio" id="tab-wishlist" name="prof-tabs" checked class="fbla-hidden">
+    <input type="radio" id="tab-newsletter" name="prof-tabs" class="fbla-hidden">
+    <input type="radio" id="tab-account" name="prof-tabs" class="fbla-hidden">
+
+    <div class="exhibitions-filters reveal" style="justify-content: center; margin-bottom: 2rem;">
+        <label for="tab-wishlist">My Itinerary</label>
+        <label for="tab-newsletter">Newsletter</label>
+        <label for="tab-account">Account Settings</label>
+    </div>
+
+    <div class="prof-content-wishlist">
+      <div class="user-top-layout" style="grid-template-columns: 380px 1fr;">
         
         <div class="sleek-panel">
           <h3><i class="fa-solid fa-list-check"></i> My Itinerary</h3>
@@ -530,9 +542,11 @@
         </div>
       </div>
 
-      <div class="user-bottom-layout">
-        
-      <div class="sleek-panel newsletter-side-panel">
+      </div> <!-- end prof-content-wishlist -->
+      
+      <div class="prof-content-newsletter">
+        <div class="user-bottom-layout" style="display: block; max-width: 800px; margin: 0 auto;">
+          <div class="sleek-panel newsletter-side-panel">
           <div class="new-news-badge"><i class="fa-solid fa-envelope-open-text"></i> The Gilded Dispatch</div>
           <h3>The Official Museum Chronicle</h3>
           <p>Join our group of patrons. Verify your account to subscribe to real-time updates regarding our historical restoration collections.</p>
@@ -563,8 +577,14 @@
           </div>
         </div>
 
-        <div class="sleek-panel">
-          <h3><i class="fa-solid fa-user-gear"></i> Account Manager</h3>
+        </div>
+          </div> <!-- end user-bottom-layout -->
+      </div> <!-- end prof-content-newsletter -->
+
+      <div class="prof-content-account">
+        <div class="user-bottom-layout" style="display: block; max-width: 800px; margin: 0 auto;">
+          <div class="sleek-panel">
+            <h3><i class="fa-solid fa-user-gear"></i> Account Manager</h3>
           <div class="nested-tabs">
             <button id="subtab-name" class="nested-tab-btn active" onclick="window.switchSettingsPane('name')">Display Name</button>
             <button id="subtab-user" class="nested-tab-btn" onclick="window.switchSettingsPane('user')">Username</button>
@@ -622,8 +642,9 @@
             <button type="submit">Commit Changes</button>
           </form>
         </div>
-
-      </div>
+          </div> <!-- end user-bottom-layout -->
+        </div> <!-- end prof-content-account -->
+      </div> <!-- end prof-tabs-wrapper -->
 
       </div>
     </div>

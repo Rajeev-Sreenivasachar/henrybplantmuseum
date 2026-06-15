@@ -2595,3 +2595,22 @@ body.dark-mode .nav-container > .nav-cta {
     color: #ffffff !important;
     border: none !important;
 }
+
+/* Profile Dashboard Radio Tabs */
+.prof-content-wishlist, .prof-content-newsletter, .prof-content-account {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+#tab-wishlist:checked ~ .prof-content-wishlist { display: block; }
+#tab-newsletter:checked ~ .prof-content-newsletter { display: block; }
+#tab-account:checked ~ .prof-content-account { display: block; }
+
+#tab-wishlist:checked ~ .exhibitions-filters label[for="tab-wishlist"],
+#tab-newsletter:checked ~ .exhibitions-filters label[for="tab-newsletter"],
+#tab-account:checked ~ .exhibitions-filters label[for="tab-account"] {
+    background: var(--brand-gold);
+    color: #000 !important;
+    border-color: var(--brand-primary);
+    box-shadow: 0 8px 16px rgba(128, 0, 32, 0.2);
+}

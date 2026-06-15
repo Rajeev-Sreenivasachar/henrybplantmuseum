@@ -31,6 +31,7 @@ export default async function handler(req, res) {
         const main = safeRead(path.join(process.cwd(), 'main.json'));
 
         const message = req.body.message;
+        const history = req.body.history || [];
         
         const systemPrompt = `
         You are a helpful virtual assistant and guide for our new museum website. 
@@ -43,7 +44,23 @@ export default async function handler(req, res) {
 
         2. If the user asks a general question unrelated to the museum, go ahead and answer it normally using your general knowledge. Keep all answers concise and helpful.
         
-        User Question: ${message}`;
+        3. ALWAYS output a valid JSON object in the following format:
+        {
+          "reply": "Your response to the user",
+          "redirect": "/target-page.html" // ONLY include this key if the user explicitly asks to be taken/redirected to a specific page (e.g., /about.html, /events.html, /exhibits.html, /artifacts.html, /profile.html, /get_involved.html). If no redirection is requested, omit the "redirect" key or set it to null.
+        }`;
+
+        const contents = [];
+        for (const msg of history) {
+            contents.push({
+                role: msg.sender === 'user' ? 'user' : 'model',
+                parts: [{ text: msg.text }]
+            });
+        }
+        contents.push({
+            role: 'user',
+            parts: [{ text: message }]
+        });
         
         const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
@@ -51,7 +68,9 @@ export default async function handler(req, res) {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                contents: [{ parts: [{ text: systemPrompt }] }]
+                systemInstruction: { parts: [{ text: systemPrompt }] },
+                contents: contents,
+                generationConfig: { responseMimeType: "application/json" }
             })
         });
 
@@ -63,7 +82,13 @@ export default async function handler(req, res) {
 
         if (data.candidates && data.candidates.length > 0) {
             const responseText = data.candidates[0].content.parts[0].text;
-            return res.status(200).json({ reply: responseText });
+            let parsed;
+            try {
+                parsed = JSON.parse(responseText);
+            } catch (e) {
+                return res.status(200).json({ reply: responseText });
+            }
+            return res.status(200).json({ reply: parsed.reply || "No reply generated", redirect: parsed.redirect || null });
         } else {
             return res.status(200).json({ reply: 'UNKNOWN ERROR: ' + JSON.stringify(data) });
         }
