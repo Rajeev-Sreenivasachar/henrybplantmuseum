@@ -498,6 +498,17 @@ body.dark-mode h5 {
     color: var(--text-main) !important;
 }
 
+body.dark-mode .card:hover h3,
+body.dark-mode .card-exhibits:hover h3,
+body.dark-mode .card-artifacts:hover h3,
+body.dark-mode .discover-card:hover h3 {
+    color: var(--brand-primary) !important;
+}
+
+body.dark-mode .new-auth-box { background: var(--bg-surface) !important; }
+body.dark-mode .new-auth-box p, body.dark-mode .new-auth-tab { color: var(--text-muted) !important; }
+body.dark-mode .new-auth-input { background: var(--bg-alt) !important; color: var(--text-main) !important; border-color: var(--border-color) !important; }
+
 
 
 body.dyslexia-mode { 
@@ -604,12 +615,12 @@ img { max-width: 100%; height: auto; display: block; }
     .cards-grid-involved { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
 
     .card {
-      background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md);
+      background: linear-gradient(135deg, #ffffff 0%, #fdf9ec 100%); border: 1px solid var(--border-color); border-radius: var(--radius-md);
       padding: 3rem 2.5rem; display: flex; flex-direction: column; position: relative; z-index: 1;
       transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
     }
-    .history .card { background: #ffffff; }
-    .highlights .card { background: #ffffff; }
+    .history .card { background: linear-gradient(135deg, #ffffff 0%, #fdf9ec 100%); }
+    .highlights .card { background: linear-gradient(135deg, #ffffff 0%, #fdf9ec 100%); }
 
     .card::before {
       content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
@@ -778,8 +789,8 @@ input:checked + .slider:before { transform: translateX(20px); }
 #current-exhibits:checked ~ .exhibitions-filters label[for="current-exhibits"],
 #past-exhibits:checked ~ .exhibitions-filters label[for="past-exhibits"],
 #online-exhibits:checked ~ .exhibitions-filters label[for="online-exhibits"] {
-  background: var(--brand-primary);
-  color: #fff;
+  background: var(--brand-gold);
+  color: #000 !important;
   border-color: var(--brand-primary);
   box-shadow: 0 8px 16px rgba(128, 0, 32, 0.2);
 }
@@ -2276,7 +2287,7 @@ body {
 /* --- PREMIUM FAVORITES UI --- */
 
 /* We need relative positioning on the card so the star stays inside it */
-.card-artifacts { background: #ffffff; 
+.card-artifacts { background: linear-gradient(135deg, #ffffff 0%, #fdf9ec 100%); 
   position: relative; 
   padding-bottom: 50px;
   background: white;
@@ -2486,7 +2497,7 @@ body {
     color: #fff;
 }
 
-.card-exhibits { background: #ffffff !important; position: relative; }
+.card-exhibits { background: linear-gradient(135deg, #ffffff 0%, #fdf9ec 100%) !important; position: relative; }
 
 
 
@@ -2520,6 +2531,17 @@ body.high-contrast h4,
 body.high-contrast h5 {
     color: var(--text-main) !important;
 }
+
+body.high-contrast .card:hover h3,
+body.high-contrast .card-exhibits:hover h3,
+body.high-contrast .card-artifacts:hover h3,
+body.high-contrast .discover-card:hover h3 {
+    color: var(--brand-primary) !important;
+}
+
+body.high-contrast .new-auth-box { background: var(--bg-surface) !important; }
+body.high-contrast .new-auth-box p, body.high-contrast .new-auth-tab { color: var(--text-muted) !important; }
+body.high-contrast .new-auth-input { background: var(--bg-alt) !important; color: var(--text-main) !important; border-color: var(--border-color) !important; }
 
 body.high-contrast #drawerA11y .panel-header h3,
 body.high-contrast #drawerA11y label,
