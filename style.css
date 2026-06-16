@@ -2606,9 +2606,9 @@ body.dark-mode .nav-container > .nav-cta {
 #tab-newsletter:checked ~ .prof-content-newsletter { display: block; }
 #tab-account:checked ~ .prof-content-account { display: block; }
 
-#tab-wishlist:checked ~ .exhibitions-filters label[for="tab-wishlist"],
-#tab-newsletter:checked ~ .exhibitions-filters label[for="tab-newsletter"],
-#tab-account:checked ~ .exhibitions-filters label[for="tab-account"] {
+#tab-wishlist:checked ~ .new-dash-header .exhibitions-filters label[for="tab-wishlist"],
+#tab-newsletter:checked ~ .new-dash-header .exhibitions-filters label[for="tab-newsletter"],
+#tab-account:checked ~ .new-dash-header .exhibitions-filters label[for="tab-account"] {
     background: var(--brand-gold);
     color: #000 !important;
     border-color: var(--brand-primary);

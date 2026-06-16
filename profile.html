@@ -100,9 +100,9 @@
     
 .new-signout-btn {
   padding: 0.6rem 1.4rem;
-  border: 1px solid #8B1E3F;
+  border: 1px solid var(--crimson);
   border-radius: 4px;
-  background: #8B1E3F;
+  background: var(--crimson);
   color: #fff;
   cursor: pointer;
   font-family: 'Outfit', sans-serif;
@@ -114,8 +114,9 @@
 }
 
 .new-signout-btn:hover {
-  background: #741934;
-  border-color: #741934;
+  background: #8e1526;
+  border-color: #8e1526;
+  color: #fff;
 }
 
     /* Natural gap between side-by-side components */
@@ -329,7 +330,7 @@
 
 /* 2. Re-apply your original colors to the new left panel */
 .newsletter-side-panel {
-  background: var(--burgundy, #5A1827) !important;
+  background: linear-gradient(135deg, #fffcf2 0%, #fdf5d6 100%) !important;
   padding: 30px 24px;
   border-radius: 8px;
   border: 1px solid var(--border-color, #D4AF37);
@@ -340,7 +341,7 @@
 .newsletter-side-panel p,
 .newsletter-side-panel h5,
 .newsletter-side-panel .new-news-badge {
-  color: #ffffff !important;
+  color: #000000 !important;
 }
 
 /* 3. Strip the white border & shadow off the Beehiiv embed box completely */
@@ -463,25 +464,26 @@
     <div id="fbla-dash-view" class="fbla-hidden">
       <div class="dashboard-grid-container">
         
-        <div class="new-dash-header">
-          <div class="new-dash-header-text">
-            <h2>Welcome back, <span id="ui-name">---</span></h2>
-            <p>Identity Signature: <span id="ui-user">---</span></p>
-          </div>
-          <button class="new-signout-btn" onclick="window.logout()">
-            Sign Out <i class="fa-solid fa-right-from-bracket"></i>
-          </button>
-        </div>
-
 <div class="prof-tabs-wrapper">
     <input type="radio" id="tab-wishlist" name="prof-tabs" checked class="fbla-hidden">
     <input type="radio" id="tab-newsletter" name="prof-tabs" class="fbla-hidden">
     <input type="radio" id="tab-account" name="prof-tabs" class="fbla-hidden">
 
-    <div class="exhibitions-filters reveal" style="justify-content: center; margin-bottom: 2rem;">
-        <label for="tab-wishlist">My Itinerary</label>
-        <label for="tab-newsletter">Newsletter</label>
-        <label for="tab-account">Account Settings</label>
+    <div class="new-dash-header">
+      <div class="new-dash-header-text">
+        <h2>Welcome, <span id="ui-name" style="text-transform: none; font-size: 1.6rem;">---</span></h2>
+        <p>Identity Signature: <span id="ui-user">---</span></p>
+      </div>
+      
+      <div class="exhibitions-filters reveal" style="justify-content: center; margin-bottom: 0;">
+          <label for="tab-wishlist">My Itinerary</label>
+          <label for="tab-newsletter">Newsletter</label>
+          <label for="tab-account">Account Settings</label>
+      </div>
+
+      <button class="new-signout-btn" onclick="window.logout()">
+        Sign Out <i class="fa-solid fa-right-from-bracket"></i>
+      </button>
     </div>
 
     <div class="prof-content-wishlist">
