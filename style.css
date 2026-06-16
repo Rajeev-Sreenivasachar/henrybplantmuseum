@@ -217,7 +217,10 @@
     }
     .nav-links .nav-cta:hover, .nav-container > .nav-cta:hover { background: var(--brand-primary) !important; color: #fff !important; transform: translateY(-2px); }
     .nav-links .nav-cta::after { display: none; }
-    .nav-links a.nav-cta.active { background: var(--brand-primary) !important; color: #fff !important; }
+    .nav-links a.nav-cta.active, .nav-container > .nav-cta.active { 
+    background: var(--brand-primary) !important; 
+    color: #fff !important; 
+    }  
     
     .menu-toggle { display: none !important; } 
     .nav-links .nav-cta { display: none; } 
