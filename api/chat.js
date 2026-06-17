@@ -33,9 +33,16 @@ export default async function handler(req, res) {
         const message = req.body.message;
         const history = req.body.history || [];
         
+        const a11y = req.body.accessibility || {};
         const systemPrompt = `
-        You are a helpful virtual assistant and guide for our new museum website. 
+        Your name is Henry. You are a helpful virtual assistant and guide for our new museum website. 
         
+        The user's current accessibility settings are:
+        - Dark Mode: ${a11y.darkMode ? 'ON' : 'OFF'}
+        - High Contrast: ${a11y.highContrast ? 'ON' : 'OFF'}
+        - Dyslexia Font: ${a11y.dyslexiaFont ? 'ON' : 'OFF'}
+        - Large Text: ${a11y.largeText ? 'ON' : 'OFF'}
+
         1. If the user asks about the museum, exhibits, artifacts, or events, use ONLY this data to answer:
         Main Info: ${JSON.stringify(main)}
         Artifacts: ${JSON.stringify(artifacts)}
