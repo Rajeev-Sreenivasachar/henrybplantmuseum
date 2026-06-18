@@ -225,9 +225,11 @@
     .menu-toggle { display: none !important; } 
     .nav-links .nav-cta { display: none; } 
 
-    @media (max-width: 900px) {
-      .menu-toggle { display: block !important; font-size: 1.8rem; color: #000 !important; cursor: pointer; z-index: 2000; }
-      /* removed .nav-cta display: none on mobile navbar */ 
+      @media (max-width: 900px) {
+        .logo { order: 1; }
+        .nav-container > .nav-cta { order: 2; margin-left: auto; margin-right: 1.5rem; display: block !important; }
+        .menu-toggle { display: block !important; font-size: 1.8rem; color: #000 !important; cursor: pointer; z-index: 2000; order: 3; }
+        /* removed .nav-cta display: none on mobile navbar */ 
       
       .nav-links {
         display: none !important; 
