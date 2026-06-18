@@ -2422,7 +2422,7 @@ body {
 
 .fav-header { 
   display: flex; 
-   
+  justify-content: space-between;
   align-items: center; 
   border-bottom: 2px solid #D4AF37; 
   padding-bottom: 15px; 
