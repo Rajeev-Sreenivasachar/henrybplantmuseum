@@ -205,3 +205,57 @@ window.copyItinerary = function() {
 window.printItinerary = function() {
     window.print();
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Check for a logged-in user in localStorage
+    const storedUsername = localStorage.getItem("currentUsername");
+    
+    // Select all links pointing to the profile page (in main nav, quick links, etc.)
+    const profileLinks = document.querySelectorAll('a[href="profile.html"], a[href="./profile.html"]');
+
+    if (storedUsername) {
+        // If the user is logged in, replace "Profile" with their username
+        profileLinks.forEach(link => {
+            // Keeps your user icon () and adds the name next to it
+            link.innerHTML = ` ${storedUsername}`; 
+        });
+    }
+
+    // 2. Handle the Sign-Out button
+    // Using the specific class from your provided CSS: .new-signout-btn
+    const signOutBtn = document.querySelector('.new-signout-btn');
+    
+    if (signOutBtn) {
+        signOutBtn.addEventListener("click", (e) => {
+            e.preventDefault(); // Stop default link behavior
+            
+            // Clear the username from storage
+            localStorage.removeItem("currentUsername");
+            
+            // Redirect to the profile page (which now acts as the logged-out sign-in page)
+            window.location.href = "profile.html";
+        });
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Target your specific login button and input field
+    const loginBtn = document.querySelector('.new-auth-btn');
+    // Adjust this selector if your username/email input has a specific ID or class
+    const usernameInput = document.querySelector('.new-auth-input[type="text"]'); 
+
+    if (loginBtn && usernameInput) {
+        loginBtn.addEventListener("click", (e) => {
+            // Grab the typed name
+            const username = usernameInput.value.trim();
+            
+            if (username) {
+                // Save it to localStorage
+                localStorage.setItem("currentUsername", username);
+                
+                // Allow the page to proceed/refresh so the dashboard loads 
+                // and the global navbar script picks up the new name
+            }
+        });
+    }
+});
