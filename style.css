@@ -670,7 +670,7 @@ img { max-width: 100%; height: auto; display: block; }
       transform: scaleX(0); transform-origin: right; transition: transform var(--transition); z-index: 2;
     }
     .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: transparent; }
-    /* .card:hover::before removed */
+    .card::before, .card-exhibits::before, .card-artifacts::before, .discover-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--brand-primary); transform: scaleX(0); transform-origin: right; transition: transform var(--transition); z-index: 2; } .card:hover::before, .card-exhibits:hover::before, .card-artifacts:hover::before, .discover-card:hover::before { transform: scaleX(1); transform-origin: left; }
     .card h3 { font-size: 1.4rem; font-family: var(--font-sans); color: var(--text-main); margin-bottom: 1rem; transition: color var(--transition); }
     /* .card:hover h3 { color: var(--brand-primary); } */
     .card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; flex-grow: 1; }
@@ -1380,14 +1380,7 @@ input:checked + .slider:before { transform: translateX(20px); }
   text-align: center;
 }
 
-.cards-grid-involved {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+
 
 
 
@@ -2688,3 +2681,4 @@ body.high-contrast .new-card h4,
 body.high-contrast .artifacts-promo-box h4 {
     color: #ff0 !important;
 }
+
