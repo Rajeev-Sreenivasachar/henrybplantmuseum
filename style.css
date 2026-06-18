@@ -2644,3 +2644,47 @@ body.dark-mode .nav-container > .nav-cta {
     border-color: var(--brand-primary);
     box-shadow: 0 8px 16px rgba(128, 0, 32, 0.2);
 }
+
+/* Dark Mode additions for profile.html */
+body.dark-mode .new-prof-wrapper { background-color: var(--bg-main) !important; color: var(--text-main) !important; }
+body.dark-mode .new-card,
+body.dark-mode .artifacts-promo-box,
+body.dark-mode .new-wishlist li,
+body.dark-mode .itin-action-btn,
+body.dark-mode .new-newsletter-banner {
+    background: var(--bg-surface) !important;
+    color: var(--text-main) !important;
+    border-color: var(--border-color) !important;
+}
+body.dark-mode .new-card p,
+body.dark-mode .artifacts-promo-box p,
+body.dark-mode .new-newsletter-banner p,
+body.dark-mode .new-wishlist li a {
+    color: var(--text-muted) !important;
+}
+body.dark-mode .new-card h4,
+body.dark-mode .artifacts-promo-box h4 {
+    color: var(--brand-gold) !important;
+}
+
+/* High Contrast additions for profile.html */
+body.high-contrast .new-prof-wrapper { background-color: #000 !important; color: #fff !important; }
+body.high-contrast .new-card,
+body.high-contrast .artifacts-promo-box,
+body.high-contrast .new-wishlist li,
+body.high-contrast .itin-action-btn,
+body.high-contrast .new-newsletter-banner {
+    background: #000 !important;
+    color: #fff !important;
+    border-color: #0ff !important;
+}
+body.high-contrast .new-card p,
+body.high-contrast .artifacts-promo-box p,
+body.high-contrast .new-newsletter-banner p,
+body.high-contrast .new-wishlist li a {
+    color: #fff !important;
+}
+body.high-contrast .new-card h4,
+body.high-contrast .artifacts-promo-box h4 {
+    color: #ff0 !important;
+}

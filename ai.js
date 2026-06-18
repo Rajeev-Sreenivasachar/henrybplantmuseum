@@ -72,12 +72,20 @@ async function sendMessage() {
     try {
         // 3. Send the message and history to your Vercel backend (/api/chat)
         const history = JSON.parse(localStorage.getItem('museumChatHistory')) || [];
+        
+        const accessibility = {
+            darkMode: document.body.classList.contains('dark-mode'),
+            highContrast: document.body.classList.contains('high-contrast'),
+            dyslexiaFont: document.body.classList.contains('dyslexia-mode'),
+            largeText: document.body.classList.contains('large-text')
+        };
+
         const response = await fetch('/api/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ message, history })
+            body: JSON.stringify({ message, history, accessibility })
         });
 
         const data = await response.json();
