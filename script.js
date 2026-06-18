@@ -206,8 +206,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1. Check if a username is currently saved in localStorage
     const storedUsername = localStorage.getItem("currentUsername");
     
-    // ONLY target profile links inside the top header or nav elements (ignores the footer)
-    const profileLinks = document.querySelectorAll('nav a[href*="profile.html"], header a[href*="profile.html"]');
+    // EXACTLY target profile links inside your desktop navbar (#navbar) and mobile menu (#navLinks)
+    const profileLinks = document.querySelectorAll('#navbar a[href*="profile.html"], #navLinks a[href*="profile.html"]');
 
     if (storedUsername) {
         // If signed in, change "Profile" to the actual username (e.g., Monessh)
