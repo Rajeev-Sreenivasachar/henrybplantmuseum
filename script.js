@@ -250,34 +250,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 3. Smart Authentication Sync (Handles both Successful Login & Signup)
     document.addEventListener('click', (e) => {
-        // Listen for any click on a login button, signup button, or generic submit button
+        // Listen for clicks on login, signup, or generic submission buttons
         const authBtn = e.target.closest('.new-auth-btn, button, input[type="submit"]');
         
         if (authBtn) {
-            // Wait 150ms to let your profile validation scripts finish running first!
+            // CRITICAL FIX: Grab what they typed IMMEDIATELY before the form clears or resets!
+            const textInputs = document.querySelectorAll('input[type="text"], input[type="email"], .new-auth-input');
+            let preCapturedUsername = "";
+            
+            for (let input of textInputs) {
+                const val = input.value.trim();
+                // Grab the first text field that isn't a password or empty
+                if (val && input.type !== 'password' && !input.placeholder.toLowerCase().includes('password')) {
+                    preCapturedUsername = val;
+                    break;
+                }
+            }
+
+            // Wait a brief moment to let your authentication/validation scripts finish processing
             setTimeout(() => {
                 const isNowLogged = localStorage.getItem("museumUserLogged") === "true";
                 
                 if (isNowLogged) {
-                    // Look for any active text/email inputs on the page (works for both login and signup forms)
-                    const textInputs = document.querySelectorAll('input[type="text"], input[type="email"]');
-                    let detectedUsername = "";
+                    // Check if your script saved a name, otherwise use our pre-captured username
+                    const finalUsername = localStorage.getItem("currentUsername") || preCapturedUsername;
                     
-                    // Grab the first input field that actually has text typed inside it
-                    for (let input of textInputs) {
-                        if (input.value.trim()) {
-                            detectedUsername = input.value.trim();
-                            break;
-                        }
-                    }
-                    
-                    if (detectedUsername) {
-                        // Save the valid username and update the navbar immediately
-                        localStorage.setItem("currentUsername", detectedUsername);
-                        updateNavbarText(detectedUsername);
+                    if (finalUsername) {
+                        // Lock it into localStorage and update the navbar instantly
+                        localStorage.setItem("currentUsername", finalUsername);
+                        updateNavbarText(finalUsername);
                     }
                 }
-            }, 150);
+            }, 200); // 200ms gives the registration script plenty of time to set state
         }
     });
 });
