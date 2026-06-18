@@ -368,7 +368,7 @@
 
     .panel-drawer { position: fixed; top: 0; right: -420px; width: 400px; max-width: 100vw; height: 100vh; background: var(--bg-surface); border-left: 1px solid var(--border-color); box-shadow: var(--shadow-hover); z-index: 10001; transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column; color: #000; }
     .panel-drawer.open { right: 0; }
-    .panel-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color); display: flex;  align-items: center; background: var(--bg-main);}
+    .panel-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: var(--bg-main);}
     .panel-header h3 { font-family: var(--font-sans); font-size: 1.1rem; font-weight: 600; margin: 0; color: #000;}
     .close-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted); transition: color var(--transition); }
     .close-btn:hover { color: var(--brand-primary); transform: rotate(90deg); }
@@ -392,7 +392,7 @@
     /* Burgundy Hover for Socials */
     .social-btn:hover { background: var(--brand-primary); color: #fff; transform: translateY(-2px); }
 
-    .a11y-setting { display: flex;  align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border-color); }
+    .a11y-setting { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border-color); }
     .a11y-setting label { font-size: 0.95rem; font-weight: 500; color: #000; cursor: pointer;}
     .switch { position: relative; display: inline-block; width: 44px; height: 24px; }
     .switch input { opacity: 0; width: 0; height: 0; }
@@ -481,8 +481,8 @@
 /* Accessibility Modes */
 body.dark-mode {
   --bg-main: #000000;       /* Pure black background */
-  --bg-surface: #333333;    /* Light gray for cards to contrast black bg */
-  --bg-alt: #111111;        /* For subtle section backgrounds */
+  --bg-surface: #000000;    /* Pure black for cards */
+  --bg-alt: #000000;        /* Pure black */
   --text-main: #ffffff;     /* Pure white for primary text */
   --text-muted: #e0e0e0;    /* Very light gray for subtitles */
   --border-color: #555555;  /* High contrast borders */
@@ -748,7 +748,7 @@ img { max-width: 100%; height: auto; display: block; }
     /* Burgundy Hover for Socials */
     .social-btn:hover { background: var(--brand-primary); color: #fff; transform: translateY(-2px); }
 
-    .a11y-setting { display: flex;  align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border-color); }
+    .a11y-setting { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border-color); }
    .a11y-setting { 
     display: flex; 
      
@@ -2714,6 +2714,7 @@ body.dark-mode .text-gold-link:hover { color: #fdf5d6 !important; }
 .cards-grid-involved .card h3 {
     font-size: 1.25rem;
 }
+
 
 
 
