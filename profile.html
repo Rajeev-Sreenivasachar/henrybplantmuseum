@@ -925,15 +925,7 @@
       const p = document.getElementById('reg-pass').value;
       try {
         const cred = await createUserWithEmailAndPassword(auth, `${u.toLowerCase()}@museum.local`, p);
-        const initialWishlist = [
-          { name: "Upstairs / Downstairs", url: "events/upstairs-downstairs.html" },
-          { name: "Free Movie Series", url: "events/free-movie-series.html" },
-          { name: "Celebrate Sunset", url: "events/celebrate-sunset.html" },
-          { name: "Tampa at War", url: "exhibits/tampa-at-war.html" },
-          { name: "Grand Hotel", url: "exhibits/grand-hotel.html" },
-          { name: "Gaspar's Gold", url: "exhibits/gaspar_gold.html" },
-          { name: "Plants Southern Empire", url: "exhibits/plants-southern-empire.html" }
-        ];
+        const initialWishlist = [];
         await setDoc(doc(db, "users", cred.user.uid), { realName: n, username: u, wishlist: initialWishlist });
         localStorage.setItem('museumUserLogged', 'true');
         switchTab('login');
