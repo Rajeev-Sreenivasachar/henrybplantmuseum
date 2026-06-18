@@ -203,15 +203,18 @@ window.printItinerary = function() {
 // UNIFIED NAVBAR & AUTHENTICATION MANAGER
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
-    // Target all profile links on the entire page, then filter out any that live inside a footer
+    // Target all profile links on the entire page, excluding the footer
     const allProfileLinks = document.querySelectorAll('a[href*="profile.html"]');
     const profileLinks = Array.from(allProfileLinks).filter(link => !link.closest('footer'));
 
     // Helper function to update the navbar text instantly
     function updateNavbarText(username) {
         if (username) {
+            // FIX: Truncate usernames longer than 7 characters
+            const displayUsername = username.length > 7 ? username.substring(0, 4) + "..." : username;
+            
             profileLinks.forEach(link => {
-                link.innerHTML = `<i class="fa-solid fa-user"></i> ${username}`;
+                link.innerHTML = `<i class="fa-solid fa-user"></i> ${displayUsername}`;
             });
         } else {
             profileLinks.forEach(link => {
@@ -230,14 +233,13 @@ document.addEventListener("DOMContentLoaded", () => {
         updateNavbarText(null);
     }
 
-    // 2. Real-Time Input Tracker (Captures the name WHILE they type so it can't be cleared)
+    // 2. Real-Time Input Tracker
     let lastTypedUsername = "";
     document.addEventListener('input', (e) => {
         if (e.target.tagName === 'INPUT' && e.target.type !== 'password') {
             const placeholder = (e.target.placeholder || "").toLowerCase();
             const idOrClass = (e.target.id || "" + e.target.className || "").toLowerCase();
             
-            // Look for name, username, or email input fields
             if (placeholder.includes('user') || placeholder.includes('name') || placeholder.includes('email') || idOrClass.includes('auth')) {
                 if (e.target.value.trim()) {
                     lastTypedUsername = e.target.value.trim();
@@ -246,45 +248,34 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 3. Handle Sign-Out Interaction (Using Event Delegation)
+    // 3. Handle Sign-Out Interaction 
     document.addEventListener('click', (e) => {
         const signOutTarget = e.target.closest('a, button, .new-signout-btn');
         if (signOutTarget && signOutTarget.textContent.includes('Sign Out')) {
-            e.preventDefault();
-            
-            // Clear out all session data completely
+            // Clears the navbar memory instantly, but lets Firebase do its official sign-out process!
             localStorage.removeItem("currentUsername");
             localStorage.removeItem("museumUserLogged");
-            
-            // Instantly revert navbar to "Sign In"
             updateNavbarText(null);
-            
-            // Redirect to reset the profile page state
-            window.location.href = "profile.html";
         }
     });
 
-    // 4. Smart Authentication Sync (Handles both Successful Login & Signup)
+    // 4. Smart Authentication Sync
     document.addEventListener('click', (e) => {
-        // Listen for clicks on login, signup, or generic submission buttons
         const authBtn = e.target.closest('.new-auth-btn, button, input[type="submit"]');
         
         if (authBtn) {
-            // Wait a brief moment to let your main registration/login script validate things
             setTimeout(() => {
                 const isNowLogged = localStorage.getItem("museumUserLogged") === "true";
                 
                 if (isNowLogged) {
-                    // If your profile script didn't set a name yet, use our real-time tracked name
                     const finalUsername = localStorage.getItem("currentUsername") || lastTypedUsername;
                     
                     if (finalUsername) {
-                        // Lock it into localStorage and update the navbar instantly!
                         localStorage.setItem("currentUsername", finalUsername);
                         updateNavbarText(finalUsername);
                     }
                 }
-            }, 250); // 250ms gives the registration script plenty of time to process
+            }, 250); 
         }
     });
 });
