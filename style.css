@@ -2694,3 +2694,24 @@ body.dark-mode .card:hover h3, body.dark-mode .card-exhibits:hover h3, body.dark
 @media (max-width: 900px) { .cards-grid-about { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .cards-grid-about { grid-template-columns: 1fr; } }
 
+
+/* INLINE GOLD LINK */
+.text-gold-link {
+    color: var(--brand-gold);
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color var(--transition);
+}
+.text-gold-link:hover {
+    color: var(--brand-primary);
+}
+body.dark-mode .text-gold-link { color: var(--brand-gold) !important; }
+body.dark-mode .text-gold-link:hover { color: #fdf5d6 !important; }
+
+/* SMALLER GET INVOLVED CARDS */
+.cards-grid-involved .card {
+    padding: 2rem 2rem;
+}
+.cards-grid-involved .card h3 {
+    font-size: 1.25rem;
+}
