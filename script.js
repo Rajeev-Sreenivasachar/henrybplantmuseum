@@ -203,52 +203,60 @@ window.printItinerary = function() {
 // UNIFIED NAVBAR & AUTHENTICATION MANAGER
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Check if a username is currently saved in localStorage
-    const storedUsername = localStorage.getItem("currentUsername");
-    
     // EXACTLY target profile links inside your desktop navbar (#navbar) and mobile menu (#navLinks)
     const profileLinks = document.querySelectorAll('#navbar a[href*="profile.html"], #navLinks a[href*="profile.html"]');
 
-    if (storedUsername) {
-        // If signed in, change "Profile" to the actual username (e.g., Monessh)
-        profileLinks.forEach(link => {
-            link.innerHTML = `<i class="fa-solid fa-user"></i> ${storedUsername}`;
-        });
-    } else {
-        // If signed out, guarantee it reverts back to "Profile"
-        profileLinks.forEach(link => {
-            link.innerHTML = `<i class="fa-solid fa-user"></i> Profile`;
-        });
+    // Helper function to update the navbar text instantly
+    function updateNavbarText(username) {
+        if (username) {
+            profileLinks.forEach(link => {
+                link.innerHTML = `<i class="fa-solid fa-user"></i> ${username}`;
+            });
+        } else {
+            profileLinks.forEach(link => {
+                link.innerHTML = `<i class="fa-solid fa-user"></i> Profile`;
+            });
+        }
     }
 
-    // 2. Handle Sign-Out Interaction
-    document.querySelectorAll('a, button, .new-signout-btn').forEach(element => {
-        if (element.textContent.includes('Sign Out')) {
-            element.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                // Clear out the user's session data completely
-                localStorage.removeItem("currentUsername");
-                localStorage.removeItem("museumUserLogged");
-                
-                // Send them straight back to the profile page (now in logged-out state)
-                window.location.href = "profile.html";
-            });
+    // 1. Initial Check on page load
+    const storedUsername = localStorage.getItem("currentUsername");
+    updateNavbarText(storedUsername);
+
+    // 2. Handle Sign-Out Interaction (Using Event Delegation)
+    document.addEventListener('click', (e) => {
+        const signOutTarget = e.target.closest('a, button, .new-signout-btn');
+        if (signOutTarget && signOutTarget.textContent.includes('Sign Out')) {
+            e.preventDefault();
+            
+            // Clear out the session data completely
+            localStorage.removeItem("currentUsername");
+            localStorage.removeItem("museumUserLogged");
+            
+            // Instantly revert navbar to "Profile" without waiting for a reload
+            updateNavbarText(null);
+            
+            // Force reload/redirect to reset the profile page state
+            window.location.href = "profile.html";
         }
     });
 
-    // 3. Handle Sign-In Interaction
-    const loginBtn = document.querySelector('.new-auth-btn');
-    const usernameInput = document.querySelector('.new-auth-input[type="text"]');
-
-    if (loginBtn && usernameInput) {
-        loginBtn.addEventListener("click", () => {
-            const username = usernameInput.value.trim();
-            if (username) {
-                // Save the dynamic name to storage before the page changes/reloads
-                localStorage.setItem("currentUsername", username);
-                localStorage.setItem("museumUserLogged", "true");
+    // 3. Handle Sign-In Interaction (Using Event Delegation)
+    document.addEventListener('click', (e) => {
+        const loginBtn = e.target.closest('.new-auth-btn');
+        if (loginBtn) {
+            const usernameInput = document.querySelector('.new-auth-input[type="text"]');
+            if (usernameInput) {
+                const username = usernameInput.value.trim();
+                if (username) {
+                    // Save the dynamic name to storage
+                    localStorage.setItem("currentUsername", username);
+                    localStorage.setItem("museumUserLogged", "true");
+                    
+                    // Instantly change "Profile" to the username right when clicked!
+                    updateNavbarText(username);
+                }
             }
-        });
-    }
+        }
+    });
 });
