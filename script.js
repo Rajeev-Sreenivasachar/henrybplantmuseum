@@ -230,7 +230,23 @@ document.addEventListener("DOMContentLoaded", () => {
         updateNavbarText(null);
     }
 
-    // 2. Handle Sign-Out Interaction (Using Event Delegation)
+    // 2. Real-Time Input Tracker (Captures the name WHILE they type so it can't be cleared)
+    let lastTypedUsername = "";
+    document.addEventListener('input', (e) => {
+        if (e.target.tagName === 'INPUT' && e.target.type !== 'password') {
+            const placeholder = (e.target.placeholder || "").toLowerCase();
+            const idOrClass = (e.target.id || "" + e.target.className || "").toLowerCase();
+            
+            // Look for name, username, or email input fields
+            if (placeholder.includes('user') || placeholder.includes('name') || placeholder.includes('email') || idOrClass.includes('auth')) {
+                if (e.target.value.trim()) {
+                    lastTypedUsername = e.target.value.trim();
+                }
+            }
+        }
+    });
+
+    // 3. Handle Sign-Out Interaction (Using Event Delegation)
     document.addEventListener('click', (e) => {
         const signOutTarget = e.target.closest('a, button, .new-signout-btn');
         if (signOutTarget && signOutTarget.textContent.includes('Sign Out')) {
@@ -248,40 +264,27 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 3. Smart Authentication Sync (Handles both Successful Login & Signup)
+    // 4. Smart Authentication Sync (Handles both Successful Login & Signup)
     document.addEventListener('click', (e) => {
         // Listen for clicks on login, signup, or generic submission buttons
         const authBtn = e.target.closest('.new-auth-btn, button, input[type="submit"]');
         
         if (authBtn) {
-            // CRITICAL FIX: Grab what they typed IMMEDIATELY before the form clears or resets!
-            const textInputs = document.querySelectorAll('input[type="text"], input[type="email"], .new-auth-input');
-            let preCapturedUsername = "";
-            
-            for (let input of textInputs) {
-                const val = input.value.trim();
-                // Grab the first text field that isn't a password or empty
-                if (val && input.type !== 'password' && !input.placeholder.toLowerCase().includes('password')) {
-                    preCapturedUsername = val;
-                    break;
-                }
-            }
-
-            // Wait a brief moment to let your authentication/validation scripts finish processing
+            // Wait a brief moment to let your main registration/login script validate things
             setTimeout(() => {
                 const isNowLogged = localStorage.getItem("museumUserLogged") === "true";
                 
                 if (isNowLogged) {
-                    // Check if your script saved a name, otherwise use our pre-captured username
-                    const finalUsername = localStorage.getItem("currentUsername") || preCapturedUsername;
+                    // If your profile script didn't set a name yet, use our real-time tracked name
+                    const finalUsername = localStorage.getItem("currentUsername") || lastTypedUsername;
                     
                     if (finalUsername) {
-                        // Lock it into localStorage and update the navbar instantly
+                        // Lock it into localStorage and update the navbar instantly!
                         localStorage.setItem("currentUsername", finalUsername);
                         updateNavbarText(finalUsername);
                     }
                 }
-            }, 200); // 200ms gives the registration script plenty of time to set state
+            }, 250); // 250ms gives the registration script plenty of time to process
         }
     });
 });
