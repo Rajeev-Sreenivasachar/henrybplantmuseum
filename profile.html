@@ -424,7 +424,7 @@
 
   <main class="new-prof-wrapper">
     <div id="fbla-auth-view" class="new-auth-box">
-      <h2>Museum Portal</h2>
+      <h2 style="text-transform: none !important;">Museum Portal</h2>
       <p>Curate your Gilded Age experience</p>
       
       <div class="new-auth-tabs">
@@ -983,7 +983,7 @@
           await reauthenticateWithCredential(auth.currentUser, credential);
           
           await updateDoc(ref, { realName: newName });
-          document.getElementById('ui-name').innerText = newName;
+          document.getElementById('ui-name').innerText = newName.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
           alert("Display name updated successfully.");
           
         } else if (activeTabId === 'subtab-user') {
@@ -1083,7 +1083,7 @@
         const snap = await getDoc(doc(db, "users", user.uid));
         if(snap.exists()) {
           const data = snap.data();
-          document.getElementById('ui-name').innerText = data.realName;
+          document.getElementById('ui-name').innerText = data.realName.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
           document.getElementById('ui-user').innerText = data.username;
           drawWishlist(data.wishlist);
         }
@@ -1118,6 +1118,7 @@
 
 </body>
 </html>
+
 
 
 
