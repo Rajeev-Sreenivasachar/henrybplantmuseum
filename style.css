@@ -269,8 +269,7 @@
     }
 
     .hero-detail {
-        height: 30vh !important;
-        min-height: 250px !important;
+        height: 20vh !important; min-height: 200px !important;
     }
 
     .intro-section { padding: var(--section-padding); text-align: center; background: var(--bg-surface); }
@@ -627,8 +626,8 @@ img { max-width: 100%; height: auto; display: block; }
 .scroll-progress { position: fixed; top: 0; left: 0; height: 4px; background: var(--brand-primary); width: 0%; z-index: 10000; transition: width 0.1s ease; }
 .hero-about {
       position: relative;
-      height: 35vh; 
-      min-height: 350px; 
+      height: 30vh !important; 
+      min-height: 300px !important; 
       display: flex; align-items: center; justify-content: center; text-align: center;
       background: url("https://studio.code.org/v3/files/CgcsctcM6hQFGYaI-obuqdkIeduxn9Z1z5zzVima8Gg/about-header.png?t=1767654606374") center/cover no-repeat;
       background-attachment: fixed; color: #fff; overflow: hidden;
@@ -707,8 +706,8 @@ img { max-width: 100%; height: auto; display: block; }
 
     .hero-exhibits {
   position: relative;
-  height: 35vh;
-  min-height: 350px;
+  height: 30vh !important;
+  min-height: 300px !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -970,8 +969,8 @@ input:checked + .slider:before { transform: translateX(20px); }
 
 .hero-artifacts {
   position: relative;
-  height: 35vh;
-  min-height: 350px;
+  height: 30vh !important;
+  min-height: 300px !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1371,8 +1370,8 @@ input:checked + .slider:before { transform: translateX(20px); }
    ========================================================================== */
 .hero-involved {
   position: relative;
-  height: 35vh;
-  min-height: 350px;
+  height: 30vh !important;
+  min-height: 300px !important;
   background: url('https://th.bing.com/th/id/R.a557dfc873ba60ed095643faa549b516?rik=R0fSjztdXIHO9Q&pid=ImgRaw&r=0') center/cover;
   display: flex;
   align-items: center;
@@ -1915,8 +1914,8 @@ body {
 /* --- HERO SYSTEM --- */
 .hero-exhibits {
   position: relative;
-  height: 25vh;
-  min-height: 250px;
+  height: 30vh !important;
+  min-height: 300px !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2252,8 +2251,8 @@ body {
 
     .hero-credits {
   position: relative;
-  height: 35vh;
-  min-height: 350px;
+  height: 30vh !important;
+  min-height: 300px !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2715,5 +2714,6 @@ body.dark-mode .text-gold-link:hover { color: #fdf5d6 !important; }
 .cards-grid-involved .card h3 {
     font-size: 1.25rem;
 }
+
 
 
