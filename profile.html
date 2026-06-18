@@ -219,11 +219,28 @@
     .new-card h4 { font-size: 1.1rem; color: #000000; margin-bottom: 0.4rem; }
     .new-card p { font-size: 0.85rem; color: #000000; margin-bottom: 1.5rem; font-weight: 300; }
     
-    .new-card-btn {
-      width: 100%; padding: 0.75rem; border-radius: 4px; border: 1px solid var(--burgundy);
-      background: transparent; color: var(--burgundy); cursor: pointer;
-      font-weight: 600; font-family: 'Outfit', sans-serif; transition: all 0.25s;
-    }
+.new-card-btn {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid var(--burgundy);
+  background: transparent;
+  color: var(--burgundy);
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.new-card-btn i {
+  margin: 0;
+  display: inline-block;
+  font-size: 0.9rem;
+}
     .new-card-btn:hover:not(:disabled) { background: var(--burgundy); color: #fff; }
     .new-card-btn:disabled { background: #fdfaf2; color: var(--gold); border-color: var(--gold); cursor: not-allowed; }
 
@@ -494,7 +511,7 @@
       <div class="user-top-layout" style="grid-template-columns: 380px 1fr;">
         
         <div class="sleek-panel">
-          <h3><i class="fa-solid fa-list-check"></i> Gilded Experience</h3>
+          <h3><i class="fa-solid fa-list-check"></i> My Gilded Experience</h3>
           <ul id="fbla-wishlist-box" class="new-wishlist">
             <li style="color:#888; font-size:14px; background:none; border:none; padding:0;">Loading Gilded Experience...</li>
           </ul>
@@ -506,7 +523,7 @@
           </div>
           <div class="artifacts-promo-box">
             <h4><i class="fa-solid fa-bookmark"></i> Favorite Artifacts</h4>
-            <p>Visit artifacts.html to save your artifacts to your gilded experience!</p>
+            <p>Since you signed in, you can now save your favorite artifacts!</p>
             <a href="/artifacts.html">Explore Collections →</a>
           </div>
         </div>
