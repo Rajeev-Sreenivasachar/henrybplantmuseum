@@ -215,15 +215,20 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         } else {
             profileLinks.forEach(link => {
-                // Changed from "Profile" to "Sign In" per your preference
                 link.innerHTML = `<i class="fa-solid fa-user"></i> Sign In`; 
             });
         }
     }
 
-    // 1. Initial Check on page load
+    // 1. Initial State Sync on Page Load
+    const isLoggedInitially = localStorage.getItem("museumUserLogged") === "true";
     const storedUsername = localStorage.getItem("currentUsername");
-    updateNavbarText(storedUsername);
+
+    if (isLoggedInitially && storedUsername) {
+        updateNavbarText(storedUsername);
+    } else {
+        updateNavbarText(null);
+    }
 
     // 2. Handle Sign-Out Interaction (Using Event Delegation)
     document.addEventListener('click', (e) => {
@@ -231,34 +236,48 @@ document.addEventListener("DOMContentLoaded", () => {
         if (signOutTarget && signOutTarget.textContent.includes('Sign Out')) {
             e.preventDefault();
             
-            // Clear out the session data completely
+            // Clear out all session data completely
             localStorage.removeItem("currentUsername");
             localStorage.removeItem("museumUserLogged");
             
-            // Instantly revert navbar to "Sign In" without waiting for a reload
+            // Instantly revert navbar to "Sign In"
             updateNavbarText(null);
             
-            // Force reload/redirect to reset the profile page state
+            // Redirect to reset the profile page state
             window.location.href = "profile.html";
         }
     });
 
-    // 3. Handle Sign-In Interaction (Using Event Delegation)
+    // 3. Smart Authentication Sync (Handles both Successful Login & Signup)
     document.addEventListener('click', (e) => {
-        const loginBtn = e.target.closest('.new-auth-btn');
-        if (loginBtn) {
-            const usernameInput = document.querySelector('.new-auth-input[type="text"]');
-            if (usernameInput) {
-                const username = usernameInput.value.trim();
-                if (username) {
-                    // Save the dynamic name to storage
-                    localStorage.setItem("currentUsername", username);
-                    localStorage.setItem("museumUserLogged", "true");
+        // Listen for any click on a login button, signup button, or generic submit button
+        const authBtn = e.target.closest('.new-auth-btn, button, input[type="submit"]');
+        
+        if (authBtn) {
+            // Wait 150ms to let your profile validation scripts finish running first!
+            setTimeout(() => {
+                const isNowLogged = localStorage.getItem("museumUserLogged") === "true";
+                
+                if (isNowLogged) {
+                    // Look for any active text/email inputs on the page (works for both login and signup forms)
+                    const textInputs = document.querySelectorAll('input[type="text"], input[type="email"]');
+                    let detectedUsername = "";
                     
-                    // Instantly change "Sign In" to the username right when clicked!
-                    updateNavbarText(username);
+                    // Grab the first input field that actually has text typed inside it
+                    for (let input of textInputs) {
+                        if (input.value.trim()) {
+                            detectedUsername = input.value.trim();
+                            break;
+                        }
+                    }
+                    
+                    if (detectedUsername) {
+                        // Save the valid username and update the navbar immediately
+                        localStorage.setItem("currentUsername", detectedUsername);
+                        updateNavbarText(detectedUsername);
+                    }
                 }
-            }
+            }, 150);
         }
     });
 });
