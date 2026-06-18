@@ -269,8 +269,8 @@
     }
 
     .hero-detail {
-        height: 40vh !important;
-        min-height: 350px !important;
+        height: 30vh !important;
+        min-height: 250px !important;
     }
 
     .intro-section { padding: var(--section-padding); text-align: center; background: var(--bg-surface); }
@@ -2715,3 +2715,4 @@ body.dark-mode .text-gold-link:hover { color: #fdf5d6 !important; }
 .cards-grid-involved .card h3 {
     font-size: 1.25rem;
 }
+
