@@ -203,8 +203,9 @@ window.printItinerary = function() {
 // UNIFIED NAVBAR & AUTHENTICATION MANAGER
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
-    // EXACTLY target profile links inside your desktop navbar (#navbar) and mobile menu (#navLinks)
-    const profileLinks = document.querySelectorAll('#navbar a[href*="profile.html"], #navLinks a[href*="profile.html"]');
+    // Target all profile links on the entire page, then filter out any that live inside a footer
+    const allProfileLinks = document.querySelectorAll('a[href*="profile.html"]');
+    const profileLinks = Array.from(allProfileLinks).filter(link => !link.closest('footer'));
 
     // Helper function to update the navbar text instantly
     function updateNavbarText(username) {
@@ -214,7 +215,8 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         } else {
             profileLinks.forEach(link => {
-                link.innerHTML = `<i class="fa-solid fa-user"></i> Profile`;
+                // Changed from "Profile" to "Sign In" per your preference
+                link.innerHTML = `<i class="fa-solid fa-user"></i> Sign In`; 
             });
         }
     }
@@ -233,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.removeItem("currentUsername");
             localStorage.removeItem("museumUserLogged");
             
-            // Instantly revert navbar to "Profile" without waiting for a reload
+            // Instantly revert navbar to "Sign In" without waiting for a reload
             updateNavbarText(null);
             
             // Force reload/redirect to reset the profile page state
@@ -253,7 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     localStorage.setItem("currentUsername", username);
                     localStorage.setItem("museumUserLogged", "true");
                     
-                    // Instantly change "Profile" to the username right when clicked!
+                    // Instantly change "Sign In" to the username right when clicked!
                     updateNavbarText(username);
                 }
             }
