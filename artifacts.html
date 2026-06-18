@@ -39,7 +39,7 @@
 
   <aside id="favSidebar" class="fav-sidebar">
     <div class="fav-header">
-      <h3>Collection</h3>
+      <h3>Favorites</h3>
       <button class="close-btn" id="closeFav" style="background:none; border:none; font-size:1.8rem; cursor:pointer; color: #722F37;"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div id="favList"></div>
@@ -1509,7 +1509,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create an overlay div
     const overlay = document.createElement('div');
     overlay.className = 'close-curate-backdrop';
-    overlay.style.cssText = 'position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 99; display: none;';
+    overlay.style.cssText = 'position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9998; display: none;';
     document.body.appendChild(overlay);
 
     toggleBtn.addEventListener('click', () => {
