@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artifacts | Henry B. Plant Museum</title>
+  <title>Henry B. Plant Museum - Artifacts</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1446,7 +1446,6 @@ onAuthStateChanged(auth, async (user) => {
     if(snap.exists()) {
       const data = snap.data();
       localFavorites = data.favorites || [];
-      window.showPopup(`Welcome back to the archives, <strong>${data.realName || 'Explorer'}</strong>!`);
       window.renderSidebar();
     }
   } else {
@@ -1519,14 +1518,14 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleBtn.addEventListener('click', () => {
         // If sidebar becomes active, show overlay
         setTimeout(() => {
-            if (sidebar.classList.contains('active')) {
+            if (sidebar.classList.contains('open')) {
                 overlay.style.display = 'block';
             }
         }, 50);
     });
 
     overlay.addEventListener('click', () => {
-        sidebar.classList.remove('active');
+        sidebar.classList.remove('open');
         overlay.style.display = 'none';
     });
     

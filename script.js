@@ -1,5 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Sync global auth state
+  if (localStorage.getItem('museumUserLogged') === 'true') {
+    document.querySelectorAll('a[href="/profile.html"]').forEach(el => {
+      el.innerHTML = '<i class="fa-solid fa-user"></i> Profile';
+    });
+  }
+
   // 1. Mobile Menu
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');

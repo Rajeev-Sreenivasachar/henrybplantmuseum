@@ -415,10 +415,10 @@
         <a href="/exhibits.html">Exhibits</a>
         <a href="/artifacts.html">Artifacts</a>
         <a href="/get_involved.html">Get Involved</a>
-        <a href="/profile.html" class="active">Sign In</a>
-        <a href="/visitor.html" class="nav-cta">Plan Your Visit</a>
+        <a href="/visitor.html">Plan Your Visit</a>
+          <a href="/profile.html" class="nav-cta class="active"">Sign In</a>
       </div>
-      <a href="/visitor.html" class="nav-cta">Plan Your Visit</a>
+      <a href="/profile.html" class="nav-cta">Sign In</a>
     </div>
   </nav>
 
@@ -443,7 +443,7 @@
           <i class="fa-regular fa-eye toggle-password" onclick="window.togglePasswordVisibility('log-pass', this)"></i>
         </div>
         <div id="log-err" style="color:var(--crimson); font-size:14px; margin-bottom: 12px; font-weight:500;"></div>
-        <button class="new-auth-btn" onclick="window.signIn()">ACCESS PORTAL</button>
+        <button class="new-auth-btn" onclick="window.signIn()">Access Portal</button>
       </div>
       
       <div id="form-signup" class="fbla-hidden">
@@ -461,7 +461,7 @@
           <i class="fa-regular fa-eye toggle-password" onclick="window.togglePasswordVisibility('reg-pass', this)"></i>
         </div>
         <div id="reg-err" style="color:var(--crimson); font-size:14px; margin-bottom: 12px; font-weight:500;"></div>
-        <button class="new-auth-btn" onclick="window.signUp()">CREATE ACCOUNT</button>
+        <button class="new-auth-btn" onclick="window.signUp()">Create Account</button>
       </div>
     </div>
 
@@ -935,17 +935,25 @@
           { name: "Plants Southern Empire", url: "exhibits/plants-southern-empire.html" }
         ];
         await setDoc(doc(db, "users", cred.user.uid), { realName: n, username: u, wishlist: initialWishlist });
+        localStorage.setItem('museumUserLogged', 'true');
+        switchTab('login');
       } catch (e) { document.getElementById('reg-err').innerText = e.message; }
     };
 
     window.signIn = async () => {
       const u = document.getElementById('log-user').value;
       const p = document.getElementById('log-pass').value;
-      try { await signInWithEmailAndPassword(auth, `${u.toLowerCase()}@museum.local`, p); } 
+      try { 
+        await signInWithEmailAndPassword(auth, `${u.toLowerCase()}@museum.local`, p); 
+        localStorage.setItem('museumUserLogged', 'true');
+      } 
       catch (e) { document.getElementById('log-err').innerText = "Credentials verification failed."; }
     };
 
-    window.logout = () => signOut(auth);
+    window.logout = () => {
+        localStorage.removeItem('museumUserLogged');
+        signOut(auth);
+    };
 
     /* --- TABBED CONFIGURATION CREDENTIAL CONTROLLER PROCESSING LOGIC --- */
     window.updateCredentials = async (e) => {
@@ -1110,5 +1118,8 @@
 
 </body>
 </html>
+
+
+
 
 

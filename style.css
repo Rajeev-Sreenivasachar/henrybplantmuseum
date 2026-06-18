@@ -505,7 +505,7 @@ body.dark-mode .card:hover h3,
 body.dark-mode .card-exhibits:hover h3,
 body.dark-mode .card-artifacts:hover h3,
 body.dark-mode .discover-card:hover h3 {
-    color: var(--brand-primary) !important;
+    color: var(--brand-gold) !important;
 }
 
 body.dark-mode .new-auth-box { background: var(--bg-surface) !important; }
@@ -603,7 +603,8 @@ img { max-width: 100%; height: auto; display: block; }
     }
   .hero-common-content h1 {
     font-size: clamp(3rem, 6vw, 4.5rem);
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    color: #fff;
     letter-spacing: -0.02em;
     text-transform: none; /* 👈 Add this line to force normal casing */
 }
@@ -631,7 +632,7 @@ img { max-width: 100%; height: auto; display: block; }
       transform: scaleX(0); transform-origin: right; transition: transform var(--transition); z-index: 2;
     }
     .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: transparent; }
-    .card:hover::before { transform: scaleX(1); transform-origin: left; }
+    /* .card:hover::before removed */
     .card h3 { font-size: 1.4rem; font-family: var(--font-sans); color: var(--text-main); margin-bottom: 1rem; transition: color var(--transition); }
     .card:hover h3 { color: var(--brand-primary); }
     .card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; flex-grow: 1; }
@@ -847,7 +848,7 @@ input:checked + .slider:before { transform: translateX(20px); }
   border-color: transparent;
 }
 .card-exhibits:hover::before { opacity: 1; }
-.card-exhibits:hover::after { transform: scaleX(1); transform-origin: left; }
+/* .card-exhibits:hover::after removed */
 
 .upcoming-tag {
   position: absolute;
@@ -865,9 +866,9 @@ input:checked + .slider:before { transform: translateX(20px); }
 }
 
 .card-exhibits:hover .upcoming-tag {
-  background: var(--brand-primary);
+  background: var(--brand-gold);
   color: #fff;
-  border-color: var(--brand-primary);
+  border-color: var(--brand-gold);
 }
 
 .card-exhibits h3 {
@@ -1021,7 +1022,7 @@ input:checked + .slider:before { transform: translateX(20px); }
   border-color: transparent;
 }
 .card-artifacts:hover::before { opacity: 1; }
-.card-artifacts:hover::after { transform: scaleX(1); transform-origin: left; }
+/* .card-artifacts:hover::after removed */
 
 .card-artifacts img {
   max-width: 100%;
@@ -1337,33 +1338,14 @@ input:checked + .slider:before { transform: translateX(20px); }
 
 .cards-grid-involved {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.hero-involved {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          position: relative;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            height: 60vh;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              min-height: 400px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                background: url('https://th.bing.com/th/id/R.a557dfc873ba60ed095643faa549b516?rik=R0fSjztdXIHO9Q&pid=ImgRaw&r=0') center/cover;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  display: flex;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    align-items: center;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      justify-content: center;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        text-align: center;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        .cards-grid-involved {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          display: grid;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            grid-template-columns: repeat(2, 1fr);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              gap: 2rem;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                padding: 4rem 2rem;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  max-width: 1200px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    margin: 0 auto;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 
 /* ==========================================================================
    FBLA RIGHT DOCK & SIDE PANEL
@@ -1690,7 +1672,7 @@ input:checked + .slider:before { transform: translateX(20px); }
 
 .fbla-dash-hero h2 { 
   color: #0a0a0a; 
-  font-size: 2.5rem;
+  font-size: 2.0rem;
   font-weight: 800;
   letter-spacing: -1px;
 }
@@ -1896,7 +1878,8 @@ body {
 /* --- HERO SYSTEM --- */
 .hero-exhibits {
   position: relative;
-  height: 450px;
+  height: 25vh;
+  min-height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2539,7 +2522,7 @@ body.high-contrast .card:hover h3,
 body.high-contrast .card-exhibits:hover h3,
 body.high-contrast .card-artifacts:hover h3,
 body.high-contrast .discover-card:hover h3 {
-    color: var(--brand-primary) !important;
+    color: var(--brand-gold) !important;
 }
 
 body.high-contrast .new-auth-box { background: var(--bg-surface) !important; }
