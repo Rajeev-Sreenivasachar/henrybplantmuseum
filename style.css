@@ -268,6 +268,11 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    .hero-detail {
+        height: 40vh !important;
+        min-height: 350px !important;
+    }
+
     .intro-section { padding: var(--section-padding); text-align: center; background: var(--bg-surface); }
     .intro-content { max-width: 800px; margin: 0 auto; }
     .intro-content h2 { font-size: 2.5rem; color: var(--brand-primary); margin-bottom: 1.5rem; }
@@ -322,12 +327,12 @@
     .discover-card:hover .card-icon { transform: scale(1.1) translateY(-4px); color: var(--brand-gold); }
 
     .discover-card h3 { font-size: 1.4rem; font-family: var(--font-sans); margin-bottom: 1rem; color: var(--text-main); transition: color var(--transition); }
-    .discover-card:hover h3 { color: var(--brand-primary); }
+    /* .discover-card:hover h3 { color: var(--brand-primary); } */
     .discover-card p { color: var(--text-muted); margin-bottom: 2rem; flex-grow: 1; font-size: 0.95rem; line-height: 1.6;}
     
     .card-link { font-weight: 600; color: var(--text-main); font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem; transition: color var(--transition); }
     .card-link i { transition: transform var(--transition); }
-    .discover-card:hover .card-link { color: var(--brand-primary); }
+    /* .discover-card:hover .card-link { color: var(--brand-primary); } */
     .discover-card:hover .card-link i { transform: translateX(6px); }
 
     .slider-section { padding: var(--section-padding); background: var(--bg-surface); border-top: 1px solid var(--border-color); }
@@ -523,7 +528,40 @@ body.highlight-links a {
 }
 
 body.reduced-motion *, body.reduced-motion *::before, body.reduced-motion *::after {
-  animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; transform: none !important;
+  animation-duration: 0.01ms !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+  transform: none !important;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+  }
+}
+
+/* About Page Specific Layout */
+.history .cards-grid-involved,
+.mission-section .card-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+}
+
+@media (max-width: 900px) {
+    .history .cards-grid-involved,
+    .mission-section .card-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .history .cards-grid-involved,
+    .mission-section .card-grid {
+        grid-template-columns: 1fr !important;
+    }
 }
 
 /* Accessibility Settings Layout Adjustments */
@@ -634,7 +672,7 @@ img { max-width: 100%; height: auto; display: block; }
     .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: transparent; }
     /* .card:hover::before removed */
     .card h3 { font-size: 1.4rem; font-family: var(--font-sans); color: var(--text-main); margin-bottom: 1rem; transition: color var(--transition); }
-    .card:hover h3 { color: var(--brand-primary); }
+    /* .card:hover h3 { color: var(--brand-primary); } */
     .card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; flex-grow: 1; }
 
     .mission-section {
@@ -879,7 +917,7 @@ input:checked + .slider:before { transform: translateX(20px); }
   margin-bottom: 0.5rem;
   transition: color var(--transition);
 }
-.card-exhibits:hover h3 { color: var(--brand-primary); }
+/* .card-exhibits:hover h3 { color: var(--brand-primary); } */
 
 .card-exhibits > p:nth-of-type(1) {
   font-size: 0.85rem;
@@ -909,7 +947,7 @@ input:checked + .slider:before { transform: translateX(20px); }
   margin-top: auto;
 }
 .learn-more i { transition: transform var(--transition); }
-.card-exhibits:hover .learn-more { color: var(--brand-primary); }
+/* .card-exhibits:hover .learn-more { color: var(--brand-primary); } */
 .card-exhibits:hover .learn-more i { transform: translateX(6px); }
 
 #every:checked ~ .exhibitions-content .every,
@@ -1039,7 +1077,7 @@ input:checked + .slider:before { transform: translateX(20px); }
   margin-bottom: 0.5rem;
   transition: color var(--transition);
 }
-.card-artifacts:hover h3 { color: var(--brand-primary); }
+/* .card-artifacts:hover h3 { color: var(--brand-primary); } */
 
 .card-artifacts .artifact-meta {
   font-size: 0.8rem;

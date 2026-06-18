@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Sync global auth state
   if (localStorage.getItem('museumUserLogged') === 'true') {
-    document.querySelectorAll('a[href="/profile.html"]').forEach(el => {
+    document.querySelectorAll('a[href="/profile.html"], a[href="profile.html"]').forEach(el => {
       el.innerHTML = '<i class="fa-solid fa-user"></i> Profile';
     });
   }
@@ -170,21 +170,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // State retention for Radio Filters
-    const filterKey = window.location.pathname + '_filter';
-    const savedFilterId = sessionStorage.getItem(filterKey);
-    if (savedFilterId) {
-        const radio = document.getElementById(savedFilterId);
-        if (radio) radio.checked = true;
+    // Smart Back Buttons on Detailed Pages
+    const backBtn = document.querySelector('.sticky-ticket-btn');
+    if (backBtn && backBtn.textContent.includes('Back to')) {
+        const ref = document.referrer.toLowerCase();
+        if (!ref.includes('events.html') && !ref.includes('exhibits.html') && !ref.includes('get_involved.html') && !ref.includes('artifacts.html')) {
+            backBtn.style.display = 'none';
+        }
     }
-
-    document.querySelectorAll('input[type="radio"][name="category"]').forEach(radio => {
-        radio.addEventListener('change', (e) => {
-            if (e.target.checked) {
-                sessionStorage.setItem(filterKey, e.target.id);
-            }
-        });
-    });
 });
 
 window.clearItinerary = function() {
