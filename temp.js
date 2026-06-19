@@ -83,6 +83,17 @@
       const n = document.getElementById('reg-name').value;
       const u = document.getElementById('reg-user').value;
       const p = document.getElementById('reg-pass').value;
+      
+      let errors = [];
+      if (!n.trim()) errors.push("Name cannot be empty.");
+      if (!u || !/^[a-zA-Z0-9_]+$/.test(u)) errors.push("Username contains spaces or invalid characters.");
+      if (!p || p.length < 6) errors.push("Password must be at least 6 characters.");
+      
+      if (errors.length > 0) {
+        document.getElementById('reg-err').innerHTML = errors.join('<br>');
+        return;
+      }
+
       try {
         const cred = await createUserWithEmailAndPassword(auth, `${u.toLowerCase()}@museum.local`, p);
         const initialWishlist = [
@@ -97,17 +108,39 @@
         await setDoc(doc(db, "users", cred.user.uid), { realName: n, username: u, wishlist: initialWishlist });
         localStorage.setItem('museumUserLogged', 'true');
         switchTab('login');
-      } catch (e) { document.getElementById('reg-err').innerText = e.message; }
+      } catch (e) {
+        let msg = e.message;
+        if (e.code === 'auth/email-already-in-use') msg = "Username is already in use.";
+        else if (e.code === 'auth/weak-password') msg = "Password must be at least 6 characters.";
+        else if (e.code === 'auth/invalid-email') msg = "Invalid username format.";
+        document.getElementById('reg-err').innerHTML = msg;
+      }
     };
 
     window.signIn = async () => {
       const u = document.getElementById('log-user').value;
       const p = document.getElementById('log-pass').value;
+      
+      let errors = [];
+      if (!u) errors.push("Please enter a username.");
+      if (!p) errors.push("Please enter a password.");
+      
+      if (errors.length > 0) {
+        document.getElementById('log-err').innerHTML = errors.join('<br>');
+        return;
+      }
+
       try { 
         await signInWithEmailAndPassword(auth, `${u.toLowerCase()}@museum.local`, p); 
         localStorage.setItem('museumUserLogged', 'true');
-      } 
-      catch (e) { document.getElementById('log-err').innerText = e.message; }
+      } catch (e) {
+        let msg = e.message;
+        if (e.code === 'auth/user-not-found') msg = "Username not found.";
+        else if (e.code === 'auth/wrong-password') msg = "Incorrect password.";
+        else if (e.code === 'auth/invalid-credential') msg = "Incorrect username or password.";
+        else if (e.code === 'auth/invalid-email') msg = "Invalid username format.";
+        document.getElementById('log-err').innerHTML = msg;
+      }
     };
 
     window.logout = () => {
