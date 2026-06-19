@@ -146,6 +146,39 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Dynamic addition of Reset to Default button
+  if (drawA11y) {
+    const panelBody = drawA11y.querySelector('.panel-body');
+    if (panelBody && !document.getElementById('reset-a11y-btn')) {
+      const resetBtn = document.createElement('button');
+      resetBtn.id = 'reset-a11y-btn';
+      resetBtn.innerText = 'Reset to Default';
+      resetBtn.className = 'reset-a11y-btn';
+      
+      resetBtn.addEventListener('click', () => {
+        const toggles = ['toggle-contrast', 'toggle-text', 'toggle-dyslexia', 'toggle-links', 'toggle-motion', 'toggle-dark'];
+        toggles.forEach(id => {
+          const toggle = document.getElementById(id);
+          if (toggle) {
+            toggle.checked = false;
+            toggle.dispatchEvent(new Event('change'));
+          }
+        });
+        
+        // Final sanity check to clean all local states and body classes
+        document.body.classList.remove('high-contrast', 'large-text', 'dyslexia-mode', 'highlight-links', 'reduced-motion', 'dark-mode');
+        localStorage.setItem('high-contrast', 'false');
+        localStorage.setItem('large-text', 'false');
+        localStorage.setItem('dyslexia-mode', 'false');
+        localStorage.setItem('highlight-links', 'false');
+        localStorage.setItem('reduced-motion', 'false');
+        localStorage.setItem('dark-mode', 'disabled');
+      });
+
+      panelBody.appendChild(resetBtn);
+    }
+  }
 });
 
 // State retention for Events/Exhibits scroll position

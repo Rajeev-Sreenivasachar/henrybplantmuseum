@@ -326,7 +326,7 @@
 }
     .discover-card:hover::before { transform: scaleX(1); }
 
-    .card-icon { font-size: 2rem; color: var(--brand-primary); margin-bottom: 1.5rem; transition: transform var(--transition), color var(--transition); display: inline-block;}
+    .card-icon { font-size: 2rem; color: var(--brand-gold); margin-bottom: 1.5rem; transition: transform var(--transition), color var(--transition); display: inline-block;}
     .discover-card:hover .card-icon { transform: scale(1.1) translateY(-4px); color: var(--brand-gold); }
 
     .discover-card h3 { font-size: 1.4rem; font-family: var(--font-sans); margin-bottom: 1rem; color: var(--text-main); transition: color var(--transition); }
@@ -2966,4 +2966,48 @@ body.high-contrast .dev-row {
 body.dark-mode .product-dropdown summary .arrow,
 body.high-contrast .product-dropdown summary .arrow {
   border-color: var(--text-main) !important;
+}
+
+/* Reset Accessibility Button */
+.reset-a11y-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--brand-primary);
+  color: #fff !important;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.reset-a11y-btn:hover {
+  background: var(--brand-gold);
+  color: #000 !important;
+}
+.reset-a11y-btn:active {
+  transform: scale(0.98);
+}
+
+/* High Contrast Override */
+body.high-contrast .reset-a11y-btn {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+body.high-contrast .reset-a11y-btn:hover {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+/* Dark Mode Override */
+body.dark-mode .reset-a11y-btn {
+  background: var(--brand-gold);
+  color: #000 !important;
+}
+body.dark-mode .reset-a11y-btn:hover {
+  background: #fff;
+  color: #000 !important;
 }
