@@ -1915,8 +1915,8 @@ input:checked + .slider:before { transform: translateX(20px); }
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: var(--white);
-  color: var(--text);
+  background-color: var(--bg-main);
+  color: var(--text-main);
 }
 
 /* --- HERO SYSTEM --- */
@@ -2926,3 +2926,4 @@ body.high-contrast .a11y-item p,
 body.high-contrast .a11y-item i {
   color: yellow !important;
 }
+
