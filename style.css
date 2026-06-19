@@ -229,7 +229,7 @@
     .menu-toggle { display: none !important; } 
     .nav-links .nav-cta { display: none; } 
 
-      @media (max-width: 900px) {
+      @media (max-width: 1220px) {
         .nav-container > .nav-cta { display: none !important; }
         .menu-toggle { display: block !important; font-size: 1.8rem; color: #000 !important; cursor: pointer; z-index: 2000; }
         
