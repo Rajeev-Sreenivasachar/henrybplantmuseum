@@ -389,43 +389,6 @@
 
 <!-- Links your logic to the HTML -->
 <script src="/ai.js"></script>
-
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-    // 1. Target your filter buttons 
-    // IMPORTANT: Change '.filter-btn' to whatever class your 4 filter buttons actually use!
-    const filterButtons = document.querySelectorAll('.filter-btn'); 
-
-    // 2. Check if the user just came from a detailed event page
-    // Because your detailed events live inside the "events/" folder, we check the previous URL for that exact path.
-    const cameFromDetailsPage = document.referrer.includes('/events/');
-
-    if (cameFromDetailsPage) {
-        // Grab the saved filter name from temporary storage
-        const savedFilter = sessionStorage.getItem('activeEventFilter');
-        
-        if (savedFilter) {
-            // Find the matching button and click it to trigger your existing filter logic!
-            filterButtons.forEach(btn => {
-                if (btn.innerText.trim() === savedFilter) {
-                    btn.click(); 
-                }
-            });
-        }
-    } else {
-        // If they came from Home, About, or anywhere else, wipe the memory completely.
-        // Your page will naturally default back to "All Events".
-        sessionStorage.removeItem('activeEventFilter');
-    }
-
-    // 3. Whenever a user clicks a filter, memorize its name for later!
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            sessionStorage.setItem('activeEventFilter', e.target.innerText.trim());
-        });
-    });
-});
-</script>
 </body>
 </html>
 
