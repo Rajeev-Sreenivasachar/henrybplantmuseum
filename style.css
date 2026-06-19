@@ -2763,3 +2763,38 @@ body.high-contrast .card h3, body.high-contrast .card-exhibits h3, body.high-con
     color: var(--brand-gold) !important;
 }
 
+
+/* --- DARK MODE FIXES FOR DETAIL PAGES --- */
+body.dark-mode .exhibit-content h2,
+body.high-contrast .exhibit-content h2 {
+  color: var(--brand-gold) !important;
+}
+
+body.dark-mode .exhibit-content p,
+body.high-contrast .exhibit-content p {
+  color: var(--text-muted) !important;
+}
+
+body.dark-mode .details-card,
+body.high-contrast .details-card {
+  background: var(--bg-surface) !important;
+  border-left-color: var(--brand-gold) !important;
+}
+
+body.dark-mode .details-card h3,
+body.high-contrast .details-card h3 {
+  color: var(--brand-gold) !important;
+}
+
+body.dark-mode .details-card p,
+body.high-contrast .details-card p {
+  color: var(--text-muted) !important;
+}
+
+/* Fix reduced motion toggle */
+body.reduced-motion .slider:before {
+  transition: transform 0.01ms !important;
+}
+body.reduced-motion input:checked + .slider:before {
+  transform: translateX(20px) !important;
+}

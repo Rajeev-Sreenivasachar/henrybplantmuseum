@@ -25,8 +25,8 @@
     }
 
     body {
-      background-color: var(--soft-white);
-      color: var(--dark-text);
+      background-color: var(--bg-main, var(--soft-white));
+      color: var(--text-main, var(--dark-text));
       font-family: 'Inter', sans-serif;
     }
 
@@ -44,7 +44,7 @@
     .thank-you-card {
       max-width: 650px;
       width: 100%;
-      background: #ffffff;
+      background: var(--bg-surface, #ffffff);
       border-radius: 12px;
       padding: 50px 40px;
       text-align: center;
@@ -173,7 +173,15 @@
         justify-content: center;
       }
     }
-  </style>
+      body.dark-mode .thank-you-card h1, body.high-contrast .thank-you-card h1,
+    body.dark-mode .thank-you-card h2, body.high-contrast .thank-you-card h2 {
+      color: var(--brand-gold, #c5a059);
+    }
+    body.dark-mode .thank-you-card p, body.high-contrast .thank-you-card p,
+    body.dark-mode .next-steps li, body.high-contrast .next-steps li {
+      color: var(--text-muted, #fcfbfa);
+    }
+</style>
 </head>
 <body>
   <div class="scroll-progress" id="progressBar"></div>
@@ -486,6 +494,8 @@
 
 </body>
 </html>
+
+
 
 
 
