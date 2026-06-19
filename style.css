@@ -2752,10 +2752,7 @@ body.dark-mode .fav-item p, body.high-contrast .fav-item p { color: #cccccc !imp
 body.dark-mode .remove-fav, body.high-contrast .remove-fav { color: #ff6b6b !important; }
 body.dark-mode .close-btn, body.high-contrast .close-btn { color: #ffffff !important; }
 /* Force permanent hover-like state for all cards */
-.card::before, .card-exhibits::before, .card-artifacts::before, .discover-card::before,
-.card-exhibits::after, .card-artifacts::after {
-    transform: scaleX(1) !important;
-}
+
 .card h3, .card-exhibits h3, .card-artifacts h3, .discover-card h3 {
     color: var(--brand-primary) !important;
 }
@@ -2765,3 +2762,4 @@ body.dark-mode .card h3, body.dark-mode .card-exhibits h3, body.dark-mode .card-
 body.high-contrast .card h3, body.high-contrast .card-exhibits h3, body.high-contrast .card-artifacts h3, body.high-contrast .discover-card h3 {
     color: var(--brand-gold) !important;
 }
+

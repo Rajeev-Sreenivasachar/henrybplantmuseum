@@ -493,7 +493,6 @@
     <div class="new-dash-header">
       <div class="new-dash-header-text">
         <h2>Welcome, <span id="ui-name">---</span></h2>
-        <p>Identity Signature: <span id="ui-user">---</span></p>
       </div>
       
       <div class="exhibitions-filters reveal" style="justify-content: center; margin-bottom: 0;">
@@ -615,7 +614,6 @@
             <h3><i class="fa-solid fa-user-gear"></i> Account Manager</h3>
           <div class="nested-tabs">
             <button id="subtab-name" class="nested-tab-btn active" onclick="window.switchSettingsPane('name')">Display Name</button>
-            <button id="subtab-user" class="nested-tab-btn" onclick="window.switchSettingsPane('user')">Username</button>
             <button id="subtab-pass" class="nested-tab-btn" onclick="window.switchSettingsPane('pass')">Password</button>
           </div>
           <form class="settings-form" onsubmit="window.updateCredentials(event)">
@@ -631,20 +629,6 @@
               <div class="form-input-group">
                 <label>New Display Name <span style="color:var(--crimson);">*</span></label>
                 <input type="text" id="settings-new-name" placeholder="Enter new display name...">
-              </div>
-            </div>
-            <div id="pane-user" class="settings-pane fbla-hidden">
-              <div class="form-input-group" style="margin-top: 1rem;">
-                <label>Current Password <span style="color:var(--crimson);">*</span></label>
-                <input type="password" id="settings-user-curr-pass" placeholder="Enter current password...">
-              </div>
-              <div class="form-input-group">
-                <label>Current Username</label>
-                <input type="text" id="settings-user-curr-user" placeholder="Confirm current username...">
-              </div>
-              <div class="form-input-group">
-                <label>New Username <span style="color:var(--crimson);">*</span></label>
-                <input type="text" id="settings-new-user" placeholder="Enter new custom account handle...">
               </div>
             </div>
             <div id="pane-pass" class="settings-pane fbla-hidden">
