@@ -326,7 +326,7 @@
 }
     .discover-card:hover::before { transform: scaleX(1); }
 
-    .card-icon { font-size: 2rem; color: var(--text-main); margin-bottom: 1.5rem; transition: transform var(--transition), color var(--transition); display: inline-block;}
+    .card-icon { font-size: 2rem; color: var(--brand-primary); margin-bottom: 1.5rem; transition: transform var(--transition), color var(--transition); display: inline-block;}
     .discover-card:hover .card-icon { transform: scale(1.1) translateY(-4px); color: var(--brand-gold); }
 
     .discover-card h3 { font-size: 1.4rem; font-family: var(--font-sans); margin-bottom: 1rem; color: var(--text-main); transition: color var(--transition); }
@@ -708,7 +708,7 @@ img { max-width: 100%; height: auto; display: block; }
       .mission-content-wrapper { padding: 4rem 2rem; }
     }
 
-    .hero-exhibits {
+    .hero-exhibits, .hero-events {
   position: relative;
   height: 30vh !important;
   min-height: 300px !important;
@@ -716,10 +716,17 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: url("https://studio.code.org/v3/files/CgcsctcM6hQFGYaI-obuqdkIeduxn9Z1z5zzVima8Gg/exhibits_header.png?t=1767635214726") center/cover no-repeat;
   background-attachment: fixed;
   color: #fff;
   overflow: hidden;
+}
+
+.hero-exhibits {
+  background: url("https://studio.code.org/v3/files/CgcsctcM6hQFGYaI-obuqdkIeduxn9Z1z5zzVima8Gg/exhibits_header.png?t=1767635214726") center/cover no-repeat;
+}
+
+.hero-events {
+  background: url("https://studio.code.org/v3/files/CgcsctcM6hQFGYaI-obuqdkIeduxn9Z1z5zzVima8Gg/events_header.png") center/cover no-repeat;
 }
 
 .exhibitions-wrapper {
@@ -1920,7 +1927,7 @@ body {
 }
 
 /* --- HERO SYSTEM --- */
-.hero-exhibits {
+.hero-exhibits, .hero-events {
   position: relative;
   height: 30vh !important;
   min-height: 300px !important;
