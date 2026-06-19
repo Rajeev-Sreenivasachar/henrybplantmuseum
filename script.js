@@ -279,3 +279,69 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    // ==========================================
+    // 1. THE GLOBAL "BACK BUTTON" WATCHER
+    // (Runs on all 45+ detailed pages automatically!)
+    // ==========================================
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        
+        // If they clicked a link that has "Back to" in the text...
+        if (link && link.textContent.includes('Back to')) {
+            const href = link.getAttribute('href') || '';
+            
+            // Drop the correct flag depending on where they are going back to
+            if (href.includes('events.html')) {
+                sessionStorage.setItem('triggerSavedFilter_events', 'true');
+            } else if (href.includes('exhibits.html')) {
+                sessionStorage.setItem('triggerSavedFilter_exhibits', 'true');
+            }
+        }
+    });
+
+    // ==========================================
+    // 2. THE FILTER RESTORER 
+    // (Runs only when loading the main Events or Exhibits pages)
+    // ==========================================
+    const currentPage = window.location.pathname.toLowerCase();
+
+    // Route the logic based on which main page the user is currently looking at
+    if (currentPage.includes('events.html')) {
+        setupSmartFilters('triggerSavedFilter_events', 'activeEventFilter');
+    } else if (currentPage.includes('exhibits.html') || currentPage.includes('exhibit.html')) {
+        setupSmartFilters('triggerSavedFilter_exhibits', 'activeExhibitFilter');
+    }
+
+    // The master function that handles the memory and clicking
+    function setupSmartFilters(triggerKey, savedFilterKey) {
+        // IMPORTANT: Ensure your filter buttons on both pages have the class "filter-btn"
+        const filterButtons = document.querySelectorAll('.filter-btn'); 
+        if (filterButtons.length === 0) return;
+
+        const shouldRestore = sessionStorage.getItem(triggerKey) === 'true';
+        const savedFilter = sessionStorage.getItem(savedFilterKey);
+
+        if (shouldRestore && savedFilter) {
+            // Find the matching button and click it automatically!
+            filterButtons.forEach(btn => {
+                if (btn.innerText.trim() === savedFilter) {
+                    btn.click();
+                }
+            });
+            // Wipe the flag so a normal page refresh doesn't trigger it again
+            sessionStorage.removeItem(triggerKey); 
+        } else {
+            // If they came from Home or About, clear the memory completely
+            sessionStorage.removeItem(savedFilterKey);
+        }
+
+        // Whenever the user clicks a filter, memorize its name!
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                sessionStorage.setItem(savedFilterKey, e.target.innerText.trim());
+            });
+        });
+    }
+});
