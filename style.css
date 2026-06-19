@@ -74,16 +74,20 @@
     color: #D4AF37; /* Gold text */
     padding: 15px;
     display: flex;
-    
+    justify-content: space-between;
     align-items: center;
     font-weight: bold;
+}
+
+.chat-header h3 {
+    margin: 0;
 }
 
 #close-chat-btn {
     background: none;
     border: none;
     color: #D4AF37;
-    font-size: 24px;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
