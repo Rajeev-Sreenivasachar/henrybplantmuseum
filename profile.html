@@ -967,6 +967,16 @@ window.logout = () => {
         localStorage.removeItem('museumUserLogged');
         localStorage.removeItem('currentUsername'); 
         
+        // --- NEW FIX: WIPE ALL FORM INPUTS CLEAN ---
+        // This finds every text, email, and password box in your auth section and empties them.
+        const authInputs = document.querySelectorAll('#fbla-auth-view input');
+        authInputs.forEach(input => {
+            // We don't want to accidentally erase the text on your "Sign Up" or "Sign In" buttons!
+            if (input.type !== 'submit' && input.type !== 'button') {
+                input.value = '';
+            }
+        });
+        
         // Tell Firebase to sign out
         signOut(auth);
 
