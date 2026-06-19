@@ -369,50 +369,40 @@
             </section>
          </div>
       </main>
-      <div class="side-buttons">
-         <button class="side-btn" id="btnResources" aria-label="Museum Resources" title="Resources & Contact"><i class="fa-solid fa-layer-group"></i></button>
-         <button class="side-btn" id="btnA11y" aria-label="Accessibility Settings" title="Accessibility"><i class="fa-solid fa-universal-access"></i></button>
+  <div class="side-buttons">
+    <button class="side-btn" id="btnResources" aria-label="Museum Resources" title="Resources & Contact"><i class="fa-solid fa-layer-group"></i></button>
+    <button class="side-btn" id="btnA11y" aria-label="Accessibility Settings" title="Accessibility"><i class="fa-solid fa-universal-access"></i></button>
+  </div>
+
+  <div class="panel-overlay" id="panelOverlay"></div>
+
+  <aside class="panel-drawer" id="drawerResources">
+    <div class="panel-header">
+      <h3>Museum Resources</h3>
+      <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="panel-body">
+      <div class="drawer-group">
+        <h4>Visit & Contact</h4>
+        <a href="tel:8132541891" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="resource-text"><h5>Phone</h5><p>(813) 254-1891</p></div>
+        </a>
+        <a href="mailto:info@plantmuseum.com" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="resource-text"><h5>Email</h5><p>info@plantmuseum.com</p></div>
+        </a>
+        <a href="https://www.google.com/maps?q=401+W+Kennedy+Blvd,+Tampa,+FL" target="_blank" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="resource-text"><h5>Location</h5><p>401 W. Kennedy Blvd, Tampa</p></div>
+        </a>
+        <div class="resource-item static">
+          <div class="resource-icon"><i class="fa-solid fa-clock"></i></div>
+          <div class="resource-text"><h5>Hours of Operation</h5><p>Tue–Sat: 10am–5pm<br>Sun: 12pm–5pm<br>Mon: Closed</p></div>
+        </div>
       </div>
-      <div class="panel-overlay" id="panelOverlay"></div>
-      <aside class="panel-drawer" id="drawerResources">
-         <div class="panel-header">
-            <h3>Museum Resources</h3>
-            <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
-         </div>
-         <div class="panel-body">
-            <div class="drawer-group">
-               <h4>Visit & Contact</h4>
-               <a href="tel:8132541891" class="resource-item">
-                  <div class="resource-icon"><i class="fa-solid fa-phone"></i></div>
-                  <div class="resource-text">
-                     <h5>Phone</h5>
-                     <p>(813) 254-1891</p>
-                  </div>
-               </a>
-               <a href="mailto:info@plantmuseum.com" class="resource-item">
-                  <div class="resource-icon"><i class="fa-solid fa-envelope"></i></div>
-                  <div class="resource-text">
-                     <h5>Email</h5>
-                     <p>info@plantmuseum.com</p>
-                  </div>
-               </a>
-               <a href="https://www.google.com/maps?q=401+W+Kennedy+Blvd,+Tampa,+FL" target="_blank" class="resource-item">
-                  <div class="resource-icon"><i class="fa-solid fa-location-dot"></i></div>
-                  <div class="resource-text">
-                     <h5>Location</h5>
-                     <p>401 W. Kennedy Blvd, Tampa</p>
-                  </div>
-               </a>
-               <div class="resource-item static">
-                  <div class="resource-icon"><i class="fa-solid fa-clock"></i></div>
-                  <div class="resource-text">
-                     <h5>Hours of Operation</h5>
-                     <p>Tue–Sat: 10am–5pm<br>Sun: 12pm–5pm<br>Mon: Closed</p>
-                  </div>
-               </div>
-            </div>
-            <div class="drawer-group">
-               <h4>Support the Museum</h4>
+      <div class="drawer-group">
+        <h4>Support the Museum</h4>
         <a href="/visitor.html" target="_blank" class="resource-item">
           <div class="resource-icon"><i class="fa-solid fa-ticket"></i></div>
           <div class="resource-text"><h5>Buy Tickets</h5><p>Admissions & Tours</p></div>
@@ -421,53 +411,85 @@
           <div class="resource-icon"><i class="fa-solid fa-id-card"></i></div>
           <div class="resource-text"><h5>Membership</h5><p>Join the Museum Society</p></div>
         </a>
-               <a href="https://henry-b-plant-museum.square.site/product/donation/101" target="_blank" class="resource-item">
-                  <div class="resource-icon"><i class="fa-solid fa-heart"></i></div>
-                  <div class="resource-text">
-                     <h5>Donate Now</h5>
-                     <p>Support our preservation</p>
-                  </div>
-               </a>
-            </div>
-            <div class="drawer-group">
-               <h4>Connect With Us</h4>
-               <div class="drawer-socials">
-                  <a href="https://twitter.com/HBPlantMuseum" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                  <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                  <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                  <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-               </div>
-            </div>
-         </div>
-      </aside>
-      <aside class="panel-drawer" id="drawerA11y">
-         <div class="panel-header">
-            <h3>Accessibility Settings</h3>
-            <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
-         </div>
-         <div class="panel-body">
-            <div class="a11y-setting">
-               <label for="toggle-contrast">High Contrast Mode</label>
-               <label class="switch"><input type="checkbox" id="toggle-contrast"><span class="slider"></span></label>
-            </div>
-            <div class="a11y-setting">
-               <label for="toggle-text">Large Text</label>
-               <label class="switch"><input type="checkbox" id="toggle-text"><span class="slider"></span></label>
-            </div>
-            <div class="a11y-setting">
-               <label for="toggle-dyslexia">Dyslexia Friendly Font</label>
-               <label class="switch"><input type="checkbox" id="toggle-dyslexia"><span class="slider"></span></label>
-            </div>
-            <div class="a11y-setting">
-               <label for="toggle-motion">Reduce Motion</label>
-               <label class="switch"><input type="checkbox" id="toggle-motion"><span class="slider"></span></label>
-            </div>
-            <div class="a11y-setting">
-               <label for="toggle-links">Highlight Links</label>
-               <label class="switch"><input type="checkbox" id="toggle-links"><span class="slider"></span></label>
-            </div>
-         </div>
-      </aside>
+        <a href="https://henry-b-plant-museum.square.site/product/donation/101" target="_blank" class="resource-item">
+          <div class="resource-icon"><i class="fa-solid fa-heart"></i></div>
+          <div class="resource-text"><h5>Donate Now</h5><p>Support our preservation</p></div>
+        </a>
+      </div>
+      <div class="drawer-group">
+        <h4>Connect With Us</h4>
+        <div class="drawer-socials">
+          <a href="https://twitter.com/HBPlantMuseum" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/hbplantmuseum/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/HenryPlantMuseum/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/user/henrybplantmuseum" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <aside class="panel-drawer" id="drawerA11y">
+    <div class="panel-header">
+      <h3>Accessibility Settings</h3>
+      <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="panel-body">
+  <div class="a11y-setting">
+    <div class="setting-text">
+      <label for="toggle-contrast">High Contrast Mode</label>
+      <small class="a11y-desc">High contrast black and white theme.</small>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="toggle-contrast">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+<div class="a11y-setting">
+  <div class="setting-text">
+    <label for="toggle-dark">Dark Mode</label>
+    <small class="a11y-desc">Switch to a sleek, dark color palette.</small>
+  </div>
+  <label class="switch">
+    <input type="checkbox" id="toggle-dark"> <span class="slider"></span>
+  </label>
+</div>
+
+  <div class="a11y-setting">
+    <div class="setting-text">
+      <label for="toggle-dyslexia">Dyslexia Friendly Font</label>
+      <small class="a11y-desc">Changes text to an easier-to-read font style.</small>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="toggle-dyslexia">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="a11y-setting">
+    <div class="setting-text">
+      <label for="toggle-motion">Reduce Motion</label>
+      <small class="a11y-desc">Minimizes animations and transitions.</small>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="toggle-motion">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="a11y-setting">
+    <div class="setting-text">
+      <label for="toggle-links">Highlight Links</label>
+      <small class="a11y-desc">Adds clear underlines to all interactive links.</small>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="toggle-links">
+      <span class="slider"></span>
+    </label>
+  </div>
+ </div>
+</aside>
+
   <footer class="footer">
     <div class="footer-grid">
       <div class="footer-col">
@@ -542,6 +564,8 @@
 
 </body>
 </html>
+
+
 
 
 
