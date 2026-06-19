@@ -2722,3 +2722,28 @@ body.dark-mode .text-gold-link:hover { color: #fdf5d6 !important; }
 
 
 
+/* Fixes for Nav CTA in Dark Mode & High Contrast */
+body.dark-mode .nav-links .nav-cta, 
+body.dark-mode .nav-container > .nav-cta,
+body.high-contrast .nav-links .nav-cta, 
+body.high-contrast .nav-container > .nav-cta {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: none !important;
+}
+body.dark-mode .nav-links .nav-cta i, 
+body.dark-mode .nav-container > .nav-cta i,
+body.high-contrast .nav-links .nav-cta i, 
+body.high-contrast .nav-container > .nav-cta i {
+    color: #000000 !important;
+}
+
+/* Dark Mode & High Contrast Curate Panel */
+body.dark-mode .fav-sidebar, body.high-contrast .fav-sidebar { background-color: #000000 !important; color: #ffffff !important; }
+body.dark-mode .fav-header, body.high-contrast .fav-header { background-color: #000000 !important; border-bottom: 2px solid #D4AF37 !important; }
+body.dark-mode .fav-header h3, body.high-contrast .fav-header h3 { color: #ffffff !important; }
+body.dark-mode .fav-item, body.high-contrast .fav-item { background-color: #333333 !important; color: #ffffff !important; border: 1px solid #555 !important; }
+body.dark-mode .fav-item h4, body.high-contrast .fav-item h4 { color: #ffffff !important; }
+body.dark-mode .fav-item p, body.high-contrast .fav-item p { color: #cccccc !important; }
+body.dark-mode .remove-fav, body.high-contrast .remove-fav { color: #ff6b6b !important; }
+body.dark-mode .close-btn, body.high-contrast .close-btn { color: #ffffff !important; }
