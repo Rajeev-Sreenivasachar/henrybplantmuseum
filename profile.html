@@ -852,7 +852,7 @@
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updatePassword, EmailAuthProvider, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updatePassword, updateEmail, EmailAuthProvider, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
     import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, arrayRemove } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
     const firebaseConfig = {
@@ -1015,8 +1015,19 @@ window.logout = () => {
           const credential = EmailAuthProvider.credential(auth.currentUser.email, currPass);
           await reauthenticateWithCredential(auth.currentUser, credential);
           
+          await updateEmail(auth.currentUser, `${newUsername.toLowerCase()}@museum.local`);
           await updateDoc(ref, { username: newUsername });
           document.getElementById('ui-user').innerText = newUsername;
+          
+          // Also update localStorage so navbar works across pages
+          localStorage.setItem("currentUsername", newUsername);
+          const displayUser = newUsername.length > 7 ? newUsername.substring(0, 4) + "..." : newUsername;
+          document.querySelectorAll('a[href*="profile.html"]').forEach(link => {
+              if (!link.closest('footer')) {
+                  link.innerHTML = `<i class="fa-solid fa-user"></i> ${displayUser}`;
+              }
+          });
+          
           alert("Username updated successfully.");
           
         } else if (activeTabId === 'subtab-pass') {

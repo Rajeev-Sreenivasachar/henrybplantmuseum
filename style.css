@@ -2535,7 +2535,7 @@ body {
 body.dark-mode #drawerA11y .panel-header h3,
 body.dark-mode #drawerA11y label,
 body.dark-mode #drawerA11y .a11y-desc {
-    color: var(--brand-primary) !important;
+    color: #ffffff !important;
 }
 
 body.high-contrast {
