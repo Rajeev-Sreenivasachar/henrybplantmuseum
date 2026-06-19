@@ -1015,7 +1015,6 @@ window.logout = () => {
           const credential = EmailAuthProvider.credential(auth.currentUser.email, currPass);
           await reauthenticateWithCredential(auth.currentUser, credential);
           
-          await updateEmail(auth.currentUser, `${newUsername.toLowerCase()}@museum.local`);
           await updateDoc(ref, { username: newUsername });
           document.getElementById('ui-user').innerText = newUsername;
           
