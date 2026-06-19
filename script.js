@@ -316,7 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     // 1. THE GLOBAL "BACK BUTTON" WATCHER
-    // (Runs on all 45+ detailed pages automatically!)
+    // (Runs on all detailed pages automatically)
     // ==========================================
     document.addEventListener('click', (e) => {
         const link = e.target.closest('a');
@@ -327,53 +327,59 @@ document.addEventListener("DOMContentLoaded", () => {
             
             // Drop the correct flag depending on where they are going back to
             if (href.includes('events.html')) {
-                sessionStorage.setItem('triggerSavedFilter_events', 'true');
+                sessionStorage.setItem('triggerRestore_events', 'true');
             } else if (href.includes('exhibits.html')) {
-                sessionStorage.setItem('triggerSavedFilter_exhibits', 'true');
+                sessionStorage.setItem('triggerRestore_exhibits', 'true');
             }
         }
     });
 
     // ==========================================
-    // 2. THE FILTER RESTORER 
-    // (Runs only when loading the main Events or Exhibits pages)
+    // 2. THE RADIO FILTER MEMORY & RESTORER
+    // (Runs on Events or Exhibits main pages)
     // ==========================================
-    const currentPage = window.location.pathname.toLowerCase();
+    const currentPath = window.location.pathname.toLowerCase();
 
     // Route the logic based on which main page the user is currently looking at
-    if (currentPage.includes('events.html')) {
-        setupSmartFilters('triggerSavedFilter_events', 'activeEventFilter');
-    } else if (currentPage.includes('exhibits.html') || currentPage.includes('exhibit.html')) {
-        setupSmartFilters('triggerSavedFilter_exhibits', 'activeExhibitFilter');
+    if (currentPath.includes('events.html')) {
+        setupRadioFilters('triggerRestore_events', 'savedRadio_events');
+    } else if (currentPath.includes('exhibits.html') || currentPath.includes('exhibit.html')) {
+        setupRadioFilters('triggerRestore_exhibits', 'savedRadio_exhibits');
     }
 
-    // The master function that handles the memory and clicking
-    function setupSmartFilters(triggerKey, savedFilterKey) {
-        // IMPORTANT: Ensure your filter buttons on both pages have the class "filter-btn"
-        const filterButtons = document.querySelectorAll('.filter-btn'); 
-        if (filterButtons.length === 0) return;
+    function setupRadioFilters(triggerKey, savedFilterKey) {
+        // Find all radio buttons that control the categories
+        const radioButtons = document.querySelectorAll('input[type="radio"][name="category"]');
+        if (radioButtons.length === 0) return; // Exit if no filters exist on this page
 
         const shouldRestore = sessionStorage.getItem(triggerKey) === 'true';
-        const savedFilter = sessionStorage.getItem(savedFilterKey);
+        const savedRadioId = sessionStorage.getItem(savedFilterKey);
 
-        if (shouldRestore && savedFilter) {
-            // Find the matching button and click it automatically!
-            filterButtons.forEach(btn => {
-                if (btn.innerText.trim() === savedFilter) {
-                    btn.click();
-                }
-            });
+        if (shouldRestore && savedRadioId) {
+            // Find the saved radio button by its ID and check it
+            const targetRadio = document.getElementById(savedRadioId);
+            if (targetRadio) {
+                targetRadio.checked = true;
+            }
             // Wipe the flag so a normal page refresh doesn't trigger it again
-            sessionStorage.removeItem(triggerKey); 
+            sessionStorage.removeItem(triggerKey);
         } else {
             // If they came from Home or About, clear the memory completely
             sessionStorage.removeItem(savedFilterKey);
+            
+            // Reset to the default "All" filter just in case
+            const defaultRadio = document.getElementById('every');
+            if (defaultRadio) {
+                defaultRadio.checked = true;
+            }
         }
 
-        // Whenever the user clicks a filter, memorize its name!
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                sessionStorage.setItem(savedFilterKey, e.target.innerText.trim());
+        // Whenever the user clicks a new filter, memorize its ID
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.checked) {
+                    sessionStorage.setItem(savedFilterKey, e.target.id);
+                }
             });
         });
     }
