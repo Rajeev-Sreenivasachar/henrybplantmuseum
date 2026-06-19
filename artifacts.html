@@ -1343,6 +1343,11 @@
     </div>
 </div>
 
+<!-- Auth Popup -->
+<div id="authPopup" class="auth-popup">
+    <span id="authMsg">You need to create an account to favorite artifacts.</span>
+</div>
+
 <!-- Links your logic to the HTML -->
 <script src="/ai.js"></script>
 
@@ -1408,7 +1413,7 @@ window.removeFavorite = async (title, imgSrc) => {
 
 window.toggleStar = async (btn, title, imgSrc) => {
   if (!currentUserRef) {
-    window.showPopup("You must <a href='profile.html' style='color:#D4AF37;'>Sign In</a> to save artifacts!");
+    window.showPopup("You need to create an account to favorite artifacts.");
     return;
   }
   const isStarred = btn.classList.contains('active');
@@ -1431,6 +1436,15 @@ window.showPopup = function(msg) {
   const authPopup = document.getElementById('authPopup');
   const authMsg = document.getElementById('authMsg');
   if(!authPopup || !authMsg) return;
+
+  // Position above the active Henry AI window/button dynamically
+  const chatWindow = document.getElementById('chat-window');
+  if (chatWindow && !chatWindow.classList.contains('hidden')) {
+    authPopup.style.bottom = '560px'; // Sits above open chat window (95px bottom + 450px height + 15px gap)
+  } else {
+    authPopup.style.bottom = '95px';  // Sits above closed chat button (20px bottom + 65px height + 10px gap)
+  }
+
   authMsg.innerHTML = msg;
   authPopup.classList.add('show');
   setTimeout(() => authPopup.classList.remove('show'), 4000);

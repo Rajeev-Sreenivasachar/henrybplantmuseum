@@ -3102,3 +3102,18 @@ body.dark-mode .reset-a11y-btn:hover {
   background: #fff;
   color: #000 !important;
 }
+
+/* Auth Popup Accessibility Overrides */
+body.dark-mode .auth-popup {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+}
+
+body.high-contrast .auth-popup {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  color: yellow !important;
+  border: 2px solid yellow !important;
+}
