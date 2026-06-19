@@ -77,7 +77,8 @@ async function sendMessage() {
             darkMode: document.body.classList.contains('dark-mode'),
             highContrast: document.body.classList.contains('high-contrast'),
             dyslexiaFont: document.body.classList.contains('dyslexia-mode'),
-            largeText: document.body.classList.contains('large-text')
+            largeText: document.body.classList.contains('large-text'),
+            reducedMotion: document.body.classList.contains('reduced-motion')
         };
 
         const response = await fetch('/api/chat', {
@@ -199,6 +200,8 @@ function executeChatAction(action) {
         case 'toggleHighContrast': clickIfFound('toggle-contrast'); break;
         case 'toggleDyslexia': clickIfFound('toggle-dyslexia'); break;
         case 'toggleText': clickIfFound('toggle-text'); break;
+        case 'toggleReduceMotion': clickIfFound('toggle-motion'); break;
+        case 'resetA11y': clickIfFound('reset-a11y-btn'); break;
         case 'openA11y': clickIfFound('btnA11y'); break;
         case 'openResources': clickIfFound('btnResources'); break;
         case 'scrollToTop': window.scrollTo({top: 0, behavior: 'smooth'}); break;

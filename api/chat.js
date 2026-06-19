@@ -42,6 +42,7 @@ export default async function handler(req, res) {
         - High Contrast: ${a11y.highContrast ? 'ON' : 'OFF'}
         - Dyslexia Font: ${a11y.dyslexiaFont ? 'ON' : 'OFF'}
         - Large Text: ${a11y.largeText ? 'ON' : 'OFF'}
+        - Reduced Motion: ${a11y.reducedMotion ? 'ON' : 'OFF'}
 
         1. If the user asks about the museum, exhibits, artifacts, or events, use ONLY this data to answer:
         Main Info: ${JSON.stringify(main)}
@@ -55,16 +56,43 @@ export default async function handler(req, res) {
         {
           "reply": "Your response to the user",
           "redirect": "/target-page.html", // ONLY include if the user explicitly asks to be taken/redirected to a specific page. Otherwise null.
-          "action": "ACTION_NAME" // ONLY include if the user asks you to perform one of the 30 interactive capabilities. Otherwise null.
+          "action": "ACTION_NAME" // ONLY include if the user asks you to perform one of the allowed actions. Otherwise null.
         }
 
-        4. ALLOWED ACTION_NAME VALUES:
-        "toggleDarkMode", "toggleHighContrast", "toggleDyslexia", "toggleText", "openA11y",
-        "openResources", "scrollToTop", "scrollToBottom", "goBack", "goForward", "refreshPage",
-        "toggleMenu", "hideChat", "printPage", "copyUrl", "sharePage", "clearChat", "showLocation",
-        "showPhone", "showEmail", "openNewsletter", "donate", "buyTickets", "login", "logout",
-        "clearItinerary", "copyItinerary", "playAudioTour", "pauseAudioTour", "confetti"
-        
+        4. ALLOWED ACTION_NAME VALUES AND DESCRIPTION:
+        - "toggleDarkMode": Use when the user requests turning on/off or toggling Dark Mode.
+        - "toggleHighContrast": Use when the user requests turning on/off or toggling High Contrast Mode.
+        - "toggleDyslexia": Use when the user requests turning on/off or toggling Dyslexia Font.
+        - "toggleText": Use when the user requests turning on/off or toggling Large Text.
+        - "toggleReduceMotion": Use when the user requests turning on/off, toggling, or setting "Reduce Motion" (reducing animations/motion on the site).
+        - "resetA11y": Use when the user requests turning off ALL accessibility features, resetting all accessibility settings/options to default, or disabling all active styling features.
+        - "openA11y": Use when the user requests opening/showing the accessibility settings panel/drawer.
+        - "openResources": Use when the user requests opening/showing the resources panel/drawer.
+        - "scrollToTop": Use when the user requests scrolling to the top of the page.
+        - "scrollToBottom": Use when the user requests scrolling to the bottom of the page.
+        - "goBack": Use when the user requests going back to the previous page.
+        - "goForward": Use when the user requests going forward in history.
+        - "refreshPage": Use when the user requests refreshing/reloading the page.
+        - "toggleMenu": Use when the user requests opening/closing or toggling the navigation menu.
+        - "hideChat": Use when the user requests closing or hiding the chat box.
+        - "printPage": Use when the user requests printing the page.
+        - "copyUrl": Use when the user requests copying the page link/URL.
+        - "sharePage": Use when the user requests sharing the page.
+        - "clearChat": Use when the user requests clearing/resetting the chat history.
+        - "showLocation": Use when the user requests the location or directions to the museum.
+        - "showPhone": Use when the user requests the phone number or calling the museum.
+        - "showEmail": Use when the user requests the email address or emailing the museum.
+        - "openNewsletter": Use when the user requests signing up/opening the newsletter.
+        - "donate": Use when the user requests donating or helping the museum.
+        - "buyTickets": Use when the user requests buying tickets or admission.
+        - "login": Use when the user requests logging in, signing up, or viewing their profile.
+        - "logout": Use when the user requests logging out.
+        - "clearItinerary": Use when the user requests clearing their itinerary.
+        - "copyItinerary": Use when the user requests copying their itinerary.
+        - "playAudioTour": Use when the user requests playing the audio tour.
+        - "pauseAudioTour": Use when the user requests pausing the audio tour.
+        - "confetti": Use when the user requests confetti or celebrating.
+
         If the user intent matches one of those commands, set the "action" key to the exact string value.
         `;
 
