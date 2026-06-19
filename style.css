@@ -522,7 +522,7 @@ body.dark-mode .new-auth-input { background: var(--bg-alt) !important; color: va
 
 
 
-body.dyslexia-mode, body.dyslexia-mode * { 
+body.dyslexia-mode, body.dyslexia-mode *:not(i):not(.fa-solid):not(.fa-regular):not(.fa-brands) { 
   font-family: 'OpenDyslexic', sans-serif !important; letter-spacing: 0.05em !important; line-height: 2 !important; 
 }
 
