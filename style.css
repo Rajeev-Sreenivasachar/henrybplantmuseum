@@ -1886,6 +1886,10 @@ input:checked + .slider:before { transform: translateX(20px); }
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
+.fbla-add-btn:hover i {
+  color: #ffffff !important;
+}
+
 @media (max-width: 768px) {
   .fbla-profile-wrapper { padding: 100px 1rem 2rem; }
   .fbla-dash-hero { flex-direction: column; text-align: center; gap: 1.5rem; padding: 2.5rem 1.5rem;}
