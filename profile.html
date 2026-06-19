@@ -365,6 +365,30 @@
   color: #000000 !important;
 }
 
+/* Dark Mode & High Contrast Adjustments */
+body.dark-mode .newsletter-side-panel,
+body.high-contrast .newsletter-side-panel {
+  background: #111111 !important;
+  border: 1px solid #ffffff !important;
+}
+body.dark-mode .newsletter-side-panel h3, 
+body.dark-mode .newsletter-side-panel p,
+body.dark-mode .newsletter-side-panel h5,
+body.dark-mode .newsletter-side-panel .new-news-badge,
+body.dark-mode .newsletter-side-panel .new-feature-item i,
+body.high-contrast .newsletter-side-panel h3, 
+body.high-contrast .newsletter-side-panel p,
+body.high-contrast .newsletter-side-panel h5,
+body.high-contrast .newsletter-side-panel .new-news-badge,
+body.high-contrast .newsletter-side-panel .new-feature-item i {
+  color: #ffffff !important;
+}
+body.dark-mode .archive-view-btn,
+body.high-contrast .archive-view-btn {
+  color: #ffffff !important;
+  border: 1px solid #ffffff !important;
+}
+
 /* 3. Strip the white border & shadow off the Beehiiv embed box completely */
 .newsletter-side-panel .new-news-right {
   border: none !important;
@@ -1000,7 +1024,6 @@ window.logout = () => {
           await reauthenticateWithCredential(auth.currentUser, credential);
           
           await updateDoc(ref, { username: newUsername });
-          document.getElementById('ui-user').innerText = newUsername;
           
           // Also update localStorage so navbar works across pages
           localStorage.setItem("currentUsername", newUsername);
@@ -1093,7 +1116,6 @@ onAuthStateChanged(auth, async (user) => {
         if(snap.exists()) {
           const data = snap.data();
           document.getElementById('ui-name').innerText = data.realName.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
-          document.getElementById('ui-user').innerText = data.username;
           drawWishlist(data.wishlist);
 
           // --- NEW NAVBAR FIX ---
