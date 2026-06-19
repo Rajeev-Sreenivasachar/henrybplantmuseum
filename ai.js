@@ -268,5 +268,34 @@ function triggerConfetti() {
     }
 }
 
+    // Global Keyboard Shortcut: Pressing 'h' opens Henry AI
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'h' || e.key === 'H') {
+            // Ignore if modifier keys are held down (like Ctrl+H, Alt+H)
+            if (e.ctrlKey || e.altKey || e.metaKey) return;
+            
+            // Ignore if typing in a text input field, textarea, or content-editable area
+            const active = document.activeElement;
+            if (active) {
+                const tag = active.tagName.toLowerCase();
+                if (tag === 'input' || tag === 'textarea' || active.isContentEditable) {
+                    return;
+                }
+            }
+            
+            // Open the chat window if it is closed
+            if (chatWindow.classList.contains('hidden')) {
+                chatWindow.classList.remove('hidden');
+                setTimeout(() => {
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                    chatInput.focus();
+                }, 50);
+            } else {
+                // If already open, just focus the input box
+                chatInput.focus();
+            }
+        }
+    });
+
 loadChatHistory();
 });
