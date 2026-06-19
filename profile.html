@@ -954,9 +954,20 @@
       catch (e) { document.getElementById('log-err').innerText = e.message; }
     };
 
-    window.logout = () => {
+window.logout = () => {
+        // Clear the memory so script.js knows you are out
         localStorage.removeItem('museumUserLogged');
+        localStorage.removeItem('currentUsername'); 
+        
+        // Tell Firebase to sign out
         signOut(auth);
+
+        // Instantly reset the navbar back to "Sign In"
+        document.querySelectorAll('a[href*="profile.html"]').forEach(link => {
+            if (!link.closest('footer')) {
+                link.innerHTML = `<i class="fa-solid fa-user"></i> Sign In`;
+            }
+        });
     };
 
     /* --- TABBED CONFIGURATION CREDENTIAL CONTROLLER PROCESSING LOGIC --- */
@@ -1080,7 +1091,7 @@
       });
     };
 
-    onAuthStateChanged(auth, async (user) => {
+onAuthStateChanged(auth, async (user) => {
       const authView = document.getElementById('fbla-auth-view');
       const dashView = document.getElementById('fbla-dash-view');
       if(user) {
@@ -1090,6 +1101,20 @@
           document.getElementById('ui-name').innerText = data.realName.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
           document.getElementById('ui-user').innerText = data.username;
           drawWishlist(data.wishlist);
+
+          // --- NEW NAVBAR FIX ---
+          // 1. Save the username so script.js can see it on other pages
+          localStorage.setItem("currentUsername", data.username);
+          localStorage.setItem("museumUserLogged", "true");
+
+          // 2. Instantly update the navbar on THIS page (with the truncation rule!)
+          const displayUser = data.username.length > 7 ? data.username.substring(0, 4) + "..." : data.username;
+          document.querySelectorAll('a[href*="profile.html"]').forEach(link => {
+              if (!link.closest('footer')) {
+                  link.innerHTML = `<i class="fa-solid fa-user"></i> ${displayUser}`;
+              }
+          });
+          // ----------------------
         }
         authView.classList.add('fbla-hidden');
         dashView.classList.remove('fbla-hidden');
