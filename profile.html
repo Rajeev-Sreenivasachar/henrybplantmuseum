@@ -160,12 +160,11 @@
 
     /* Gilded Experience Action Buttons */
     .gilded-experience-actions {
-      display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2rem;
+      display: flex; gap: 0.5rem; align-items: center;
     }
     .itin-action-btn {
-      width: 100%; padding: 0.75rem; background: var(--app-bg); border: 1px solid var(--border-color);
-      border-radius: 6px; color: var(--dark-text); font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 0.9rem;
-      cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.6rem; transition: all 0.2s ease;
+      width: 32px; height: 32px; padding: 0; background: var(--app-bg); border: 1px solid var(--border-color);
+      border-radius: 6px; color: var(--dark-text); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; cursor: pointer;
     }
     .itin-action-btn:hover { background: #EAEAEA; border-color: #ccc; }
     .itin-action-btn i { color: #888; transition: color 0.2s; }
@@ -534,16 +533,17 @@ body.high-contrast .archive-view-btn {
       <div class="user-top-layout" style="grid-template-columns: 380px 1fr;">
         
         <div class="sleek-panel">
-          <h3><i class="fa-solid fa-list-check"></i> My Gilded Experience</h3>
-          <ul id="fbla-wishlist-box" class="new-wishlist">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <h3 style="margin: 0;"><i class="fa-solid fa-list-check"></i> My Gilded Experience</h3>
+            <div class="gilded-experience-actions">
+              <button class="itin-action-btn" onclick="window.clearItinerary()" aria-label="Clear Gilded Experience" title="Clear Gilded Experience"><i class="fa-solid fa-trash-can"></i></button>
+              <button class="itin-action-btn" onclick="window.copyItinerary()" aria-label="Copy to Clipboard" title="Copy to Clipboard"><i class="fa-solid fa-share-nodes"></i></button>
+              <button class="itin-action-btn" onclick="window.printItinerary()" aria-label="Print Page" title="Print Page"><i class="fa-solid fa-print"></i></button>
+            </div>
+          </div>
+          <ul id="fbla-wishlist-box" class="new-wishlist" style="margin-bottom: 2rem;">
             <li style="color:#888; font-size:14px; background:none; border:none; padding:0;">Loading Gilded Experience...</li>
           </ul>
-          
-          <div class="gilded-experience-actions">
-            <button class="itin-action-btn" onclick="window.clearItinerary()"><i class="fa-solid fa-trash-can"></i> Clear Gilded Experience</button>
-            <button class="itin-action-btn" onclick="window.copyItinerary()"><i class="fa-solid fa-share-nodes"></i> Copy to Clipboard</button>
-            <button class="itin-action-btn" onclick="window.printItinerary()"><i class="fa-solid fa-print"></i> Print Page</button>
-          </div>
           <div class="artifacts-promo-box">
             <h4><i class="fa-solid fa-bookmark"></i> Favorite Artifacts</h4>
             <p>Since you signed in, you can now save your favorite artifacts!</p>
@@ -622,7 +622,7 @@ body.high-contrast .archive-view-btn {
           </div>
 
           <a href="https://henrybplantmuseum.beehiiv.com/" target="_blank" class="archive-view-btn" style="margin-bottom: 2rem;">
-            <i class="fa-solid fa-book-open"></i> View Newsletter Website →
+            <i class="fa-solid fa-book-open"></i> View newsletter website →
           </a>
 
           <div class="new-news-right">
@@ -724,7 +724,7 @@ body.high-contrast .archive-view-btn {
           <div class="resource-icon"><i class="fa-solid fa-ticket"></i></div>
           <div class="resource-text"><h5>Buy Tickets</h5><p>Admissions & Tours</p></div>
         </a>
-        <a href="/get_involved/membership.html" target="_blank" class="resource-item">
+        <a href="/membership.html" target="_blank" class="resource-item">
           <div class="resource-icon"><i class="fa-solid fa-id-card"></i></div>
           <div class="resource-text"><h5>Membership</h5><p>Join the Museum Society</p></div>
         </a>
