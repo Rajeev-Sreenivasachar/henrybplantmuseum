@@ -2139,7 +2139,7 @@ body {
 .dev-section .dev-row {
   display: flex;
   align-items: center;
-  
+  justify-content: space-between;
   gap: 1rem;
   background: #fffdf2;
   border-left: 5px solid #c59a00;
@@ -2201,7 +2201,7 @@ body {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.4px;
-  /* text-transform removed */
+  text-transform: capitalize;
 
   border-radius: 999px;
 
@@ -2243,6 +2243,7 @@ body {
   border-bottom: 2px solid #333;
   transform: rotate(45deg);
   transition: transform 0.25s ease;
+  margin-left: 8px;
 }
 
 .product-dropdown[open] .arrow {
@@ -2927,3 +2928,35 @@ body.high-contrast .a11y-item i {
   color: yellow !important;
 }
 
+
+/* Credit Page Dark Mode and High Contrast Overrides */
+body.high-contrast .section-card-credits,
+body.high-contrast .source-item-credits,
+body.high-contrast .dev-row,
+body.dark-mode .section-card-credits,
+body.dark-mode .source-item-credits,
+body.dark-mode .dev-row {
+  background: var(--bg-surface) !important;
+  color: var(--text-main) !important;
+}
+
+body.high-contrast .dev-info h3,
+body.high-contrast .dev-info p,
+body.high-contrast .source-item-credits h3,
+body.high-contrast .section-card-credits h2,
+body.dark-mode .dev-info h3,
+body.dark-mode .dev-info p,
+body.dark-mode .source-item-credits h3,
+body.dark-mode .section-card-credits h2 {
+  color: var(--text-main) !important;
+}
+
+body.high-contrast .source-item-credits,
+body.high-contrast .dev-row {
+  border-color: #ffffff !important;
+}
+
+body.dark-mode .product-dropdown summary .arrow,
+body.high-contrast .product-dropdown summary .arrow {
+  border-color: var(--text-main) !important;
+}
