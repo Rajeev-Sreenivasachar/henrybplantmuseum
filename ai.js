@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendBtn = document.getElementById('send-btn');
 
     if (!chatWindow || !toggleBtn || !closeBtn || !chatMessages || !chatInput || !sendBtn) return;
+
+    // Update initial welcome message to explain keyboard shortcuts
+    const firstBotMsg = chatMessages.querySelector('.msg.bot');
+    if (firstBotMsg) {
+        firstBotMsg.textContent = "Hi, I'm Henry, your personal AI guide! You can press the 'H' key on your keyboard to toggle me on, and 'Esc' to close me. How can I assist you today?";
+    }
+
 function loadChatHistory() {
     const history = JSON.parse(localStorage.getItem('museumChatHistory')) || [];
     
@@ -268,8 +275,9 @@ function triggerConfetti() {
     }
 }
 
-    // Global Keyboard Shortcut: Pressing 'h' opens Henry AI
+    // Global Keyboard Shortcuts: 'H' to open/focus, 'Esc' to close
     document.addEventListener('keydown', (e) => {
+        // 1. Pressing 'h' or 'H' opens or focuses Henry AI
         if (e.key === 'h' || e.key === 'H') {
             // Ignore if modifier keys are held down (like Ctrl+H, Alt+H)
             if (e.ctrlKey || e.altKey || e.metaKey) return;
@@ -293,6 +301,13 @@ function triggerConfetti() {
             } else {
                 // If already open, just focus the input box
                 chatInput.focus();
+            }
+        }
+
+        // 2. Pressing 'Escape' or 'Esc' closes Henry AI
+        if (e.key === 'Escape' || e.key === 'Esc') {
+            if (!chatWindow.classList.contains('hidden')) {
+                chatWindow.classList.add('hidden');
             }
         }
     });
