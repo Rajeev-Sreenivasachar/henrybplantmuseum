@@ -2862,3 +2862,67 @@ body.high-contrast .cards-grid-involved .card h3,
 body.high-contrast .cards-grid-involved .card p {
   color: yellow !important;
 }
+
+/* Further Dark Mode / High Contrast overrides for Get Involved, Plan Your Visit, and Accessibility Drawer */
+
+/* panel-drawer Text Fixes */
+body.dark-mode .panel-drawer,
+body.dark-mode .panel-header h3,
+body.dark-mode .setting-text label,
+body.dark-mode .a11y-desc,
+body.dark-mode .drawer-group h4,
+body.dark-mode .resource-item h5,
+body.dark-mode .resource-item p {
+  color: #ffffff !important;
+}
+
+body.high-contrast .panel-drawer,
+body.high-contrast .panel-header h3,
+body.high-contrast .setting-text label,
+body.high-contrast .a11y-desc,
+body.high-contrast .drawer-group h4,
+body.high-contrast .resource-item h5,
+body.high-contrast .resource-item p {
+  color: yellow !important;
+}
+
+/* Fix background gradient overriding background-color on .card */
+body.dark-mode .cards-grid-involved .card {
+  background: #000000 !important;
+}
+
+body.high-contrast .cards-grid-involved .card {
+  background: #000000 !important;
+}
+
+/* Fix plan your visit inclusivity section background */
+body.dark-mode .bg-alt,
+body.dark-mode .visitor-accessibility {
+  background: #000000 !important;
+}
+
+body.high-contrast .bg-alt,
+body.high-contrast .visitor-accessibility {
+  background: #000000 !important;
+}
+
+/* Fix inclusivity items (a11y-item) */
+body.dark-mode .a11y-item {
+  background: #000000 !important;
+  border: 1px solid #ffffff !important;
+}
+body.dark-mode .a11y-item h4,
+body.dark-mode .a11y-item p,
+body.dark-mode .a11y-item i {
+  color: #ffffff !important;
+}
+
+body.high-contrast .a11y-item {
+  background: #000000 !important;
+  border: 1px solid yellow !important;
+}
+body.high-contrast .a11y-item h4,
+body.high-contrast .a11y-item p,
+body.high-contrast .a11y-item i {
+  color: yellow !important;
+}
