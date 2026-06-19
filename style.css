@@ -2798,3 +2798,67 @@ body.reduced-motion .slider:before {
 body.reduced-motion input:checked + .slider:before {
   transform: translateX(20px) !important;
 }
+
+/* Explicit overrides requested by user for detailed pages */
+
+/* Dark Mode */
+body.dark-mode .exhibit-main-layout,
+body.dark-mode .details-card,
+body.dark-mode .hero-involved,
+body.dark-mode .mission-section,
+body.dark-mode .cards-grid-involved .card {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #ffffff !important;
+}
+
+body.dark-mode .exhibit-main-layout h1,
+body.dark-mode .exhibit-main-layout h2,
+body.dark-mode .exhibit-main-layout h3,
+body.dark-mode .exhibit-main-layout p,
+body.dark-mode .exhibit-main-layout span,
+body.dark-mode .details-card h1,
+body.dark-mode .details-card h2,
+body.dark-mode .details-card h3,
+body.dark-mode .details-card p,
+body.dark-mode .details-card span,
+body.dark-mode .hero-involved h1,
+body.dark-mode .hero-involved p,
+body.dark-mode .mission-section h1,
+body.dark-mode .mission-section h2,
+body.dark-mode .mission-section p,
+body.dark-mode .cards-grid-involved .card h3,
+body.dark-mode .cards-grid-involved .card p {
+  color: #ffffff !important;
+}
+
+/* High Contrast Mode */
+body.high-contrast .exhibit-main-layout,
+body.high-contrast .details-card,
+body.high-contrast .hero-involved,
+body.high-contrast .mission-section,
+body.high-contrast .cards-grid-involved .card {
+  background-color: #000000 !important;
+  color: yellow !important;
+  border: 1px solid yellow !important;
+}
+
+body.high-contrast .exhibit-main-layout h1,
+body.high-contrast .exhibit-main-layout h2,
+body.high-contrast .exhibit-main-layout h3,
+body.high-contrast .exhibit-main-layout p,
+body.high-contrast .exhibit-main-layout span,
+body.high-contrast .details-card h1,
+body.high-contrast .details-card h2,
+body.high-contrast .details-card h3,
+body.high-contrast .details-card p,
+body.high-contrast .details-card span,
+body.high-contrast .hero-involved h1,
+body.high-contrast .hero-involved p,
+body.high-contrast .mission-section h1,
+body.high-contrast .mission-section h2,
+body.high-contrast .mission-section p,
+body.high-contrast .cards-grid-involved .card h3,
+body.high-contrast .cards-grid-involved .card p {
+  color: yellow !important;
+}

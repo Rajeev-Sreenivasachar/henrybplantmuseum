@@ -404,77 +404,7 @@
 
   <script src="scripts.js"></script>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Mobile Menu Toggle
-      const menuToggle = document.getElementById('menuToggle');
-      const navLinks = document.getElementById('navLinks');
-      if(menuToggle && navLinks) {
-        menuToggle.addEventListener('click', (e) => {
-          navLinks.classList.toggle('mobile-open');
-          e.stopPropagation();
-        });
-        document.addEventListener('click', (e) => {
-          if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
-            navLinks.classList.remove('mobile-open');
-          }
-        });
-      }
-
-      // Scroll Progress Indicator & Navbar Scroll Animation
-      const progressBar = document.getElementById('progressBar');
-      const navbar = document.getElementById('navbar');
-      window.addEventListener('scroll', () => {
-        if(progressBar) {
-          const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-          progressBar.style.width = (winScroll / height) * 100 + "%";
-        }
-        if(navbar) {
-          if (window.scrollY > 20) navbar.classList.add('scrolled');
-          else navbar.classList.remove('scrolled');
-        }
-      });
-
-      // Lateral Panel Drawers Handlers
-      const btnRes = document.getElementById('btnResources');
-      const btnA11y = document.getElementById('btnA11y');
-      const drawRes = document.getElementById('drawerResources');
-      const drawA11y = document.getElementById('drawerA11y');
-      const overlay = document.getElementById('panelOverlay');
-      const closeBtns = document.querySelectorAll('.close-btn');
-
-      function closeDrawers() {
-        if(drawRes) drawRes.classList.remove('open');
-        if(drawA11y) drawA11y.classList.remove('open');
-        if(overlay) overlay.classList.remove('open');
-      }
-
-      function openDrawer(drawer) {
-        closeDrawers();
-        if(drawer) drawer.classList.add('open');
-        if(overlay) overlay.classList.add('open');
-      }
-
-      if(btnRes) btnRes.addEventListener('click', () => openDrawer(drawRes));
-      if(btnA11y) btnA11y.addEventListener('click', () => openDrawer(drawA11y));
-      if(overlay) overlay.github ? overlay.addEventListener('click', closeDrawers) : overlay.addEventListener('click', closeDrawers);
-      closeBtns.forEach(btn => btn.addEventListener('click', closeDrawers));
-
-      // Accessibility Toggle Hooks
-      const tContrast = document.getElementById('toggle-contrast');
-      const tText = document.getElementById('toggle-text');
-      const tDyslexia = document.getElementById('toggle-dyslexia');
-      const tLinks = document.getElementById('toggle-links');
-      const tMotion = document.getElementById('toggle-motion');
-
-      if(tContrast) tContrast.addEventListener('change', e => document.body.classList.toggle('high-contrast', e.target.checked));
-      if(tText) tText.addEventListener('change', e => document.body.classList.toggle('large-text', e.target.checked));
-      if(tDyslexia) tDyslexia.addEventListener('change', e => document.body.classList.toggle('dyslexia-mode', e.target.checked));
-      if(tLinks) tLinks.addEventListener('change', e => document.body.classList.toggle('highlight-links', e.target.checked));
-      if(tMotion) tMotion.addEventListener('change', e => document.body.classList.toggle('reduced-motion', e.target.checked));
-    });
-   </script>
+  <script src="script.js"></script>
  <!-- Chat Toggle Button -->
 <button id="chat-toggle-btn" aria-label="Open Chat">💬</button>
 
@@ -498,6 +428,7 @@
 
 </body>
 </html>
+
 
 
 
