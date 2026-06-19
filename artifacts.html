@@ -1345,7 +1345,7 @@
 
 <!-- Auth Popup -->
 <div id="authPopup" class="auth-popup">
-    <span id="authMsg">You need to create an account to favorite artifacts.</span>
+    <span id="authMsg">You need to <a href="profile.html" style="color:#D4AF37; font-weight:bold; text-decoration:underline;">create an account</a> to favorite artifacts.</span>
 </div>
 
 <!-- Links your logic to the HTML -->
@@ -1413,7 +1413,7 @@ window.removeFavorite = async (title, imgSrc) => {
 
 window.toggleStar = async (btn, title, imgSrc) => {
   if (!currentUserRef) {
-    window.showPopup("You need to create an account to favorite artifacts.");
+    window.showPopup("You need to <a href='profile.html' style='color:#D4AF37; font-weight:bold; text-decoration:underline;'>create an account</a> to favorite artifacts.");
     return;
   }
   const isStarred = btn.classList.contains('active');
