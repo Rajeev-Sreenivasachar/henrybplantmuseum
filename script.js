@@ -336,23 +336,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ==========================================
-    // 2. THE RADIO FILTER MEMORY & RESTORER
+    // 2. THE HYBRID FILTER MEMORY & RESTORER
     // ==========================================
     const currentPath = window.location.pathname.toLowerCase();
 
+    // Tell the function what elements to look for based on the current page
     if (currentPath.includes('events.html')) {
-        setupRadioFilters('triggerRestore_events', 'savedRadio_events');
+        setupPageFilters('triggerRestore_events', 'savedFilter_events', 'input[type="radio"]');
     } else if (currentPath.includes('exhibits.html') || currentPath.includes('exhibit.html')) {
-        setupRadioFilters('triggerRestore_exhibits', 'savedRadio_exhibits');
+        setupPageFilters('triggerRestore_exhibits', 'savedFilter_exhibits', 'input[type="radio"]');
     } else if (currentPath.includes('artifacts.html') || currentPath.includes('artifact.html')) {
-        setupRadioFilters('triggerRestore_artifacts', 'savedRadio_artifacts');
+        setupPageFilters('triggerRestore_artifacts', 'savedFilter_artifacts', '.filter-btn');
     } else if (currentPath.includes('profile.html')) {
-        setupRadioFilters('triggerRestore_profile', 'savedRadio_profile');
+        setupPageFilters('triggerRestore_profile', 'savedFilter_profile', 'input[type="radio"]');
     }
 
-    function setupRadioFilters(triggerKey, savedFilterKey) {
-        const radioButtons = document.querySelectorAll('input[type="radio"]');
-        if (radioButtons.length === 0) return; 
+    function setupPageFilters(triggerKey, savedFilterKey, elementSelector) {
+        const filterElements = document.querySelectorAll(elementSelector);
+        if (filterElements.length === 0) return; 
 
         // Detect if the page load is a user refresh
         let isRefresh = false;
@@ -364,42 +365,65 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const cameFromBackButton = sessionStorage.getItem(triggerKey) === 'true';
-        const savedRadioId = sessionStorage.getItem(savedFilterKey);
+        const savedValue = sessionStorage.getItem(savedFilterKey);
         const shouldRestore = cameFromBackButton || isRefresh;
+        const isRadio = elementSelector.includes('radio');
 
-        if (shouldRestore && savedRadioId) {
-            const targetRadio = document.getElementById(savedRadioId);
-            if (targetRadio) {
-                targetRadio.checked = true;
-                // CRITICAL FIX: Tell your artifact filtering JS that a change happened!
-                targetRadio.dispatchEvent(new Event('change'));
+        if (shouldRestore && savedValue) {
+            if (isRadio) {
+                // Radio buttons layout: Find by ID and check it
+                const targetRadio = document.getElementById(savedValue);
+                if (targetRadio) {
+                    targetRadio.checked = true;
+                    targetRadio.dispatchEvent(new Event('change'));
+                }
+            } else {
+                // Button layout (Artifacts): Find the button matching the saved data-filter attribute
+                const targetButton = document.querySelector(`.filter-btn[data-filter="${savedValue}"]`);
+                if (targetButton) {
+                    targetButton.click();
+                }
             }
             sessionStorage.removeItem(triggerKey);
         } else {
-            // Fresh navigation: wipe memory and find the default "All" filter
+            // Fresh navigation: clean slate setup
             sessionStorage.removeItem(savedFilterKey);
             
-            // Look for common "All" IDs dynamically (e.g., 'every', 'all', 'all-artifacts')
-            const defaultRadio = document.getElementById('every') || 
-                                 document.getElementById('all') || 
-                                 Array.from(radioButtons).find(r => r.id.toLowerCase().includes('all') || r.id.toLowerCase().includes('every'));
-            
-            if (defaultRadio) {
-                defaultRadio.checked = true;
-                defaultRadio.dispatchEvent(new Event('change'));
-            } else if (radioButtons.length > 0) {
-                radioButtons[0].checked = true;
-                radioButtons[0].dispatchEvent(new Event('change'));
+            if (isRadio) {
+                const defaultRadio = document.getElementById('every') || 
+                                     document.getElementById('all') || 
+                                     Array.from(filterElements).find(r => r.id.toLowerCase().includes('all') || r.id.toLowerCase().includes('every'));
+                if (defaultRadio) {
+                    defaultRadio.checked = true;
+                    defaultRadio.dispatchEvent(new Event('change'));
+                }
+            } else {
+                // Button layout default: Click the "all" button natively
+                const defaultButton = document.querySelector('.filter-btn[data-filter="all"]') || filterElements[0];
+                if (defaultButton) {
+                    defaultButton.click();
+                }
             }
         }
 
-        // Whenever the user clicks a filter, memorize its ID
-        radioButtons.forEach(radio => {
-            radio.addEventListener('change', (e) => {
-                if (e.target.checked && e.target.id) {
-                    sessionStorage.setItem(savedFilterKey, e.target.id);
-                }
-            });
+        // ==========================================
+        // 3. LISTEN FOR USER SELECTIONS TO MEMORIZE THEM
+        // ==========================================
+        filterElements.forEach(element => {
+            if (isRadio) {
+                element.addEventListener('change', (e) => {
+                    if (e.target.checked && e.target.id) {
+                        sessionStorage.setItem(savedFilterKey, e.target.id);
+                    }
+                });
+            } else {
+                element.addEventListener('click', (e) => {
+                    const filterValue = e.currentTarget.getAttribute('data-filter');
+                    if (filterValue) {
+                        sessionStorage.setItem(savedFilterKey, filterValue);
+                    }
+                });
+            }
         });
     }
 });
