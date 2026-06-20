@@ -356,8 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const isRadio = elementSelector.includes('radio');
 
-        // 1. START LISTENING IMMEDIATELY 
-        // (So we don't miss it if the user clicks a filter super fast)
+        // 1. START LISTENING IMMEDIATELY
         filterElements.forEach(element => {
             if (isRadio) {
                 element.addEventListener('change', (e) => {
@@ -375,54 +374,61 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // 2. DELAY THE RESTORATION BY 100ms 
-        // (This prevents race conditions with your other scripts)
-        setTimeout(() => {
-            let isRefresh = false;
-            if (window.performance && window.performance.getEntriesByType) {
-                const navEntries = window.performance.getEntriesByType("navigation");
-                if (navEntries.length > 0 && navEntries[0].type === "reload") {
-                    isRefresh = true;
-                }
+        // 2. CHECK STATUS IMMEDIATELY (No more waiting in a timeout here)
+        let isRefresh = false;
+        if (window.performance && window.performance.getEntriesByType) {
+            const navEntries = window.performance.getEntriesByType("navigation");
+            if (navEntries.length > 0 && navEntries[0].type === "reload") {
+                isRefresh = true;
             }
+        }
 
-            const cameFromBackButton = sessionStorage.getItem(triggerKey) === 'true';
-            const savedValue = sessionStorage.getItem(savedFilterKey);
-            const shouldRestore = cameFromBackButton || isRefresh;
+        const cameFromBackButton = sessionStorage.getItem(triggerKey) === 'true';
+        const savedValue = sessionStorage.getItem(savedFilterKey);
+        const shouldRestore = cameFromBackButton || isRefresh;
 
-            if (shouldRestore && savedValue) {
-                if (isRadio) {
-                    const targetRadio = document.getElementById(savedValue);
-                    if (targetRadio) {
-                        targetRadio.checked = true;
-                        targetRadio.dispatchEvent(new Event('change'));
-                    }
-                } else {
-                    const targetButton = document.querySelector(`.filter-btn[data-filter="${savedValue}"]`);
-                    if (targetButton) {
-                        targetButton.click(); 
-                    }
+        // 3. APPLY VISUALS AT 0ms, DELAY THE LOGIC BY 100ms
+        if (shouldRestore && savedValue) {
+            if (isRadio) {
+                const targetRadio = document.getElementById(savedValue);
+                if (targetRadio) {
+                    // INSTANT: Visually check the correct radio button
+                    targetRadio.checked = true; 
+                    // DELAY: Tell the other scripts it changed
+                    setTimeout(() => targetRadio.dispatchEvent(new Event('change')), 100); 
                 }
-                sessionStorage.removeItem(triggerKey);
             } else {
-                // Fresh navigation: Clean up and set to default
-                sessionStorage.removeItem(savedFilterKey);
-                
-                if (isRadio) {
-                    const defaultRadio = document.getElementById('every') || 
-                                         document.getElementById('all') || 
-                                         Array.from(filterElements).find(r => r.id.toLowerCase().includes('all') || r.id.toLowerCase().includes('every'));
-                    if (defaultRadio) {
-                        defaultRadio.checked = true;
-                        defaultRadio.dispatchEvent(new Event('change'));
-                    }
-                } else {
-                    const defaultButton = document.querySelector('.filter-btn[data-filter="all"]') || filterElements[0];
-                    if (defaultButton) {
-                        defaultButton.click();
-                    }
+                const targetButton = document.querySelector(`.filter-btn[data-filter="${savedValue}"]`);
+                if (targetButton) {
+                    // INSTANT: Strip 'active' from all buttons, give it only to the saved one
+                    filterElements.forEach(btn => btn.classList.remove('active'));
+                    targetButton.classList.add('active');
+                    
+                    // DELAY: Trigger the actual filtering logic
+                    setTimeout(() => targetButton.click(), 100); 
                 }
             }
-        }, 100); 
+            sessionStorage.removeItem(triggerKey);
+        } else {
+            // Fresh navigation: Clean up and set to default
+            sessionStorage.removeItem(savedFilterKey);
+            
+            if (isRadio) {
+                const defaultRadio = document.getElementById('every') || 
+                                     document.getElementById('all') || 
+                                     Array.from(filterElements).find(r => r.id.toLowerCase().includes('all') || r.id.toLowerCase().includes('every'));
+                if (defaultRadio) {
+                    defaultRadio.checked = true;
+                    setTimeout(() => defaultRadio.dispatchEvent(new Event('change')), 100);
+                }
+            } else {
+                const defaultButton = document.querySelector('.filter-btn[data-filter="all"]') || filterElements[0];
+                if (defaultButton) {
+                    filterElements.forEach(btn => btn.classList.remove('active'));
+                    defaultButton.classList.add('active');
+                    setTimeout(() => defaultButton.click(), 100);
+                }
+            }
+        }
     }
 });
