@@ -146,11 +146,11 @@
 
     /* Wishlist Elements */
     .new-wishlist { 
-      list-style: none; padding: 1rem !important; margin: 0; 
+      list-style: none; padding: 0; margin: 0; 
       border: 1px solid var(--border-color); 
       border-radius: 6px; 
-      display: grid !important;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+      display: flex !important;
+      flex-direction: column !important;
       gap: 1rem !important;
       flex-grow: 1;
       margin-bottom: 2rem !important;
@@ -172,18 +172,17 @@
     .itin-action-btn:hover i { color: var(--burgundy); }
 
     .new-wishlist li {
-      position: relative;
-      display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.5rem; text-align: center;
-      padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border-color); 
       margin: 0 !important; background: var(--app-bg); transition: all 0.25s ease;
-      min-height: 100px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      min-height: 40px;
     }
     .new-wishlist li:last-child {
-      border: 1px solid var(--border-color);
+      border-bottom: none;
     }
-    .new-wishlist li:hover { background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transform: translateY(-3px); }
-    .new-wishlist li a { text-decoration: none; color: var(--brand-primary); font-size: 1.05rem; font-weight: 600; }
-    .new-wishlist li button { position: absolute; top: 10px; right: 10px; background: none; border: none; color: #ccc; cursor: pointer; transition: color 0.2s; font-size: 1.2rem; }
+    .new-wishlist li:hover { background: #fff; box-shadow: inset 2px 0 0 var(--burgundy); }
+    .new-wishlist li a { text-decoration: underline; color: var(--dark-text); font-size: 0.9rem; font-weight: 500; }
+    .new-wishlist li button { background: none; border: none; color: #ccc; cursor: pointer; transition: color 0.2s; }
     .new-wishlist li button:hover { color: var(--crimson); }
 
     /* Artifacts Custom Section Box */
@@ -210,7 +209,9 @@
     .form-input-group { display: flex; flex-direction: column; gap: 0; margin-bottom: 1rem; }
 
     /* Main Grid Items */
-    .new-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2rem; }
+    .new-cards-grid { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+    @media (min-width: 768px) { .new-cards-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1200px) { .new-cards-grid { grid-template-columns: repeat(3, 1fr); } }
     .new-card {
       background: linear-gradient(135deg, #fffcf2 0%, #fdf5d6 100%); padding: 2rem 1.5rem; border-radius: 12px;
       border: 1px solid var(--border-color); text-align: left; position: relative; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
