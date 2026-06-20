@@ -3202,3 +3202,9 @@ body.dark-mode .mission-content-wrapper,
 body.high-contrast .mission-content-wrapper {
     border: none !important;
 }
+
+/* Dark Mode btn-outline hover fix */
+body.dark-mode .btn-outline:hover {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
