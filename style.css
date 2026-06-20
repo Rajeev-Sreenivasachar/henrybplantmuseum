@@ -175,6 +175,47 @@
 #send-btn:hover {
     background-color: #bfa030; /* Slightly darker gold on hover */
 }
+
+/* The container for the username must be relative */
+.nav-profile-name {
+    position: relative;
+    cursor: pointer;
+}
+
+/* The Custom Tooltip Box */
+.nav-profile-name.long-name-tooltip::after {
+    content: attr(data-full-name); /* This pulls the full name from the HTML attribute */
+    position: absolute;
+    top: calc(100% + 12px); /* Drops it just below the navbar button */
+    right: 0;               /* Anchors to the right, so it expands to the LEFT */
+    
+    /* Branding */
+    background-color: #6C1527; 
+    color: #FFFFFF;
+    border: 1px solid #D4AF37;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap; /* Keeps the name on one line */
+    z-index: 1000;
+    
+    /* Initially hidden */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none; /* Prevents the tooltip from blocking clicks */
+}
+
+/* The Hover Animation */
+.nav-profile-name.long-name-tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
     .scroll-progress { position: fixed; top: 0; left: 0; height: 4px; background: var(--brand-primary); width: 0%; z-index: 10000; transition: width 0.1s ease; }
      .reveal {
       opacity: 0;

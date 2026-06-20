@@ -1153,12 +1153,29 @@ window.logout = () => {
           localStorage.setItem("museumUserLogged", "true");
 
           // 2. Instantly update the navbar on THIS page (with the truncation rule!)
-          const displayUser = data.username.length > 7 ? data.username.substring(0, 4) + "..." : data.username;
-          document.querySelectorAll('a[href*="profile.html"]').forEach(link => {
-              if (!link.closest('footer')) {
-                  link.innerHTML = `<i class="fa-solid fa-user"></i> ${displayUser}`;
-              }
-          });
+        const displayUser = data.username.length > 7
+            ? data.username.substring(0, 4) + "..."
+            : data.username;
+
+        document.querySelectorAll('a[href*="profile.html"]').forEach(link => {
+            if (!link.closest('footer')) {
+
+                // Add base class
+                link.classList.add('nav-profile-name');
+
+                // Add tooltip only when name is truncated
+                if (data.username.length > 7) {
+                    link.classList.add('long-name-tooltip');
+                    link.setAttribute('data-full-name', data.username);
+                } else {
+                    link.classList.remove('long-name-tooltip');
+                    link.removeAttribute('data-full-name');
+                }
+
+                // Update text
+                link.innerHTML = `<i class="fa-solid fa-user" style="margin-right: 6px;"></i> ${displayUser}`;
+            }
+        });
           // ----------------------
         }
         authView.classList.add('fbla-hidden');
