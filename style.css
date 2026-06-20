@@ -3154,7 +3154,10 @@ body.high-contrast .campus-map-btn:hover {
 /* Ribbons in Reduced Motion */
 body.reduced-motion .card-ribbon {
     animation: none !important;
-    transform: none !important;
+}
+.card-ribbon {
+    background: linear-gradient(135deg, #ffffff 0%, #fdf9ec 100%) !important;
+    border: 1px solid var(--border-color);
 }
 
 .card-exhibits { background: #fdf5d6 !important; position: relative; }
