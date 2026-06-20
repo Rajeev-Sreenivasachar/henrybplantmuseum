@@ -3151,13 +3151,13 @@ body.high-contrast .campus-map-btn:hover {
     border-color: #000 !important;
 }
 
-/* Ribbons in Reduced Motion */
-body.reduced-motion .card-ribbon {
-    animation: none !important;
-}
-.card-ribbon {
-    background: linear-gradient(135deg, #ffffff 0%, #fdf9ec 100%) !important;
-    border: 1px solid var(--border-color);
+/* Restore Ribbon Transform in Reduced Motion */
+body.reduced-motion .upcoming-tag {
+    transform: rotate(-45deg) !important;
 }
 
-.card-exhibits { background: #fdf5d6 !important; position: relative; }
+/* Remove Mission Box border in Dark/High Contrast Modes */
+body.dark-mode .mission-content-wrapper,
+body.high-contrast .mission-content-wrapper {
+    border: none !important;
+}
