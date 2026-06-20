@@ -463,7 +463,17 @@ body.high-contrast .archive-view-btn {
   </nav>
 
   <main class="new-prof-wrapper">
-    <div id="fbla-auth-view" class="new-auth-box">
+    <section class="fbla-main-content">
+    <div class="fbla-dash-container">
+
+    <!-- Loading View -->
+    <div id="fbla-loading-view" style="text-align:center; padding:5rem; font-size:1.5rem; color:var(--brand-primary);">
+      <i class="fa-solid fa-spinner fa-spin" style="margin-bottom:1rem; font-size:2rem;"></i><br>
+      Checking Authentication...
+    </div>
+
+    <!-- 1) NEW MODERN TABBED AUTH VIEW -->
+    <div id="fbla-auth-view" class="new-auth-box fbla-hidden">
       <h2 style="font-size: 2.2rem; color: var(--burgundy);">Museum Portal</h2>
       <p>Curate your Gilded Age experience</p>
       
@@ -1119,10 +1129,14 @@ window.logout = () => {
       });
     };
 
-onAuthStateChanged(auth, async (user) => {
-      const authView = document.getElementById('fbla-auth-view');
-      const dashView = document.getElementById('fbla-dash-view');
-      if(user) {
+    onAuthStateChanged(auth, async (user) => {
+        // Hide loading screen as soon as we know auth state
+        const loadView = document.getElementById('fbla-loading-view');
+        if (loadView) loadView.style.display = 'none';
+
+        const authView = document.getElementById('fbla-auth-view');
+        const dashView = document.getElementById('fbla-dash-view');
+        if(user) {
         const snap = await getDoc(doc(db, "users", user.uid));
         if(snap.exists()) {
           const data = snap.data();

@@ -1349,6 +1349,9 @@ input:checked + .slider:before { transform: translateX(20px); }
   background: none;
   border: none;
   padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-family: var(--font-sans);
   font-size: 1.1rem;
   font-weight: 600;
@@ -3117,3 +3120,41 @@ body.high-contrast .auth-popup {
   color: yellow !important;
   border: 2px solid yellow !important;
 }
+
+/* === Additional Fixes from the 9 Tasks === */
+
+/* High Contrast Navbar Active Link */
+body.high-contrast .navbar a.active {
+    border-bottom: 3px solid #000 !important;
+    font-weight: 900 !important;
+}
+
+/* Container Borders in High Contrast & Dark Mode */
+body.high-contrast .sleek-panel,
+body.high-contrast .new-card,
+body.high-contrast .info-panel,
+body.high-contrast .card-exhibits,
+body.high-contrast .exhibit-card,
+body.dark-mode .sleek-panel,
+body.dark-mode .new-card,
+body.dark-mode .info-panel,
+body.dark-mode .card-exhibits,
+body.dark-mode .exhibit-card {
+    border: none !important;
+}
+
+/* Campus Map Button Hover in High Contrast */
+body.high-contrast .btn-outline:hover,
+body.high-contrast .campus-map-btn:hover {
+    background: #000 !important;
+    color: #fff !important;
+    border-color: #000 !important;
+}
+
+/* Ribbons in Reduced Motion */
+body.reduced-motion .card-ribbon {
+    animation: none !important;
+    transform: none !important;
+}
+
+.card-exhibits { background: #fdf5d6 !important; position: relative; }
