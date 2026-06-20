@@ -340,7 +340,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     const currentPath = window.location.pathname.toLowerCase();
 
-    // Tell the function what elements to look for based on the current page
     if (currentPath.includes('events.html')) {
         setupPageFilters('triggerRestore_events', 'savedFilter_events', 'input[type="radio"]');
     } else if (currentPath.includes('exhibits.html') || currentPath.includes('exhibit.html')) {
@@ -355,60 +354,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const filterElements = document.querySelectorAll(elementSelector);
         if (filterElements.length === 0) return; 
 
-        // Detect if the page load is a user refresh
-        let isRefresh = false;
-        if (window.performance && window.performance.getEntriesByType) {
-            const navEntries = window.performance.getEntriesByType("navigation");
-            if (navEntries.length > 0 && navEntries[0].type === "reload") {
-                isRefresh = true;
-            }
-        }
-
-        const cameFromBackButton = sessionStorage.getItem(triggerKey) === 'true';
-        const savedValue = sessionStorage.getItem(savedFilterKey);
-        const shouldRestore = cameFromBackButton || isRefresh;
         const isRadio = elementSelector.includes('radio');
 
-        if (shouldRestore && savedValue) {
-            if (isRadio) {
-                // Radio buttons layout: Find by ID and check it
-                const targetRadio = document.getElementById(savedValue);
-                if (targetRadio) {
-                    targetRadio.checked = true;
-                    targetRadio.dispatchEvent(new Event('change'));
-                }
-            } else {
-                // Button layout (Artifacts): Find the button matching the saved data-filter attribute
-                const targetButton = document.querySelector(`.filter-btn[data-filter="${savedValue}"]`);
-                if (targetButton) {
-                    targetButton.click();
-                }
-            }
-            sessionStorage.removeItem(triggerKey);
-        } else {
-            // Fresh navigation: clean slate setup
-            sessionStorage.removeItem(savedFilterKey);
-            
-            if (isRadio) {
-                const defaultRadio = document.getElementById('every') || 
-                                     document.getElementById('all') || 
-                                     Array.from(filterElements).find(r => r.id.toLowerCase().includes('all') || r.id.toLowerCase().includes('every'));
-                if (defaultRadio) {
-                    defaultRadio.checked = true;
-                    defaultRadio.dispatchEvent(new Event('change'));
-                }
-            } else {
-                // Button layout default: Click the "all" button natively
-                const defaultButton = document.querySelector('.filter-btn[data-filter="all"]') || filterElements[0];
-                if (defaultButton) {
-                    defaultButton.click();
-                }
-            }
-        }
-
-        // ==========================================
-        // 3. LISTEN FOR USER SELECTIONS TO MEMORIZE THEM
-        // ==========================================
+        // 1. START LISTENING IMMEDIATELY 
+        // (So we don't miss it if the user clicks a filter super fast)
         filterElements.forEach(element => {
             if (isRadio) {
                 element.addEventListener('change', (e) => {
@@ -425,5 +374,55 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
         });
+
+        // 2. DELAY THE RESTORATION BY 100ms 
+        // (This prevents race conditions with your other scripts)
+        setTimeout(() => {
+            let isRefresh = false;
+            if (window.performance && window.performance.getEntriesByType) {
+                const navEntries = window.performance.getEntriesByType("navigation");
+                if (navEntries.length > 0 && navEntries[0].type === "reload") {
+                    isRefresh = true;
+                }
+            }
+
+            const cameFromBackButton = sessionStorage.getItem(triggerKey) === 'true';
+            const savedValue = sessionStorage.getItem(savedFilterKey);
+            const shouldRestore = cameFromBackButton || isRefresh;
+
+            if (shouldRestore && savedValue) {
+                if (isRadio) {
+                    const targetRadio = document.getElementById(savedValue);
+                    if (targetRadio) {
+                        targetRadio.checked = true;
+                        targetRadio.dispatchEvent(new Event('change'));
+                    }
+                } else {
+                    const targetButton = document.querySelector(`.filter-btn[data-filter="${savedValue}"]`);
+                    if (targetButton) {
+                        targetButton.click(); 
+                    }
+                }
+                sessionStorage.removeItem(triggerKey);
+            } else {
+                // Fresh navigation: Clean up and set to default
+                sessionStorage.removeItem(savedFilterKey);
+                
+                if (isRadio) {
+                    const defaultRadio = document.getElementById('every') || 
+                                         document.getElementById('all') || 
+                                         Array.from(filterElements).find(r => r.id.toLowerCase().includes('all') || r.id.toLowerCase().includes('every'));
+                    if (defaultRadio) {
+                        defaultRadio.checked = true;
+                        defaultRadio.dispatchEvent(new Event('change'));
+                    }
+                } else {
+                    const defaultButton = document.querySelector('.filter-btn[data-filter="all"]') || filterElements[0];
+                    if (defaultButton) {
+                        defaultButton.click();
+                    }
+                }
+            }
+        }, 100); 
     }
 });
