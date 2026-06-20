@@ -926,6 +926,7 @@ body.high-contrast .archive-view-btn {
       document.querySelectorAll('.fbla-add-btn').forEach(btn => {
         btn.innerHTML = '<i class="fa-solid fa-plus"></i> Add';
         btn.classList.remove('fbla-added');
+        btn.style.cursor = '';
       });
 
       if (!arr || arr.length === 0) {
