@@ -432,3 +432,38 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+document.addEventListener("DOMContentLoaded", () => {
+    // ==========================================
+    // GLOBAL NAVBAR SYNC & TOOLTIP LOGIC
+    // (Runs on all pages to keep the navbar updated)
+    // ==========================================
+    const isLogged = localStorage.getItem('museumUserLogged') === 'true';
+    const currentUsername = localStorage.getItem('currentUsername');
+
+    // If the user is logged in and we have their username saved
+    if (isLogged && currentUsername) {
+        // Run the exact same truncation math
+        const displayUser = currentUsername.length > 7 ? currentUsername.substring(0, 4) + "..." : currentUsername;
+        
+        // Find the navbar profile link on WHATEVER page the user is currently on
+        document.querySelectorAll('a[href*="profile.html"]').forEach(link => {
+            // Ignore the footer link
+            if (!link.closest('footer')) {
+                // 1. Add the base anchor class
+                link.classList.add('nav-profile-name');
+                
+                // 2. Add the tooltip class and full name data ONLY if truncated
+                if (currentUsername.length > 7) {
+                    link.classList.add('long-name-tooltip');
+                    link.setAttribute('data-full-name', currentUsername);
+                } else {
+                    link.classList.remove('long-name-tooltip');
+                    link.removeAttribute('data-full-name');
+                }
+                
+                // 3. Inject the text and the icon with the 6px margin
+                link.innerHTML = `<i class="fa-solid fa-user" style="margin-right: 6px;"></i> ${displayUser}`;
+            }
+        });
+    }
+});
