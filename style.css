@@ -490,6 +490,7 @@ body.dark-mode {
   --text-main: #ffffff;     /* Pure white for primary text */
   --text-muted: #e0e0e0;    /* Very light gray for subtitles */
   --border-color: #555555;  /* High contrast borders */
+  --shadow-hover: 0 10px 25px rgba(255, 255, 255, 0.15); /* White shadow for dark mode */
 }
 
 body.dark-mode .card,
@@ -2557,6 +2558,7 @@ body.high-contrast {
   --text-main: #ffffff; --text-muted: #ffffff;
   --brand-primary: #ffcc00; --brand-primary-hover: #e6b800;
   --brand-gold: #ffcc00; --border-color: #ffffff;
+  --shadow-hover: 0 10px 25px rgba(255, 255, 0, 0.4); /* Yellow shadow for high contrast */
 }
 
 body.high-contrast .card,
@@ -2819,7 +2821,6 @@ body.reduced-motion input:checked + .slider:before {
 body.dark-mode .exhibit-main-layout,
 body.dark-mode .details-card,
 body.dark-mode .hero-involved,
-body.dark-mode .mission-section,
 body.dark-mode .cards-grid-involved .card {
   background-color: #000000 !important;
   color: #ffffff !important;
@@ -2850,7 +2851,6 @@ body.dark-mode .cards-grid-involved .card p {
 body.high-contrast .exhibit-main-layout,
 body.high-contrast .details-card,
 body.high-contrast .hero-involved,
-body.high-contrast .mission-section,
 body.high-contrast .cards-grid-involved .card {
   background-color: #000000 !important;
   color: yellow !important;
