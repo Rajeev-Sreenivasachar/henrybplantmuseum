@@ -316,12 +316,10 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     // 1. THE GLOBAL "BACK BUTTON" WATCHER
-    // (Runs on all detailed pages automatically)
     // ==========================================
     document.addEventListener('click', (e) => {
         const link = e.target.closest('a');
         
-        // If they clicked a link that has "Back to" in the text...
         if (link && link.textContent.includes('Back to')) {
             const href = link.getAttribute('href') || '';
             
@@ -330,54 +328,74 @@ document.addEventListener("DOMContentLoaded", () => {
                 sessionStorage.setItem('triggerRestore_events', 'true');
             } else if (href.includes('exhibits.html')) {
                 sessionStorage.setItem('triggerRestore_exhibits', 'true');
+            } else if (href.includes('artifacts.html')) {
+                sessionStorage.setItem('triggerRestore_artifacts', 'true');
+            } else if (href.includes('profile.html')) {
+                sessionStorage.setItem('triggerRestore_profile', 'true');
             }
         }
     });
 
     // ==========================================
     // 2. THE RADIO FILTER MEMORY & RESTORER
-    // (Runs on Events or Exhibits main pages)
     // ==========================================
     const currentPath = window.location.pathname.toLowerCase();
 
-    // Route the logic based on which main page the user is currently looking at
+    // Route the logic based on which page the user is currently on
     if (currentPath.includes('events.html')) {
         setupRadioFilters('triggerRestore_events', 'savedRadio_events');
     } else if (currentPath.includes('exhibits.html') || currentPath.includes('exhibit.html')) {
         setupRadioFilters('triggerRestore_exhibits', 'savedRadio_exhibits');
+    } else if (currentPath.includes('artifacts.html') || currentPath.includes('artifact.html')) {
+        setupRadioFilters('triggerRestore_artifacts', 'savedRadio_artifacts');
+    } else if (currentPath.includes('profile.html')) {
+        setupRadioFilters('triggerRestore_profile', 'savedRadio_profile');
     }
 
     function setupRadioFilters(triggerKey, savedFilterKey) {
-        // Find all radio buttons that control the categories
-        const radioButtons = document.querySelectorAll('input[type="radio"][name="category"]');
-        if (radioButtons.length === 0) return; // Exit if no filters exist on this page
+        const radioButtons = document.querySelectorAll('input[type="radio"]');
+        if (radioButtons.length === 0) return; // Exit if no filters exist
 
-        const shouldRestore = sessionStorage.getItem(triggerKey) === 'true';
+        // --- NEW FEATURE: DETECT PAGE REFRESH ---
+        let isRefresh = false;
+        if (window.performance && window.performance.getEntriesByType) {
+            const navEntries = window.performance.getEntriesByType("navigation");
+            if (navEntries.length > 0 && navEntries[0].type === "reload") {
+                isRefresh = true;
+            }
+        }
+
+        const cameFromBackButton = sessionStorage.getItem(triggerKey) === 'true';
         const savedRadioId = sessionStorage.getItem(savedFilterKey);
+        
+        // Restore if they hit a "Back to" button OR if they refreshed the page
+        const shouldRestore = cameFromBackButton || isRefresh;
 
         if (shouldRestore && savedRadioId) {
-            // Find the saved radio button by its ID and check it
             const targetRadio = document.getElementById(savedRadioId);
             if (targetRadio) {
                 targetRadio.checked = true;
             }
-            // Wipe the flag so a normal page refresh doesn't trigger it again
+            // Wipe the back-button flag
             sessionStorage.removeItem(triggerKey);
         } else {
-            // If they came from Home or About, clear the memory completely
+            // If it was a fresh navigation, wipe the memory completely
             sessionStorage.removeItem(savedFilterKey);
             
-            // Reset to the default "All" filter just in case
+            // Reset to the default "All" filter 
             const defaultRadio = document.getElementById('every');
             if (defaultRadio) {
                 defaultRadio.checked = true;
+            } else if (radioButtons.length > 0) {
+                // Safety fallback: check the very first radio if '#every' doesn't exist
+                radioButtons[0].checked = true;
             }
         }
 
         // Whenever the user clicks a new filter, memorize its ID
         radioButtons.forEach(radio => {
             radio.addEventListener('change', (e) => {
-                if (e.target.checked) {
+                if (e.target.checked && e.target.id) {
                     sessionStorage.setItem(savedFilterKey, e.target.id);
                 }
             });
