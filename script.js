@@ -323,7 +323,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (link && link.textContent.includes('Back to')) {
             const href = link.getAttribute('href') || '';
             
-            // Drop the correct flag depending on where they are going back to
             if (href.includes('events.html')) {
                 sessionStorage.setItem('triggerRestore_events', 'true');
             } else if (href.includes('exhibits.html')) {
@@ -341,7 +340,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     const currentPath = window.location.pathname.toLowerCase();
 
-    // Route the logic based on which page the user is currently on
     if (currentPath.includes('events.html')) {
         setupRadioFilters('triggerRestore_events', 'savedRadio_events');
     } else if (currentPath.includes('exhibits.html') || currentPath.includes('exhibit.html')) {
@@ -354,9 +352,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function setupRadioFilters(triggerKey, savedFilterKey) {
         const radioButtons = document.querySelectorAll('input[type="radio"]');
-        if (radioButtons.length === 0) return; // Exit if no filters exist
+        if (radioButtons.length === 0) return; 
 
-        // --- NEW FEATURE: DETECT PAGE REFRESH ---
+        // Detect if the page load is a user refresh
         let isRefresh = false;
         if (window.performance && window.performance.getEntriesByType) {
             const navEntries = window.performance.getEntriesByType("navigation");
@@ -367,32 +365,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const cameFromBackButton = sessionStorage.getItem(triggerKey) === 'true';
         const savedRadioId = sessionStorage.getItem(savedFilterKey);
-        
-        // Restore if they hit a "Back to" button OR if they refreshed the page
         const shouldRestore = cameFromBackButton || isRefresh;
 
         if (shouldRestore && savedRadioId) {
             const targetRadio = document.getElementById(savedRadioId);
             if (targetRadio) {
                 targetRadio.checked = true;
+                // CRITICAL FIX: Tell your artifact filtering JS that a change happened!
+                targetRadio.dispatchEvent(new Event('change'));
             }
-            // Wipe the back-button flag
             sessionStorage.removeItem(triggerKey);
         } else {
-            // If it was a fresh navigation, wipe the memory completely
+            // Fresh navigation: wipe memory and find the default "All" filter
             sessionStorage.removeItem(savedFilterKey);
             
-            // Reset to the default "All" filter 
-            const defaultRadio = document.getElementById('every');
+            // Look for common "All" IDs dynamically (e.g., 'every', 'all', 'all-artifacts')
+            const defaultRadio = document.getElementById('every') || 
+                                 document.getElementById('all') || 
+                                 Array.from(radioButtons).find(r => r.id.toLowerCase().includes('all') || r.id.toLowerCase().includes('every'));
+            
             if (defaultRadio) {
                 defaultRadio.checked = true;
+                defaultRadio.dispatchEvent(new Event('change'));
             } else if (radioButtons.length > 0) {
-                // Safety fallback: check the very first radio if '#every' doesn't exist
                 radioButtons[0].checked = true;
+                radioButtons[0].dispatchEvent(new Event('change'));
             }
         }
 
-        // Whenever the user clicks a new filter, memorize its ID
+        // Whenever the user clicks a filter, memorize its ID
         radioButtons.forEach(radio => {
             radio.addEventListener('change', (e) => {
                 if (e.target.checked && e.target.id) {
