@@ -3287,21 +3287,18 @@ body.dark-mode .btn-outline:hover {
     }
 }
 
-/* ==========================================
-   MOBILE RESPONSIVENESS FOR VISITOR PAGE
-   ========================================== */
+/*Visitor Page Mobile Responsivness*/
 @media (max-width: 768px) {
     
     /* 1. Fix the Hero section & stop buttons from cutting off */
     .hero-visitor {
-        background-attachment: scroll !important; /* Fixes the notorious mobile background parallax bug */
+        background-attachment: scroll !important; /* Fixes mobile background parallax bug */
         height: auto !important;
-        padding: 60px 20px !important; /* Gives the content plenty of breathing room */
+        padding: 60px 20px !important; 
     }
 
-    /* Force the hero button container to stack vertically if they overlap */
-    .hero-visitor .hero-buttons, 
-    .hero-visitor div:has(> a) { 
+    /* Force the hero buttons to stack vertically on mobile */
+    .hero-visitor .hero-buttons { 
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
@@ -3311,39 +3308,38 @@ body.dark-mode .btn-outline:hover {
 
     .hero-visitor a {
         width: 100% !important;
-        max-width: 280px !important; /* Prevents buttons from becoming awkwardly wide */
+        max-width: 280px !important; /* Prevents buttons from getting awkwardly wide */
         text-align: center;
     }
 
-    /* 2. Fix the Accessibility & Inclusivity section alignment */
-    /* Forces whatever grid or flex system you used to collapse safely into 1 column */
-    .accessibility-section,
-    /* Targets any immediate layout containers inside your accessibility block */
-    section:has(#backToTop) ~ section, 
-    div:has(> h3) {
+    /* 2. Fix the Accessibility section safely (No global hooks) */
+    .accessibility-section {
         max-width: 100% !important;
         box-sizing: border-box !important;
+        padding: 40px 20px !important;
     }
 
-    /* Force all layout cards (Wheelchair, Audio Guide, etc.) to sit centered and stack */
-    .accessibility-grid, 
-    .accessibility-container,
-    div:has(> .fa-solid) {
+    /* ONLY target the grids/containers nested INSIDE the accessibility section */
+    .accessibility-section .accessibility-grid, 
+    .accessibility-section .accessibility-container {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
         width: 100% !important;
         margin: 0 auto !important;
-        padding-left: 15px !important;
-        padding-right: 15px !important;
+        gap: 20px !important;
     }
 
-    /* Ensure no single card retains a rigid width */
-    .accessibility-card, 
-    .card-visitor-info {
+    /* ONLY target the specific cards inside the accessibility section */
+    .accessibility-section .accessibility-card, 
+    .accessibility-section .card-visitor-info,
+    .accessibility-section .accessibility-grid > div {
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        margin: 0 auto !important;
     }
 }
