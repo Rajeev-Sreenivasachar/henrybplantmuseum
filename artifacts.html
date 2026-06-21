@@ -1433,38 +1433,43 @@ window.toggleStar = async (btn, title, imgSrc) => {
 };
 
 window.showPopup = function(msg) {
-  // 1. Create the popup using the new pill design
+  // 1. Instantly remove any existing popup
+  const existingToast = document.querySelector('.dynamic-auth-popup');
+  if (existingToast) {
+      existingToast.remove();
+  }
+
+  // 2. Create the new popup
   const toast = document.createElement('div');
   toast.className = 'dynamic-auth-popup';
   
-  // 2. Add the message text and the gold progress line
+  // 3. FIXED HTML: Removed 'display: flex' and 'gap' from the text container
+  // Now it will flow like a normal sentence with standard link spacing!
   toast.innerHTML = `
-      <div style="z-index: 2; display: flex; align-items: center; gap: 15px;">
+      <div style="z-index: 2;">
           ${msg}
       </div>
       <div class="toast-progress-line" style="z-index: 1;"></div>
   `;
   
-  // 3. Position above the active Henry AI window dynamically
+  // 4. Position dynamically around Henry AI
   const chatWindow = document.getElementById('chat-window');
   if (chatWindow && !chatWindow.classList.contains('hidden')) {
-    toast.style.bottom = '560px'; // Sits above open chat window
+    toast.style.bottom = '560px'; 
   } else {
-    toast.style.bottom = '95px';  // Sits above closed chat button
+    toast.style.bottom = '95px';  
   }
 
-  // 4. Put it on the screen
+  // 5. Put it on the screen
   document.body.appendChild(toast);
   
-  // 5. Watch the gold line. When it hits 0%, fade out and delete.
+  // 6. Slide-up animation
+  setTimeout(() => toast.classList.add('show'), 10);
+  
+  // 7. Watch the gold line and fade out when done
   const progressLine = toast.querySelector('.toast-progress-line');
   progressLine.addEventListener('animationend', () => {
-      // Trigger the slide down and fade out
-      toast.style.transition = 'all 0.4s ease';
-      toast.style.opacity = '0';
-      toast.style.transform = 'translateY(90px)';
-      
-      // Remove it from the HTML completely after the fade finishes
+      toast.classList.remove('show');
       setTimeout(() => toast.remove(), 400);
   });
 };

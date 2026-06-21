@@ -2565,8 +2565,7 @@ body {
    ========================================== */
 .dynamic-auth-popup {
     position: fixed;
-    left: 20px;     /* Left side to avoid Back-to-Top button */
-    /* bottom is handled dynamically by JavaScript */
+    left: 20px;
     background: #722F37;
     color: white;
     padding: 15px 25px;
@@ -2577,17 +2576,20 @@ body {
     z-index: 3000;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     border: 1px solid #D4AF37;
-    
-    /* CRITICAL: Keeps the gold line inside the rounded pill shape */
     overflow: hidden; 
-
-    /* Slide-in animation */
+    
+    /* Back to your original smooth transition */
     transform: translateY(90px);
     opacity: 0;
-    animation: slideUpAuth 0.4s ease forwards;
+    transition: all 0.4s ease;
 }
 
-/* Retaining your button styling in case your messages use buttons */
+/* This triggers the smooth slide up */
+.dynamic-auth-popup.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .dynamic-auth-popup button {
     background: #D4AF37;
     color: #722F37;
@@ -2598,7 +2600,6 @@ body {
     font-weight: bold;
 }
 
-/* The Gold Depleting Line */
 .dynamic-auth-popup .toast-progress-line {
     position: absolute;
     bottom: 0;
@@ -2609,14 +2610,8 @@ body {
     animation: depleteTime 4s linear forwards;
 }
 
-/* Pauses the gold line animation on hover */
 .dynamic-auth-popup:hover .toast-progress-line {
     animation-play-state: paused;
-}
-
-/* Animations */
-@keyframes slideUpAuth {
-    to { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes depleteTime {
