@@ -2595,6 +2595,67 @@ body {
   font-weight: bold;
 }
 
+/* ==========================================
+   CUSTOM HOVER-PAUSE NOTIFICATION POPUP
+   ========================================== */
+
+/* The Popup Container */
+.museum-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #6C1527; /* Museum Burgundy */
+    color: #FFFFFF;
+    padding: 16px 24px;
+    border-radius: 6px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    z-index: 9999;
+    
+    /* overflow: hidden is CRITICAL so the gold line doesn't poke out of the rounded corners */
+    overflow: hidden; 
+    
+    /* Smooth slide-in animation */
+    transform: translateY(100px);
+    opacity: 0;
+    animation: slideUpToast 0.3s ease forwards;
+}
+
+/* The Gold Depleting Line */
+.toast-progress-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: #D4AF37; /* Museum Gold */
+    width: 100%;
+    
+    /* 4-second linear animation */
+    animation: depleteTime 4s linear forwards;
+}
+
+/* THE HOVER MAGIC: Pauses the gold line animation when the mouse is over the popup */
+.museum-toast:hover .toast-progress-line {
+    animation-play-state: paused;
+}
+
+/* ==========================================
+   ANIMATION KEYFRAMES
+   ========================================== */
+
+/* Shrinks the gold line from 100% to 0% */
+@keyframes depleteTime {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+/* Slides the popup in from the bottom */
+@keyframes slideUpToast {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 /* Back Button Styles */
 .back-link, a:has(.fa-arrow-left) {
     display: inline-flex;

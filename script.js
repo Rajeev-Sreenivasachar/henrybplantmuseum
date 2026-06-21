@@ -467,3 +467,33 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+// Function to call whenever you need to show an error or message
+function showMuseumNotification(message) {
+    // 1. Create the popup box
+    const toast = document.createElement('div');
+    toast.className = 'museum-toast';
+    
+    // 2. Add the text and the gold progress line
+    toast.innerHTML = `
+        <div class="toast-content"><i class="fa-solid fa-circle-exclamation" style="color: #D4AF37; margin-right: 8px;"></i> ${message}</div>
+        <div class="toast-progress-line"></div>
+    `;
+    
+    // 3. Put it on the screen
+    document.body.appendChild(toast);
+    
+    // 4. Grab the gold line inside this specific popup
+    const progressLine = toast.querySelector('.toast-progress-line');
+    
+    // 5. When the gold line animation finally hits 0% (ignoring paused time), remove the popup
+    progressLine.addEventListener('animationend', () => {
+        // Fade it out smoothly
+        toast.style.transition = 'all 0.3s ease';
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(20px)';
+        
+        // Remove it from the HTML completely after the fade
+        setTimeout(() => toast.remove(), 300);
+    });
+}
