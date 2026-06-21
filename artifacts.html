@@ -1433,17 +1433,19 @@ window.toggleStar = async (btn, title, imgSrc) => {
 };
 
 window.showPopup = function(msg) {
-  // 1. Create the new premium popup box
+  // 1. Create the popup using the new pill design
   const toast = document.createElement('div');
-  toast.className = 'museum-toast';
+  toast.className = 'dynamic-auth-popup';
   
-  // 2. Add the text and the gold progress line
+  // 2. Add the message text and the gold progress line
   toast.innerHTML = `
-      <div class="toast-content"><i class="fa-solid fa-circle-exclamation" style="color: #D4AF37; margin-right: 8px;"></i> ${msg}</div>
-      <div class="toast-progress-line"></div>
+      <div style="z-index: 2; display: flex; align-items: center; gap: 15px;">
+          ${msg}
+      </div>
+      <div class="toast-progress-line" style="z-index: 1;"></div>
   `;
   
-  // 3. Preserve your brilliant Henry AI dynamic positioning!
+  // 3. Position above the active Henry AI window dynamically
   const chatWindow = document.getElementById('chat-window');
   if (chatWindow && !chatWindow.classList.contains('hidden')) {
     toast.style.bottom = '560px'; // Sits above open chat window
@@ -1454,15 +1456,16 @@ window.showPopup = function(msg) {
   // 4. Put it on the screen
   document.body.appendChild(toast);
   
-  // 5. Watch the gold line. When it hits 0%, fade out and delete the popup.
+  // 5. Watch the gold line. When it hits 0%, fade out and delete.
   const progressLine = toast.querySelector('.toast-progress-line');
   progressLine.addEventListener('animationend', () => {
-      toast.style.transition = 'all 0.3s ease';
+      // Trigger the slide down and fade out
+      toast.style.transition = 'all 0.4s ease';
       toast.style.opacity = '0';
-      toast.style.transform = 'translateY(20px)';
+      toast.style.transform = 'translateY(90px)';
       
-      // Remove it from the HTML completely after the fade
-      setTimeout(() => toast.remove(), 300);
+      // Remove it from the HTML completely after the fade finishes
+      setTimeout(() => toast.remove(), 400);
   });
 };
 

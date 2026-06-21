@@ -2560,83 +2560,68 @@ body {
   transform: scale(1.1);
 }
 
-/* Auth Popup */
-.auth-popup {
-  position: fixed;
-  bottom: 90px;
-  left: 20px;
-  background: #722F37;
-  color: white;
-  padding: 15px 25px;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  z-index: 3000;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  opacity: 0;
-  transform: translateY(90px);
-  transition: all 0.4s ease;
-  pointer-events: none;
-  border: 1px solid #D4AF37;
-}
-.auth-popup.show { 
-  opacity: 1; 
-  transform: translateY(0); 
-  pointer-events: auto;
-}
-.auth-popup button {
-  background: #D4AF37;
-  color: #722F37;
-  border: none;
-  padding: 6px 14px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
 /* ==========================================
-   CUSTOM HOVER-PAUSE NOTIFICATION POPUP
+   DYNAMIC AUTH POPUP (Pill Design + Hover Pause)
    ========================================== */
-
-/* The Popup Container */
-.museum-toast {
+.dynamic-auth-popup {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #6C1527; /* Museum Burgundy */
-    color: #FFFFFF;
-    padding: 16px 24px;
-    border-radius: 6px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    font-weight: 500;
-    z-index: 9999;
+    left: 20px;     /* Left side to avoid Back-to-Top button */
+    /* bottom is handled dynamically by JavaScript */
+    background: #722F37;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 3000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 1px solid #D4AF37;
     
-    /* overflow: hidden is CRITICAL so the gold line doesn't poke out of the rounded corners */
+    /* CRITICAL: Keeps the gold line inside the rounded pill shape */
     overflow: hidden; 
-    
-    /* Smooth slide-in animation */
-    transform: translateY(100px);
+
+    /* Slide-in animation */
+    transform: translateY(90px);
     opacity: 0;
-    animation: slideUpToast 0.3s ease forwards;
+    animation: slideUpAuth 0.4s ease forwards;
+}
+
+/* Retaining your button styling in case your messages use buttons */
+.dynamic-auth-popup button {
+    background: #D4AF37;
+    color: #722F37;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 /* The Gold Depleting Line */
-.toast-progress-line {
+.dynamic-auth-popup .toast-progress-line {
     position: absolute;
     bottom: 0;
     left: 0;
     height: 4px;
-    background-color: #D4AF37; /* Museum Gold */
+    background-color: #D4AF37;
     width: 100%;
-    
-    /* 4-second linear animation */
     animation: depleteTime 4s linear forwards;
 }
 
-/* THE HOVER MAGIC: Pauses the gold line animation when the mouse is over the popup */
-.museum-toast:hover .toast-progress-line {
+/* Pauses the gold line animation on hover */
+.dynamic-auth-popup:hover .toast-progress-line {
     animation-play-state: paused;
+}
+
+/* Animations */
+@keyframes slideUpAuth {
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes depleteTime {
+    from { width: 100%; }
+    to { width: 0%; }
 }
 
 /* ==========================================
