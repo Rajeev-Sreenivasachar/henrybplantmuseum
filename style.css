@@ -2570,21 +2570,15 @@ body {
     color: white;
     padding: 15px 25px;
     border-radius: 50px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
     z-index: 3000;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     border: 1px solid #D4AF37;
     overflow: hidden; 
-    
-    /* Back to your original smooth transition */
     transform: translateY(90px);
     opacity: 0;
     transition: all 0.4s ease;
 }
 
-/* This triggers the smooth slide up */
 .dynamic-auth-popup.show {
     opacity: 1;
     transform: translateY(0);
