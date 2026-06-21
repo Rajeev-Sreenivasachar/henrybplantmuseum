@@ -176,41 +176,75 @@
     background-color: #bfa030; /* Slightly darker gold on hover */
 }
 
-/* The container for the username must be relative */
+/* ==========================================
+   GLOBAL NAVBAR TOOLTIP WITH ARROW
+   (Preserves Museum Branding)
+   ========================================== */
+
+/* 1. Base anchor for all pages */
 .nav-profile-name {
     position: relative;
     cursor: pointer;
 }
 
-/* The Custom Tooltip Box */
-.nav-profile-name.long-name-tooltip::after {
-    content: attr(data-full-name); /* This pulls the full name from the HTML attribute */
+/* 2. Create the small triangle with ::before */
+.nav-profile-name.long-name-tooltip::before {
+    content: '';
     position: absolute;
-    top: calc(100% + 12px); /* Drops it just below the navbar button */
-    right: 0;               /* Anchors to the right, so it expands to the LEFT */
     
-    /* Branding */
-    background-color: #6C1527; 
-    color: #FFFFFF;
-    border: 1px solid #D4AF37;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    /* Anchors at the exact bottom of the navbar button */
+    top: calc(100%); 
     
-    padding: 8px 14px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    white-space: nowrap; /* Keeps the name on one line */
-    z-index: 1000;
+    /* Positions the triangle. Tweak right value if it's not centered. */
+    right: 20px;      
     
-    /* Initially hidden */
+    /* Pure CSS downward-pointing burgundy triangle */
+    border-width: 12px;
+    border-style: solid;
+    border-color: #6C1527 transparent transparent transparent; 
+    
+    /* Starts hidden and syncs with the box's z-index */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-5px);
     transition: opacity 0.2s ease, transform 0.2s ease;
-    pointer-events: none; /* Prevents the tooltip from blocking clicks */
+    z-index: 1001; /* Slightly higher than the box */
+    pointer-events: none;
 }
 
-/* The Hover Animation */
+/* 3. Create the main tooltip box with ::after (Updated code) */
+.nav-profile-name.long-name-tooltip::after {
+    content: attr(data-full-name);
+    position: absolute;
+    
+    /* Starts 12px below the button, bridged by the triangle arrow */
+    top: calc(100% + 12px); 
+    
+    /* Anchors to the right so it expands to the LEFT */
+    right: 0;               
+    
+    /* Existing Branding & Styling */
+    background-color: #6C1527;
+    color: #FFFFFF;
+    border: 1px solid #D4AF37;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    
+    /* Hidden state */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* 4. The unified Hover Animation (Controls both arrow and box) */
+.nav-profile-name.long-name-tooltip:hover::before,
 .nav-profile-name.long-name-tooltip:hover::after {
     opacity: 1;
     visibility: visible;
