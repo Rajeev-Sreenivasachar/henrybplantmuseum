@@ -3287,12 +3287,35 @@ body.dark-mode .btn-outline:hover {
     }
 }
 
-/* Visitor Mobile Fixes */
+/* ==========================================
+   MOBILE RESET: DISABLE TOOLTIP ON MOBILE
+   ========================================== */
+@media (max-width: 1024px) {
+    .nav-profile-name.long-name-tooltip::before,
+    .nav-profile-name.long-name-tooltip::after {
+        display: none !important;
+        content: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+}
+
+/* ==========================================
+   DARK MODE UTILITIES
+   ========================================== */
+body.dark-mode .btn-outline:hover {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+/* ==========================================
+   CLEAN MOBILE RESPONSIVE FIXES (768px)
+   ========================================== */
 @media (max-width: 768px) {
     
     /* 1. Hero Section Fixes (Buttons centered & fit-content) */
     .hero-visitor {
-        background-attachment: scroll !important; /* Fixes mobile background parallax bug */
+        background-attachment: scroll !important; /* Fixes mobile parallax bug */
         height: auto !important;
         padding: 60px 20px !important; 
     }
@@ -3325,7 +3348,7 @@ body.dark-mode .btn-outline:hover {
         text-align: center !important;
     }
 
-    /* Forces your grids/flexboxes to stack vertically into 1 centered column */
+    /* Forces grids/containers to stack vertically into 1 centered column */
     .accessibility-section .accessibility-grid, 
     .accessibility-section .accessibility-container {
         display: flex !important;
@@ -3338,7 +3361,7 @@ body.dark-mode .btn-outline:hover {
         gap: 20px !important;
     }
 
-    /* Forces all individual feature cards to scale safely inside mobile boundaries */
+    /* Forces individual feature cards to scale safely inside mobile boundaries */
     .accessibility-section .accessibility-card, 
     .accessibility-section .card-visitor-info,
     .accessibility-section .accessibility-grid > div {
