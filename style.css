@@ -3275,3 +3275,14 @@ body.dark-mode .btn-outline:hover {
     background: #ffffff !important;
     color: #000000 !important;
 }
+
+@media (max-width: 1024px) {
+    /* Completely strips out the arrow and the text box on collapsed layouts */
+    .nav-profile-name.long-name-tooltip::before,
+    .nav-profile-name.long-name-tooltip::after {
+        display: none !important;
+        content: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+}
