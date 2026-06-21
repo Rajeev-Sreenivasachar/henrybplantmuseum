@@ -187,28 +187,26 @@
     cursor: pointer;
 }
 
-/* 2. Create the small triangle with ::before */
+/* 2. Create the small triangle with ::before (Now pointing UP) */
 .nav-profile-name.long-name-tooltip::before {
     content: '';
     position: absolute;
     
-    /* Anchors at the exact bottom of the navbar button */
-    top: calc(100%); 
-    
-    /* Positions the triangle. Tweak right value if it's not centered. */
+    /* Sits exactly in the gap between the navbar and the box */
+    top: calc(100% + 2px); 
     right: 20px;      
     
-    /* Pure CSS downward-pointing burgundy triangle */
-    border-width: 12px;
+    /* Pure CSS UPWARD-pointing burgundy triangle */
+    border-width: 0 8px 10px 8px; /* 0 on top, 10px on bottom */
     border-style: solid;
-    border-color: #6C1527 transparent transparent transparent; 
+    border-color: transparent transparent #6C1527 transparent; 
     
     /* Starts hidden and syncs with the box's z-index */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-5px);
     transition: opacity 0.2s ease, transform 0.2s ease;
-    z-index: 1001; /* Slightly higher than the box */
+    z-index: 1001; 
     pointer-events: none;
 }
 
