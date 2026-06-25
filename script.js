@@ -150,11 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Dynamic addition of Reset to Default button
   if (drawA11y) {
     const panelBody = drawA11y.querySelector('.panel-body');
-    if (panelBody && !document.getElementById('reset-a11y-btn')) {
-      const resetBtn = document.createElement('button');
-      resetBtn.id = 'reset-a11y-btn';
-      resetBtn.innerText = 'Reset to Default';
-      resetBtn.className = 'reset-a11y-btn';
       
       resetBtn.addEventListener('click', () => {
         const toggles = ['toggle-contrast', 'toggle-text', 'toggle-dyslexia', 'toggle-links', 'toggle-motion', 'toggle-dark'];
