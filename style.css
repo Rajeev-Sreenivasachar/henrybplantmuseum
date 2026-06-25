@@ -2505,16 +2505,25 @@ body {
   right: -360px;
   width: 360px;
   height: 100vh;
-  background: #FDFBF7;
+  background: rgba(253, 251, 247, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   box-shadow: -10px 0 30px rgba(0,0,0,0.15);
   z-index: 2000;
   transition: right 0.5s ease;
   padding: 30px 20px;
   overflow-y: auto;
-  /* border-left: 6px solid #722F37; */
   z-index: 9999;
 }
 .fav-sidebar.open { right: 0; }
+
+/* Hide AI Chat when panels are open */
+body:has(.fav-sidebar.open) #chat-toggle-btn,
+body:has(.panel-drawer.open) #chat-toggle-btn,
+body:has(.fav-sidebar.open) #chat-window,
+body:has(.panel-drawer.open) #chat-window {
+  display: none !important;
+}
 
 .fav-header { 
   display: flex; 
@@ -2867,8 +2876,8 @@ body.high-contrast .nav-container > .nav-cta i {
 }
 
 /* Dark Mode & High Contrast Curate Panel */
-body.dark-mode .fav-sidebar, body.high-contrast .fav-sidebar { background-color: #000000 !important; color: #ffffff !important; }
-body.dark-mode .fav-header, body.high-contrast .fav-header { background-color: #000000 !important; border-bottom: 2px solid #D4AF37 !important; }
+body.dark-mode .fav-sidebar, body.high-contrast .fav-sidebar { background-color: rgba(0,0,0,0.85) !important; color: #ffffff !important; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); }
+body.dark-mode .fav-header, body.high-contrast .fav-header { background-color: transparent !important; border-bottom: 2px solid #D4AF37 !important; }
 body.dark-mode .fav-header h3, body.high-contrast .fav-header h3 { color: #ffffff !important; }
 body.dark-mode .fav-item, body.high-contrast .fav-item { background-color: #333333 !important; color: #ffffff !important; border: 1px solid #555 !important; }
 body.dark-mode .fav-item h4, body.high-contrast .fav-item h4 { color: #ffffff !important; }
