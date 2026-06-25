@@ -147,10 +147,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Dynamic addition of Reset to Default button
-  if (drawA11y) {
-    const panelBody = drawA11y.querySelector('.panel-body');
-      
+// Accessibility Reset Button Logic
+    const resetBtn = document.getElementById('reset-a11y-btn');
+    
+    if (resetBtn) {
       resetBtn.addEventListener('click', () => {
         const toggles = ['toggle-contrast', 'toggle-text', 'toggle-dyslexia', 'toggle-links', 'toggle-motion', 'toggle-dark'];
         toggles.forEach(id => {
@@ -170,11 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('reduced-motion', 'false');
         localStorage.setItem('dark-mode', 'disabled');
       });
-
-      panelBody.appendChild(resetBtn);
     }
-  }
-});
 
 // State retention for Events/Exhibits scroll position
 document.addEventListener('DOMContentLoaded', () => {
