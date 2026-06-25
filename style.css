@@ -3360,3 +3360,83 @@ body.dark-mode .btn-outline:hover {
         margin: 0 auto !important;
     }
 }
+/* Accessibility Drawer - Extra Info Sections */
+.a11y-info-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+.a11y-info-section h4 {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--text-main);
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.a11y-info-section h4 i {
+  color: var(--brand-primary);
+}
+.a11y-key-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.a11y-key {
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--text-main);
+  box-shadow: 0 2px 0 var(--border-color);
+}
+.a11y-screen-reader-box {
+  margin-top: 1.5rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+.a11y-screen-reader-box strong {
+  color: var(--text-main);
+}
+
+/* High contrast overrides for new keyboard section */
+body.high-contrast .a11y-info-section h4,
+body.high-contrast .a11y-key-row,
+body.high-contrast .a11y-key-row span,
+body.high-contrast .a11y-key,
+body.high-contrast .a11y-screen-reader-box,
+body.high-contrast .a11y-screen-reader-box strong {
+  color: yellow !important;
+  border-color: yellow !important;
+}
+body.high-contrast .a11y-key,
+body.high-contrast .a11y-screen-reader-box {
+  background-color: #000 !important;
+}
+
+body.dark-mode .a11y-info-section h4,
+body.dark-mode .a11y-key-row,
+body.dark-mode .a11y-key-row span,
+body.dark-mode .a11y-key,
+body.dark-mode .a11y-screen-reader-box,
+body.dark-mode .a11y-screen-reader-box strong {
+  color: #fff !important;
+  border-color: #555 !important;
+}
+body.dark-mode .a11y-key,
+body.dark-mode .a11y-screen-reader-box {
+  background-color: #222 !important;
+}
+
