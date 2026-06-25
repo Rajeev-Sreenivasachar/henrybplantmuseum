@@ -497,3 +497,51 @@ function showMuseumNotification(message) {
         setTimeout(() => toast.remove(), 300);
     });
 }
+
+document.addEventListener('keydown', function(event) {
+  // 1. Safeguard: Do nothing if the user is typing in a chat input or text box
+  const activeElement = document.activeElement;
+  if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA') {
+    return;
+  }
+
+  // 2. Handle Opening Panels (A, R, C)
+  switch (event.key.toLowerCase()) {
+    case 'a':
+      const accessBtn = document.getElementById('btnA11y');
+      if (accessBtn) accessBtn.click();
+      break;
+
+    case 'r':
+      const resourcesBtn = document.getElementById('btnResources');
+      if (resourcesBtn) resourcesBtn.click();
+      break;
+
+    case 'c':
+      const curateBtn = document.getElementById('floatingFavBtn');
+      if (curateBtn) curateBtn.click();
+      break;
+  }
+
+  // 3. Handle Closing Panels (Escape)
+  if (event.key === 'Escape') {
+    
+    // Grab the Curate close button via its ID
+    const closeCurateBtn = document.getElementById('closeFav');
+    if (closeCurateBtn) closeCurateBtn.click();
+
+    // Grab the Accessibility drawer and its specific close button
+    const a11yDrawer = document.getElementById('drawerA11y');
+    if (a11yDrawer) {
+      const closeA11yBtn = a11yDrawer.querySelector('.close-btn');
+      if (closeA11yBtn) closeA11yBtn.click();
+    }
+
+    // Grab the Resources drawer and its specific close button
+    const resourcesDrawer = document.getElementById('drawerResources');
+    if (resourcesDrawer) {
+      const closeResourcesBtn = resourcesDrawer.querySelector('.close-btn');
+      if (closeResourcesBtn) closeResourcesBtn.click();
+    }
+  }
+});
