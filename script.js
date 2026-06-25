@@ -498,88 +498,101 @@ function showMuseumNotification(message) {
     });
 }
 
-// 1. Create a stack array to track the history of opened panels
-let openPanelsStack = [];
+// 1. GLOBAL LIFO STACK SYSTEM
+// Attaching these to the 'window' object lets ai.js use them without mixing code files
+window.openPanelsStack = [];
 
-// Helper function to manage adding/removing panels from the history stack
-function trackPanelToggle(panelId, forceClose = false) {
-  const index = openPanelsStack.indexOf(panelId);
-  
-  if (forceClose) {
-    // Explicitly remove from stack if a close button was clicked
-    openPanelsStack = openPanelsStack.filter(id => id !== panelId);
-  } else if (index > -1) {
-    // If it's already in the stack and toggled again, remove it (closing)
-    openPanelsStack.splice(index, 1);
-  } else {
-    // If it's not in the stack, push it to the top (opening)
-    openPanelsStack.push(panelId);
-  }
-}
+window.togglePanelInStack = function(panelId, forceClose = false) {
+    const index = window.openPanelsStack.indexOf(panelId);
+    if (forceClose) {
+        window.openPanelsStack = window.openPanelsStack.filter(id => id !== panelId);
+    } else if (index > -1) {
+        window.openPanelsStack.splice(index, 1);
+    } else {
+        window.openPanelsStack.push(panelId);
+    }
+};
 
-// 2. Track mouse clicks so the stack stays accurate even if they don't use shortcuts
-document.addEventListener('click', function(e) {
-  const target = e.target;
-
-  // Track openings/toggles
-  if (target.closest('#btnA11y')) trackPanelToggle('drawerA11y');
-  if (target.closest('#btnResources')) trackPanelToggle('drawerResources');
-  if (target.closest('#floatingFavBtn')) trackPanelToggle('favSidebar');
-
-  // Track explicit close button clicks
-  if (target.closest('#closeFav')) trackPanelToggle('favSidebar', true);
-  if (target.closest('#drawerA11y .close-btn')) trackPanelToggle('drawerA11y', true);
-  if (target.closest('#drawerResources .close-btn')) trackPanelToggle('drawerResources', true);
+// 2. MOUSE CLICK TRACKER
+// Updates the stack automatically when someone uses a mouse instead of keyboard shortcuts
+document.addEventListener('click', (e) => {
+    const target = e.target;
+    
+    // Panel Openings
+    if (target.closest('#btnA11y')) window.togglePanelInStack('drawerA11y');
+    if (target.closest('#btnResources')) window.togglePanelInStack('drawerResources');
+    if (target.closest('#floatingFavBtn')) window.togglePanelInStack('favSidebar');
+    if (target.closest('#chat-toggle-btn')) window.togglePanelInStack('aiChatbot');
+    
+    // Panel Closings
+    if (target.closest('#closeFav')) window.togglePanelInStack('favSidebar', true);
+    if (target.closest('#drawerA11y .close-btn')) window.togglePanelInStack('drawerA11y', true);
+    if (target.closest('#drawerResources .close-btn')) window.togglePanelInStack('drawerResources', true);
+    // Replace 'chatbot-close-btn-id' with your chatbot's actual 'X' button ID if it has one
+    if (target.closest('#chatbot-close-btn-id')) window.togglePanelInStack('aiChatbot', true); 
 });
 
-// 3. Main Keyboard Shortcuts Listener
-document.addEventListener('keydown', function(event) {
-  // Safeguard: Do nothing if typing inside an input/textarea
-  const activeElement = document.activeElement;
-  if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA') {
-    return;
-  }
+// 3. MASTER KEYBOARD CONTROLLER
+document.addEventListener('keydown', (e) => {
+    const active = document.activeElement;
+    const isTyping = active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable);
 
-  // Handle Opening Panels (A, R, C)
-  switch (event.key.toLowerCase()) {
-    case 'a':
-      const accessBtn = document.getElementById('btnA11y');
-      if (accessBtn) accessBtn.click(); // Click event will naturally trigger our stack tracker above
-      break;
+    // --- THE ESCAPE KEY: Closes only the LATEST panel opened ---
+    if (e.key === 'Escape' || e.key === 'Esc') {
+        if (window.openPanelsStack.length > 0) {
+            // Pull the top item off the stack
+            const latestPanel = window.openPanelsStack.pop();
 
-    case 'r':
-      const resourcesBtn = document.getElementById('btnResources');
-      if (resourcesBtn) resourcesBtn.click();
-      break;
-
-    case 'c':
-      const curateBtn = document.getElementById('floatingFavBtn');
-      if (curateBtn) curateBtn.click();
-      break;
-  }
-
-  // Handle Closing Only the Latest Panel (Escape)
-  if (event.key === 'Escape' && openPanelsStack.length > 0) {
-    // .pop() extracts the very last item added to our array
-    const latestPanelId = openPanelsStack.pop();
-
-    if (latestPanelId === 'favSidebar') {
-      const closeCurateBtn = document.getElementById('closeFav');
-      if (closeCurateBtn) closeCurateBtn.click();
-    } 
-    else if (latestPanelId === 'drawerA11y') {
-      const a11yDrawer = document.getElementById('drawerA11y');
-      if (a11yDrawer) {
-        const closeA11yBtn = a11yDrawer.querySelector('.close-btn');
-        if (closeA11yBtn) closeA11yBtn.click();
-      }
-    } 
-    else if (latestPanelId === 'drawerResources') {
-      const resourcesDrawer = document.getElementById('drawerResources');
-      if (resourcesDrawer) {
-        const closeResourcesBtn = resourcesDrawer.querySelector('.close-btn');
-        if (closeResourcesBtn) closeResourcesBtn.click();
-      }
+            if (latestPanel === 'favSidebar') {
+                const closeBtn = document.getElementById('closeFav');
+                if (closeBtn) closeBtn.click();
+            } 
+            else if (latestPanel === 'drawerA11y') {
+                const a11yDrawer = document.getElementById('drawerA11y');
+                if (a11yDrawer) {
+                    const closeBtn = a11yDrawer.querySelector('.close-btn');
+                    if (closeBtn) closeBtn.click();
+                }
+            } 
+            else if (latestPanel === 'drawerResources') {
+                const resourcesDrawer = document.getElementById('drawerResources');
+                if (resourcesDrawer) {
+                    const closeBtn = resourcesDrawer.querySelector('.close-btn');
+                    if (closeBtn) closeBtn.click();
+                }
+            }
+            else if (latestPanel === 'aiChatbot') {
+                // Simulates clicking the main chat toggle button to trigger the close actions in ai.js
+                const chatToggle = document.getElementById('chat-toggle-btn');
+                if (chatToggle) chatToggle.click();
+                
+                if (isTyping) active.blur();
+            }
+            
+            e.preventDefault(); // Stop default browser escape actions
+            return;
+        }
     }
-  }
+
+    // --- ALPHABET SHORTCUTS: Prevent firing if user is actively typing ---
+    if (isTyping) return;
+    if (e.ctrlKey || e.altKey || e.metaKey) return;
+
+    const key = e.key.toLowerCase();
+    
+    // 'A' - Open Accessibility
+    if (key === 'a') {
+        const btn = document.getElementById('btnA11y');
+        if (btn) btn.click();
+    } 
+    // 'R' - Open Resources
+    else if (key === 'r') {
+        const btn = document.getElementById('btnResources');
+        if (btn) btn.click();
+    } 
+    // 'C' - Open Curate Panel
+    else if (key === 'c') {
+        const btn = document.getElementById('floatingFavBtn');
+        if (btn) btn.click();
+    }
 });
