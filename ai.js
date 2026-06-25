@@ -48,22 +48,22 @@ toggleBtn.addEventListener('click', () => {
     chatWindow.classList.toggle('hidden');
 
     if (!chatWindow.classList.contains('hidden')) {
-        toggleBtn.setAttribute('aria-label', 'Close AI');
-        toggleBtn.setAttribute('title', 'Close AI');
+        toggleBtn.setAttribute('aria-label', 'Close Chat');
+        toggleBtn.setAttribute('title', 'Close Chat');
         setTimeout(() => {
             chatMessages.scrollTop = chatMessages.scrollHeight;
             chatInput.focus();
         }, 0);
     } else {
-        toggleBtn.setAttribute('aria-label', 'Open AI');
-        toggleBtn.setAttribute('title', 'Open AI');
+        toggleBtn.setAttribute('aria-label', 'Open Chat');
+        toggleBtn.setAttribute('title', 'Open Chat');
     }
 });
 
 closeBtn.addEventListener('click', () => {
     chatWindow.classList.add('hidden');
-    toggleBtn.setAttribute('aria-label', 'Open AI');
-    toggleBtn.setAttribute('title', 'Open AI');
+    toggleBtn.setAttribute('aria-label', 'Open Chat');
+    toggleBtn.setAttribute('title', 'Open Chat');
 });
 
 // The main function that handles chatting

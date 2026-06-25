@@ -147,6 +147,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+// Accessibility Reset Button Logic
+    const resetBtn = document.getElementById('reset-a11y-btn');
+    
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        const toggles = ['toggle-contrast', 'toggle-text', 'toggle-dyslexia', 'toggle-links', 'toggle-motion', 'toggle-dark'];
+        toggles.forEach(id => {
+          const toggle = document.getElementById(id);
+          if (toggle) {
+            toggle.checked = false;
+            toggle.dispatchEvent(new Event('change'));
+          }
+        });
+        
+        // Final sanity check to clean all local states and body classes
+        document.body.classList.remove('high-contrast', 'large-text', 'dyslexia-mode', 'highlight-links', 'reduced-motion', 'dark-mode');
+        localStorage.setItem('high-contrast', 'false');
+        localStorage.setItem('large-text', 'false');
+        localStorage.setItem('dyslexia-mode', 'false');
+        localStorage.setItem('highlight-links', 'false');
+        localStorage.setItem('reduced-motion', 'false');
+        localStorage.setItem('dark-mode', 'disabled');
+      });
+    }
+});
+
 // State retention for Events/Exhibits scroll position
 document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname.includes('events.html') || window.location.pathname.includes('exhibits.html')) {
@@ -561,37 +587,4 @@ document.addEventListener('keydown', (e) => {
         const btn = document.getElementById('floatingFavBtn');
         if (btn) btn.click();
     }
-});
-
-    // ACCESSIBILITY RESET BUTTON LOGIC
-    
-    const resetBtn = document.getElementById('reset-a11y-btn');
-    
-    if (resetBtn) {
-        resetBtn.addEventListener('click', () => {
-            const toggles = ['toggle-contrast', 'toggle-text', 'toggle-dyslexia', 'toggle-links', 'toggle-motion', 'toggle-dark'];
-            
-            // Turn off all toggle switches
-            toggles.forEach(id => {
-                const toggle = document.getElementById(id);
-                if (toggle) {
-                    toggle.checked = false;
-                    // Trigger the change event so the site updates
-                    toggle.dispatchEvent(new Event('change')); 
-                }
-            });
-            
-            // Wipe the classes from the body
-            document.body.classList.remove('high-contrast', 'large-text', 'dyslexia-mode', 'highlight-links', 'reduced-motion', 'dark-mode');
-            
-            // Clear out the saved local storage
-            localStorage.setItem('high-contrast', 'false');
-            localStorage.setItem('large-text', 'false');
-            localStorage.setItem('dyslexia-mode', 'false');
-            localStorage.setItem('highlight-links', 'false');
-            localStorage.setItem('reduced-motion', 'false');
-            localStorage.setItem('dark-mode', 'disabled');
-        });
-    }
-
 });
