@@ -3440,3 +3440,10 @@ body.dark-mode .a11y-screen-reader-box {
   background-color: #222 !important;
 }
 
+
+/* Blur for curate panel backdrop to match other panels */
+.close-curate-backdrop {
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
