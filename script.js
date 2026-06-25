@@ -498,18 +498,53 @@ function showMuseumNotification(message) {
     });
 }
 
+// 1. Create a stack array to track the history of opened panels
+let openPanelsStack = [];
+
+// Helper function to manage adding/removing panels from the history stack
+function trackPanelToggle(panelId, forceClose = false) {
+  const index = openPanelsStack.indexOf(panelId);
+  
+  if (forceClose) {
+    // Explicitly remove from stack if a close button was clicked
+    openPanelsStack = openPanelsStack.filter(id => id !== panelId);
+  } else if (index > -1) {
+    // If it's already in the stack and toggled again, remove it (closing)
+    openPanelsStack.splice(index, 1);
+  } else {
+    // If it's not in the stack, push it to the top (opening)
+    openPanelsStack.push(panelId);
+  }
+}
+
+// 2. Track mouse clicks so the stack stays accurate even if they don't use shortcuts
+document.addEventListener('click', function(e) {
+  const target = e.target;
+
+  // Track openings/toggles
+  if (target.closest('#btnA11y')) trackPanelToggle('drawerA11y');
+  if (target.closest('#btnResources')) trackPanelToggle('drawerResources');
+  if (target.closest('#floatingFavBtn')) trackPanelToggle('favSidebar');
+
+  // Track explicit close button clicks
+  if (target.closest('#closeFav')) trackPanelToggle('favSidebar', true);
+  if (target.closest('#drawerA11y .close-btn')) trackPanelToggle('drawerA11y', true);
+  if (target.closest('#drawerResources .close-btn')) trackPanelToggle('drawerResources', true);
+});
+
+// 3. Main Keyboard Shortcuts Listener
 document.addEventListener('keydown', function(event) {
-  // 1. Safeguard: Do nothing if the user is typing in a chat input or text box
+  // Safeguard: Do nothing if typing inside an input/textarea
   const activeElement = document.activeElement;
   if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA') {
     return;
   }
 
-  // 2. Handle Opening Panels (A, R, C)
+  // Handle Opening Panels (A, R, C)
   switch (event.key.toLowerCase()) {
     case 'a':
       const accessBtn = document.getElementById('btnA11y');
-      if (accessBtn) accessBtn.click();
+      if (accessBtn) accessBtn.click(); // Click event will naturally trigger our stack tracker above
       break;
 
     case 'r':
@@ -523,25 +558,28 @@ document.addEventListener('keydown', function(event) {
       break;
   }
 
-  // 3. Handle Closing Panels (Escape)
-  if (event.key === 'Escape') {
-    
-    // Grab the Curate close button via its ID
-    const closeCurateBtn = document.getElementById('closeFav');
-    if (closeCurateBtn) closeCurateBtn.click();
+  // Handle Closing Only the Latest Panel (Escape)
+  if (event.key === 'Escape' && openPanelsStack.length > 0) {
+    // .pop() extracts the very last item added to our array
+    const latestPanelId = openPanelsStack.pop();
 
-    // Grab the Accessibility drawer and its specific close button
-    const a11yDrawer = document.getElementById('drawerA11y');
-    if (a11yDrawer) {
-      const closeA11yBtn = a11yDrawer.querySelector('.close-btn');
-      if (closeA11yBtn) closeA11yBtn.click();
-    }
-
-    // Grab the Resources drawer and its specific close button
-    const resourcesDrawer = document.getElementById('drawerResources');
-    if (resourcesDrawer) {
-      const closeResourcesBtn = resourcesDrawer.querySelector('.close-btn');
-      if (closeResourcesBtn) closeResourcesBtn.click();
+    if (latestPanelId === 'favSidebar') {
+      const closeCurateBtn = document.getElementById('closeFav');
+      if (closeCurateBtn) closeCurateBtn.click();
+    } 
+    else if (latestPanelId === 'drawerA11y') {
+      const a11yDrawer = document.getElementById('drawerA11y');
+      if (a11yDrawer) {
+        const closeA11yBtn = a11yDrawer.querySelector('.close-btn');
+        if (closeA11yBtn) closeA11yBtn.click();
+      }
+    } 
+    else if (latestPanelId === 'drawerResources') {
+      const resourcesDrawer = document.getElementById('drawerResources');
+      if (resourcesDrawer) {
+        const closeResourcesBtn = resourcesDrawer.querySelector('.close-btn');
+        if (closeResourcesBtn) closeResourcesBtn.click();
+      }
     }
   }
 });
