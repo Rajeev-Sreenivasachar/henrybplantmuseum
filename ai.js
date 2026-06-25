@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update initial welcome message to explain keyboard shortcuts
     const firstBotMsg = chatMessages.querySelector('.msg.bot');
     if (firstBotMsg) {
-        firstBotMsg.textContent = "Hi, I'm Henry, your personal AI guide! You can press the 'H' key on your keyboard to toggle me on, and 'Esc' to close me. How can I assist you today?";
+        firstBotMsg.textContent = "Hi, I'm Henry, your personal AI guide! I can answer your questions about the museum, adjust accessibility settings, and navigate to other pages. How can I assist you today?";
     }
 
 function loadChatHistory() {
