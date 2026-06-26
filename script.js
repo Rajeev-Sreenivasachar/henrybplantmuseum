@@ -490,8 +490,9 @@ function showMuseumNotification(message) {
     });
 }
 
+// ==========================================
 // 1. GLOBAL LIFO STACK SYSTEM
-// Attaching these to the 'window' object lets ai.js use them without mixing code files
+// ==========================================
 window.openPanelsStack = [];
 
 window.togglePanelInStack = function(panelId, forceClose = false) {
@@ -505,36 +506,38 @@ window.togglePanelInStack = function(panelId, forceClose = false) {
     }
 };
 
-// 2. MOUSE CLICK TRACKER
-// Updates the stack automatically when someone uses a mouse instead of keyboard shortcuts
+// ==========================================
+// 2. MOUSE CLICK TRACKER (Keeps Stack Synced)
+// ==========================================
 document.addEventListener('click', (e) => {
     const target = e.target;
     
-    // Panel Openings
+    // -- Openers --
     if (target.closest('#btnA11y')) window.togglePanelInStack('drawerA11y');
     if (target.closest('#btnResources')) window.togglePanelInStack('drawerResources');
     if (target.closest('#floatingFavBtn')) window.togglePanelInStack('favSidebar');
     if (target.closest('#chat-toggle-btn')) window.togglePanelInStack('aiChatbot');
     
-    // Panel Closings
+    // -- Closers --
     if (target.closest('#closeFav')) window.togglePanelInStack('favSidebar', true);
     if (target.closest('#drawerA11y .close-btn')) window.togglePanelInStack('drawerA11y', true);
     if (target.closest('#drawerResources .close-btn')) window.togglePanelInStack('drawerResources', true);
-    // Replace 'chatbot-close-btn-id' with your chatbot's actual 'X' button ID if it has one
-    if (target.closest('#chatbot-close-btn-id')) window.togglePanelInStack('aiChatbot', true); 
+    // Replace 'chat-close-btn' with your AI's actual X button ID
+    if (target.closest('#chat-close-btn')) window.togglePanelInStack('aiChatbot', true); 
 });
 
+// ==========================================
 // 3. MASTER KEYBOARD CONTROLLER
+// ==========================================
 document.addEventListener('keydown', (e) => {
     const active = document.activeElement;
     const isTyping = active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable);
 
-    // --- THE ESCAPE KEY: Closes only the LATEST panel opened ---
+    // --- ESCAPE KEY LOGIC (LIFO Stack) ---
     if (e.key === 'Escape' || e.key === 'Esc') {
         if (window.openPanelsStack.length > 0) {
-            // Pull the top item off the stack
-            const latestPanel = window.openPanelsStack.pop();
-
+            const latestPanel = window.openPanelsStack.pop(); // Grab the most recently opened panel
+            
             if (latestPanel === 'favSidebar') {
                 const closeBtn = document.getElementById('closeFav');
                 if (closeBtn) closeBtn.click();
@@ -554,37 +557,53 @@ document.addEventListener('keydown', (e) => {
                 }
             }
             else if (latestPanel === 'aiChatbot') {
-                // Simulates clicking the main chat toggle button to trigger the close actions in ai.js
-                const chatToggle = document.getElementById('chat-toggle-btn');
-                if (chatToggle) chatToggle.click();
-                
+                // Adjust this to match how your AI chat closes
+                const chatCloseBtn = document.getElementById('chat-close-btn'); 
+                if (chatCloseBtn) {
+                    chatCloseBtn.click();
+                } else {
+                    const chatWindow = document.getElementById('chat-window');
+                    if (chatWindow) chatWindow.classList.add('hidden');
+                }
                 if (isTyping) active.blur();
             }
             
-            e.preventDefault(); // Stop default browser escape actions
+            e.preventDefault();
             return;
         }
     }
 
-    // --- ALPHABET SHORTCUTS: Prevent firing if user is actively typing ---
-    if (isTyping) return;
-    if (e.ctrlKey || e.altKey || e.metaKey) return;
+    // --- ALPHABET SHORTCUTS (A, R, C, H) ---
+    if (isTyping) return; // Don't trigger if typing in a form or chat!
+    if (e.ctrlKey || e.altKey || e.metaKey) return; // Don't block system shortcuts
 
     const key = e.key.toLowerCase();
     
-    // 'A' - Open Accessibility
     if (key === 'a') {
         const btn = document.getElementById('btnA11y');
         if (btn) btn.click();
     } 
-    // 'R' - Open Resources
     else if (key === 'r') {
         const btn = document.getElementById('btnResources');
         if (btn) btn.click();
     } 
-    // 'C' - Open Curate Panel
     else if (key === 'c') {
         const btn = document.getElementById('floatingFavBtn');
         if (btn) btn.click();
+    }
+    else if (key === 'h') {
+        const chatWindow = document.getElementById('chat-window');
+        const chatInput = document.getElementById('chat-input');
+        const chatToggleBtn = document.getElementById('chat-toggle-btn');
+        
+        if (chatWindow && chatWindow.classList.contains('hidden')) {
+            // Open the chat
+            if (chatToggleBtn) chatToggleBtn.click();
+            setTimeout(() => { if (chatInput) chatInput.focus(); }, 50);
+        } else {
+            // Chat is already open, just focus the text box
+            if (chatInput) chatInput.focus();
+        }
+        e.preventDefault();
     }
 });
