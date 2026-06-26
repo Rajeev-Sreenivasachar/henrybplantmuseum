@@ -2515,9 +2515,14 @@ body {
 }
 .fav-sidebar.open { right: 0; }
 
-/* Hide AI Chat when panels are open */
+/* Hide AI Chat window and blur/disable toggle when panels are open */
 body:has(.fav-sidebar.open) #chat-toggle-btn,
-body:has(.panel-drawer.open) #chat-toggle-btn,
+body:has(.panel-drawer.open) #chat-toggle-btn {
+  filter: blur(2px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 body:has(.fav-sidebar.open) #chat-window,
 body:has(.panel-drawer.open) #chat-window {
   display: none !important;
