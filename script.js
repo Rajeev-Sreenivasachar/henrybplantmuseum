@@ -490,9 +490,7 @@ function showMuseumNotification(message) {
     });
 }
 
-// ==========================================
 // 1. GLOBAL LIFO STACK SYSTEM
-// ==========================================
 window.openPanelsStack = [];
 
 window.togglePanelInStack = function(panelId, forceClose = false) {
@@ -506,9 +504,7 @@ window.togglePanelInStack = function(panelId, forceClose = false) {
     }
 };
 
-// ==========================================
 // 2. MOUSE CLICK TRACKER (Keeps Stack Synced)
-// ==========================================
 document.addEventListener('click', (e) => {
     const target = e.target;
     
@@ -526,9 +522,7 @@ document.addEventListener('click', (e) => {
     if (target.closest('#chat-close-btn')) window.togglePanelInStack('aiChatbot', true); 
 });
 
-// ==========================================
 // 3. MASTER KEYBOARD CONTROLLER
-// ==========================================
 document.addEventListener('keydown', (e) => {
     const active = document.activeElement;
     const isTyping = active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable);
@@ -574,8 +568,8 @@ document.addEventListener('keydown', (e) => {
     }
 
     // --- ALPHABET SHORTCUTS (A, R, C, H) ---
-    if (isTyping) return; // Don't trigger if typing in a form or chat!
-    if (e.ctrlKey || e.altKey || e.metaKey) return; // Don't block system shortcuts
+    if (isTyping) return;
+    if (e.ctrlKey || e.altKey || e.metaKey) return;
 
     const key = e.key.toLowerCase();
     
@@ -597,11 +591,9 @@ document.addEventListener('keydown', (e) => {
         const chatToggleBtn = document.getElementById('chat-toggle-btn');
         
         if (chatWindow && chatWindow.classList.contains('hidden')) {
-            // Open the chat
             if (chatToggleBtn) chatToggleBtn.click();
             setTimeout(() => { if (chatInput) chatInput.focus(); }, 50);
         } else {
-            // Chat is already open, just focus the text box
             if (chatInput) chatInput.focus();
         }
         e.preventDefault();
