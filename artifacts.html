@@ -1597,6 +1597,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeBtn) {
         closeBtn.addEventListener('click', () => {
             overlay.style.display = 'none';
+            window.togglePanelInStack('favSidebar', true);
         });
     }
 });

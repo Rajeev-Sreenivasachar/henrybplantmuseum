@@ -508,11 +508,23 @@ window.togglePanelInStack = function(panelId, forceClose = false) {
 document.addEventListener('click', (e) => {
     const target = e.target;
     
-    // -- Openers --
+// -- Openers --
     if (target.closest('#btnA11y')) window.togglePanelInStack('drawerA11y');
     if (target.closest('#btnResources')) window.togglePanelInStack('drawerResources');
     if (target.closest('#floatingFavBtn')) window.togglePanelInStack('favSidebar');
     if (target.closest('#chat-toggle-btn')) window.togglePanelInStack('aiChatbot');
+    
+    if (target.closest('.fa-star') || target.closest('[class*="star"]')) {
+        setTimeout(() => {
+            const favSidebar = document.getElementById('favSidebar');
+            // If clicking the star caused the panel to open, tell the stack!
+            if (favSidebar && favSidebar.classList.contains('open')) {
+                if (!window.openPanelsStack.includes('favSidebar')) {
+                    window.openPanelsStack.push('favSidebar');
+                }
+            }
+        }, 50);
+    }
     
     // -- Closers --
     if (target.closest('#closeFav')) window.togglePanelInStack('favSidebar', true);
