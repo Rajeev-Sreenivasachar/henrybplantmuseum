@@ -1,76 +1,77 @@
 {
-  "museum_profile": {
-    "name": "Henry B. Plant Museum",
-    "address": "401 W. Kennedy Blvd, Tampa, FL",
-    "location_context": "Housed in the south wing of Plant Hall on the University of Tampa campus.",
-    "contact": {
-      "phone": "(813) 254-1891",
-      "email": "info@plantmuseum.com",
-      "map_link": "https://maps.google.com/?q=401+W.+Kennedy+Blvd,+Tampa"
-    }
-  },
-  "visitor_logistics": {
-    "hours_of_operation": {
-      "tuesday_to_saturday": "10:00 AM - 5:00 PM",
-      "sunday": "12:00 PM - 5:00 PM",
-      "monday": "Closed"
-    },
-    "admission_rates": {
-      "adults": "$12",
-      "seniors_65_plus": "$9",
-      "students_with_id": "$7",
-      "children_under_4": "Free"
-    },
-    "purchasing_tickets": {
-      "url": "/visitor.html",
-      "instruction": "Tickets can be purchased online in advance on our Plan Your Visit layout or directly at the front desk inside the lobby entrance hall."
-    }
-  },
-  "ways_to_get_involved": {
-    "memberships": {
-      "program_name": "The Museum Society",
-      "url": "/membership.html",
-      "details": "Join the Museum Society to receive unlimited free admission, invitations to exclusive exhibition openings, a 10% discount in the museum store, and a subscription to our historical newsletter registers."
-    },
-    "volunteering": {
-      "program_name": "Volunteer and Docent Guild",
-      "url": "/get_involved.html",
-      "details": "Support our educational mission by volunteering. Roles include museum docents (tour guides), archival research assistants, museum store attendants, and administrative helpers. Training is provided."
-    },
-    "donating": {
-      "portal_url": "https://henry-b-plant-museum.square.site/product/donation/101",
-      "details": "The museum is a 501(c)(3) non-profit institution. Tax-deductible donations directly fund structural preservation projects, educational community outreach, and the restoration of fragile Gilded Age antiquities."
-    },
-    "tours": {
-      "self_guided_audio": "Included with standard admission. Explores the lifestyle rooms using a handheld audio receiver device.",
-      "group_tours": {
-        "requirement": "Requires a minimum reservation of 10 participants.",
-        "booking_instruction": "Must be scheduled at least two weeks in advance via email at info@plantmuseum.com."
-      }
-    },
-    "field_trips": {
-      "target_groups": "K-12 school groups, university classes, and educational scouts.",
-      "curriculum_alignment": "Tours are directly aligned with Florida State Educational Standards for Social Studies and Gilded Age industrial history.",
-      "booking_url": "/get_involved.html",
-      "details": "Discounted admission rates are available for students and chaperones on pre-booked school field trips. Teachers receive free companion passes."
-    }
-  },
-  "historical_frequently_asked_questions": [
-    {
-      "question": "Who was Henry B. Plant?",
-      "answer": "Henry Bradley Plant was a powerful American transportation tycoon who built the 'Plant System' of railroads and steamships. His rail lines integrated Florida into national trade networks, driving early tourism and industries like citrus, phosphate, and cigar manufacturing."
-    },
-    {
-      "question": "What is the history of the museum building?",
-      "answer": "The museum is located inside the remaining wing of the legendary Tampa Bay Hotel, a 511-room luxury winter resort built by Henry Plant in 1891. The building was purchased by the City of Tampa in 1932 and became a preserved National Historic Landmark."
-    },
-    {
-      "question": "What makes the architecture unique?",
-      "answer": "Designed by architect J.A. Wood, the structure is a premier example of Moorish Revival architecture. It features iconic red brick layouts, horseshoe arches, expansive ornate verandas, and 13 silver minarets capped with crescent moons representing the months of the year."
-    },
-    {
-      "question": "What happened here during the Spanish-American War?",
-      "answer": "In 1898, the hotel served as the official military headquarters for high-ranking United States Army officers, foreign observers, and war correspondents during the Cuban mobilization. Famous figures like Colonel Theodore Roosevelt and his Rough Riders stayed on the grounds."
-    }
-  ]
+    "museum_profile":  {
+                           "name":  "Henry B. Plant Museum",
+                           "address":  "401 W. Kennedy Blvd, Tampa, FL",
+                           "location_context":  "Housed in the south wing of Plant Hall on the University of Tampa campus.",
+                           "contact":  {
+                                           "phone":  "(813) 254-1891",
+                                           "email":  "info@plantmuseum.com",
+                                           "map_link":  "https://maps.google.com/?q=401+W.+Kennedy+Blvd,+Tampa"
+                                       }
+                       },
+    "visitor_logistics":  {
+                              "hours_of_operation":  {
+                                                         "tuesday_to_saturday":  "10:00 AM - 5:00 PM",
+                                                         "sunday":  "12:00 PM - 5:00 PM",
+                                                         "monday":  "Closed"
+                                                     },
+                              "admission_rates":  {
+                                                      "adults":  "$12",
+                                                      "seniors_65_plus":  "$9",
+                                                      "students_with_id":  "$7",
+                                                      "children_under_4":  "Free"
+                                                  },
+                              "purchasing_tickets":  {
+                                                         "url":  "/visitor.html",
+                                                         "instruction":  "Tickets can be purchased online in advance on our Plan Your Visit layout or directly at the front desk inside the lobby entrance hall."
+                                                     },
+                              "parking":  "Parking is completely free."
+                          },
+    "ways_to_get_involved":  {
+                                 "memberships":  {
+                                                     "program_name":  "The Museum Society",
+                                                     "url":  "/membership.html",
+                                                     "details":  "Join the Museum Society to receive unlimited free admission, invitations to exclusive exhibition openings, a 10% discount in the museum store, and a subscription to our historical newsletter registers."
+                                                 },
+                                 "volunteering":  {
+                                                      "program_name":  "Volunteer and Docent Guild",
+                                                      "url":  "/get_involved.html",
+                                                      "details":  "Support our educational mission by volunteering. Roles include museum docents (tour guides), archival research assistants, museum store attendants, and administrative helpers. Training is provided."
+                                                  },
+                                 "donating":  {
+                                                  "portal_url":  "https://henry-b-plant-museum.square.site/product/donation/101",
+                                                  "details":  "The museum is a 501(c)(3) non-profit institution. Tax-deductible donations directly fund structural preservation projects, educational community outreach, and the restoration of fragile Gilded Age antiquities."
+                                              },
+                                 "tours":  {
+                                               "self_guided_audio":  "Included with standard admission. Explores the lifestyle rooms using a handheld audio receiver device.",
+                                               "group_tours":  {
+                                                                   "requirement":  "Requires a minimum reservation of 10 participants.",
+                                                                   "booking_instruction":  "Must be scheduled at least two weeks in advance via email at info@plantmuseum.com."
+                                                               }
+                                           },
+                                 "field_trips":  {
+                                                     "target_groups":  "K-12 school groups, university classes, and educational scouts.",
+                                                     "curriculum_alignment":  "Tours are directly aligned with Florida State Educational Standards for Social Studies and Gilded Age industrial history.",
+                                                     "booking_url":  "/get_involved.html",
+                                                     "details":  "Discounted admission rates are available for students and chaperones on pre-booked school field trips. Teachers receive free companion passes."
+                                                 }
+                             },
+    "historical_frequently_asked_questions":  [
+                                                  {
+                                                      "question":  "Who was Henry B. Plant?",
+                                                      "answer":  "Henry Bradley Plant was a powerful American transportation tycoon who built the \u0027Plant System\u0027 of railroads and steamships. His rail lines integrated Florida into national trade networks, driving early tourism and industries like citrus, phosphate, and cigar manufacturing."
+                                                  },
+                                                  {
+                                                      "question":  "What is the history of the museum building?",
+                                                      "answer":  "The museum is located inside the remaining wing of the legendary Tampa Bay Hotel, a 511-room luxury winter resort built by Henry Plant in 1891. The building was purchased by the City of Tampa in 1932 and became a preserved National Historic Landmark."
+                                                  },
+                                                  {
+                                                      "question":  "What makes the architecture unique?",
+                                                      "answer":  "Designed by architect J.A. Wood, the structure is a premier example of Moorish Revival architecture. It features iconic red brick layouts, horseshoe arches, expansive ornate verandas, and 13 silver minarets capped with crescent moons representing the months of the year."
+                                                  },
+                                                  {
+                                                      "question":  "What happened here during the Spanish-American War?",
+                                                      "answer":  "In 1898, the hotel served as the official military headquarters for high-ranking United States Army officers, foreign observers, and war correspondents during the Cuban mobilization. Famous figures like Colonel Theodore Roosevelt and his Rough Riders stayed on the grounds."
+                                                  }
+                                              ]
 }

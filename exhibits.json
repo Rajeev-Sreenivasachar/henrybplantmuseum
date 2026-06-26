@@ -1,245 +1,251 @@
 {
-  "page_title": "Henry B. Plant Museum - Exhibitions Archive",
-  "exhibits": [
-    {
-      "title": "Plant’s Southern Empire",
-      "type": "Ongoing Exhibition",
-      "timeline": "Jan 1, 2020 – Jan 1, 2030",
-      "category": "current-exhibits",
-      "url": "exhibits/plants-southern-empire.html",
-      "requires_subpage_routing": true,
-      "summary": "Explore the Plant System, a massive network of railroads and steamships built by Henry B. Plant in the late 19th century that shaped Florida.",
-      "bot_guidance": "Tell the user to open the link to look at full maps, train hardware registries, and shipping logs."
-    },
-    {
-      "title": "Tampa at War",
-      "type": "Ongoing Exhibition",
-      "timeline": "Sep 22, 2024 – Sep 22, 2030",
-      "category": "current-exhibits",
-      "url": "exhibits/tampa-at-war.html",
-      "requires_subpage_routing": true,
-      "summary": "Explore how Tampa and the historic Tampa Bay Hotel played a major role as a command base during major American conflicts.",
-      "bot_guidance": "Instruct the user to follow the URL to read troop logbooks, military uniform manifests, and wartime letters."
-    },
-    {
-      "title": "Grand Hotel",
-      "type": "Ongoing Exhibition",
-      "timeline": "Dec 9, 2025 – Dec 9, 2030",
-      "category": "current-exhibits",
-      "url": "exhibits/grand-hotel.html",
-      "requires_subpage_routing": true,
-      "summary": "Explore the Museum’s lifestyle rooms and vignettes that showcase genuine Gilded Age resort grandeur and high-society habits.",
-      "bot_guidance": "Tell the user to visit the specific page to view deep architectural profiles of the luxury suites and parlors."
-    },
-    {
-      "title": "Gaspar's Gold",
-      "type": "Ongoing Exhibition",
-      "timeline": "Jan 24, 2026 - Aug 30, 2026",
-      "category": "current-exhibits",
-      "url": "exhibits/gaspar_gold.html",
-      "requires_subpage_routing": true,
-      "summary": "Stepping beyond the local pirate myth, this exhibit reveals the true symbols and customs behind one of America’s signature celebrations.",
-      "bot_guidance": "Remind the user to click the link to check out festival timelines, carnival history files, and community regalia details."
-    },
-    {
-      "title": "Captain's Log",
-      "type": "Past Exhibition",
-      "timeline": "Archived Retrospective",
-      "category": "past-exhibits",
-      "url": "exhibits/CaptainsLog.html",
-      "requires_subpage_routing": true,
-      "summary": "Revisit the glamour and spectacle of luxury steamship travel in Gilded Age America.",
-      "bot_guidance": "Note that while the physical exhibit has wrapped up, the complete written logs and vessel sketches are entirely viewable on the subpage link."
-    },
-    {
-      "title": "Imagined East",
-      "type": "Past Exhibition",
-      "timeline": "Archived Retrospective",
-      "category": "past-exhibits",
-      "url": "exhibits/Imagined-East.html",
-      "requires_subpage_routing": true,
-      "summary": "Explore the historic aesthetic movement known as Orientalism and its influence on hotel designs.",
-      "bot_guidance": "Direct the user to the link to read the cultural design essays detailing Henry Plant's obsession with eastern decor styles."
-    },
-    {
-      "title": "Imperfect Harmony",
-      "type": "Past Exhibition",
-      "timeline": "Archived Retrospective",
-      "category": "past-exhibits",
-      "url": "exhibits/Imperfect-Harmony.html",
-      "requires_subpage_routing": true,
-      "summary": "Discover the lost world of self-playing mechanical instruments in an exciting look at music at the Tampa Bay Hotel.",
-      "bot_guidance": "Tell the user to open the target link to check out acoustic patents, piano roll listings, and instrument mechanics text files."
-    },
-    {
-      "title": "\"When the Train Comes Along\"",
-      "type": "Past Exhibition",
-      "timeline": "Archived Retrospective",
-      "category": "past-exhibits",
-      "url": "exhibits/when-the-train.html",
-      "requires_subpage_routing": true,
-      "summary": "Examine the profound historical impact of Booker T. Washington at the Tampa Bay Casino in 1912.",
-      "bot_guidance": "This is vital civil history. Tell the user to use the link to read speech transcripts and local news records from his historic visit."
-    },
-    {
-      "title": "Henry Plant",
-      "type": "Past Exhibition",
-      "timeline": "Archived Retrospective",
-      "category": "past-exhibits",
-      "url": "exhibits/Henry-Plant.html",
-      "requires_subpage_routing": true,
-      "summary": "A special celebratory exhibit launched in honor of founder Henry Plant's 200th birthday.",
-      "bot_guidance": "Instruct the user to follow the URL to read a complete timeline biography of Henry Plant's business life and empire expansions."
-    },
-    {
-      "title": "Imperial Design",
-      "type": "Past Exhibition",
-      "timeline": "Archived Retrospective",
-      "category": "past-exhibits",
-      "url": "exhibits/Imperial-design.html",
-      "requires_subpage_routing": true,
-      "summary": "An exquisite collection of porcelains and decorative arts that harken back to the grand dynasties of 19th century Europe and Asia.",
-      "bot_guidance": "Direct the user to open the subpage link to browse high-society pottery hallmarks and dynastic timeline indexes."
-    },
-    {
-      "title": "Dogs In Art",
-      "type": "Past Exhibition",
-      "timeline": "Archived Retrospective",
-      "category": "past-exhibits",
-      "url": "exhibits/Dogs-In-Art.html",
-      "requires_subpage_routing": true,
-      "summary": "A warm visual showcase featuring canine portraits and representations of man's best friend in Gilded Age high society.",
-      "bot_guidance": "Tell the user to click the link to read about the specific sporting artwork catalogs used during the resort days."
-    },
-    {
-      "title": "Menus",
-      "type": "Past Exhibition",
-      "timeline": "Archived Retrospective",
-      "category": "past-exhibits",
-      "url": "exhibits/Menus.html",
-      "requires_subpage_routing": true,
-      "summary": "This exhibit uses original meal plans as a starting point to explore the fine dining experiences at the Tampa Bay Hotel and other grand resorts from 1891 to 1932.",
-      "bot_guidance": "Gourmet logs are packed here. Tell the user to read the target link to view full Gilded Age recipe names and banquet layouts."
-    },
-    {
-      "title": "Henry Plant's Playlist",
-      "type": "Online Exhibit",
-      "timeline": "Digital Media",
-      "category": "online-exhibits",
-      "url": "exhibits/french_operetta.html",
-      "requires_subpage_routing": true,
-      "summary": "Learn the origins of the operetta craze that swept late-nineteenth-century America in this short documentary film, featuring performances from several popular works.",
-      "bot_guidance": "Tell the user to load the subpage link to stream the documentary video and browse audio logs directly."
-    },
-    {
-      "title": "Gems from Olivette",
-      "type": "Online Exhibit",
-      "timeline": "Digital Media",
-      "category": "online-exhibits",
-      "url": "exhibits/gems.html",
-      "requires_subpage_routing": true,
-      "summary": "Learn about French comic opera in this short documentary film, featuring historically informed performances of popular songs from Olivette.",
-      "bot_guidance": "Tell the user to use the relative link to view theater notes and access embedded streaming video panels."
-    },
-    {
-      "title": "Signatures from the Spanish American War",
-      "type": "Online Exhibit",
-      "timeline": "Digital Media",
-      "category": "online-exhibits",
-      "url": "exhibits/signature.html",
-      "requires_subpage_routing": true,
-      "summary": "Discover a rarely exhibited autograph album featuring the signatures of dignitaries, journalists, and artists who joined U.S. Generals on the hotel verandas in 1898.",
-      "bot_guidance": "Tell the user to click through to view digital scans of original handwriting signatures from the command camp logs."
-    },
-    {
-      "title": "Music and Meaning",
-      "type": "Online Exhibit",
-      "timeline": "Digital Media",
-      "category": "online-exhibits",
-      "url": "exhibits/tampa_casino.html",
-      "requires_subpage_routing": true,
-      "summary": "View a performance of a spiritual sung at the Tampa Bay Casino and learn about the profound significance of this musical form.",
-      "bot_guidance": "Instruct the user to follow the relative link to read acoustic analysis essays and stream the digital song records."
-    },
-    {
-      "title": "Dirty Laundry",
-      "type": "Online Exhibit",
-      "timeline": "Digital Media",
-      "category": "online-exhibits",
-      "url": "exhibits/dirty_laundry.html",
-      "requires_subpage_routing": true,
-      "summary": "This crucial digital exhibit showcases the working lives of the housekeepers, maids, and laundresses who labored behind the scenes at the hotel.",
-      "bot_guidance": "Direct the user to the link to view deep text records regarding domestic labor histories and employee diaries."
-    },
-    {
-      "title": "Minstrelsy in Black and White",
-      "type": "Online Exhibit",
-      "timeline": "Digital Media",
-      "category": "online-exhibits",
-      "url": "exhibits/minstrelsy.html",
-      "requires_subpage_routing": true,
-      "summary": "Explore theatrical minstrel performances staged at the Tampa Bay Casino during the turn of the century.",
-      "bot_guidance": "Instruct the user to navigate via the link to read the analytical cultural essays hosted entirely on that subpage."
-    },
-    {
-      "title": "Lucky Charms",
-      "type": "Online Exhibit",
-      "timeline": "Digital Media",
-      "category": "online-exhibits",
-      "url": "exhibits/lucky_charms.html",
-      "requires_subpage_routing": true,
-      "summary": "Enjoy a performance from a 19th century opera and learn about the historical connections between the work and the City of Tampa.",
-      "bot_guidance": "Tell the user to open the subpage path link to review performance breakdowns and local opera schedules."
-    },
-    {
-      "title": "Ann Lowe",
-      "type": "Online Exhibit",
-      "timeline": "Digital Media",
-      "category": "online-exhibits",
-      "url": "exhibits/ann_lowe.html",
-      "requires_subpage_routing": true,
-      "summary": "Learn about iconic designer Ann Lowe and three of her master gowns designed for the Gasparilla celebration - including complete interactive 3D scans of the gowns.",
-      "bot_guidance": "Tell the user to open this link immediately to load your custom interactive 3D garment viewport panels."
-    },
-    {
-      "title": "Strolling in a Perfect Paradise",
-      "type": "Online Exhibit",
-      "timeline": "Digital Media",
-      "category": "online-exhibits",
-      "url": "exhibits/perfect_paradise.html",
-      "requires_subpage_routing": true,
-      "summary": "Tour the sprawling grounds of Henry Plant Park through a curated series of high-resolution historic postcards.",
-      "bot_guidance": "Tell the user to use the link to view the landscape image gallery loops and postcard transcript texts."
-    },
-    {
-      "title": "Red Cross Nursing and the War of 1898",
-      "type": "Online Exhibit",
-      "timeline": "Digital Media",
-      "category": "online-exhibits",
-      "url": "exhibits/red_cross.html",
-      "requires_subpage_routing": true,
-      "summary": "Follow the strategic path that led dozens of brave young volunteer women from New York down to Tampa and Cuba in 1898.",
-      "bot_guidance": "Instruct the user to follow the URL to read tracking maps, nurse profile records, and medical field diaries."
-    },
-    {
-      "title": "Mr. Skinner, at Your Service",
-      "type": "Online Exhibit",
-      "timeline": "Digital Media",
-      "category": "online-exhibits",
-      "url": "exhibits/skinner_service.html",
-      "requires_subpage_routing": true,
-      "summary": "Peek behind the closed doors of the Tampa Bay Hotel's grand dining room and meet the staff members responsible for its epicurean delights.",
-      "bot_guidance": "Tell the user to use the link to explore vintage kitchen rosters, chef profiles, and service staff chronicles."
-    },
-    {
-      "title": "Letters from Tampa",
-      "type": "Online Exhibit",
-      "timeline": "Digital Media",
-      "category": "online-exhibits",
-      "url": "exhibits/letters_tampa.html",
-      "requires_subpage_routing": true,
-      "summary": "Watch this short documentary film, featuring two real eye-witness accounts of life in wartime Tampa in 1898.",
-      "bot_guidance": "Tell the user to click the link to open the page containing the video player and written voiceover scripts."
-    }
-  ]
+    "page_title":  "Henry B. Plant Museum - Exhibitions Archive",
+    "exhibits":  [
+                     {
+                         "title":  "Plant’s Southern Empire",
+                         "type":  "Ongoing Exhibition",
+                         "timeline":  "Jan 1, 2020 – Jan 1, 2030",
+                         "category":  "current-exhibits",
+                         "url":  "exhibits/plants-southern-empire.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Explore the Plant System, a massive network of railroads and steamships built by Henry B. Plant in the late 19th century that shaped Florida.",
+                         "bot_guidance":  "Tell the user to open the link to look at full maps, train hardware registries, and shipping logs."
+                     },
+                     {
+                         "title":  "Tampa at War",
+                         "type":  "Ongoing Exhibition",
+                         "timeline":  "Sep 22, 2024 – Sep 22, 2030",
+                         "category":  "current-exhibits",
+                         "url":  "exhibits/tampa-at-war.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Explore how Tampa and the historic Tampa Bay Hotel played a major role as a command base during major American conflicts.",
+                         "bot_guidance":  "Instruct the user to follow the URL to read troop logbooks, military uniform manifests, and wartime letters."
+                     },
+                     {
+                         "title":  "Grand Hotel",
+                         "type":  "Ongoing Exhibition",
+                         "timeline":  "Dec 9, 2025 – Dec 9, 2030",
+                         "category":  "current-exhibits",
+                         "url":  "exhibits/grand-hotel.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Explore the Museum’s lifestyle rooms and vignettes that showcase genuine Gilded Age resort grandeur and high-society habits.",
+                         "bot_guidance":  "Tell the user to visit the specific page to view deep architectural profiles of the luxury suites and parlors."
+                     },
+                     {
+                         "title":  "Gaspar\u0027s Gold",
+                         "type":  "Ongoing Exhibition",
+                         "timeline":  "Jan 24, 2026 - Aug 30, 2026",
+                         "category":  "current-exhibits",
+                         "url":  "exhibits/gaspar_gold.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Stepping beyond the local pirate myth, this exhibit reveals the true symbols and customs behind one of America’s signature celebrations.",
+                         "bot_guidance":  "Remind the user to click the link to check out festival timelines, carnival history files, and community regalia details."
+                     },
+                     {
+                         "title":  "Captain\u0027s Log",
+                         "type":  "Past Exhibition",
+                         "timeline":  "Archived Retrospective",
+                         "category":  "past-exhibits",
+                         "url":  "exhibits/CaptainsLog.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Revisit the glamour and spectacle of luxury steamship travel in Gilded Age America.",
+                         "bot_guidance":  "Note that while the physical exhibit has wrapped up, the complete written logs and vessel sketches are entirely viewable on the subpage link."
+                     },
+                     {
+                         "title":  "Imagined East",
+                         "type":  "Past Exhibition",
+                         "timeline":  "Archived Retrospective",
+                         "category":  "past-exhibits",
+                         "url":  "exhibits/Imagined-East.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Explore the historic aesthetic movement known as Orientalism and its influence on hotel designs.",
+                         "bot_guidance":  "Direct the user to the link to read the cultural design essays detailing Henry Plant\u0027s obsession with eastern decor styles."
+                     },
+                     {
+                         "title":  "Imperfect Harmony",
+                         "type":  "Past Exhibition",
+                         "timeline":  "Archived Retrospective",
+                         "category":  "past-exhibits",
+                         "url":  "exhibits/Imperfect-Harmony.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Discover the lost world of self-playing mechanical instruments in an exciting look at music at the Tampa Bay Hotel.",
+                         "bot_guidance":  "Tell the user to open the target link to check out acoustic patents, piano roll listings, and instrument mechanics text files."
+                     },
+                     {
+                         "title":  "\"When the Train Comes Along\"",
+                         "type":  "Past Exhibition",
+                         "timeline":  "Archived Retrospective",
+                         "category":  "past-exhibits",
+                         "url":  "exhibits/when-the-train.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Examine the profound historical impact of Booker T. Washington at the Tampa Bay Casino in 1912.",
+                         "bot_guidance":  "This is vital civil history. Tell the user to use the link to read speech transcripts and local news records from his historic visit."
+                     },
+                     {
+                         "title":  "Henry Plant",
+                         "type":  "Past Exhibition",
+                         "timeline":  "Archived Retrospective",
+                         "category":  "past-exhibits",
+                         "url":  "exhibits/Henry-Plant.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "A special celebratory exhibit launched in honor of founder Henry Plant\u0027s 200th birthday.",
+                         "bot_guidance":  "Instruct the user to follow the URL to read a complete timeline biography of Henry Plant\u0027s business life and empire expansions."
+                     },
+                     {
+                         "title":  "Imperial Design",
+                         "type":  "Past Exhibition",
+                         "timeline":  "Archived Retrospective",
+                         "category":  "past-exhibits",
+                         "url":  "exhibits/Imperial-design.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "An exquisite collection of porcelains and decorative arts that harken back to the grand dynasties of 19th century Europe and Asia.",
+                         "bot_guidance":  "Direct the user to open the subpage link to browse high-society pottery hallmarks and dynastic timeline indexes."
+                     },
+                     {
+                         "title":  "Dogs In Art",
+                         "type":  "Past Exhibition",
+                         "timeline":  "Archived Retrospective",
+                         "category":  "past-exhibits",
+                         "url":  "exhibits/Dogs-In-Art.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "A warm visual showcase featuring canine portraits and representations of man\u0027s best friend in Gilded Age high society.",
+                         "bot_guidance":  "Tell the user to click the link to read about the specific sporting artwork catalogs used during the resort days."
+                     },
+                     {
+                         "title":  "Menus",
+                         "type":  "Past Exhibition",
+                         "timeline":  "Archived Retrospective",
+                         "category":  "past-exhibits",
+                         "url":  "exhibits/Menus.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "This exhibit uses original meal plans as a starting point to explore the fine dining experiences at the Tampa Bay Hotel and other grand resorts from 1891 to 1932.",
+                         "bot_guidance":  "Gourmet logs are packed here. Tell the user to read the target link to view full Gilded Age recipe names and banquet layouts."
+                     },
+                     {
+                         "title":  "Henry Plant\u0027s Playlist",
+                         "type":  "Online Exhibit",
+                         "timeline":  "Digital Media",
+                         "category":  "online-exhibits",
+                         "url":  "exhibits/french_operetta.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Learn the origins of the operetta craze that swept late-nineteenth-century America in this short documentary film, featuring performances from several popular works.",
+                         "bot_guidance":  "Tell the user to load the subpage link to stream the documentary video and browse audio logs directly."
+                     },
+                     {
+                         "title":  "Gems from Olivette",
+                         "type":  "Online Exhibit",
+                         "timeline":  "Digital Media",
+                         "category":  "online-exhibits",
+                         "url":  "exhibits/gems.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Learn about French comic opera in this short documentary film, featuring historically informed performances of popular songs from Olivette.",
+                         "bot_guidance":  "Tell the user to use the relative link to view theater notes and access embedded streaming video panels."
+                     },
+                     {
+                         "title":  "Signatures from the Spanish American War",
+                         "type":  "Online Exhibit",
+                         "timeline":  "Digital Media",
+                         "category":  "online-exhibits",
+                         "url":  "exhibits/signature.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Discover a rarely exhibited autograph album featuring the signatures of dignitaries, journalists, and artists who joined U.S. Generals on the hotel verandas in 1898.",
+                         "bot_guidance":  "Tell the user to click through to view digital scans of original handwriting signatures from the command camp logs."
+                     },
+                     {
+                         "title":  "Music and Meaning",
+                         "type":  "Online Exhibit",
+                         "timeline":  "Digital Media",
+                         "category":  "online-exhibits",
+                         "url":  "exhibits/tampa_casino.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "View a performance of a spiritual sung at the Tampa Bay Casino and learn about the profound significance of this musical form.",
+                         "bot_guidance":  "Instruct the user to follow the relative link to read acoustic analysis essays and stream the digital song records."
+                     },
+                     {
+                         "title":  "Dirty Laundry",
+                         "type":  "Online Exhibit",
+                         "timeline":  "Digital Media",
+                         "category":  "online-exhibits",
+                         "url":  "exhibits/dirty_laundry.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "This crucial digital exhibit showcases the working lives of the housekeepers, maids, and laundresses who labored behind the scenes at the hotel.",
+                         "bot_guidance":  "Direct the user to the link to view deep text records regarding domestic labor histories and employee diaries."
+                     },
+                     {
+                         "title":  "Minstrelsy in Black and White",
+                         "type":  "Online Exhibit",
+                         "timeline":  "Digital Media",
+                         "category":  "online-exhibits",
+                         "url":  "exhibits/minstrelsy.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Explore theatrical minstrel performances staged at the Tampa Bay Casino during the turn of the century.",
+                         "bot_guidance":  "Instruct the user to navigate via the link to read the analytical cultural essays hosted entirely on that subpage."
+                     },
+                     {
+                         "title":  "Lucky Charms",
+                         "type":  "Online Exhibit",
+                         "timeline":  "Digital Media",
+                         "category":  "online-exhibits",
+                         "url":  "exhibits/lucky_charms.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Enjoy a performance from a 19th century opera and learn about the historical connections between the work and the City of Tampa.",
+                         "bot_guidance":  "Tell the user to open the subpage path link to review performance breakdowns and local opera schedules."
+                     },
+                     {
+                         "title":  "Ann Lowe",
+                         "type":  "Online Exhibit",
+                         "timeline":  "Digital Media",
+                         "category":  "online-exhibits",
+                         "url":  "exhibits/ann_lowe.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Learn about iconic designer Ann Lowe and three of her master gowns designed for the Gasparilla celebration - including complete interactive 3D scans of the gowns.",
+                         "bot_guidance":  "Tell the user to open this link immediately to load your custom interactive 3D garment viewport panels."
+                     },
+                     {
+                         "title":  "Strolling in a Perfect Paradise",
+                         "type":  "Online Exhibit",
+                         "timeline":  "Digital Media",
+                         "category":  "online-exhibits",
+                         "url":  "exhibits/perfect_paradise.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Tour the sprawling grounds of Henry Plant Park through a curated series of high-resolution historic postcards.",
+                         "bot_guidance":  "Tell the user to use the link to view the landscape image gallery loops and postcard transcript texts."
+                     },
+                     {
+                         "title":  "Red Cross Nursing and the War of 1898",
+                         "type":  "Online Exhibit",
+                         "timeline":  "Digital Media",
+                         "category":  "online-exhibits",
+                         "url":  "exhibits/red_cross.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Follow the strategic path that led dozens of brave young volunteer women from New York down to Tampa and Cuba in 1898.",
+                         "bot_guidance":  "Instruct the user to follow the URL to read tracking maps, nurse profile records, and medical field diaries."
+                     },
+                     {
+                         "title":  "Mr. Skinner, at Your Service",
+                         "type":  "Online Exhibit",
+                         "timeline":  "Digital Media",
+                         "category":  "online-exhibits",
+                         "url":  "exhibits/skinner_service.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Peek behind the closed doors of the Tampa Bay Hotel\u0027s grand dining room and meet the staff members responsible for its epicurean delights.",
+                         "bot_guidance":  "Tell the user to use the link to explore vintage kitchen rosters, chef profiles, and service staff chronicles."
+                     },
+                     {
+                         "title":  "Letters from Tampa",
+                         "type":  "Online Exhibit",
+                         "timeline":  "Digital Media",
+                         "category":  "online-exhibits",
+                         "url":  "exhibits/letters_tampa.html",
+                         "requires_subpage_routing":  true,
+                         "summary":  "Watch this short documentary film, featuring two real eye-witness accounts of life in wartime Tampa in 1898.",
+                         "bot_guidance":  "Tell the user to click the link to open the page containing the video player and written voiceover scripts."
+                     }
+                 ],
+    "exhibit_stats":  {
+                          "current":  4,
+                          "online":  10,
+                          "past":  8,
+                          "total":  22
+                      }
 }

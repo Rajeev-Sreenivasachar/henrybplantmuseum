@@ -1,1062 +1,1072 @@
 {
-  "museum_name": "Henry B. Plant Museum",
-  "total_items_cataloged": 135,
-  "artifacts": [
-    {
-      "name": "Baker",
-      "category": "statues",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 27 in. Metal Alloy",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0172.jpg?ext=.jpg",
-      "description": "An exquisite metal alloy classical figural statue depicting a traditional French baker, selected by Henry Plant to add European artistic flair to the hotel's prominent reception areas."
-    },
-    {
-      "name": "Blue & White Garden Seat",
-      "category": "furnishing",
-      "meta": "Late 19th Century | Japanese",
-      "specs": "Height: 19 in. Porcelain",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1999-071.jpg?ext=.jpg",
-      "description": "A barrel-shaped porcelain garden seat hand-decorated with deep blue cobalt landscape panels. These seats lined the grand verandas for guests relaxing outdoors."
-    },
-    {
-      "name": "Blue & White Jardiniere",
-      "category": "ceramics",
-      "meta": "Late 19th Century | English",
-      "specs": "Height: 23 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2001-045.jpg?ext=.jpg",
-      "description": "A massive English ceramic planter decorated with rich multi-layered cobalt detailing, used to show off exotic flora inside the hotel's main hallways."
-    },
-    {
-      "name": "Blue and White Bowl (Instance 1)",
-      "category": "ceramics",
-      "meta": "Late 19th Century | Japanese",
-      "specs": "Height: 8 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-220-copy.jpg?ext=.jpg",
-      "description": "An original decorative Meiji-era porcelain bowl featuring detailed landscape and linear artwork, hand-selected on buying trips through East Asia."
-    },
-    {
-      "name": "Blue and White Bowl (Instance 2)",
-      "category": "ceramics",
-      "meta": "Late 19th Century | Japanese",
-      "specs": "Height: 8 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-220-copy.jpg?ext=.jpg",
-      "description": "An additional matching multi-paneled Japanese ceramic bowl display, used to hold ornate table centerpieces for high-society dining events."
-    },
-    {
-      "name": "Blue Garden Seat",
-      "category": "furnishing",
-      "meta": "Late 19th Century | English",
-      "specs": "Height: 20 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1999-077.jpg?ext=.jpg",
-      "description": "An English ceramic seat featuring a deep, vibrant solid blue wash, designed to offer seating for hotel guests along the brick sun verandas."
-    },
-    {
-      "name": "Bonito Lake",
-      "category": "paintings",
-      "meta": "Late 19th Century | French-American",
-      "specs": "9 x 42 in. Gouache",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-438Pascal-detail.jpg?ext=.jpg",
-      "description": "A long, panoramic natural view rendered in fine gouache paint, showing the peaceful mountain lakes frequented by vacationers during the Gilded Age."
-    },
-    {
-      "name": "Bottleneck Vase",
-      "category": "ceramics",
-      "meta": "19th Century | Chinese",
-      "specs": "Height: 13 in. Porcelain",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0101.jpg?ext=.jpg",
-      "description": "A classic porcelain vase featuring a distinct narrow bottleneck form and high-gloss translucent glaze coat, showing off fine Asian craft design."
-    },
-    {
-      "name": "Boulle Style Cabinet (Marble Top)",
-      "category": "furnishing",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 44 in. Wood with marble top",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0216.jpg?ext=.jpg",
-      "description": "A beautiful low cabinet styled after André-Charles Boulle, featuring ebonized wood finishes, bright brass inlay trims, and a heavy white marble counter slab."
-    },
-    {
-      "name": "Boulle Style Cabinet (Mahogany)",
-      "category": "furnishing",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 51 in. Mahogany Wood",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/Boulle-Style-Cabinet.jpg?ext=.jpg",
-      "description": "A tall, majestic mahogany cabinet featuring ornate brass accents and premium glass display windows, used to exhibit curio artifacts in parlor suites."
-    },
-    {
-      "name": "Boulle Style Table",
-      "category": "furnishing",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 31 in. Wood with brass inlay",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0230.jpg?ext=.jpg",
-      "description": "An opulent parlor center table displaying complex tortoiseshell and brass scrollwork marquetry, serving as a social focal point in luxury rooms."
-    },
-    {
-      "name": "Boy with Harp",
-      "category": "statues",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 23 in. Metal Alloy",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0182.jpg?ext=.jpg",
-      "description": "A romanticist metal alloy statue detailing a young classical performer strumming a harp, celebrating music and fine theater aesthetics."
-    },
-    {
-      "name": "Briar Root Bench",
-      "category": "furnishing",
-      "meta": "Late 19th Century | France",
-      "specs": "Height: 42 in. Briar Root",
-      "image_url": "https://www.plantmuseum.com/getattachment/1b5bc164-f009-4e62-8f6c-6dfb44e1a20f/1999-011-001-Briarwood.jpg.aspx;?lang=en-US&width=183&height=233&ext=.jpg",
-      "description": "An incredible rustic statement bench made from woven, natural briar root branches, placed inside the hotel's solariums to create an indoor-outdoor oasis look."
-    },
-    {
-      "name": "Bronze Vases",
-      "category": "decor",
-      "meta": "Late 19th Century | Japanese",
-      "specs": "Height: 10 in. Bronze",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0177.jpg?ext=.jpg",
-      "description": "A matching pair of cast bronze vases featuring relief work of seasonal cherry blossoms, showing the high-quality international arts imported by Henry Plant."
-    },
-    {
-      "name": "Carved Shodana",
-      "category": "furnishing",
-      "meta": "Late 19th Century | Japanese",
-      "specs": "Height: 91 in. Teckwood with gilded panels",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0213.jpg?ext=.jpg",
-      "description": "A monumental 7-foot tall teak wood display cabinet featuring asymmetric shelves, gold leaf landscape backgrounds, and fine ivory accents."
-    },
-    {
-      "name": "Celadon Floor Vase",
-      "category": "ceramics",
-      "meta": "Late 19th Century | Chinese",
-      "specs": "Height: 19 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-076.jpg?ext=.jpg",
-      "description": "A large ceramic floor jar finished in a classic pale sea-green jade-like celadon crackle glaze coat, popular among high-society collectors."
-    },
-    {
-      "name": "Celadon Garden Seat",
-      "category": "furnishing",
-      "meta": "Late 19th Century | Chinese",
-      "specs": "Height: 19 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1999-074.jpg?ext=.jpg",
-      "description": "A glazed light-green ceramic garden seat displaying openwork double-coin patterns and raised slip-dot textures running along its edges."
-    },
-    {
-      "name": "Cellini",
-      "category": "statues",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 23 in. White metal with bronze patina",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0155.jpg?ext=.jpg",
-      "description": "A tribute sculpture honoring the master Renaissance craftsman Benvenuto Cellini, rendered in white metal with a deep chemically developed bronze patina finish."
-    },
-    {
-      "name": "Ceramic Flask (German)",
-      "category": "ceramics",
-      "meta": "1892 | German",
-      "specs": "Height: 10 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0142.jpg?ext=.jpg",
-      "description": "An authentic salt-glazed ceramic flask showing historical coat-of-arms relief designs, imported from Germany as a novelty decoration item."
-    },
-    {
-      "name": "Ceramic Flask (Hungarian)",
-      "category": "ceramics",
-      "meta": "Late 19th Century | Hungarian",
-      "specs": "Height: 11 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0143.jpg?ext=.jpg",
-      "description": "A colorful glazed majolica ceramic flask featuring traditional Hungarian floral borders and unique stylized loop handles."
-    },
-    {
-      "name": "Chinese Chair",
-      "category": "furnishing",
-      "meta": "Late 19th Century | Chinese",
-      "specs": "Height: 36 in. Hardwood and inset marble",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0251.jpg?ext=.jpg",
-      "description": "A heavy, hand-carved rosewood armchair featuring an inset circular plaque of natural dreamstone marble mimicking storm clouds."
-    },
-    {
-      "name": "Cleopatra",
-      "category": "statues",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 36 in. Hardwood and inset marble",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0171.jpg?ext=.jpg",
-      "description": "A dramatic romanticist cast metal sculpture depicting Cleopatra VII reclining on an Egyptian couch, showcasing detailed drapery work."
-    },
-    {
-      "name": "Cloisonne Vase (Peony)",
-      "category": "decor",
-      "meta": "Late 19th Century | Japanese",
-      "specs": "Height: 19 in. Enamelware",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0069.jpg?ext=.jpg",
-      "description": "A stunning enamel-on-copper vase that uses thin wire frames to hold layers of rich green, red, and gold glass paste forming blooming peonies."
-    },
-    {
-      "name": "Cloisonne Vase (Dragon)",
-      "category": "decor",
-      "meta": "Late 19th Century | Japanese",
-      "specs": "Height: 18 in. Enamelware",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0080.jpg?ext=.jpg",
-      "description": "An intricate wire cloisonné vase depicting a long imperial dragon coiling across a polished midnight-blue glass sky background."
-    },
-    {
-      "name": "Cobalt Blue Vase",
-      "category": "ceramics",
-      "meta": "Early 19th Century | European",
-      "specs": "Height: 14.5 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0134.jpg?ext=.jpg",
-      "description": "A rare early 1800s porcelain display vase coated in a deep Sevres cobalt blue glaze and detailed with delicate hand-painted gold accents."
-    },
-    {
-      "name": "Cobalt Garden Seat",
-      "category": "furnishing",
-      "meta": "Late 19th Century | Chinese",
-      "specs": "Height: 19 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1999-080.jpg?ext=.jpg",
-      "description": "A rich cobalt blue glazed porcelain garden stool featuring open decorative cutouts and stylized elephant-head relief work on the sides."
-    },
-    {
-      "name": "Cobalt Imari Vase",
-      "category": "ceramics",
-      "meta": "Late 19th Century | Japanese",
-      "specs": "Height: 36 in. Porcelain",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0061.jpg?ext=.jpg",
-      "description": "A massive 3-foot tall porcelain statement urn blending deep cobalt underglazes with brilliant iron-red and gold floral patterns."
-    },
-    {
-      "name": "Cobalt Mirror",
-      "category": "decor",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 48 in. Glass and Wood",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0224.jpg?ext=.jpg",
-      "description": "A breathtaking Venetian-style decorative wall mirror framed with custom blown glass elements and deep cobalt blue floral appliques."
-    },
-    {
-      "name": "Collector's Cabinet",
-      "category": "furnishing",
-      "meta": "Late 19th Century | European",
-      "specs": "Height: 26 in. Wood with ivory inlay",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0222.jpg?ext=.jpg",
-      "description": "A desktop locking display chest built from fine hardwood and featuring miniature hand-etched ivory panels showing historical scenes."
-    },
-    {
-      "name": "Conversation",
-      "category": "paintings",
-      "meta": "Late 19th Century | Swiss",
-      "specs": "34 x 45 in. Oil on Canvas",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-230-Conversation-detail.jpg?ext=.jpg",
-      "description": "A large Swiss oil painting depicting Victorian figures gathered together in conversation, hung in public social parlors."
-    },
-    {
-      "name": "Correggio",
-      "category": "statues",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 21 in. Metal Alloy",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0151.jpg?ext=.jpg",
-      "description": "A French cast metal alloy figural statue celebrating the classic Italian painter Antonio da Correggio, embodying fine art appreciation."
-    },
-    {
-      "name": "Departure",
-      "category": "paintings",
-      "meta": "Late 19th Century | Norwegian",
-      "specs": "Height: 24 in. Oil on Canvas",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1972-007-002.jpg?ext=.jpg",
-      "description": "A moody Norwegian oil canvas painting depicting ships leaving a dock, a visual nod to Henry Plant's own steamship lines."
-    },
-    {
-      "name": "Dog Portrait",
-      "category": "paintings",
-      "meta": "Late 19th Century | French",
-      "specs": "8 x 6 in. Oil on Panel",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-143-Black-Dog-Head.jpeg?ext=.jpeg",
-      "description": "A charming, small-scale portrait painting focusing on a dark hunting hound, displayed in the hotel's masculine card and billiard rooms."
-    },
-    {
-      "name": "Dog Wearing Coat",
-      "category": "paintings",
-      "meta": "Late 19th Century | French",
-      "specs": "8 x 6 in. Oil on Panel",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-142-Dog-wearing-Jacket.jpeg?ext=.jpeg",
-      "description": "A whimsical, humorous Gilded Age painting showing a small terrier dog dressed up in a custom winter coat panel."
-    },
-    {
-      "name": "Duke of Savoy",
-      "category": "paintings",
-      "meta": "Late 19th Century | French School",
-      "specs": "31 x 24.5 in. Oil on Panel",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-135-Duke-of-Savoy.jpeg?ext=.jpeg",
-      "description": "A historical portrait painting of European nobility rendered in oil on wood panel, bringing an old-world look into the Florida resort."
-    },
-    {
-      "name": "Effroi",
-      "category": "statues",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 22 in. Metal Alloy",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0158.jpg?ext=.jpg",
-      "description": "A detailed French figurative metal alloy statue capturing high-stakes emotional drama, typical of late Victorian interior design choices."
-    },
-    {
-      "name": "Elephant Garden Seat",
-      "category": "furnishing",
-      "meta": "Late 19th Century | European",
-      "specs": "Height: 20 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0073.jpg?ext=.jpg",
-      "description": "An glazed ceramic stool sculpted into a classic caparisoned elephant carrying a seat platform, tapping into popular Orientalism trends."
-    },
-    {
-      "name": "Elephant with Pagoda",
-      "category": "furnishing",
-      "meta": "Late 19th Century | Chinese",
-      "specs": "Height: 26 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2001-037.jpg?ext=.jpg",
-      "description": "An intricate glazed ceramic structural stand modeled as a royal elephant balancing an ornate multi-tiered pagoda tower on its back."
-    },
-    {
-      "name": "Esmeralda",
-      "category": "statues",
-      "meta": "1880 | French",
-      "specs": "Cast iron with bronze patina",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/Esmerelda.jpg?ext=.jpg",
-      "description": "A majestic, full-scale cast iron indoor statue depicting the famous character Esmeralda from Victor Hugo's fiction, treated with a bronze finish."
-    },
-    {
-      "name": "Ewer with Cherub",
-      "category": "decor",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 25 in. Metal Alloy",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0174.jpg?ext=.jpg",
-      "description": "A large decorative display pitcher featuring an elaborate sculptural handle wrapped with miniature cherubs and trailing grapevines."
-    },
-    {
-      "name": "Flower Vase with Swan",
-      "category": "ceramics",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 56 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0244.jpg?ext=.jpg",
-      "description": "A massive 4.5-foot tall ceramic vase featuring sculpted white swan figures forming the side handles, used as a parlor center feature."
-    },
-    {
-      "name": "French Chair",
-      "category": "furnishing",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 36 in. Giltwood",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0234.jpg?ext=.jpg",
-      "description": "A light salon chair crafted from hand-carved wood and finished entirely in gold leaf gilding, used in the ladies' drawing rooms."
-    },
-    {
-      "name": "Frog Garden Seat",
-      "category": "furnishing",
-      "meta": "Circa 1890 | Bohemian",
-      "specs": "Height: 18 in. Glazed Earthenware",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0087.jpg?ext=.jpg",
-      "description": "A rare earthenware stool from Bohemia sculpted into a large, stylized frog sitting on a riverbed, covered in bright green earthy majolica glazes."
-    },
-    {
-      "name": "Fruit Still Life",
-      "category": "paintings",
-      "meta": "1883 | American",
-      "specs": "46 x 34 in. Oil on canvas",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1972-007-005Fruit-detail.jpg?ext=.jpg",
-      "description": "A large American oil painting detailing a rich spread of autumn harvest fruit, hung inside the hotel's grand main dining room."
-    },
-    {
-      "name": "Garden Seat with Figure",
-      "category": "furnishing",
-      "meta": "Late 19th century | Chinese",
-      "specs": "Height: 22 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0092.jpg?ext=.jpg",
-      "description": "A Chinese ceramic porch seat painted with scenes of traditional figures walking through courtyard pavilions and terraced gardens."
-    },
-    {
-      "name": "Gilded Bronze Clock",
-      "category": "decor",
-      "meta": "Circa 1880 | French",
-      "specs": "Height: 28 in. Bronze",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/Gld-Clock.jpg?ext=.jpg",
-      "description": "A gold-gilded bronze mantel clock displaying elaborate floral scrollwork carvings and an polished white enamel dial face."
-    },
-    {
-      "name": "Hay Wagon",
-      "category": "paintings",
-      "meta": "Early 20th century | German",
-      "specs": "15 x 23 in. Oil on canvas",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-139-Wagon-detail.jpg?ext=.jpg",
-      "description": "A German pastoral oil landscape showing a traditional horse-drawn hay wagon moving through rolling farmlands during sunset."
-    },
-    {
-      "name": "Haystacks",
-      "category": "paintings",
-      "meta": "Early 20th century | German-American",
-      "specs": "24 x 34 in. Oil on canvas",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1935-001-081-Haystack-detailjpg.jpg?ext=.jpg",
-      "description": "An impressionist landscape painting depicting open wheat fields and stacked hay mounds, catching shifting afternoon light effects."
-    },
-    {
-      "name": "Henry B. Plant",
-      "category": "paintings",
-      "meta": "Late 19th Century | American",
-      "specs": "36 x 26 in. Oil on Canvas",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-074-HBP.jpg?ext=.jpg",
-      "description": "The official formal oil portrait of founder Henry Bradley Plant, capturing the transportation tycoon at the peak of his railroad business career."
-    },
-    {
-      "name": "Herman Glogowski",
-      "category": "paintings",
-      "meta": "Late 19th Century | American",
-      "specs": "30 x 24 in. Oil on Canvas",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2001-071-MayorGlogowski.jpg?ext=.jpg",
-      "description": "An original oil portrait of Herman Glogowski, Tampa's historic first Jewish mayor and a close civic partner to Henry Plant's development projects."
-    },
-    {
-      "name": "Hotel and Bridge",
-      "category": "archive",
-      "meta": "1889 | Archives",
-      "specs": "5 x 8 in. Photograph",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2006-016-001Brdg-TBH.jpg?ext=.jpg",
-      "description": "A rare archival photograph capturing the iron bridge spanning the Hillsborough River with the newly built hotel rising in the background background."
-    },
-    {
-      "name": "Hotel Construction",
-      "category": "archive",
-      "meta": "March 1889 | Archives",
-      "specs": "5.5 x 9 in. Photograph",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2006-016-002-TBH1889.jpg?ext=.jpg",
-      "description": "An original historical progress shot from March 1889 showing scaffolding surrounding the brickwork layers and minaret bases during construction."
-    },
-    {
-      "name": "Hotel East Front",
-      "category": "archive",
-      "meta": "1893 | Archives",
-      "specs": "4 x 6.5 in. Paper",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1982-010-001CC.jpg?ext=.jpg",
-      "description": "A souvenir print from 1893 showcasing the eastern facade of the resort, highlighting the landscaped tropical parks facing the riverfront."
-    },
-    {
-      "name": "Hotel Guests",
-      "category": "archive",
-      "meta": "1897-1898 | Archives",
-      "specs": "5 x 8 in. Photograph",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2008-007-TB-Hotel-Gate.jpg?ext=.jpg",
-      "description": "An archival image documenting wealthy northern winter tourists entering the front gates via luxury horse carriages and rickshaws."
-    },
-    {
-      "name": "Hotel Veranda",
-      "category": "archive",
-      "meta": "1893 | Archives",
-      "specs": "4 x 6.5 in. Paper",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1982-010-001GG.jpg?ext=.jpg",
-      "description": "A period print capturing guests relaxing in high-backed wicker rocking chairs along the signature quarter-mile-long brick veranda space."
-    },
-    {
-      "name": "Hotel West Front",
-      "category": "archive",
-      "meta": "Early 20th Century | Archives",
-      "specs": "3.5 x 5.5 in. Postcard",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2008-011-012.jpg?ext=.jpg",
-      "description": "A colorized vintage postcard showing the western main train platform entrance, where private luxury railcars dropped off guests directly."
-    },
-    {
-      "name": "Hotel with Train",
-      "category": "archive",
-      "meta": "1893 | Archives",
-      "specs": "4 x 6.5 in. Paper",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1982-010-001LL-020.jpg?ext=.jpg",
-      "description": "An 1893 promotional print showing a Plant System steam engine pulled up right alongside the hotel's grand minaret-capped entrance towers."
-    },
-    {
-      "name": "Hotel Workers",
-      "category": "archive",
-      "meta": "March 27, 1891 | Archives",
-      "specs": "13.7 x 17 in. Photograph",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2016-022-032-Construction.jpg?ext=.jpg",
-      "description": "A crucial large photograph tracking the diverse construction workers, carpenters, masonry crews, and gardeners who built the resort structure."
-    },
-    {
-      "name": "Hunting Dogs",
-      "category": "statues",
-      "meta": "1890 | French",
-      "specs": "Height: 36 in. Cast iron",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/Coup-de-Facil.jpg?ext=.jpg",
-      "description": "A heavy cast iron sculpture of two hunting hounds tracking game, placed on the open lawns near the resort gun club facilities."
-    },
-    {
-      "name": "Imari Fish Bowl",
-      "category": "ceramics",
-      "meta": "Late 19th Century | Japanese",
-      "specs": "Height: 20 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0064.jpg?ext=.jpg",
-      "description": "A massive open ceramic basin detailed with gold leaf scales and swimming koi fish patterns, used to decorate the indoor garden solariums."
-    },
-    {
-      "name": "Imari Floor Vase",
-      "category": "ceramics",
-      "meta": "Late 19th Century | Japanese",
-      "specs": "Height: 64 in. Porcelain",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-224_1.jpg?ext=.jpg",
-      "description": "A historic 5-foot tall Japanese Imari porcelain floor urn, featuring dark iron-red floral grids and cobalt blue underglazes."
-    },
-    {
-      "name": "Imari Vase",
-      "category": "ceramics",
-      "meta": "Late 19th Century | Japanese",
-      "specs": "Height: 14 in. Porcelain",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0112.jpg?ext=.jpg",
-      "description": "A classic Imari porcelain tabletop vase featuring asymmetric panels that show panels of traditional landscape scenes and cranes."
-    },
-    {
-      "name": "Japanese Vases",
-      "category": "ceramics",
-      "meta": "Late 19th Century | Japanese",
-      "specs": "Height: 14 in. Porcelain",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0108.jpg?ext=.jpg",
-      "description": "A matching pair of porcelain display vases showcasing fine Meiji gold line details, purchased during the Plants' trips to the Orient."
-    },
-    {
-      "name": "Jardinière and stand",
-      "category": "ceramics",
-      "meta": "1885-1890 | English",
-      "specs": "Height: 14 in. Earthenware",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0068.jpg?ext=.jpg",
-      "description": "An English glazed earthenware planter balanced on a matching column stand, decorated with rich Victorian relief textures."
-    },
-    {
-      "name": "Jardinière with Designs",
-      "category": "ceramics",
-      "meta": "Early 20th century | English",
-      "specs": "Height: 24 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-409.jpg?ext=.jpg",
-      "description": "A tall ceramic display planter detailed with geometric art-nouveau style line designs, showing off late-period resort trends."
-    },
-    {
-      "name": "Jardinière with Irises",
-      "category": "ceramics",
-      "meta": "Late 19th Century | English",
-      "specs": "Height: 24 in. Earthenware",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0095.jpg?ext=.jpg",
-      "description": "A glazed earthenware planter detailed with hand-painted purple and gold garden irises, mimicking the resort's external botanical parks."
-    },
-    {
-      "name": "Jeweled Urn",
-      "category": "ceramics",
-      "meta": "Late 19th Century | Germany",
-      "specs": "Height: 17 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0115.jpg?ext=.jpg",
-      "description": "A decorative German porcelain urn detailed with raised ceramic slip dots that mimic glittering gemstone chains across its handles."
-    },
-    {
-      "name": "Kutani Vase",
-      "category": "ceramics",
-      "meta": "Late 19th Century | Japanese",
-      "specs": "Height: 14 in. Porcelain",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0096.jpg?ext=.jpg",
-      "description": "An authentic Kutani porcelain vase showing iron-red color patterns and detailed gold outlines illustrating traditional Japanese folklore stories."
-    },
-    {
-      "name": "Lake George",
-      "category": "paintings",
-      "meta": "Late 19th Century | French",
-      "specs": "11 x 28 in. Gouache on board",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-446Pascal-detail.jpg?ext=.jpg",
-      "description": "A peaceful landscape scene painted in gouache on heavy board, highlighting early American resort travel hotspots."
-    },
-    {
-      "name": "Landscape with Goats",
-      "category": "paintings",
-      "meta": "Early 20th century | German",
-      "specs": "17 x 24 in. Oil on canvas",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1935-001-079Goats-detail.jpg?ext=.jpg",
-      "description": "A rustic German oil canvas showing a small herd of mountain goats resting along alpine cliffs, common in Gilded Age hotel collections."
-    },
-    {
-      "name": "Landscape with Lake",
-      "category": "paintings",
-      "meta": "Late 19th century | French",
-      "specs": "9 x 26 in. Gouache",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-437Pascal-detail.jpg?ext=.jpg",
-      "description": "A soft, impressionistic gouache painting mapping the quiet mist hanging over a forest lake during early morning hours."
-    },
-    {
-      "name": "Louis XV Style Chair",
-      "category": "furnishing",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 40 in. Giltwood",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0238.jpg?ext=.jpg",
-      "description": "An open armchair carved with fine Rococo scroll details and covered in gold leaf gilding, upholstered in rich silk damask fabrics."
-    },
-    {
-      "name": "Louis XV Style Settee",
-      "category": "furnishing",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 39 in. Wood with brass trim",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0161.jpg?ext=.jpg",
-      "description": "A wide, elegant parlor settee bench built from dark wood, detailed with bright brass trim molding and patterned floral cushions."
-    },
-    {
-      "name": "Magician",
-      "category": "statues",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 27 in. Metal Alloy",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-140.jpg?ext=.jpg",
-      "description": "A conversational metal alloy statue depicting a traveling theater magician performing sleight-of-hand card tricks."
-    },
-    {
-      "name": "Marguerite de Valois",
-      "category": "paintings",
-      "meta": "Late 19th Century | French",
-      "specs": "39 x 26 in. Oil on canvas",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0167.jpg?ext=.jpg",
-      "description": "A large French oil portrait painting detailing the royal dress and jewels of historical figure Marguerite de Valois."
-    },
-    {
-      "name": "Mary Queen of Scots",
-      "category": "statues",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 18 in. Bronze with silver overlay",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0167.jpg?ext=.jpg",
-      "description": "A historic bronze portrait bust of Mary Stuart, featuring a detailed silver leaf overlay across her lace collar work."
-    },
-    {
-      "name": "Micro-mosaic Seat",
-      "category": "furnishing",
-      "meta": "Late 19th Century | English",
-      "specs": "Height: 19 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1999-081.jpg?ext=.jpg",
-      "description": "An English ceramic garden stool covered entirely in tiny geometric transfer print patterns that mimic classical Roman micro-mosaic stone work."
-    },
-    {
-      "name": "Monkey Garden Seat",
-      "category": "furnishing",
-      "meta": "Late 19th Century | German",
-      "specs": "Height: 19 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1999-078-Monkey-Garden-Seat.jpg?ext=.jpg",
-      "description": "A playful German majolica ceramic porch stool sculpted as three monkeys holding up the seat cushion panel, showing Victorian humor trends."
-    },
-    {
-      "name": "Mushroom Garden Seat",
-      "category": "furnishing",
-      "meta": "Circa 1890 | Bohemian",
-      "specs": "Height: 18 in. Glazed Earthenware",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0090.jpg?ext=.jpg",
-      "description": "A whimsical Bohemian glazed earthenware stool sculpted to mimic a collection of wild forest mushrooms growing out of moss foundations."
-    },
-    {
-      "name": "Napoleon & Josephine",
-      "category": "decor",
-      "meta": "Late 19th Century | German",
-      "specs": "Height: 13 in. Bisque Porcelain",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0120.jpg?ext=.jpg",
-      "description": "A pair of unglazed matte bisque porcelain portrait figurines capturing Emperor Napoleon Bonaparte and Empress Josephine in full court regalia dress."
-    },
-    {
-      "name": "Ornate Clock",
-      "category": "decor",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 44 in. Bronze with Gilded Patina",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/ornate-clock.jpg?ext=.jpg",
-      "description": "A massive French parlor mantel clock crafted from heavy cast bronze and covered in gold leaf, serving as a time center for public lobbies."
-    },
-    {
-      "name": "Peasant Girl",
-      "category": "statues",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 30 in. Polychromed metal alloy",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0154.jpg?ext=.jpg",
-      "description": "A detailed figurative statue finished in multi-colored polychrome paints, capturing a rustic European country girl carrying a harvest water jug."
-    },
-    {
-      "name": "Plant System Hotels Pass",
-      "category": "archive",
-      "meta": "1897 - 1898 | Archives",
-      "specs": "2.5 x 4.2 in. Paper",
-      "image_url": "https://www.plantmuseum.com/getattachment/1a75abf7-53a3-4d16-8e92-67b802c6d958/2000-104-web.jpg.aspx;?lang=en-US&width=183&height=233&ext=.jpg",
-      "description": "An authentic seasonal paper pass granting VIP access to Henry Plant's complete network of eight luxury Florida resort hotels."
-    },
-    {
-      "name": "Plant System Pass",
-      "category": "archive",
-      "meta": "1897 | Archives",
-      "specs": "2.5 x 4.2 in. Paper",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2016-4-Qrtly-pass.jpg?ext=.jpg",
-      "description": "An original printed quarterly rail pass issued to industrial executives, granting access across the complete Plant System rail network lines."
-    },
-    {
-      "name": "Plant System Railroad Pass",
-      "category": "archive",
-      "meta": "1901 | Archives",
-      "specs": "2.75 x 4.6 in. Paper",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1990-35-1-Front.jpg?ext=.jpg",
-      "description": "An historical paper railroad pass from 1901, displaying detailed engraving design work used to prevent travel fraud."
-    },
-    {
-      "name": "Plant System Railways Pass",
-      "category": "archive",
-      "meta": "1899 | Archives",
-      "specs": "2.6 x 4.3 in. Paper",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1990-35-3-Front.jpg?ext=.jpg",
-      "description": "A collectible leatherbound paper travel pass issued right before Henry Plant's death in 1899, tracking executive railroad travel authorization."
-    },
-    {
-      "name": "Plant System SFW Train",
-      "category": "archive",
-      "meta": "1893 | Archives",
-      "specs": "2.5 x 4.2 in. Paper",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1982-010-001J-026.jpg?ext=.jpg",
-      "description": "A miniature archival print from 1893 showing a South Florida Railroad locomotive engine operating along the regional tracks."
-    },
-    {
-      "name": "Polychrome Relief",
-      "category": "decor",
-      "meta": "Late 19th century | French",
-      "specs": "Height: 24 in. Metal alloy",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-402.jpg?ext=.jpg",
-      "description": "A multi-colored metal alloy wall plaque relief casting showing a collection of classical figures celebrating seasonal grape harvests."
-    },
-    {
-      "name": "Postcard",
-      "category": "archive",
-      "meta": "1908 | Archives",
-      "specs": "3.5 x 5 in. Postcard",
-      "image_url": "https://www.plantmuseum.com/getattachment/f9258378-bec9-49e6-9875-97c38054e837/2003-005-002-web.jpg.aspx;?lang=en-US&width=183&height=233&ext=.jpg",
-      "description": "An original 1908 printed postcard featuring a panoramic look of the hotel's silver minarets, sent by a guest to family up north."
-    },
-    {
-      "name": "Postcard (Alligator)",
-      "category": "archive",
-      "meta": "1908 | Archives",
-      "specs": "3.5 x 5.5 in. Postcard",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2007-013-Alligator.jpg?ext=.jpg",
-      "description": "A humorous vintage postcard showing guests looking at native Florida alligators on the resort grounds, highlighting early local tourism tropes."
-    },
-    {
-      "name": "Queen Elizabeth I",
-      "category": "statues",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 18 in. Bronze with Silver Overlay",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0166.jpg?ext=.jpg",
-      "description": "A fine bronze portrait sculpture of Queen Elizabeth I, featuring detailed silver electroplate overlay highlighting her elaborate Elizabethan collar panels."
-    },
-    {
-      "name": "Queen Victoria",
-      "category": "statues",
-      "meta": "Mid-19th Century | English",
-      "specs": "Height: 22 in. Parian ware",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0179.jpg?ext=.jpg",
-      "description": "A white matte Parian ware porcelain portrait bust capturing a young Queen Victoria, celebrating old-world British heritage design."
-    },
-    {
-      "name": "Red Riding Hood",
-      "category": "statues",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 53 in. Cast iron",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/Little-Red-Riding-Hood.jpg?ext=.jpg",
-      "description": "A large 4.5-foot tall cast iron garden statue illustrating Little Red Riding Hood, used to decorate the entry fountain walkways."
-    },
-    {
-      "name": "Regence Style Chair",
-      "category": "furnishing",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 44 in. Giltwood",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0232.jpg?ext=.jpg",
-      "description": "A high-backed formal armchair carved with heavy acanthus leaf scroll patterns and finished entirely in gold leaf coatings."
-    },
-    {
-      "name": "Reticulated Vase",
-      "category": "ceramics",
-      "meta": "1889 | English",
-      "specs": "Height: 22 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0104.jpg?ext=.jpg",
-      "description": "An English ceramic display vase showcasing complex openwork reticulated latticed cuts along its outer double walls."
-    },
-    {
-      "name": "Rooftop View, Minarets",
-      "category": "archive",
-      "meta": "CC. 1910 | Archives",
-      "specs": "8 x 10 in. Photograph",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1990-032-001.jpg?ext=.jpg",
-      "description": "An historical photograph looking out across the rooflines, showing the massive size of the Moorish minarets and crescent moons up close."
-    },
-    {
-      "name": "Salt Glaze Garden Seat (20 in.)",
-      "category": "furnishing",
-      "meta": "Late 19th Century | German",
-      "specs": "Height: 20 in. Stoneware",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0081.jpg?ext=.jpg",
-      "description": "A salt-glazed German stoneware seat finished in a signature blue and grey speckled sheen, built to weather outdoor veranda use."
-    },
-    {
-      "name": "Salt Glaze Garden Seat (22 in.)",
-      "category": "furnishing",
-      "meta": "Late 19th Century | German",
-      "specs": "Height: 22 in. Stoneware",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0084.jpg?ext=.jpg",
-      "description": "A taller variant of the German salt-glazed stoneware porch stool, detailed with heavy molded lions head handles on the sides."
-    },
-    {
-      "name": "Satsuma Garden Seat",
-      "category": "furnishing",
-      "meta": "19th Century | Japanese",
-      "specs": "Height: 18 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0067.jpg?ext=.jpg",
-      "description": "An authentic Japanese Satsuma ceramic seat covered in a soft ivory crackle glaze and detailed with complex gold line court portraits."
-    },
-    {
-      "name": "Seated Shepherd Boy",
-      "category": "statues",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 10 in. Metal alloy",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0163.jpg?ext=.jpg",
-      "description": "A small metal alloy sculpture showing a young country shepherd boy resting along a stone wall, typical of romantic table decorations."
-    },
-    {
-      "name": "Sevres Style Vase",
-      "category": "ceramics",
-      "meta": "Late 19th century | French",
-      "specs": "Height: 18 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0136.jpg?ext=.jpg",
-      "description": "A high-quality French style display urn featuring an painted center scene of court lovers, framed with heavy gold leaf trim borders."
-    },
-    {
-      "name": "Shepherd Boy",
-      "category": "statues",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 21 in. Metal Alloy",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0159.jpg?ext=.jpg",
-      "description": "A companion alloy statue tracking a standing shepherd boy playing a traditional reed pipe instrument, celebrating country themes."
-    },
-    {
-      "name": "Ships at Sea",
-      "category": "paintings",
-      "meta": "Late 19th Century | American",
-      "specs": "6 x 12 in. Oil on Board",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-375-ships-detail.jpg?ext=.jpg",
-      "description": "A crisp maritime oil painting tracking high masted clipper ships moving through rolling ocean whitecaps, highlighting ocean travel."
-    },
-    {
-      "name": "Small Pouf",
-      "category": "furnishing",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 31 in. Gilded Wood",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0205.jpg?ext=.jpg",
-      "description": "A gilded low footstool upholstered in fine velvet fabric, matching the formal seating arrangements of the main drawing rooms."
-    },
-    {
-      "name": "Spinning Girl",
-      "category": "statues",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 60 in. Cast iron",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/PERM-COLL-Spinning-Girl.jpg?ext=.jpg",
-      "description": "A large 5-foot tall cast iron indoor statue detailing a young woman weaving textiles, a tribute to Gilded Age industry and craftsmanship."
-    },
-    {
-      "name": "Sunrise",
-      "category": "paintings",
-      "meta": "Late 19th Century | Holland-American",
-      "specs": "23 x 33 in. Oil on canvas",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1972-007-003Sunrise-detail.jpg?ext=.jpg",
-      "description": "A luminous maritime landscape oil canvas capturing early morning golden light reflecting over low coastal harbor canals."
-    },
-    {
-      "name": "Tampa Bay Hotel (1897 Photo)",
-      "category": "archive",
-      "meta": "C. 1897 | Archives",
-      "specs": "7 x 9 in. Photograph",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-064-052-013.jpg?ext=.jpg",
-      "description": "An original silver-print photograph capturing the full length of the resort building at the absolute peak of its Gilded Age operation."
-    },
-    {
-      "name": "Tampa Bay Hotel (1890 View)",
-      "category": "archive",
-      "meta": "C. 1890 | Archives",
-      "specs": "5 x 8 in. Photograph",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2015-030-TBH.jpg?ext=.jpg",
-      "description": "A rare historical photograph capturing the resort right before its official 1891 grand opening events commenced."
-    },
-    {
-      "name": "Tampa Bay Hotel Ad",
-      "category": "archive",
-      "meta": "1905 | Archives",
-      "specs": "4.2 x 5.5 in. Paper",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2003-059-ad.jpg?ext=.jpg",
-      "description": "An original printed news advertisement from 1905 layout maps, promoting the resort's complete fireproof construction and luxury rooms."
-    },
-    {
-      "name": "Tampa Bay Hotel, Bridge",
-      "category": "archive",
-      "meta": "1893 | Archives",
-      "specs": "5 x 8 in. Photograph",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1995-012-043-12.jpg?ext=.jpg",
-      "description": "An historical layout photograph tracking visitors crossing the old wooden footbridge to access the exotic botanical center gardens."
-    },
-    {
-      "name": "Tampa Bay Hotel Brochure",
-      "category": "archive",
-      "meta": "1898 | Archives",
-      "specs": "5 x 7 in. Photograph",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1992-015.jpg?ext=.jpg",
-      "description": "An original guest brochure from the 1898 season, detailing room rates, hunting club trips, and orchestra schedules."
-    },
-    {
-      "name": "Tampa Bay Hotel Gates",
-      "category": "archive",
-      "meta": "1893 | Archives",
-      "specs": "4 x 6.5 in. Paper",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1982-010-001i-017.jpg?ext=.jpg",
-      "description": "A clear souvenir paper print tracking the decorative wrought iron entry gates designed to keep out local cattle and secure the resort."
-    },
-    {
-      "name": "Tampa Bay Hotel Photograph",
-      "category": "archive",
-      "meta": "1892 | Archives",
-      "specs": "8 x 10 in. Photograph",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2003-065-003-035.jpg?ext=.jpg",
-      "description": "A crisp early glass-plate photograph print capturing the unique Moorish Revival architecture from across the lawns."
-    },
-    {
-      "name": "Taming of Wild Horse",
-      "category": "statues",
-      "meta": "Late 19th Century | Holland-American",
-      "specs": "Cast iron with bronze patina",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/PERM-COLL-Horse-of-Marley.jpg?ext=.jpg",
-      "description": "A dynamic cast iron courtyard sculpture capturing a trainer wrestling a wild stallion, modeled after the famous Marly Horses of France."
-    },
-    {
-      "name": "Terra Cotta Jug",
-      "category": "ceramics",
-      "meta": "Late 19th century | European",
-      "specs": "Height: 16 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0137.jpg?ext=.jpg",
-      "description": "A rustic unglazed earthenware terra-cotta pitcher featuring simple folk art floral carvings, used to contrast with the formal porcelains."
-    },
-    {
-      "name": "Twilight",
-      "category": "paintings",
-      "meta": "Late 19th century | American",
-      "specs": "24 x 29 in. Oil on canvas",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1972-007-004-Twilight-detail.jpg?ext=.jpg",
-      "description": "A rich tonalist American landscape painting capturing deep purple and amber sunset values hanging over marshy low country meadows."
-    },
-    {
-      "name": "Vase Applied Flowers",
-      "category": "ceramics",
-      "meta": "Late 19th Century | Germany",
-      "specs": "Height: 12 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0139.jpg?ext=.jpg",
-      "description": "A high-relief German porcelain display vase featuring individually hand-sculpted, fragile flower petals applied directly onto the outer walls."
-    },
-    {
-      "name": "Vase Cobalt Design",
-      "category": "ceramics",
-      "meta": "19th century | Japanese",
-      "specs": "Height: 18 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0146.jpg?ext=.jpg",
-      "description": "An authentic Japanese porcelain jar painted with abstract deep blue cobalt fluid motion wave patterns along its rim zones."
-    },
-    {
-      "name": "Vase with Birds",
-      "category": "ceramics",
-      "meta": "Late 19th Century | Bohemian",
-      "specs": "Height: 13 in. Glass",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0129.jpg?ext=.jpg",
-      "description": "An elegant Bohemian blown glass vase with enameled detailing showing native forest songbirds resting along winter tree branches."
-    },
-    {
-      "name": "Vase with Child",
-      "category": "ceramics",
-      "meta": "Late 19th Century | European",
-      "specs": "Height: 10 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0126.jpg?ext=.jpg",
-      "description": "A decorative porcelain mantel vase featuring a sculpted porcelain cherub figure sitting and playing near the base molding paths."
-    },
-    {
-      "name": "Vase with Flowers",
-      "category": "ceramics",
-      "meta": "Late 19th Century | English",
-      "specs": "Height: 21 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0122.jpg?ext=.jpg",
-      "description": "A classic Victorian English mantle urn featuring hand-painted panels of country roses and wild meadow floral clusters."
-    },
-    {
-      "name": "Vase with Frog Men",
-      "category": "ceramics",
-      "meta": "Late 19th Century | Japanese",
-      "specs": "Height: 12 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/getattachment/Exhibits/Permanent-Collection/Vase-with-Frogs/Untitled-1-(19)-copy-(1).jpg.aspx;?lang=en-US&width=250&height=300&ext=.jpg",
-      "description": "An incredibly rare Japanese ceramic vase featuring sculpted relief figures of mythological frog-men climbing along the neck casing."
-    },
-    {
-      "name": "Vase with Geese",
-      "category": "ceramics",
-      "meta": "Late 19th Century | Chinese",
-      "specs": "Height: 23 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0098.jpg?ext=.jpg",
-      "description": "A Chinese porcelain display jar showing detailed brushwork of a flock of wild marsh geese resting along reed-lined riverbanks."
-    },
-    {
-      "name": "Venus",
-      "category": "statues",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 41 in. Cast iron",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/PERM-COLL-Venus.jpg?ext=.jpg",
-      "description": "A grand, heavy cast iron neoclassical garden statue depicting Venus, used to anchors the central focus of the resort's indoor solarium."
-    },
-    {
-      "name": "Venus at the Bath",
-      "category": "statues",
-      "meta": "Late 19th Century | French",
-      "specs": "Height: 34 in. Cast iron",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/bather-1.jpg?ext=.jpg",
-      "description": "A companion cast iron sculpture detailing Venus preparing for a bath, celebrating classical Roman architecture and myths."
-    },
-    {
-      "name": "Victorian Lady",
-      "category": "paintings",
-      "meta": "Late 19th Century | American",
-      "specs": "Height: 41 in. Oil on canvas",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-286.jpg?ext=.jpg",
-      "description": "A formal portrait painting in oil on canvas tracking the sophisticated winter travel dress of a wealthy Gilded Age woman."
-    },
-    {
-      "name": "Victorian Lamp",
-      "category": "furnishing",
-      "meta": "Late 19th Century | Chinese",
-      "specs": "Height: 72 in. Ceramic, bronze mountings",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/Perm-Coll-WATER-JUG-LAMP.jpg?ext=.jpg",
-      "description": "A massive 6-foot tall floor lamp crafted out of a monumental Chinese ceramic vase foundation and fitted with heavy French bronze base rings."
-    },
-    {
-      "name": "Wedgwood Swan Vase",
-      "category": "ceramics",
-      "meta": "1886 | England",
-      "specs": "Height: 54 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0196.jpg?ext=.jpg",
-      "description": "An historic 4.5-foot tall English Wedgwood Jasperware vase featuring relief swan handles and white classical muses layered on fine light blue stoneware backgrounds."
-    },
-    {
-      "name": "Wine, Women & Song",
-      "category": "paintings",
-      "meta": "1890 | German",
-      "specs": "Height: 55 in. Oil Painting",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/Perm-Coll-WINE-WOMEN-SONG.jpg?ext=.jpg",
-      "description": "A massive German oil festival painting celebrating music and community festivities, hung in the hotel's long grand ballroom wings."
-    },
-    {
-      "name": "Winter Scene",
-      "category": "paintings",
-      "meta": "Late 19th century | French",
-      "specs": "6 x 8.5 in. Oil on panel",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-144snow-scene-detail.jpg?ext=.jpg",
-      "description": "A crisp, beautiful oil painting on wood panel showing snow blanketed French country villages, offering a mental contrast to Florida's warm winters."
-    },
-    {
-      "name": "Worcester Vase",
-      "category": "ceramics",
-      "meta": "Late 19th century | English",
-      "specs": "Height: 30 in. Ceramic",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0125.jpg?ext=.jpg",
-      "description": "A stately Royal Worcester English ceramic display urn detailed with gold relief handle leaves and custom hand painted floral bouquets."
-    },
-    {
-      "name": "Yellow Jardinière",
-      "category": "ceramics",
-      "meta": "Late 19th century | English",
-      "specs": "Height: 12 in. Earthenware",
-      "image_url": "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0071.jpg?ext=.jpg",
-      "description": "An English earthenware planter finished in a distinct bright yellow mustard glaze, designed to catch sunlight on parlor window casings."
-    }
-  ]
+    "museum_name":  "Henry B. Plant Museum",
+    "total_items_cataloged":  131,
+    "artifacts":  [
+                      {
+                          "name":  "Baker",
+                          "category":  "statues",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 27 in. Metal Alloy",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0172.jpg?ext=.jpg",
+                          "description":  "An exquisite metal alloy classical figural statue depicting a traditional French baker, selected by Henry Plant to add European artistic flair to the hotel\u0027s prominent reception areas."
+                      },
+                      {
+                          "name":  "Blue \u0026 White Garden Seat",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | Japanese",
+                          "specs":  "Height: 19 in. Porcelain",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1999-071.jpg?ext=.jpg",
+                          "description":  "A barrel-shaped porcelain garden seat hand-decorated with deep blue cobalt landscape panels. These seats lined the grand verandas for guests relaxing outdoors."
+                      },
+                      {
+                          "name":  "Blue \u0026 White Jardiniere",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | English",
+                          "specs":  "Height: 23 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2001-045.jpg?ext=.jpg",
+                          "description":  "A massive English ceramic planter decorated with rich multi-layered cobalt detailing, used to show off exotic flora inside the hotel\u0027s main hallways."
+                      },
+                      {
+                          "name":  "Blue and White Bowl (Instance 1)",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | Japanese",
+                          "specs":  "Height: 8 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-220-copy.jpg?ext=.jpg",
+                          "description":  "An original decorative Meiji-era porcelain bowl featuring detailed landscape and linear artwork, hand-selected on buying trips through East Asia."
+                      },
+                      {
+                          "name":  "Blue and White Bowl (Instance 2)",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | Japanese",
+                          "specs":  "Height: 8 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-220-copy.jpg?ext=.jpg",
+                          "description":  "An additional matching multi-paneled Japanese ceramic bowl display, used to hold ornate table centerpieces for high-society dining events."
+                      },
+                      {
+                          "name":  "Blue Garden Seat",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | English",
+                          "specs":  "Height: 20 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1999-077.jpg?ext=.jpg",
+                          "description":  "An English ceramic seat featuring a deep, vibrant solid blue wash, designed to offer seating for hotel guests along the brick sun verandas."
+                      },
+                      {
+                          "name":  "Bonito Lake",
+                          "category":  "paintings",
+                          "meta":  "Late 19th Century | French-American",
+                          "specs":  "9 x 42 in. Gouache",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-438Pascal-detail.jpg?ext=.jpg",
+                          "description":  "A long, panoramic natural view rendered in fine gouache paint, showing the peaceful mountain lakes frequented by vacationers during the Gilded Age."
+                      },
+                      {
+                          "name":  "Bottleneck Vase",
+                          "category":  "ceramics",
+                          "meta":  "19th Century | Chinese",
+                          "specs":  "Height: 13 in. Porcelain",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0101.jpg?ext=.jpg",
+                          "description":  "A classic porcelain vase featuring a distinct narrow bottleneck form and high-gloss translucent glaze coat, showing off fine Asian craft design."
+                      },
+                      {
+                          "name":  "Boulle Style Cabinet (Marble Top)",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 44 in. Wood with marble top",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0216.jpg?ext=.jpg",
+                          "description":  "A beautiful low cabinet styled after André-Charles Boulle, featuring ebonized wood finishes, bright brass inlay trims, and a heavy white marble counter slab."
+                      },
+                      {
+                          "name":  "Boulle Style Cabinet (Mahogany)",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 51 in. Mahogany Wood",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/Boulle-Style-Cabinet.jpg?ext=.jpg",
+                          "description":  "A tall, majestic mahogany cabinet featuring ornate brass accents and premium glass display windows, used to exhibit curio artifacts in parlor suites."
+                      },
+                      {
+                          "name":  "Boulle Style Table",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 31 in. Wood with brass inlay",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0230.jpg?ext=.jpg",
+                          "description":  "An opulent parlor center table displaying complex tortoiseshell and brass scrollwork marquetry, serving as a social focal point in luxury rooms."
+                      },
+                      {
+                          "name":  "Boy with Harp",
+                          "category":  "statues",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 23 in. Metal Alloy",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0182.jpg?ext=.jpg",
+                          "description":  "A romanticist metal alloy statue detailing a young classical performer strumming a harp, celebrating music and fine theater aesthetics."
+                      },
+                      {
+                          "name":  "Briar Root Bench",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | France",
+                          "specs":  "Height: 42 in. Briar Root",
+                          "image_url":  "https://www.plantmuseum.com/getattachment/1b5bc164-f009-4e62-8f6c-6dfb44e1a20f/1999-011-001-Briarwood.jpg.aspx;?lang=en-US\u0026width=183\u0026height=233\u0026ext=.jpg",
+                          "description":  "An incredible rustic statement bench made from woven, natural briar root branches, placed inside the hotel\u0027s solariums to create an indoor-outdoor oasis look."
+                      },
+                      {
+                          "name":  "Bronze Vases",
+                          "category":  "decor",
+                          "meta":  "Late 19th Century | Japanese",
+                          "specs":  "Height: 10 in. Bronze",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0177.jpg?ext=.jpg",
+                          "description":  "A matching pair of cast bronze vases featuring relief work of seasonal cherry blossoms, showing the high-quality international arts imported by Henry Plant."
+                      },
+                      {
+                          "name":  "Carved Shodana",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | Japanese",
+                          "specs":  "Height: 91 in. Teckwood with gilded panels",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0213.jpg?ext=.jpg",
+                          "description":  "A monumental 7-foot tall teak wood display cabinet featuring asymmetric shelves, gold leaf landscape backgrounds, and fine ivory accents."
+                      },
+                      {
+                          "name":  "Celadon Floor Vase",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | Chinese",
+                          "specs":  "Height: 19 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-076.jpg?ext=.jpg",
+                          "description":  "A large ceramic floor jar finished in a classic pale sea-green jade-like celadon crackle glaze coat, popular among high-society collectors."
+                      },
+                      {
+                          "name":  "Celadon Garden Seat",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | Chinese",
+                          "specs":  "Height: 19 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1999-074.jpg?ext=.jpg",
+                          "description":  "A glazed light-green ceramic garden seat displaying openwork double-coin patterns and raised slip-dot textures running along its edges."
+                      },
+                      {
+                          "name":  "Cellini",
+                          "category":  "statues",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 23 in. White metal with bronze patina",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0155.jpg?ext=.jpg",
+                          "description":  "A tribute sculpture honoring the master Renaissance craftsman Benvenuto Cellini, rendered in white metal with a deep chemically developed bronze patina finish."
+                      },
+                      {
+                          "name":  "Ceramic Flask (German)",
+                          "category":  "ceramics",
+                          "meta":  "1892 | German",
+                          "specs":  "Height: 10 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0142.jpg?ext=.jpg",
+                          "description":  "An authentic salt-glazed ceramic flask showing historical coat-of-arms relief designs, imported from Germany as a novelty decoration item."
+                      },
+                      {
+                          "name":  "Ceramic Flask (Hungarian)",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | Hungarian",
+                          "specs":  "Height: 11 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0143.jpg?ext=.jpg",
+                          "description":  "A colorful glazed majolica ceramic flask featuring traditional Hungarian floral borders and unique stylized loop handles."
+                      },
+                      {
+                          "name":  "Chinese Chair",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | Chinese",
+                          "specs":  "Height: 36 in. Hardwood and inset marble",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0251.jpg?ext=.jpg",
+                          "description":  "A heavy, hand-carved rosewood armchair featuring an inset circular plaque of natural dreamstone marble mimicking storm clouds."
+                      },
+                      {
+                          "name":  "Cleopatra",
+                          "category":  "statues",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 36 in. Hardwood and inset marble",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0171.jpg?ext=.jpg",
+                          "description":  "A dramatic romanticist cast metal sculpture depicting Cleopatra VII reclining on an Egyptian couch, showcasing detailed drapery work."
+                      },
+                      {
+                          "name":  "Cloisonne Vase (Peony)",
+                          "category":  "decor",
+                          "meta":  "Late 19th Century | Japanese",
+                          "specs":  "Height: 19 in. Enamelware",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0069.jpg?ext=.jpg",
+                          "description":  "A stunning enamel-on-copper vase that uses thin wire frames to hold layers of rich green, red, and gold glass paste forming blooming peonies."
+                      },
+                      {
+                          "name":  "Cloisonne Vase (Dragon)",
+                          "category":  "decor",
+                          "meta":  "Late 19th Century | Japanese",
+                          "specs":  "Height: 18 in. Enamelware",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0080.jpg?ext=.jpg",
+                          "description":  "An intricate wire cloisonné vase depicting a long imperial dragon coiling across a polished midnight-blue glass sky background."
+                      },
+                      {
+                          "name":  "Cobalt Blue Vase",
+                          "category":  "ceramics",
+                          "meta":  "Early 19th Century | European",
+                          "specs":  "Height: 14.5 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0134.jpg?ext=.jpg",
+                          "description":  "A rare early 1800s porcelain display vase coated in a deep Sevres cobalt blue glaze and detailed with delicate hand-painted gold accents."
+                      },
+                      {
+                          "name":  "Cobalt Garden Seat",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | Chinese",
+                          "specs":  "Height: 19 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1999-080.jpg?ext=.jpg",
+                          "description":  "A rich cobalt blue glazed porcelain garden stool featuring open decorative cutouts and stylized elephant-head relief work on the sides."
+                      },
+                      {
+                          "name":  "Cobalt Imari Vase",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | Japanese",
+                          "specs":  "Height: 36 in. Porcelain",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0061.jpg?ext=.jpg",
+                          "description":  "A massive 3-foot tall porcelain statement urn blending deep cobalt underglazes with brilliant iron-red and gold floral patterns."
+                      },
+                      {
+                          "name":  "Cobalt Mirror",
+                          "category":  "decor",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 48 in. Glass and Wood",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0224.jpg?ext=.jpg",
+                          "description":  "A breathtaking Venetian-style decorative wall mirror framed with custom blown glass elements and deep cobalt blue floral appliques."
+                      },
+                      {
+                          "name":  "Collector\u0027s Cabinet",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | European",
+                          "specs":  "Height: 26 in. Wood with ivory inlay",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0222.jpg?ext=.jpg",
+                          "description":  "A desktop locking display chest built from fine hardwood and featuring miniature hand-etched ivory panels showing historical scenes."
+                      },
+                      {
+                          "name":  "Conversation",
+                          "category":  "paintings",
+                          "meta":  "Late 19th Century | Swiss",
+                          "specs":  "34 x 45 in. Oil on Canvas",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-230-Conversation-detail.jpg?ext=.jpg",
+                          "description":  "A large Swiss oil painting depicting Victorian figures gathered together in conversation, hung in public social parlors."
+                      },
+                      {
+                          "name":  "Correggio",
+                          "category":  "statues",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 21 in. Metal Alloy",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0151.jpg?ext=.jpg",
+                          "description":  "A French cast metal alloy figural statue celebrating the classic Italian painter Antonio da Correggio, embodying fine art appreciation."
+                      },
+                      {
+                          "name":  "Departure",
+                          "category":  "paintings",
+                          "meta":  "Late 19th Century | Norwegian",
+                          "specs":  "Height: 24 in. Oil on Canvas",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1972-007-002.jpg?ext=.jpg",
+                          "description":  "A moody Norwegian oil canvas painting depicting ships leaving a dock, a visual nod to Henry Plant\u0027s own steamship lines."
+                      },
+                      {
+                          "name":  "Dog Portrait",
+                          "category":  "paintings",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "8 x 6 in. Oil on Panel",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-143-Black-Dog-Head.jpeg?ext=.jpeg",
+                          "description":  "A charming, small-scale portrait painting focusing on a dark hunting hound, displayed in the hotel\u0027s masculine card and billiard rooms."
+                      },
+                      {
+                          "name":  "Dog Wearing Coat",
+                          "category":  "paintings",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "8 x 6 in. Oil on Panel",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-142-Dog-wearing-Jacket.jpeg?ext=.jpeg",
+                          "description":  "A whimsical, humorous Gilded Age painting showing a small terrier dog dressed up in a custom winter coat panel."
+                      },
+                      {
+                          "name":  "Duke of Savoy",
+                          "category":  "paintings",
+                          "meta":  "Late 19th Century | French School",
+                          "specs":  "31 x 24.5 in. Oil on Panel",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-135-Duke-of-Savoy.jpeg?ext=.jpeg",
+                          "description":  "A historical portrait painting of European nobility rendered in oil on wood panel, bringing an old-world look into the Florida resort."
+                      },
+                      {
+                          "name":  "Effroi",
+                          "category":  "statues",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 22 in. Metal Alloy",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0158.jpg?ext=.jpg",
+                          "description":  "A detailed French figurative metal alloy statue capturing high-stakes emotional drama, typical of late Victorian interior design choices."
+                      },
+                      {
+                          "name":  "Elephant Garden Seat",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | European",
+                          "specs":  "Height: 20 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0073.jpg?ext=.jpg",
+                          "description":  "An glazed ceramic stool sculpted into a classic caparisoned elephant carrying a seat platform, tapping into popular Orientalism trends."
+                      },
+                      {
+                          "name":  "Elephant with Pagoda",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | Chinese",
+                          "specs":  "Height: 26 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2001-037.jpg?ext=.jpg",
+                          "description":  "An intricate glazed ceramic structural stand modeled as a royal elephant balancing an ornate multi-tiered pagoda tower on its back."
+                      },
+                      {
+                          "name":  "Esmeralda",
+                          "category":  "statues",
+                          "meta":  "1880 | French",
+                          "specs":  "Cast iron with bronze patina",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/Esmerelda.jpg?ext=.jpg",
+                          "description":  "A majestic, full-scale cast iron indoor statue depicting the famous character Esmeralda from Victor Hugo\u0027s fiction, treated with a bronze finish."
+                      },
+                      {
+                          "name":  "Ewer with Cherub",
+                          "category":  "decor",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 25 in. Metal Alloy",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0174.jpg?ext=.jpg",
+                          "description":  "A large decorative display pitcher featuring an elaborate sculptural handle wrapped with miniature cherubs and trailing grapevines."
+                      },
+                      {
+                          "name":  "Flower Vase with Swan",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 56 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0244.jpg?ext=.jpg",
+                          "description":  "A massive 4.5-foot tall ceramic vase featuring sculpted white swan figures forming the side handles, used as a parlor center feature."
+                      },
+                      {
+                          "name":  "French Chair",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 36 in. Giltwood",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0234.jpg?ext=.jpg",
+                          "description":  "A light salon chair crafted from hand-carved wood and finished entirely in gold leaf gilding, used in the ladies\u0027 drawing rooms."
+                      },
+                      {
+                          "name":  "Frog Garden Seat",
+                          "category":  "furnishing",
+                          "meta":  "Circa 1890 | Bohemian",
+                          "specs":  "Height: 18 in. Glazed Earthenware",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0087.jpg?ext=.jpg",
+                          "description":  "A rare earthenware stool from Bohemia sculpted into a large, stylized frog sitting on a riverbed, covered in bright green earthy majolica glazes."
+                      },
+                      {
+                          "name":  "Fruit Still Life",
+                          "category":  "paintings",
+                          "meta":  "1883 | American",
+                          "specs":  "46 x 34 in. Oil on canvas",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1972-007-005Fruit-detail.jpg?ext=.jpg",
+                          "description":  "A large American oil painting detailing a rich spread of autumn harvest fruit, hung inside the hotel\u0027s grand main dining room."
+                      },
+                      {
+                          "name":  "Garden Seat with Figure",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th century | Chinese",
+                          "specs":  "Height: 22 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0092.jpg?ext=.jpg",
+                          "description":  "A Chinese ceramic porch seat painted with scenes of traditional figures walking through courtyard pavilions and terraced gardens."
+                      },
+                      {
+                          "name":  "Gilded Bronze Clock",
+                          "category":  "decor",
+                          "meta":  "Circa 1880 | French",
+                          "specs":  "Height: 28 in. Bronze",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/Gld-Clock.jpg?ext=.jpg",
+                          "description":  "A gold-gilded bronze mantel clock displaying elaborate floral scrollwork carvings and an polished white enamel dial face."
+                      },
+                      {
+                          "name":  "Hay Wagon",
+                          "category":  "paintings",
+                          "meta":  "Early 20th century | German",
+                          "specs":  "15 x 23 in. Oil on canvas",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-139-Wagon-detail.jpg?ext=.jpg",
+                          "description":  "A German pastoral oil landscape showing a traditional horse-drawn hay wagon moving through rolling farmlands during sunset."
+                      },
+                      {
+                          "name":  "Haystacks",
+                          "category":  "paintings",
+                          "meta":  "Early 20th century | German-American",
+                          "specs":  "24 x 34 in. Oil on canvas",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1935-001-081-Haystack-detailjpg.jpg?ext=.jpg",
+                          "description":  "An impressionist landscape painting depicting open wheat fields and stacked hay mounds, catching shifting afternoon light effects."
+                      },
+                      {
+                          "name":  "Henry B. Plant",
+                          "category":  "paintings",
+                          "meta":  "Late 19th Century | American",
+                          "specs":  "36 x 26 in. Oil on Canvas",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-074-HBP.jpg?ext=.jpg",
+                          "description":  "The official formal oil portrait of founder Henry Bradley Plant, capturing the transportation tycoon at the peak of his railroad business career."
+                      },
+                      {
+                          "name":  "Herman Glogowski",
+                          "category":  "paintings",
+                          "meta":  "Late 19th Century | American",
+                          "specs":  "30 x 24 in. Oil on Canvas",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2001-071-MayorGlogowski.jpg?ext=.jpg",
+                          "description":  "An original oil portrait of Herman Glogowski, Tampa\u0027s historic first Jewish mayor and a close civic partner to Henry Plant\u0027s development projects."
+                      },
+                      {
+                          "name":  "Hotel and Bridge",
+                          "category":  "archive",
+                          "meta":  "1889 | Archives",
+                          "specs":  "5 x 8 in. Photograph",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2006-016-001Brdg-TBH.jpg?ext=.jpg",
+                          "description":  "A rare archival photograph capturing the iron bridge spanning the Hillsborough River with the newly built hotel rising in the background background."
+                      },
+                      {
+                          "name":  "Hotel Construction",
+                          "category":  "archive",
+                          "meta":  "March 1889 | Archives",
+                          "specs":  "5.5 x 9 in. Photograph",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2006-016-002-TBH1889.jpg?ext=.jpg",
+                          "description":  "An original historical progress shot from March 1889 showing scaffolding surrounding the brickwork layers and minaret bases during construction."
+                      },
+                      {
+                          "name":  "Hotel East Front",
+                          "category":  "archive",
+                          "meta":  "1893 | Archives",
+                          "specs":  "4 x 6.5 in. Paper",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1982-010-001CC.jpg?ext=.jpg",
+                          "description":  "A souvenir print from 1893 showcasing the eastern facade of the resort, highlighting the landscaped tropical parks facing the riverfront."
+                      },
+                      {
+                          "name":  "Hotel Guests",
+                          "category":  "archive",
+                          "meta":  "1897-1898 | Archives",
+                          "specs":  "5 x 8 in. Photograph",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2008-007-TB-Hotel-Gate.jpg?ext=.jpg",
+                          "description":  "An archival image documenting wealthy northern winter tourists entering the front gates via luxury horse carriages and rickshaws."
+                      },
+                      {
+                          "name":  "Hotel Veranda",
+                          "category":  "archive",
+                          "meta":  "1893 | Archives",
+                          "specs":  "4 x 6.5 in. Paper",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1982-010-001GG.jpg?ext=.jpg",
+                          "description":  "A period print capturing guests relaxing in high-backed wicker rocking chairs along the signature quarter-mile-long brick veranda space."
+                      },
+                      {
+                          "name":  "Hotel West Front",
+                          "category":  "archive",
+                          "meta":  "Early 20th Century | Archives",
+                          "specs":  "3.5 x 5.5 in. Postcard",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2008-011-012.jpg?ext=.jpg",
+                          "description":  "A colorized vintage postcard showing the western main train platform entrance, where private luxury railcars dropped off guests directly."
+                      },
+                      {
+                          "name":  "Hotel with Train",
+                          "category":  "archive",
+                          "meta":  "1893 | Archives",
+                          "specs":  "4 x 6.5 in. Paper",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1982-010-001LL-020.jpg?ext=.jpg",
+                          "description":  "An 1893 promotional print showing a Plant System steam engine pulled up right alongside the hotel\u0027s grand minaret-capped entrance towers."
+                      },
+                      {
+                          "name":  "Hotel Workers",
+                          "category":  "archive",
+                          "meta":  "March 27, 1891 | Archives",
+                          "specs":  "13.7 x 17 in. Photograph",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2016-022-032-Construction.jpg?ext=.jpg",
+                          "description":  "A crucial large photograph tracking the diverse construction workers, carpenters, masonry crews, and gardeners who built the resort structure."
+                      },
+                      {
+                          "name":  "Hunting Dogs",
+                          "category":  "statues",
+                          "meta":  "1890 | French",
+                          "specs":  "Height: 36 in. Cast iron",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/Coup-de-Facil.jpg?ext=.jpg",
+                          "description":  "A heavy cast iron sculpture of two hunting hounds tracking game, placed on the open lawns near the resort gun club facilities."
+                      },
+                      {
+                          "name":  "Imari Fish Bowl",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | Japanese",
+                          "specs":  "Height: 20 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0064.jpg?ext=.jpg",
+                          "description":  "A massive open ceramic basin detailed with gold leaf scales and swimming koi fish patterns, used to decorate the indoor garden solariums."
+                      },
+                      {
+                          "name":  "Imari Floor Vase",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | Japanese",
+                          "specs":  "Height: 64 in. Porcelain",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-224_1.jpg?ext=.jpg",
+                          "description":  "A historic 5-foot tall Japanese Imari porcelain floor urn, featuring dark iron-red floral grids and cobalt blue underglazes."
+                      },
+                      {
+                          "name":  "Imari Vase",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | Japanese",
+                          "specs":  "Height: 14 in. Porcelain",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0112.jpg?ext=.jpg",
+                          "description":  "A classic Imari porcelain tabletop vase featuring asymmetric panels that show panels of traditional landscape scenes and cranes."
+                      },
+                      {
+                          "name":  "Japanese Vases",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | Japanese",
+                          "specs":  "Height: 14 in. Porcelain",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0108.jpg?ext=.jpg",
+                          "description":  "A matching pair of porcelain display vases showcasing fine Meiji gold line details, purchased during the Plants\u0027 trips to the Orient."
+                      },
+                      {
+                          "name":  "Jardinière and stand",
+                          "category":  "ceramics",
+                          "meta":  "1885-1890 | English",
+                          "specs":  "Height: 14 in. Earthenware",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0068.jpg?ext=.jpg",
+                          "description":  "An English glazed earthenware planter balanced on a matching column stand, decorated with rich Victorian relief textures."
+                      },
+                      {
+                          "name":  "Jardinière with Designs",
+                          "category":  "ceramics",
+                          "meta":  "Early 20th century | English",
+                          "specs":  "Height: 24 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-409.jpg?ext=.jpg",
+                          "description":  "A tall ceramic display planter detailed with geometric art-nouveau style line designs, showing off late-period resort trends."
+                      },
+                      {
+                          "name":  "Jardinière with Irises",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | English",
+                          "specs":  "Height: 24 in. Earthenware",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0095.jpg?ext=.jpg",
+                          "description":  "A glazed earthenware planter detailed with hand-painted purple and gold garden irises, mimicking the resort\u0027s external botanical parks."
+                      },
+                      {
+                          "name":  "Jeweled Urn",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | Germany",
+                          "specs":  "Height: 17 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0115.jpg?ext=.jpg",
+                          "description":  "A decorative German porcelain urn detailed with raised ceramic slip dots that mimic glittering gemstone chains across its handles."
+                      },
+                      {
+                          "name":  "Kutani Vase",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | Japanese",
+                          "specs":  "Height: 14 in. Porcelain",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0096.jpg?ext=.jpg",
+                          "description":  "An authentic Kutani porcelain vase showing iron-red color patterns and detailed gold outlines illustrating traditional Japanese folklore stories."
+                      },
+                      {
+                          "name":  "Lake George",
+                          "category":  "paintings",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "11 x 28 in. Gouache on board",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-446Pascal-detail.jpg?ext=.jpg",
+                          "description":  "A peaceful landscape scene painted in gouache on heavy board, highlighting early American resort travel hotspots."
+                      },
+                      {
+                          "name":  "Landscape with Goats",
+                          "category":  "paintings",
+                          "meta":  "Early 20th century | German",
+                          "specs":  "17 x 24 in. Oil on canvas",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1935-001-079Goats-detail.jpg?ext=.jpg",
+                          "description":  "A rustic German oil canvas showing a small herd of mountain goats resting along alpine cliffs, common in Gilded Age hotel collections."
+                      },
+                      {
+                          "name":  "Landscape with Lake",
+                          "category":  "paintings",
+                          "meta":  "Late 19th century | French",
+                          "specs":  "9 x 26 in. Gouache",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-437Pascal-detail.jpg?ext=.jpg",
+                          "description":  "A soft, impressionistic gouache painting mapping the quiet mist hanging over a forest lake during early morning hours."
+                      },
+                      {
+                          "name":  "Louis XV Style Chair",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 40 in. Giltwood",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0238.jpg?ext=.jpg",
+                          "description":  "An open armchair carved with fine Rococo scroll details and covered in gold leaf gilding, upholstered in rich silk damask fabrics."
+                      },
+                      {
+                          "name":  "Louis XV Style Settee",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 39 in. Wood with brass trim",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0161.jpg?ext=.jpg",
+                          "description":  "A wide, elegant parlor settee bench built from dark wood, detailed with bright brass trim molding and patterned floral cushions."
+                      },
+                      {
+                          "name":  "Magician",
+                          "category":  "statues",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 27 in. Metal Alloy",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-140.jpg?ext=.jpg",
+                          "description":  "A conversational metal alloy statue depicting a traveling theater magician performing sleight-of-hand card tricks."
+                      },
+                      {
+                          "name":  "Marguerite de Valois",
+                          "category":  "paintings",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "39 x 26 in. Oil on canvas",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0167.jpg?ext=.jpg",
+                          "description":  "A large French oil portrait painting detailing the royal dress and jewels of historical figure Marguerite de Valois."
+                      },
+                      {
+                          "name":  "Mary Queen of Scots",
+                          "category":  "statues",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 18 in. Bronze with silver overlay",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0167.jpg?ext=.jpg",
+                          "description":  "A historic bronze portrait bust of Mary Stuart, featuring a detailed silver leaf overlay across her lace collar work."
+                      },
+                      {
+                          "name":  "Micro-mosaic Seat",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | English",
+                          "specs":  "Height: 19 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1999-081.jpg?ext=.jpg",
+                          "description":  "An English ceramic garden stool covered entirely in tiny geometric transfer print patterns that mimic classical Roman micro-mosaic stone work."
+                      },
+                      {
+                          "name":  "Monkey Garden Seat",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | German",
+                          "specs":  "Height: 19 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1999-078-Monkey-Garden-Seat.jpg?ext=.jpg",
+                          "description":  "A playful German majolica ceramic porch stool sculpted as three monkeys holding up the seat cushion panel, showing Victorian humor trends."
+                      },
+                      {
+                          "name":  "Mushroom Garden Seat",
+                          "category":  "furnishing",
+                          "meta":  "Circa 1890 | Bohemian",
+                          "specs":  "Height: 18 in. Glazed Earthenware",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0090.jpg?ext=.jpg",
+                          "description":  "A whimsical Bohemian glazed earthenware stool sculpted to mimic a collection of wild forest mushrooms growing out of moss foundations."
+                      },
+                      {
+                          "name":  "Napoleon \u0026 Josephine",
+                          "category":  "decor",
+                          "meta":  "Late 19th Century | German",
+                          "specs":  "Height: 13 in. Bisque Porcelain",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0120.jpg?ext=.jpg",
+                          "description":  "A pair of unglazed matte bisque porcelain portrait figurines capturing Emperor Napoleon Bonaparte and Empress Josephine in full court regalia dress."
+                      },
+                      {
+                          "name":  "Ornate Clock",
+                          "category":  "decor",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 44 in. Bronze with Gilded Patina",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/ornate-clock.jpg?ext=.jpg",
+                          "description":  "A massive French parlor mantel clock crafted from heavy cast bronze and covered in gold leaf, serving as a time center for public lobbies."
+                      },
+                      {
+                          "name":  "Peasant Girl",
+                          "category":  "statues",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 30 in. Polychromed metal alloy",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0154.jpg?ext=.jpg",
+                          "description":  "A detailed figurative statue finished in multi-colored polychrome paints, capturing a rustic European country girl carrying a harvest water jug."
+                      },
+                      {
+                          "name":  "Plant System Hotels Pass",
+                          "category":  "archive",
+                          "meta":  "1897 - 1898 | Archives",
+                          "specs":  "2.5 x 4.2 in. Paper",
+                          "image_url":  "https://www.plantmuseum.com/getattachment/1a75abf7-53a3-4d16-8e92-67b802c6d958/2000-104-web.jpg.aspx;?lang=en-US\u0026width=183\u0026height=233\u0026ext=.jpg",
+                          "description":  "An authentic seasonal paper pass granting VIP access to Henry Plant\u0027s complete network of eight luxury Florida resort hotels."
+                      },
+                      {
+                          "name":  "Plant System Pass",
+                          "category":  "archive",
+                          "meta":  "1897 | Archives",
+                          "specs":  "2.5 x 4.2 in. Paper",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2016-4-Qrtly-pass.jpg?ext=.jpg",
+                          "description":  "An original printed quarterly rail pass issued to industrial executives, granting access across the complete Plant System rail network lines."
+                      },
+                      {
+                          "name":  "Plant System Railroad Pass",
+                          "category":  "archive",
+                          "meta":  "1901 | Archives",
+                          "specs":  "2.75 x 4.6 in. Paper",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1990-35-1-Front.jpg?ext=.jpg",
+                          "description":  "An historical paper railroad pass from 1901, displaying detailed engraving design work used to prevent travel fraud."
+                      },
+                      {
+                          "name":  "Plant System Railways Pass",
+                          "category":  "archive",
+                          "meta":  "1899 | Archives",
+                          "specs":  "2.6 x 4.3 in. Paper",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1990-35-3-Front.jpg?ext=.jpg",
+                          "description":  "A collectible leatherbound paper travel pass issued right before Henry Plant\u0027s death in 1899, tracking executive railroad travel authorization."
+                      },
+                      {
+                          "name":  "Plant System SFW Train",
+                          "category":  "archive",
+                          "meta":  "1893 | Archives",
+                          "specs":  "2.5 x 4.2 in. Paper",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1982-010-001J-026.jpg?ext=.jpg",
+                          "description":  "A miniature archival print from 1893 showing a South Florida Railroad locomotive engine operating along the regional tracks."
+                      },
+                      {
+                          "name":  "Polychrome Relief",
+                          "category":  "decor",
+                          "meta":  "Late 19th century | French",
+                          "specs":  "Height: 24 in. Metal alloy",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-402.jpg?ext=.jpg",
+                          "description":  "A multi-colored metal alloy wall plaque relief casting showing a collection of classical figures celebrating seasonal grape harvests."
+                      },
+                      {
+                          "name":  "Postcard",
+                          "category":  "archive",
+                          "meta":  "1908 | Archives",
+                          "specs":  "3.5 x 5 in. Postcard",
+                          "image_url":  "https://www.plantmuseum.com/getattachment/f9258378-bec9-49e6-9875-97c38054e837/2003-005-002-web.jpg.aspx;?lang=en-US\u0026width=183\u0026height=233\u0026ext=.jpg",
+                          "description":  "An original 1908 printed postcard featuring a panoramic look of the hotel\u0027s silver minarets, sent by a guest to family up north."
+                      },
+                      {
+                          "name":  "Postcard (Alligator)",
+                          "category":  "archive",
+                          "meta":  "1908 | Archives",
+                          "specs":  "3.5 x 5.5 in. Postcard",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2007-013-Alligator.jpg?ext=.jpg",
+                          "description":  "A humorous vintage postcard showing guests looking at native Florida alligators on the resort grounds, highlighting early local tourism tropes."
+                      },
+                      {
+                          "name":  "Queen Elizabeth I",
+                          "category":  "statues",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 18 in. Bronze with Silver Overlay",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0166.jpg?ext=.jpg",
+                          "description":  "A fine bronze portrait sculpture of Queen Elizabeth I, featuring detailed silver electroplate overlay highlighting her elaborate Elizabethan collar panels."
+                      },
+                      {
+                          "name":  "Queen Victoria",
+                          "category":  "statues",
+                          "meta":  "Mid-19th Century | English",
+                          "specs":  "Height: 22 in. Parian ware",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0179.jpg?ext=.jpg",
+                          "description":  "A white matte Parian ware porcelain portrait bust capturing a young Queen Victoria, celebrating old-world British heritage design."
+                      },
+                      {
+                          "name":  "Red Riding Hood",
+                          "category":  "statues",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 53 in. Cast iron",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/Little-Red-Riding-Hood.jpg?ext=.jpg",
+                          "description":  "A large 4.5-foot tall cast iron garden statue illustrating Little Red Riding Hood, used to decorate the entry fountain walkways."
+                      },
+                      {
+                          "name":  "Regence Style Chair",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 44 in. Giltwood",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0232.jpg?ext=.jpg",
+                          "description":  "A high-backed formal armchair carved with heavy acanthus leaf scroll patterns and finished entirely in gold leaf coatings."
+                      },
+                      {
+                          "name":  "Reticulated Vase",
+                          "category":  "ceramics",
+                          "meta":  "1889 | English",
+                          "specs":  "Height: 22 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0104.jpg?ext=.jpg",
+                          "description":  "An English ceramic display vase showcasing complex openwork reticulated latticed cuts along its outer double walls."
+                      },
+                      {
+                          "name":  "Rooftop View, Minarets",
+                          "category":  "archive",
+                          "meta":  "CC. 1910 | Archives",
+                          "specs":  "8 x 10 in. Photograph",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1990-032-001.jpg?ext=.jpg",
+                          "description":  "An historical photograph looking out across the rooflines, showing the massive size of the Moorish minarets and crescent moons up close."
+                      },
+                      {
+                          "name":  "Salt Glaze Garden Seat (20 in.)",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | German",
+                          "specs":  "Height: 20 in. Stoneware",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0081.jpg?ext=.jpg",
+                          "description":  "A salt-glazed German stoneware seat finished in a signature blue and grey speckled sheen, built to weather outdoor veranda use."
+                      },
+                      {
+                          "name":  "Salt Glaze Garden Seat (22 in.)",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | German",
+                          "specs":  "Height: 22 in. Stoneware",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0084.jpg?ext=.jpg",
+                          "description":  "A taller variant of the German salt-glazed stoneware porch stool, detailed with heavy molded lions head handles on the sides."
+                      },
+                      {
+                          "name":  "Satsuma Garden Seat",
+                          "category":  "furnishing",
+                          "meta":  "19th Century | Japanese",
+                          "specs":  "Height: 18 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0067.jpg?ext=.jpg",
+                          "description":  "An authentic Japanese Satsuma ceramic seat covered in a soft ivory crackle glaze and detailed with complex gold line court portraits."
+                      },
+                      {
+                          "name":  "Seated Shepherd Boy",
+                          "category":  "statues",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 10 in. Metal alloy",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0163.jpg?ext=.jpg",
+                          "description":  "A small metal alloy sculpture showing a young country shepherd boy resting along a stone wall, typical of romantic table decorations."
+                      },
+                      {
+                          "name":  "Sevres Style Vase",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th century | French",
+                          "specs":  "Height: 18 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0136.jpg?ext=.jpg",
+                          "description":  "A high-quality French style display urn featuring an painted center scene of court lovers, framed with heavy gold leaf trim borders."
+                      },
+                      {
+                          "name":  "Shepherd Boy",
+                          "category":  "statues",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 21 in. Metal Alloy",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0159.jpg?ext=.jpg",
+                          "description":  "A companion alloy statue tracking a standing shepherd boy playing a traditional reed pipe instrument, celebrating country themes."
+                      },
+                      {
+                          "name":  "Ships at Sea",
+                          "category":  "paintings",
+                          "meta":  "Late 19th Century | American",
+                          "specs":  "6 x 12 in. Oil on Board",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-375-ships-detail.jpg?ext=.jpg",
+                          "description":  "A crisp maritime oil painting tracking high masted clipper ships moving through rolling ocean whitecaps, highlighting ocean travel."
+                      },
+                      {
+                          "name":  "Small Pouf",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 31 in. Gilded Wood",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0205.jpg?ext=.jpg",
+                          "description":  "A gilded low footstool upholstered in fine velvet fabric, matching the formal seating arrangements of the main drawing rooms."
+                      },
+                      {
+                          "name":  "Spinning Girl",
+                          "category":  "statues",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 60 in. Cast iron",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/PERM-COLL-Spinning-Girl.jpg?ext=.jpg",
+                          "description":  "A large 5-foot tall cast iron indoor statue detailing a young woman weaving textiles, a tribute to Gilded Age industry and craftsmanship."
+                      },
+                      {
+                          "name":  "Sunrise",
+                          "category":  "paintings",
+                          "meta":  "Late 19th Century | Holland-American",
+                          "specs":  "23 x 33 in. Oil on canvas",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1972-007-003Sunrise-detail.jpg?ext=.jpg",
+                          "description":  "A luminous maritime landscape oil canvas capturing early morning golden light reflecting over low coastal harbor canals."
+                      },
+                      {
+                          "name":  "Tampa Bay Hotel (1897 Photo)",
+                          "category":  "archive",
+                          "meta":  "C. 1897 | Archives",
+                          "specs":  "7 x 9 in. Photograph",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-064-052-013.jpg?ext=.jpg",
+                          "description":  "An original silver-print photograph capturing the full length of the resort building at the absolute peak of its Gilded Age operation."
+                      },
+                      {
+                          "name":  "Tampa Bay Hotel (1890 View)",
+                          "category":  "archive",
+                          "meta":  "C. 1890 | Archives",
+                          "specs":  "5 x 8 in. Photograph",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2015-030-TBH.jpg?ext=.jpg",
+                          "description":  "A rare historical photograph capturing the resort right before its official 1891 grand opening events commenced."
+                      },
+                      {
+                          "name":  "Tampa Bay Hotel Ad",
+                          "category":  "archive",
+                          "meta":  "1905 | Archives",
+                          "specs":  "4.2 x 5.5 in. Paper",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2003-059-ad.jpg?ext=.jpg",
+                          "description":  "An original printed news advertisement from 1905 layout maps, promoting the resort\u0027s complete fireproof construction and luxury rooms."
+                      },
+                      {
+                          "name":  "Tampa Bay Hotel, Bridge",
+                          "category":  "archive",
+                          "meta":  "1893 | Archives",
+                          "specs":  "5 x 8 in. Photograph",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1995-012-043-12.jpg?ext=.jpg",
+                          "description":  "An historical layout photograph tracking visitors crossing the old wooden footbridge to access the exotic botanical center gardens."
+                      },
+                      {
+                          "name":  "Tampa Bay Hotel Brochure",
+                          "category":  "archive",
+                          "meta":  "1898 | Archives",
+                          "specs":  "5 x 7 in. Photograph",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1992-015.jpg?ext=.jpg",
+                          "description":  "An original guest brochure from the 1898 season, detailing room rates, hunting club trips, and orchestra schedules."
+                      },
+                      {
+                          "name":  "Tampa Bay Hotel Gates",
+                          "category":  "archive",
+                          "meta":  "1893 | Archives",
+                          "specs":  "4 x 6.5 in. Paper",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1982-010-001i-017.jpg?ext=.jpg",
+                          "description":  "A clear souvenir paper print tracking the decorative wrought iron entry gates designed to keep out local cattle and secure the resort."
+                      },
+                      {
+                          "name":  "Tampa Bay Hotel Photograph",
+                          "category":  "archive",
+                          "meta":  "1892 | Archives",
+                          "specs":  "8 x 10 in. Photograph",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/2003-065-003-035.jpg?ext=.jpg",
+                          "description":  "A crisp early glass-plate photograph print capturing the unique Moorish Revival architecture from across the lawns."
+                      },
+                      {
+                          "name":  "Taming of Wild Horse",
+                          "category":  "statues",
+                          "meta":  "Late 19th Century | Holland-American",
+                          "specs":  "Cast iron with bronze patina",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/PERM-COLL-Horse-of-Marley.jpg?ext=.jpg",
+                          "description":  "A dynamic cast iron courtyard sculpture capturing a trainer wrestling a wild stallion, modeled after the famous Marly Horses of France."
+                      },
+                      {
+                          "name":  "Terra Cotta Jug",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th century | European",
+                          "specs":  "Height: 16 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0137.jpg?ext=.jpg",
+                          "description":  "A rustic unglazed earthenware terra-cotta pitcher featuring simple folk art floral carvings, used to contrast with the formal porcelains."
+                      },
+                      {
+                          "name":  "Twilight",
+                          "category":  "paintings",
+                          "meta":  "Late 19th century | American",
+                          "specs":  "24 x 29 in. Oil on canvas",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1972-007-004-Twilight-detail.jpg?ext=.jpg",
+                          "description":  "A rich tonalist American landscape painting capturing deep purple and amber sunset values hanging over marshy low country meadows."
+                      },
+                      {
+                          "name":  "Vase Applied Flowers",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | Germany",
+                          "specs":  "Height: 12 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0139.jpg?ext=.jpg",
+                          "description":  "A high-relief German porcelain display vase featuring individually hand-sculpted, fragile flower petals applied directly onto the outer walls."
+                      },
+                      {
+                          "name":  "Vase Cobalt Design",
+                          "category":  "ceramics",
+                          "meta":  "19th century | Japanese",
+                          "specs":  "Height: 18 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0146.jpg?ext=.jpg",
+                          "description":  "An authentic Japanese porcelain jar painted with abstract deep blue cobalt fluid motion wave patterns along its rim zones."
+                      },
+                      {
+                          "name":  "Vase with Birds",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | Bohemian",
+                          "specs":  "Height: 13 in. Glass",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0129.jpg?ext=.jpg",
+                          "description":  "An elegant Bohemian blown glass vase with enameled detailing showing native forest songbirds resting along winter tree branches."
+                      },
+                      {
+                          "name":  "Vase with Child",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | European",
+                          "specs":  "Height: 10 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0126.jpg?ext=.jpg",
+                          "description":  "A decorative porcelain mantel vase featuring a sculpted porcelain cherub figure sitting and playing near the base molding paths."
+                      },
+                      {
+                          "name":  "Vase with Flowers",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | English",
+                          "specs":  "Height: 21 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0122.jpg?ext=.jpg",
+                          "description":  "A classic Victorian English mantle urn featuring hand-painted panels of country roses and wild meadow floral clusters."
+                      },
+                      {
+                          "name":  "Vase with Frog Men",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | Japanese",
+                          "specs":  "Height: 12 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/getattachment/Exhibits/Permanent-Collection/Vase-with-Frogs/Untitled-1-(19)-copy-(1).jpg.aspx;?lang=en-US\u0026width=250\u0026height=300\u0026ext=.jpg",
+                          "description":  "An incredibly rare Japanese ceramic vase featuring sculpted relief figures of mythological frog-men climbing along the neck casing."
+                      },
+                      {
+                          "name":  "Vase with Geese",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th Century | Chinese",
+                          "specs":  "Height: 23 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0098.jpg?ext=.jpg",
+                          "description":  "A Chinese porcelain display jar showing detailed brushwork of a flock of wild marsh geese resting along reed-lined riverbanks."
+                      },
+                      {
+                          "name":  "Venus",
+                          "category":  "statues",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 41 in. Cast iron",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/PERM-COLL-Venus.jpg?ext=.jpg",
+                          "description":  "A grand, heavy cast iron neoclassical garden statue depicting Venus, used to anchors the central focus of the resort\u0027s indoor solarium."
+                      },
+                      {
+                          "name":  "Venus at the Bath",
+                          "category":  "statues",
+                          "meta":  "Late 19th Century | French",
+                          "specs":  "Height: 34 in. Cast iron",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/bather-1.jpg?ext=.jpg",
+                          "description":  "A companion cast iron sculpture detailing Venus preparing for a bath, celebrating classical Roman architecture and myths."
+                      },
+                      {
+                          "name":  "Victorian Lady",
+                          "category":  "paintings",
+                          "meta":  "Late 19th Century | American",
+                          "specs":  "Height: 41 in. Oil on canvas",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-286.jpg?ext=.jpg",
+                          "description":  "A formal portrait painting in oil on canvas tracking the sophisticated winter travel dress of a wealthy Gilded Age woman."
+                      },
+                      {
+                          "name":  "Victorian Lamp",
+                          "category":  "furnishing",
+                          "meta":  "Late 19th Century | Chinese",
+                          "specs":  "Height: 72 in. Ceramic, bronze mountings",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/Perm-Coll-WATER-JUG-LAMP.jpg?ext=.jpg",
+                          "description":  "A massive 6-foot tall floor lamp crafted out of a monumental Chinese ceramic vase foundation and fitted with heavy French bronze base rings."
+                      },
+                      {
+                          "name":  "Wedgwood Swan Vase",
+                          "category":  "ceramics",
+                          "meta":  "1886 | England",
+                          "specs":  "Height: 54 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0196.jpg?ext=.jpg",
+                          "description":  "An historic 4.5-foot tall English Wedgwood Jasperware vase featuring relief swan handles and white classical muses layered on fine light blue stoneware backgrounds."
+                      },
+                      {
+                          "name":  "Wine, Women \u0026 Song",
+                          "category":  "paintings",
+                          "meta":  "1890 | German",
+                          "specs":  "Height: 55 in. Oil Painting",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/Perm-Coll-WINE-WOMEN-SONG.jpg?ext=.jpg",
+                          "description":  "A massive German oil festival painting celebrating music and community festivities, hung in the hotel\u0027s long grand ballroom wings."
+                      },
+                      {
+                          "name":  "Winter Scene",
+                          "category":  "paintings",
+                          "meta":  "Late 19th century | French",
+                          "specs":  "6 x 8.5 in. Oil on panel",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/1998-144snow-scene-detail.jpg?ext=.jpg",
+                          "description":  "A crisp, beautiful oil painting on wood panel showing snow blanketed French country villages, offering a mental contrast to Florida\u0027s warm winters."
+                      },
+                      {
+                          "name":  "Worcester Vase",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th century | English",
+                          "specs":  "Height: 30 in. Ceramic",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0125.jpg?ext=.jpg",
+                          "description":  "A stately Royal Worcester English ceramic display urn detailed with gold relief handle leaves and custom hand painted floral bouquets."
+                      },
+                      {
+                          "name":  "Yellow Jardinière",
+                          "category":  "ceramics",
+                          "meta":  "Late 19th century | English",
+                          "specs":  "Height: 12 in. Earthenware",
+                          "image_url":  "https://www.plantmuseum.com/PlantMuseum/media/HBP-Museum-Media/SBC-WQ2M0071.jpg?ext=.jpg",
+                          "description":  "An English earthenware planter finished in a distinct bright yellow mustard glaze, designed to catch sunlight on parlor window casings."
+                      }
+                  ],
+    "collection_stats":  {
+                             "decor":  9,
+                             "statues":  20,
+                             "paintings":  21,
+                             "missing_artifacts":  "4 artifacts are currently off-display for temporary restoration or archiving.",
+                             "furniture":  27,
+                             "archives":  23,
+                             "total":  131,
+                             "ceramics":  31
+                         }
 }
