@@ -547,6 +547,8 @@ document.addEventListener('keydown', (e) => {
             if (latestPanel === 'favSidebar') {
                 const closeBtn = document.getElementById('closeFav');
                 if (closeBtn) closeBtn.click();
+                const dynamicOverlay = document.querySelector('.close-curate-backdrop');
+                if (dynamicOverlay) dynamicOverlay.style.display = 'none';
             } 
             else if (latestPanel === 'drawerA11y') {
                 const a11yDrawer = document.getElementById('drawerA11y');
