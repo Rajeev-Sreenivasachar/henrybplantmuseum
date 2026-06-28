@@ -1007,6 +1007,22 @@ input:checked + .slider:before { transform: translateX(20px); }
   transform: rotate(-45deg);
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
+
+.online-tag {
+  position: absolute;
+  top: 18px;
+  left: -38px;
+  padding: 8px 50px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  /* text-transform removed */
+  color: #ffffff;
+  background: linear-gradient(135deg, #7a0f24, #9e1b32);
+  transform: rotate(-45deg);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
 /* .card-exhibits:hover .upcoming-tag {
   background: var(--brand-gold);
   color: #fff;
