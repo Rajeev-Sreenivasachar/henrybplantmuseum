@@ -988,7 +988,7 @@ input:checked + .slider:before { transform: translateX(20px); }
   letter-spacing: 0.1em;
   /* text-transform removed */
   color: #ffffff;
-  background: linear-gradient(135deg, #2d5a27, #1c3b18);
+  background: linear-gradient(135deg, #c5a059, #947235);
   transform: rotate(-45deg);
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
